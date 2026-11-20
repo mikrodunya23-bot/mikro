@@ -1,0 +1,685 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #cfeaff;
+      font-family: "Nunito", sans-serif;
+    }
+    #park-canvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    .park-bubble {
+      position: absolute;
+      z-index: 5;
+    }
+    .park-bubble-in {
+      position: relative;
+      background: #fffaf0;
+      color: #3b2416;
+      border: 6px solid #3b2416;
+      border-radius: 56px;
+      padding: 26px 44px 30px;
+      font-weight: 900;
+      font-size: 66px;
+      line-height: 1.05;
+      white-space: nowrap;
+      box-shadow: 0 10px 0 rgba(59, 36, 22, 0.18);
+    }
+    .park-bubble-in::after {
+      content: "";
+      position: absolute;
+      bottom: -40px;
+      width: 0;
+      height: 0;
+      border-left: 26px solid transparent;
+      border-right: 26px solid transparent;
+      border-top: 40px solid #3b2416;
+    }
+    #bubble-ela {
+      left: 150px;
+      top: 560px;
+    }
+    #bubble-ela-in {
+      transform-origin: 20% 120%;
+    }
+    #bubble-ela-in::after {
+      left: 90px;
+    }
+    #bubble-can {
+      left: 400px;
+      top: 540px;
+    }
+    #bubble-can-in {
+      transform-origin: 80% 120%;
+    }
+    #bubble-can-in::after {
+      right: 90px;
+    }
+    #end-title {
+      position: absolute;
+      left: 120px;
+      top: 330px;
+      width: 768px;
+      z-index: 6;
+      text-align: center;
+      font-weight: 900;
+      font-size: 132px;
+      line-height: 1.02;
+      color: #fffaf0;
+      -webkit-text-stroke: 10px #3b2416;
+      paint-order: stroke fill;
+      text-shadow: 0 12px 0 rgba(59, 36, 22, 0.25);
+    }
+    .end-word {
+      display: inline-block;
+    }
+    #end-word-3 {
+      color: #e8443a;
+    }
+  </style>
+  <div
+    id="root"
+    data-composition-id="park"
+    data-width="1080"
+    data-height="1920"
+    data-composition-variables='[{"id":"ela_line","type":"string","label":"Ela konuşma balonu","default":"Merhaba, ben Ela!"},{"id":"can_line","type":"string","label":"Can konuşma balonu","default":"Ben de Can!"}]'
+  >
+    <canvas id="park-canvas" width="1080" height="1920" data-layout-ignore></canvas>
+
+    <div id="bubble-ela" class="park-bubble clip" data-start="21.6" data-duration="2.6" data-track-index="1">
+      <div id="bubble-ela-in" class="park-bubble-in"><span id="bubble-ela-text" data-var-text="ela_line">Merhaba, ben Ela!</span></div>
+    </div>
+    <div id="bubble-can" class="park-bubble clip" data-start="24.2" data-duration="2.3" data-track-index="1">
+      <div id="bubble-can-in" class="park-bubble-in"><span id="bubble-can-text" data-var-text="can_line">Ben de Can!</span></div>
+    </div>
+    <div id="end-title" class="clip" data-start="26.6" data-duration="3.4" data-track-index="1">
+      <span id="end-word-1" class="end-word">Yeni</span> <span id="end-word-2" class="end-word">bir</span><br /><span id="end-word-3" class="end-word">arkadaş!</span>
+    </div>
+  </div>
+
+  <script src="assets/lib/three.min.js"></script>
+  <script>
+    (function () {
+      // ---------- helpers (pure functions of time) ----------
+      const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+      const sstep = (a, b, t) => {
+        const u = clamp((t - a) / (b - a), 0, 1);
+        return u * u * (3 - 2 * u);
+      };
+      const ease = (u) => u * u * (3 - 2 * u);
+      const lerp = (a, b, u) => a + (b - a) * u;
+      // keyed track: [[t, v], ...] eased between keys, held outside
+      function key(track, t) {
+        if (t <= track[0][0]) return track[0][1];
+        for (let i = 1; i < track.length; i++) {
+          if (t <= track[i][0]) {
+            const [t0, v0] = track[i - 1];
+            const [t1, v1] = track[i];
+            return lerp(v0, v1, ease((t - t0) / (t1 - t0)));
+          }
+        }
+        return track[track.length - 1][1];
+      }
+      // weight of a time window with soft edges
+      const win = (t, a, b, f = 0.2) => sstep(a - f, a, t) * (1 - sstep(b, b + f, t));
+      // short hop: list of start times
+      function hop(t, starts, h = 0.16, d = 0.38) {
+        let y = 0;
+        for (const s of starts) {
+          const u = (t - s) / d;
+          if (u > 0 && u < 1) y += h * Math.sin(Math.PI * u);
+        }
+        return y;
+      }
+      function blink(t, times) {
+        let c = 0;
+        for (const b of times) c = Math.max(c, 1 - Math.abs(t - b) / 0.09);
+        return 1 - 0.9 * clamp(c, 0, 1);
+      }
+      function mulberry32(a) {
+        return function () {
+          a |= 0;
+          a = (a + 0x6d2b79f5) | 0;
+          let t = Math.imul(a ^ (a >>> 15), 1 | a);
+          t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+          return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+        };
+      }
+      const rand = mulberry32(23);
+
+      // ---------- renderer ----------
+      const W = 1080, H = 1920;
+      const canvas = document.getElementById("park-canvas");
+      THREE.ColorManagement.legacyMode = false;
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1);
+      renderer.setSize(W, H, false);
+      renderer.outputEncoding = THREE.sRGBEncoding;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.15;
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+      const scene = new THREE.Scene();
+      // sky gradient
+      const sky = document.createElement("canvas");
+      sky.width = 4; sky.height = 512;
+      const sg = sky.getContext("2d");
+      const grad = sg.createLinearGradient(0, 0, 0, 512);
+      grad.addColorStop(0, "#6fc0ef");
+      grad.addColorStop(0.55, "#bfe6fb");
+      grad.addColorStop(1, "#fff4dc");
+      sg.fillStyle = grad; sg.fillRect(0, 0, 4, 512);
+      const skyTex = new THREE.CanvasTexture(sky);
+      skyTex.encoding = THREE.sRGBEncoding;
+      scene.background = skyTex;
+      scene.fog = new THREE.Fog(0xe4f3fb, 22, 55);
+
+      const camera = new THREE.PerspectiveCamera(50, W / H, 0.1, 200);
+
+      // lights: warm key upper-left, cool rim behind, sky/ground fill
+      scene.add(new THREE.HemisphereLight(0xd6ecff, 0x7fae5a, 0.75));
+      const key1 = new THREE.DirectionalLight(0xffe2b8, 1.65);
+      key1.castShadow = true;
+      key1.shadow.mapSize.set(2048, 2048);
+      key1.shadow.camera.left = -7; key1.shadow.camera.right = 7;
+      key1.shadow.camera.top = 7; key1.shadow.camera.bottom = -7;
+      key1.shadow.camera.near = 1; key1.shadow.camera.far = 40;
+      key1.shadow.bias = -0.0008;
+      key1.shadow.radius = 4;
+      scene.add(key1, key1.target);
+      const rim = new THREE.DirectionalLight(0xbfe0ff, 0.55);
+      scene.add(rim, rim.target);
+
+      // clay bump texture (seeded noise)
+      const nc = document.createElement("canvas");
+      nc.width = nc.height = 128;
+      const nx = nc.getContext("2d");
+      const img = nx.createImageData(128, 128);
+      for (let i = 0; i < 128 * 128; i++) {
+        const v = 110 + rand() * 40;
+        img.data[i * 4] = img.data[i * 4 + 1] = img.data[i * 4 + 2] = v;
+        img.data[i * 4 + 3] = 255;
+      }
+      nx.putImageData(img, 0, 0);
+      const bumpTex = new THREE.CanvasTexture(nc);
+      bumpTex.wrapS = bumpTex.wrapT = THREE.RepeatWrapping;
+      bumpTex.repeat.set(3, 3);
+
+      const mats = {};
+      function clay(hex, rough = 0.8) {
+        const k = hex + "_" + rough;
+        if (!mats[k]) mats[k] = new THREE.MeshStandardMaterial({ color: hex, roughness: rough, metalness: 0, bumpMap: bumpTex, bumpScale: 0.015 });
+        return mats[k];
+      }
+      function mesh(geo, mat, parent, x = 0, y = 0, z = 0, shadow = true) {
+        const m = new THREE.Mesh(geo, mat);
+        m.position.set(x, y, z);
+        m.castShadow = shadow;
+        m.receiveShadow = true;
+        if (parent) parent.add(m);
+        return m;
+      }
+
+      // ---------- park ----------
+      const ground = mesh(new THREE.PlaneGeometry(120, 120), clay(0x86c95f, 1), scene, 4, 0, 0, false);
+      ground.rotation.x = -Math.PI / 2;
+      const path = mesh(new THREE.PlaneGeometry(40, 2.6), clay(0xe9d3a6, 1), scene, 4, 0.004, 0.3, false);
+      path.rotation.x = -Math.PI / 2;
+
+      function tree(x, z, s) {
+        const g = new THREE.Group();
+        g.position.set(x, 0, z);
+        g.scale.setScalar(s);
+        mesh(new THREE.CylinderGeometry(0.22, 0.3, 2.2, 10), clay(0x8a5a3b), g, 0, 1.1, 0);
+        const greens = [0x5fae4a, 0x4f9d3f, 0x6dbb55];
+        mesh(new THREE.SphereGeometry(1.35, 20, 16), clay(greens[0]), g, 0, 2.9, 0);
+        mesh(new THREE.SphereGeometry(1.0, 20, 16), clay(greens[1]), g, -0.9, 2.4, 0.3);
+        mesh(new THREE.SphereGeometry(1.05, 20, 16), clay(greens[2]), g, 0.9, 2.5, -0.2);
+        scene.add(g);
+      }
+      for (let i = 0; i < 14; i++) tree(-8 + i * 2.3 + rand() * 1.2, -7 - rand() * 6, 0.85 + rand() * 0.5);
+      tree(-1.8, -3.6, 0.9);
+      tree(11.6, -3.2, 1.0);
+      for (let i = 0; i < 18; i++) {
+        const b = mesh(new THREE.SphereGeometry(0.55, 16, 12), clay(i % 2 ? 0x5aa646 : 0x69b553), scene, -6 + i * 1.4 + rand() * 0.6, 0.3, -4.2 - rand() * 1.2);
+        b.scale.set(1.3, 0.75, 1);
+      }
+      const flowerCols = [0xff8fb1, 0xfff1a8, 0xffffff, 0xffb347];
+      for (let i = 0; i < 70; i++) {
+        const z = rand() < 0.5 ? -1.6 - rand() * 2.4 : 1.8 + rand() * 2.0;
+        const x = -4 + rand() * 18;
+        mesh(new THREE.SphereGeometry(0.06, 8, 6), clay(flowerCols[i % 4]), scene, x, 0.09, z, false);
+        mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.09, 4), clay(0x3f8a32), scene, x, 0.045, z, false);
+      }
+      // clouds
+      for (let i = 0; i < 7; i++) {
+        const g = new THREE.Group();
+        g.position.set(-6 + i * 4 + rand() * 2, 9 + rand() * 4, -26 - rand() * 6);
+        for (let k = 0; k < 4; k++) mesh(new THREE.SphereGeometry(1.1 + rand() * 0.6, 16, 12), clay(0xffffff, 1), g, k * 1.3 - 2, rand() * 0.5, 0, false);
+        g.scale.y = 0.6;
+        scene.add(g);
+      }
+      // bench (left of Ela)
+      const bench = new THREE.Group();
+      bench.position.set(-2.6, 0, -1.9);
+      mesh(new THREE.BoxGeometry(2.0, 0.1, 0.5), clay(0xc9773e), bench, 0, 0.5, 0);
+      mesh(new THREE.BoxGeometry(2.0, 0.35, 0.08), clay(0xc9773e), bench, 0, 0.85, -0.22);
+      mesh(new THREE.BoxGeometry(0.1, 0.5, 0.45), clay(0x4a4a52), bench, -0.85, 0.25, 0);
+      mesh(new THREE.BoxGeometry(0.1, 0.5, 0.45), clay(0x4a4a52), bench, 0.85, 0.25, 0);
+      scene.add(bench);
+      // swing set behind Can
+      const swing = new THREE.Group();
+      swing.position.set(9.0, 0, -2.0);
+      const red = clay(0xe0584a, 0.55);
+      for (const sx of [-1.4, 1.4]) {
+        for (const sz of [-0.5, 0.5]) {
+          const leg = mesh(new THREE.CylinderGeometry(0.06, 0.06, 2.75, 10), red, swing, sx, 1.3, sz * 0.5);
+          leg.rotation.x = sz * 0.36;
+        }
+      }
+      const bar = mesh(new THREE.CylinderGeometry(0.07, 0.07, 3.0, 10), red, swing, 0, 2.6, 0);
+      bar.rotation.z = Math.PI / 2;
+      const seat = new THREE.Group();
+      seat.position.set(0, 2.6, 0);
+      swing.add(seat);
+      for (const rx of [-0.28, 0.28]) mesh(new THREE.CylinderGeometry(0.015, 0.015, 2.0, 6), clay(0x6b5a4a), seat, rx, -1.0, 0);
+      mesh(new THREE.BoxGeometry(0.7, 0.07, 0.3), clay(0x3d8bd9, 0.6), seat, 0, -2.0, 0);
+      scene.add(swing);
+
+      // ---------- ball ----------
+      const BALL_R = 0.18;
+      const ball = new THREE.Group();
+      const ballBody = mesh(new THREE.SphereGeometry(BALL_R, 32, 24), clay(0xe8443a, 0.45), ball);
+      const stripe = mesh(new THREE.TorusGeometry(BALL_R * 1.0, 0.018, 8, 40), clay(0xfffaf0, 0.45), ballBody);
+      const stripe2 = mesh(new THREE.TorusGeometry(BALL_R * 1.0, 0.018, 8, 40), clay(0xffd23c, 0.45), ballBody);
+      stripe2.rotation.y = Math.PI / 2;
+      scene.add(ball);
+
+      // ---------- kids ----------
+      function makeKid(o) {
+        const root = new THREE.Group();
+        const hips = new THREE.Group();
+        hips.position.y = 0.55;
+        root.add(hips);
+        const torso = new THREE.Group();
+        hips.add(torso);
+        if (o.girl) {
+          mesh(new THREE.CylinderGeometry(0.2, 0.4, 0.6, 20), clay(o.shirt), torso, 0, 0.3, 0);
+          mesh(new THREE.SphereGeometry(0.22, 16, 12), clay(o.shirt), torso, 0, 0.55, 0);
+        } else {
+          mesh(new THREE.CapsuleGeometry(0.25, 0.3, 8, 16), clay(o.shirt), torso, 0, 0.36, 0);
+          mesh(new THREE.CylinderGeometry(0.27, 0.27, 0.16, 16), clay(o.pants), torso, 0, 0.06, 0);
+        }
+        // head
+        const head = new THREE.Group();
+        head.position.y = 0.95;
+        torso.add(head);
+        const skull = mesh(new THREE.SphereGeometry(0.42, 32, 24), clay(o.skin, 0.7), head);
+        skull.scale.set(1, 0.95, 0.97);
+        mesh(new THREE.SphereGeometry(0.045, 10, 8), clay(o.skin, 0.7), head, 0, -0.02, 0.41);
+        for (const s of [-1, 1]) {
+          const ear = mesh(new THREE.SphereGeometry(0.08, 12, 10), clay(o.skin, 0.7), head, s * 0.41, 0, 0);
+          ear.scale.set(0.6, 1, 1);
+          const ch = mesh(new THREE.SphereGeometry(0.065, 12, 10), clay(0xff9e9e, 0.9), head, s * 0.24, -0.1, 0.33, false);
+          ch.scale.set(1, 0.6, 0.4);
+        }
+        const eyes = [];
+        const pupils = [];
+        for (const s of [-1, 1]) {
+          const eg = new THREE.Group();
+          eg.position.set(s * 0.15, 0.05, 0.36);
+          head.add(eg);
+          const white = mesh(new THREE.SphereGeometry(0.085, 16, 12), clay(0xffffff, 0.35), eg, 0, 0, 0, false);
+          white.scale.set(0.95, 1.1, 0.55);
+          const pg = new THREE.Group();
+          eg.add(pg);
+          mesh(new THREE.SphereGeometry(0.056, 16, 12), clay(0x1d1410, 0.3), pg, 0, -0.005, 0.03, false).scale.set(1, 1.1, 0.6);
+          mesh(new THREE.SphereGeometry(0.018, 8, 6), clay(0xffffff, 0.2), pg, 0.018, 0.022, 0.062, false);
+          // brow
+          const brow = mesh(new THREE.CapsuleGeometry(0.012, 0.07, 4, 8), clay(o.hair), eg, 0, 0.13, 0.01, false);
+          brow.rotation.z = Math.PI / 2 + s * 0.15;
+          eyes.push(eg);
+          pupils.push(pg);
+        }
+        // mouth: smile arc + open mouth
+        const mouth = new THREE.Group();
+        mouth.position.set(0, -0.17, 0.385);
+        head.add(mouth);
+        const smile = mesh(new THREE.TorusGeometry(0.085, 0.02, 8, 20, Math.PI), clay(0x7a2c26, 0.6), mouth, 0, 0, 0, false);
+        smile.rotation.z = Math.PI;
+        const open = mesh(new THREE.SphereGeometry(0.07, 16, 12), clay(0x7a2c26, 0.6), mouth, 0, -0.03, -0.01, false);
+        open.scale.set(1, 0.7, 0.35);
+        // hair
+        const hairMat = clay(o.hair, 0.9);
+        const cap = mesh(new THREE.SphereGeometry(0.45, 32, 16, 0, Math.PI * 2, 0, Math.PI * 0.55), hairMat, head, 0, 0.02, -0.03);
+        cap.rotation.x = -0.35;
+        if (o.girl) {
+          for (const s of [-1, 1]) {
+            const tail = mesh(new THREE.SphereGeometry(0.17, 16, 12), hairMat, head, s * 0.5, 0.12, -0.08);
+            tail.scale.set(0.8, 1.15, 0.8);
+            mesh(new THREE.TorusGeometry(0.06, 0.025, 8, 16), clay(0xe8443a, 0.5), head, s * 0.41, 0.2, -0.05).rotation.y = Math.PI / 2;
+          }
+          const bang = mesh(new THREE.SphereGeometry(0.3, 20, 12), hairMat, head, 0.08, 0.3, 0.2);
+          bang.scale.set(1.2, 0.45, 0.7);
+        } else {
+          for (let i = 0; i < 9; i++) {
+            const a = (i / 9) * Math.PI * 2;
+            mesh(new THREE.SphereGeometry(0.13, 12, 10), hairMat, head, Math.cos(a) * 0.27, 0.33 + (i % 2) * 0.04, Math.sin(a) * 0.27 - 0.05);
+          }
+          mesh(new THREE.SphereGeometry(0.15, 12, 10), hairMat, head, 0.05, 0.42, 0.05);
+        }
+        // arms (L at +x, R at -x when facing +z)
+        function arm(side) {
+          const sh = new THREE.Group();
+          sh.position.set(side * 0.3, 0.6, 0);
+          torso.add(sh);
+          mesh(new THREE.CapsuleGeometry(0.075, 0.28, 6, 10), clay(o.sleeve || o.shirt), sh, 0, -0.2, 0);
+          mesh(new THREE.SphereGeometry(0.095, 14, 10), clay(o.skin, 0.7), sh, 0, -0.45, 0);
+          return sh;
+        }
+        const armL = arm(1), armR = arm(-1);
+        function leg(side) {
+          const hp = new THREE.Group();
+          hp.position.set(side * 0.13, 0.02, 0);
+          hips.add(hp);
+          mesh(new THREE.CapsuleGeometry(0.085, 0.28, 6, 10), clay(o.legs), hp, 0, -0.22, 0);
+          const shoe = mesh(new THREE.SphereGeometry(0.11, 14, 10), clay(o.shoes, 0.6), hp, 0, -0.47, 0.05);
+          shoe.scale.set(0.9, 0.6, 1.35);
+          return hp;
+        }
+        const legL = leg(1), legR = leg(-1);
+        scene.add(root);
+        return { root, hips, torso, head, eyes, pupils, smile, open, armL, armR, legL, legR };
+      }
+
+      const ela = makeKid({ girl: true, skin: 0xf6c9a3, shirt: 0xffc93c, sleeve: 0xffc93c, legs: 0xf6c9a3, shoes: 0xe8443a, hair: 0x6b3e26 });
+      const can = makeKid({ girl: false, skin: 0xd9a27a, shirt: 0x3d8bd9, pants: 0x2b3e6b, legs: 0x2b3e6b, shoes: 0xffffff, hair: 0x2e2018 });
+
+      // ---------- performance (keyed states) ----------
+      const ELA = {
+        x: [[0, 0], [3.3, 0], [8.6, 6.6]],
+        run: [[3.2, 0], [3.6, 1], [8.1, 1], [8.7, 0]],
+        rotY: [[0, 0.25], [2.6, 0.25], [3.1, 0.9], [3.5, 1.2], [8.3, 1.2], [8.9, 0.75], [12.0, 0.7], [12.4, 0.9], [21.0, 0.9], [21.5, 0.45], [26.0, 0.45], [26.5, 0.12]],
+        smile: [[0, 1.0], [2.85, 1.0], [3.0, 0.15], [3.6, 0.15], [8.5, 0.35], [9.0, 0.3], [12.7, 0.35], [13.85, 1.4], [21, 1.25], [26, 1.4]],
+        open: [[0, 0.1], [2.85, 0.0], [3.0, 0.85], [3.5, 0.35], [8.0, 0.0], [13.85, 0.0], [14.0, 0.7], [14.6, 0.15], [21, 0.1]],
+        headX: [[0, 0.12], [2.6, 0.18], [3.0, -0.08], [8.8, 0.0], [9.3, 0.3], [10.0, 0.3], [10.3, 0.05], [10.8, 0.32], [12.5, 0.3], [13.1, -0.05], [21, 0.0], [26, -0.08]],
+        headY: [[0, 0], [9.9, 0], [10.2, 0.25], [10.7, 0.25], [10.9, 0], [21, 0], [21.6, 0.15], [23.6, 0.15], [24.1, 0.3], [26, 0.3], [26.4, 0]],
+        wide: [[2.85, 1], [3.0, 1.35], [3.6, 1.0], [13.4, 1.0], [13.8, 1.2], [14.2, 1.0]],
+        blinks: [1.4, 5.0, 9.6, 11.6, 15.2, 19.1, 23.8, 27.6],
+        hops: [13.9, 17.25, 20.45, 21.75, 27.0],
+        speak: [[21.7, 23.4]],
+        laugh: [[17.2, 18.0], [20.4, 21.0], [26.6, 28.0]],
+      };
+      const CAN = {
+        x: [[0, 8.0]],
+        run: [[0, 0]],
+        rotY: [[0, 0], [6.4, 0], [6.8, -0.45], [8.3, -0.45], [8.6, -0.75], [21.0, -0.9], [21.5, -0.45], [26.0, -0.45], [26.5, -0.12]],
+        smile: [[0, 0.12], [8.6, 0.2], [12.2, 0.25], [12.6, 1.2], [21, 1.2], [26, 1.4]],
+        open: [[0, 0], [6.6, 0], [6.75, 0.55], [7.1, 0.0]],
+        headX: [[0, 0.38], [6.3, 0.38], [6.7, 0.1], [7.1, 0.45], [7.8, 0.5], [8.3, 0.15], [9.2, 0.35], [11.2, 0.35], [11.5, 0.08], [11.9, 0.3], [12.3, 0.3], [12.7, 0], [26, -0.08]],
+        headY: [[0, 0], [6.4, 0], [6.7, -0.35], [7.2, -0.15], [8.2, 0], [21, 0], [24.0, 0], [24.4, -0.3], [26, -0.3], [26.4, 0]],
+        wide: [[6.55, 1], [6.7, 1.3], [7.2, 1.0]],
+        blinks: [2.1, 4.4, 7.9, 10.4, 12.4, 16.8, 22.5, 27.0],
+        hops: [15.65, 18.85, 24.35, 27.15],
+        speak: [[24.3, 25.7]],
+        laugh: [[15.6, 16.3], [18.8, 19.5], [26.6, 28.0]],
+        crouch: [[7.2, 0], [7.6, 1], [8.0, 1], [8.4, 0]],
+      };
+      // who holds the ball, and tosses
+      const HOLDS = [
+        { who: "can", a: 8.1, b: 12.95 },
+        { who: "ela", a: 13.8, b: 14.8 },
+        { who: "can", a: 15.6, b: 16.4 },
+        { who: "ela", a: 17.2, b: 18.0 },
+        { who: "can", a: 18.8, b: 19.6 },
+        { who: "ela", a: 20.4, b: 21.0 },
+      ];
+      const TOSSES = [
+        { from: "can", to: "ela", a: 12.95, b: 13.8, h: 0.9 },
+        { from: "ela", to: "can", a: 14.8, b: 15.6, h: 0.9 },
+        { from: "can", to: "ela", a: 16.4, b: 17.2, h: 1.1 },
+        { from: "ela", to: "can", a: 18.0, b: 18.8, h: 0.9 },
+        { from: "can", to: "ela", a: 19.6, b: 20.4, h: 1.3 },
+      ];
+      const RIG = { ela: [ela, ELA], can: [can, CAN] };
+
+      function inWins(t, wins) {
+        for (const [a, b] of wins) if (t >= a && t < b) return true;
+        return false;
+      }
+      function rootState(name, t) {
+        const P = RIG[name][1];
+        return { x: key(P.x, t), y: hop(t, P.hops), rotY: key(P.rotY, t) };
+      }
+      // ball position held in a kid's hands (kid local (0, 0.9, 0.55))
+      function handsPos(name, t) {
+        const s = rootState(name, t);
+        const lx = 0, ly = 0.9, lz = 0.55;
+        return new THREE.Vector3(s.x + Math.sin(s.rotY) * lz + Math.cos(s.rotY) * lx, s.y + ly, Math.cos(s.rotY) * lz - Math.sin(s.rotY) * lx);
+      }
+
+      // ---------- ball path ----------
+      const ROLL_T0 = 2.925, ROLL_T1 = 7.0, ROLL_X0 = 0.45, ROLL_X1 = 7.55;
+      const BOUNCES = [[0.7, 0.9], [0.5, 0.45], [0.35, 0.2], [0.25, 0.08]];
+      const GROUND_SPOT = new THREE.Vector3(7.3, BALL_R, 0.75);
+      function ballAt(t) {
+        const p = new THREE.Vector3();
+        let spin = 0, squash = 0;
+        if (t < ROLL_T0) {
+          // dribble beside Ela
+          const c = Math.abs(Math.cos((Math.PI * t) / 0.65));
+          p.set(0.45, BALL_R + 0.75 * c, 0.55);
+          squash = clamp(1 - c / 0.08, 0, 1);
+          return { p, spin: 0, squash };
+        }
+        if (t < ROLL_T1) {
+          const u = (t - ROLL_T0) / (ROLL_T1 - ROLL_T0);
+          const x = lerp(ROLL_X0, ROLL_X1, 1 - Math.pow(1 - u, 2.2));
+          let y = BALL_R, tt = t - ROLL_T0;
+          for (const [d, h] of BOUNCES) {
+            if (tt < d) { y = BALL_R + h * Math.sin(Math.PI * (tt / d)); break; }
+            tt -= d;
+          }
+          p.set(x, y, lerp(0.55, 0.15, u));
+          return { p, spin: -(x - ROLL_X0) / BALL_R, squash: 0 };
+        }
+        const restSpin = -(ROLL_X1 - ROLL_X0) / BALL_R;
+        if (t < 7.6) return { p: p.set(ROLL_X1, BALL_R, 0.15), spin: restSpin, squash: 0 };
+        if (t < 8.1) {
+          const u = ease((t - 7.6) / 0.5);
+          p.set(ROLL_X1, BALL_R, 0.15).lerp(handsPos("can", 8.1), u);
+          return { p, spin: restSpin, squash: 0 };
+        }
+        for (const h of HOLDS) if (t >= h.a && t < h.b) return { p: handsPos(h.who, t), spin: restSpin, squash: 0 };
+        for (const s of TOSSES) {
+          if (t >= s.a && t < s.b) {
+            const u = (t - s.a) / (s.b - s.a);
+            const a = handsPos(s.from, s.a), b = handsPos(s.to, s.b);
+            p.copy(a).lerp(b, u);
+            p.y += s.h * Math.sin(Math.PI * u);
+            return { p, spin: restSpin - u * 6, squash: 0 };
+          }
+        }
+        if (t < 21.8) {
+          const a = handsPos("ela", 21.0);
+          if (t < 21.45) {
+            const u = (t - 21.0) / 0.45;
+            p.copy(a).lerp(GROUND_SPOT, u);
+            p.y = lerp(a.y, BALL_R, u * u) + 0.25 * Math.sin(Math.PI * u) * (1 - u);
+          } else {
+            const u = (t - 21.45) / 0.35;
+            p.copy(GROUND_SPOT);
+            p.y = BALL_R + 0.15 * Math.sin(Math.PI * u);
+          }
+          return { p, spin: restSpin, squash: 0 };
+        }
+        return { p: p.copy(GROUND_SPOT), spin: restSpin, squash: 0 };
+      }
+
+      // ---------- arms ----------
+      function holding(name, t) {
+        let w = 0;
+        for (const h of HOLDS) if (h.who === name) w = Math.max(w, win(t, h.a - 0.25, h.b, 0.15));
+        if (name === "can") w = Math.max(w, win(t, 7.55, 8.1, 0.2));
+        return w;
+      }
+      function throwing(name, t) {
+        let w = 0;
+        for (const s of TOSSES) if (s.from === name) w = Math.max(w, win(t, s.a - 0.15, s.a + 0.12, 0.12));
+        return w;
+      }
+      function catching(name, t) {
+        let w = 0;
+        for (const s of TOSSES) if (s.to === name) w = Math.max(w, win(t, s.b - 0.4, s.b, 0.15));
+        return w;
+      }
+
+      function poseKid(name, t) {
+        const [k, P] = RIG[name];
+        const s = rootState(name, t);
+        k.root.position.set(s.x, s.y, 0);
+        k.root.rotation.y = s.rotY;
+        const run = key(P.run, t);
+        const phase = s.x * 4.6;
+        const crouch = P.crouch ? key(P.crouch, t) : 0;
+        const breath = Math.sin(t * 2.3 + (name === "can" ? 1.3 : 0));
+        // hips & legs
+        k.hips.position.y = 0.55 + Math.abs(Math.sin(phase)) * 0.07 * run - 0.1 * crouch;
+        k.torso.rotation.x = 0.12 * run + 0.45 * crouch;
+        k.torso.scale.y = 1 + 0.01 * breath;
+        let legLx = Math.sin(phase) * 0.75 * run - 0.35 * crouch;
+        let legRx = -Math.sin(phase) * 0.75 * run - 0.35 * crouch;
+        if (name === "ela") legRx += -1.1 * win(t, 2.78, 2.95, 0.12); // kick
+        if (name === "ela") legLx += 0.25 * Math.sin(t * 3.1) * win(t, 9.0, 12.2, 0.3) * 0.4; // shy foot twist
+        if (name === "can") legRx += -0.35 * Math.max(0, Math.sin(t * 2.4)) * win(t, 0, 6.3, 0.3); // kicks the ground, alone
+        k.legL.rotation.x = legLx;
+        k.legR.rotation.x = legRx;
+        // head (leads)
+        let speak = 0;
+        if (inWins(t, P.speak)) speak = 0.3 + 0.5 * Math.abs(Math.sin(t * 13));
+        let laugh = 0;
+        for (const [a, b] of P.laugh) laugh = Math.max(laugh, win(t, a, b, 0.15) * (0.45 + 0.35 * Math.abs(Math.sin(t * 17))));
+        k.head.rotation.x = key(P.headX, t) - 0.12 * run - 0.15 * crouch + 0.06 * laugh * Math.sin(t * 17);
+        k.head.rotation.y = key(P.headY, t);
+        k.head.rotation.z = name === "ela" ? 0.08 * Math.sin(t * 1.7) * win(t, 9.0, 12.3, 0.4) : 0;
+        // face
+        const wide = key(P.wide, t);
+        const bl = blink(t, P.blinks);
+        for (const e of k.eyes) e.scale.set(wide, wide * bl, 1);
+        const shyLook = name === "ela" ? -0.02 * win(t, 9.3, 9.9, 0.15) : 0;
+        for (const p of k.pupils) p.position.set(0, -0.012 * (key(P.headX, t) > 0.25 ? 1 : 0) + shyLook, 0);
+        const sm = key(P.smile, t);
+        k.smile.scale.set(0.6 + 0.4 * Math.min(sm, 1.4), Math.max(0.15, sm), 1);
+        const op = Math.max(key(P.open, t), speak, laugh);
+        k.open.scale.set(0.9 + 0.3 * op, 0.05 + 0.95 * op, 0.35);
+        k.open.visible = op > 0.04;
+        k.smile.visible = op < 0.5;
+        // arms (offset from head: use t - 0.1 for follow-through)
+        const ta = t - 0.08;
+        const hold = holding(name, ta), thr = throwing(name, ta), cat = catching(name, ta);
+        const swingA = Math.sin(phase) * 0.9 * run;
+        // relaxed
+        let lx = 0.05 - swingA + 0.02 * breath, rx = 0.05 + swingA - 0.02 * breath;
+        let lz = 0.14, rz = -0.14;
+        // shy (Ela): hands behind back
+        if (name === "ela") {
+          const shy = win(t, 8.9, 12.5, 0.3);
+          lx = lerp(lx, 0.5, shy); rx = lerp(rx, 0.5, shy);
+          lz = lerp(lz, -0.05, shy); rz = lerp(rz, 0.05, shy);
+          // dribble: right arm pats the ball
+          const dr = win(t, 0, 2.6, 0.15);
+          const c = Math.abs(Math.cos((Math.PI * t) / 0.65));
+          rx = lerp(rx, -0.55 - 0.35 * c, dr);
+          rz = lerp(rz, -0.25, dr);
+          // surprise: hands up
+          const sur = win(t, 2.95, 3.35, 0.15);
+          lz = lerp(lz, 0.9, sur); rz = lerp(rz, -0.9, sur);
+        }
+        if (name === "can") {
+          const pick = win(t, 7.3, 7.9, 0.25);
+          lx = lerp(lx, -0.6, pick); rx = lerp(rx, -0.6, pick);
+          // shy: rubs arm
+          const shy = win(t, 9.0, 12.3, 0.3);
+          lx = lerp(lx, -0.85, Math.max(hold, 0) > 0 ? 0 : shy);
+        }
+        // hold / catch: forward, slightly inward
+        const fw = Math.max(hold, cat);
+        lx = lerp(lx, -1.05, fw); rx = lerp(rx, -1.0, fw);
+        lz = lerp(lz, -0.16, fw); rz = lerp(rz, 0.16, fw);
+        // throw: up and over
+        lx = lerp(lx, -2.1, thr); rx = lerp(rx, -2.15, thr);
+        // wave goodbye: outer arm (Ela's right, Can's left)
+        const wave = win(t, 26.3, 30.5, 0.3);
+        const wob = 0.35 * Math.sin(t * 9.5 + (name === "can" ? 1.2 : 0));
+        if (name === "ela") { rz = lerp(rz, -2.5 + wob, wave); rx = lerp(rx, -0.2, wave); }
+        else { lz = lerp(lz, 2.5 + wob, wave); lx = lerp(lx, -0.2, wave); }
+        // speaking gesture: hand to chest
+        if (name === "ela") { const g = win(t, 21.9, 23.3, 0.25); lx = lerp(lx, -1.2, g); lz = lerp(lz, -0.55, g); }
+        else { const g = win(t, 24.5, 25.6, 0.25); rx = lerp(rx, -1.2, g); rz = lerp(rz, 0.55, g); }
+        k.armL.rotation.set(lx, 0, lz);
+        k.armR.rotation.set(rx, 0, rz);
+      }
+
+      // ---------- camera ----------
+      const CAM = [
+        [0.0, 0.6, 1.05, 2.35, 0.3, 1.0, 0.3],
+        [2.0, 0.7, 1.1, 2.7, 0.3, 0.98, 0.3],
+        [3.4, 0.9, 1.5, 5.6, 0.9, 0.8, 0.3],
+        [5.2, 3.8, 1.5, 6.0, 4.0, 0.75, 0.2],
+        [7.3, 6.8, 1.45, 6.0, 7.3, 0.9, 0.0],
+        [9.0, 7.3, 1.45, 5.6, 7.3, 1.0, 0.0],
+        [12.4, 7.3, 1.35, 4.7, 7.3, 1.05, 0.0],
+        [14.4, 7.3, 1.5, 5.6, 7.3, 1.15, 0.0],
+        [20.8, 6.3, 1.6, 5.5, 7.3, 1.15, 0.0],
+        [22.2, 7.3, 1.5, 5.2, 7.3, 1.2, 0.0],
+        [26.0, 7.3, 1.6, 5.5, 7.3, 1.3, 0.0],
+        [28.2, 7.3, 2.6, 7.4, 7.3, 2.0, 0.0],
+        [30.0, 7.3, 2.7, 7.6, 7.3, 2.05, 0.0],
+      ];
+      const camTracks = [1, 2, 3, 4, 5, 6].map((i) => CAM.map((r) => [r[0], r[i]]));
+      const tgt = new THREE.Vector3();
+
+      function renderAt(t) {
+        poseKid("ela", t);
+        poseKid("can", t);
+        const b = ballAt(t);
+        ball.position.copy(b.p);
+        ballBody.rotation.set(0, 0, b.spin);
+        ballBody.scale.set(1 + 0.12 * b.squash, 1 - 0.18 * b.squash, 1 + 0.12 * b.squash);
+        ball.position.y -= 0.03 * b.squash;
+        seat.rotation.x = 0.06 * Math.sin(t * 1.9);
+        const v = camTracks.map((tr) => key(tr, t));
+        camera.position.set(v[0], v[1], v[2]);
+        tgt.set(v[3], v[4], v[5]);
+        camera.lookAt(tgt);
+        key1.position.set(tgt.x - 6, 10, 8);
+        key1.target.position.set(tgt.x, 0, 0);
+        rim.position.set(tgt.x + 4, 5, -8);
+        rim.target.position.set(tgt.x, 1, 0);
+        renderer.render(scene, camera);
+      }
+
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      renderAt(0);
+
+      // ---------- text (GSAP) ----------
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#bubble-ela-in", { scale: 0, rotation: -8 }, { scale: 1, rotation: 0, duration: 0.35, ease: "back.out(2.2)" }, 21.6);
+      tl.to("#bubble-ela-in", { scale: 0, duration: 0.18, ease: "power2.in" }, 24.0);
+      tl.fromTo("#bubble-can-in", { scale: 0, rotation: 8 }, { scale: 1, rotation: 0, duration: 0.35, ease: "back.out(2.2)" }, 24.2);
+      tl.to("#bubble-can-in", { scale: 0, duration: 0.18, ease: "power2.in" }, 26.3);
+      tl.fromTo("#end-word-1", { y: -420, rotation: -12 }, { y: 0, rotation: -4, duration: 0.5, ease: "bounce.out" }, 26.6);
+      tl.fromTo("#end-word-2", { y: -420, rotation: 10 }, { y: 0, rotation: 3, duration: 0.5, ease: "bounce.out" }, 26.78);
+      tl.fromTo("#end-word-3", { scale: 0, rotation: -10 }, { scale: 1, rotation: -2, duration: 0.55, ease: "back.out(2.6)" }, 27.05);
+      tl.set({}, {}, 30);
+      window.__timelines["park"] = tl;
+    })();
+  </script>
+</template>
