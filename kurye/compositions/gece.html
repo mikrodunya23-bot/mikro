@@ -1,0 +1,63 @@
+<template>
+  <style>
+    @font-face { font-family: "Bangers"; src: url("assets/fonts/bangers-latin.woff2") format("woff2"); }
+    @font-face { font-family: "Bangers"; src: url("assets/fonts/bangers-latin-ext.woff2") format("woff2"); unicode-range: U+0100-024F; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0d1430; font-family: "Bangers", sans-serif; }
+    .panel { position: absolute; inset: 0; overflow: hidden; }
+    .cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+    .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .txt { position: absolute; z-index: 10; }
+    .nar-in { background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+              padding: 18px 30px 14px; font-size: 56px; line-height: 1.05; letter-spacing: 2px; transform-origin: 0% 0%; }
+    .bl-in { position: relative; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 70px;
+             padding: 26px 44px 22px; font-size: 62px; line-height: 1.04; letter-spacing: 2px; text-align: center;
+             transform-origin: var(--tx) 120%; }
+    .bl-in::before { content: ""; position: absolute; left: calc(var(--tx) - 30px); bottom: -62px; border-left: 30px solid transparent;
+             border-right: 30px solid transparent; border-top: 62px solid #16121c; }
+    .bl-in::after { content: ""; position: absolute; left: calc(var(--tx) - 20px); bottom: -46px; border-left: 20px solid transparent;
+             border-right: 20px solid transparent; border-top: 48px solid #ffffff; }
+    .shout .bl-in { background: #ffe14a; border-radius: 18px; font-size: 84px; transform: rotate(-3deg); }
+    .shout .bl-in::after { border-top-color: #ffe14a; }
+    .flash { position: absolute; inset: 0; background: #fffbe8; z-index: 20; }
+    .floor { position: absolute; left: 380px; top: 170px; width: 320px; height: 150px; display: flex; align-items: center;
+             justify-content: center; color: #ff8a2a; font-size: 120px; letter-spacing: 8px; }
+    #final-title { position: absolute; left: 120px; top: 330px; width: 660px; text-align: center; z-index: 12; }
+    .tw { display: inline-block; color: #ff7a1a; font-size: 200px; line-height: 0.92; -webkit-text-stroke: 12px #16121c; paint-order: stroke fill;
+          text-shadow: 14px 14px 0 #16121c; letter-spacing: 6px; }
+    #final-k2 { color: #ffd84a; font-size: 240px; }
+    #final-ep { display: inline-block; margin-top: 30px; background: #16121c; color: #ffd84a; font-size: 64px; padding: 10px 30px; letter-spacing: 6px; }
+    #final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
+    #final-next-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+          font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+  </style>
+  <div id="root" data-composition-id="gece" data-width="1080" data-height="1920">
+    <div id="gece-p1" class="panel clip" data-start="0.0" data-duration="2.2" data-track-index="0">
+      <div id="gece-p1-cam" class="cam"><svg data-art="tower" data-layout-ignore></svg></div>
+    </div>
+    <div id="gece-p2" class="panel clip" data-start="2.2" data-duration="4.8" data-track-index="0">
+      <div id="gece-p2-cam" class="cam"><svg data-art="visor" data-layout-ignore></svg></div>
+    </div>
+    <div id="gece-p3" class="panel clip" data-start="7.0" data-duration="3.2" data-track-index="0">
+      <div id="gece-p3-cam" class="cam"><svg data-art="walk" data-layout-ignore></svg></div>
+    </div>
+    <div id="gece-n1" class="txt clip" data-start="0.15" data-duration="2.05" data-track-index="1" style="left:150px;top:330px;"><div id="gece-n1-in" class="nar-in">BU BİNAYI BEN KURDUM.</div></div>
+    <div id="gece-n2a" class="txt clip" data-start="2.35" data-duration="2.1" data-track-index="1" style="left:150px;top:320px;"><div id="gece-n2a-in" class="nar-in">KIRK İKİ KAT. ÜÇ BİN ÇALIŞAN.</div></div>
+    <div id="gece-n2b" class="txt clip" data-start="4.45" data-duration="2.55" data-track-index="1" style="left:220px;top:320px;"><div id="gece-n2b-in" class="nar-in">AMA HİÇBİRİ YÜZÜMÜ BİLMİYOR.</div></div>
+    <div id="gece-n3" class="txt clip" data-start="7.15" data-duration="3.05" data-track-index="1" style="left:150px;top:300px;width:720px;"><div id="gece-n3-in" class="nar-in">BU GECE, ONLARI GERÇEK HALLERİYLE GÖRECEĞİM.</div></div>
+  </div>
+  <script>
+    (function () {
+      Comic.drawAll(document.querySelector('[data-composition-id="gece"]'));
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#gece-p1-cam", {"scale": 1.15, "y": 150}, {"scale": 1.15, "y": -30, "duration": 2.2, "ease": "sine.inOut"}, 0.0);
+      tl.fromTo("#gece-p2-cam", {"scale": 1.0}, {"scale": 1.14, "duration": 4.8, "ease": "sine.inOut"}, 2.2);
+      tl.fromTo("#gece-p3-cam", {"scale": 1.02, "y": 40}, {"scale": 1.12, "y": -30, "duration": 3.2, "ease": "sine.inOut"}, 7.0);
+      tl.fromTo("#gece-n1-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 0.15);
+      tl.fromTo("#gece-n2a-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 2.35);
+      tl.fromTo("#gece-n2b-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 4.45);
+      tl.fromTo("#gece-n3-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 7.15);
+      tl.set({}, {}, 10.2);
+      window.__timelines["gece"] = tl;
+    })();
+  </script>
+</template>

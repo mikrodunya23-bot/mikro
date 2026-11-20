@@ -1,0 +1,77 @@
+<template>
+  <style>
+    @font-face { font-family: "Bangers"; src: url("assets/fonts/bangers-latin.woff2") format("woff2"); }
+    @font-face { font-family: "Bangers"; src: url("assets/fonts/bangers-latin-ext.woff2") format("woff2"); unicode-range: U+0100-024F; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0d1430; font-family: "Bangers", sans-serif; }
+    .panel { position: absolute; inset: 0; overflow: hidden; }
+    .cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+    .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .txt { position: absolute; z-index: 10; }
+    .nar-in { background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+              padding: 18px 30px 14px; font-size: 56px; line-height: 1.05; letter-spacing: 2px; transform-origin: 0% 0%; }
+    .bl-in { position: relative; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 70px;
+             padding: 26px 44px 22px; font-size: 62px; line-height: 1.04; letter-spacing: 2px; text-align: center;
+             transform-origin: var(--tx) 120%; }
+    .bl-in::before { content: ""; position: absolute; left: calc(var(--tx) - 30px); bottom: -62px; border-left: 30px solid transparent;
+             border-right: 30px solid transparent; border-top: 62px solid #16121c; }
+    .bl-in::after { content: ""; position: absolute; left: calc(var(--tx) - 20px); bottom: -46px; border-left: 20px solid transparent;
+             border-right: 20px solid transparent; border-top: 48px solid #ffffff; }
+    .shout .bl-in { background: #ffe14a; border-radius: 18px; font-size: 84px; transform: rotate(-3deg); }
+    .shout .bl-in::after { border-top-color: #ffe14a; }
+    .flash { position: absolute; inset: 0; background: #fffbe8; z-index: 20; }
+    .floor { position: absolute; left: 380px; top: 170px; width: 320px; height: 150px; display: flex; align-items: center;
+             justify-content: center; color: #ff8a2a; font-size: 120px; letter-spacing: 8px; }
+    #final-title { position: absolute; left: 120px; top: 330px; width: 660px; text-align: center; z-index: 12; }
+    .tw { display: inline-block; color: #ff7a1a; font-size: 200px; line-height: 0.92; -webkit-text-stroke: 12px #16121c; paint-order: stroke fill;
+          text-shadow: 14px 14px 0 #16121c; letter-spacing: 6px; }
+    #final-k2 { color: #ffd84a; font-size: 240px; }
+    #final-ep { display: inline-block; margin-top: 30px; background: #16121c; color: #ffd84a; font-size: 64px; padding: 10px 30px; letter-spacing: 6px; }
+    #final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
+    #final-next-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+          font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+  </style>
+  <div id="root" data-composition-id="lobi" data-width="1080" data-height="1920">
+    <div id="lobi-p4" class="panel clip" data-start="0.0" data-duration="3.6" data-track-index="0">
+      <div id="lobi-p4-cam" class="cam"><svg data-art="reception" data-layout-ignore></svg></div>
+    </div>
+    <div id="lobi-p5" class="panel clip" data-start="3.6" data-duration="3.6" data-track-index="0">
+      <div id="lobi-p5-cam" class="cam"><svg data-art="denizDesk" data-layout-ignore></svg></div>
+    </div>
+    <div id="lobi-p6" class="panel clip" data-start="7.2" data-duration="4.2" data-track-index="0">
+      <div id="lobi-p6-cam" class="cam"><svg data-art="footprints" data-layout-ignore></svg></div>
+    </div>
+    <div id="lobi-p7" class="panel clip" data-start="11.4" data-duration="2.4" data-track-index="0">
+      <div id="lobi-p7-cam" class="cam"><svg data-art="guard" data-layout-ignore></svg></div>
+    </div>
+    <div id="lobi-p8" class="panel clip" data-start="13.8" data-duration="2.0" data-track-index="0">
+      <div id="lobi-p8-cam" class="cam"><svg data-art="bam" data-layout-ignore></svg></div>
+    </div>
+    <div id="lobi-b4" class="txt clip" data-start="0.3" data-duration="3.1" data-track-index="1" style="left:150px;top:310px;width:780px;"><div id="lobi-b4-in" class="bl-in" style="--tx:470px">KURYE GİRİŞİ ARKADA! BURASI YÖNETİCİLER İÇİN.</div></div>
+    <div id="lobi-b5" class="txt clip" data-start="3.7" data-duration="3.4" data-track-index="1" style="left:140px;top:300px;width:760px;"><div id="lobi-b5-in" class="bl-in" style="--tx:400px">PAKET KIRK İKİNCİ KATA. İMZA GEREKİYOR.</div></div>
+    <div id="lobi-b6" class="txt clip" data-start="7.3" data-duration="4.0" data-track-index="1" style="left:130px;top:300px;width:780px;"><div id="lobi-b6-in" class="bl-in" style="--tx:430px">ISLAK AYAKKABILARINLA MERMERİ KİRLETİYORSUN. ÇIK DIŞARI!</div></div>
+    <div id="lobi-b7" class="txt clip shout" data-start="11.6" data-duration="2.1" data-track-index="1" style="left:170px;top:300px;width:700px;"><div id="lobi-b7-in" class="bl-in" style="--tx:380px">DUYMADIN MI? DIŞARI!</div></div>
+  </div>
+  <script>
+    (function () {
+      Comic.drawAll(document.querySelector('[data-composition-id="lobi"]'));
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#lobi-p4-cam", {"scale": 1.08}, {"scale": 1.0, "duration": 3.6, "ease": "sine.out"}, 0.0);
+      tl.fromTo("#lobi-p5-cam", {"scale": 1.0}, {"scale": 1.08, "duration": 3.6, "ease": "sine.inOut"}, 3.6);
+      tl.fromTo("#lobi-p6-cam", {"scale": 1.0, "rotation": 0}, {"scale": 1.1, "rotation": -2, "duration": 4.2, "ease": "sine.inOut"}, 7.2);
+      tl.fromTo("#lobi-p7-cam", {"scale": 1.0}, {"scale": 1.16, "duration": 2.4, "ease": "power2.out"}, 11.4);
+      tl.fromTo("#lobi-p7", {x: 0, y: 0}, {keyframes: [{"x": 14.0, "y": -8.4}, {"x": -12.2, "y": 7.4}, {"x": 10.5, "y": -6.3}, {"x": -8.8, "y": 5.2}, {"x": 7.0, "y": -4.2}, {"x": -5.2, "y": 3.2}, {"x": 3.5, "y": -2.1}, {"x": -1.8, "y": 1.1}, {"x": 0, "y": 0}], duration: 0.35, ease: "none"}, 11.6);
+      tl.fromTo("#lobi-p8-cam", {"scale": 1.25}, {"scale": 1.0, "duration": 2.0, "ease": "expo.out"}, 13.8);
+      tl.fromTo("#lobi-p8", {x: 0, y: 0}, {keyframes: [{"x": 30.0, "y": -18.0}, {"x": -26.2, "y": 15.8}, {"x": 22.5, "y": -13.5}, {"x": -18.8, "y": 11.2}, {"x": 15.0, "y": -9.0}, {"x": -11.2, "y": 6.8}, {"x": 7.5, "y": -4.5}, {"x": -3.8, "y": 2.2}, {"x": 0, "y": 0}], duration: 0.5, ease: "none"}, 13.95);
+      tl.fromTo("#lobi-b4-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 0.3);
+      tl.to("#lobi-b4-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 3.28);
+      tl.fromTo("#lobi-b5-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 3.7);
+      tl.to("#lobi-b5-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 6.98);
+      tl.fromTo("#lobi-b6-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 7.3);
+      tl.to("#lobi-b6-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 11.18);
+      tl.fromTo("#lobi-b7-in", {scale: 0, rotation: -9}, {scale: 1, rotation: -3, duration: 0.24, ease: "back.out(2)"}, 11.6);
+      tl.to("#lobi-b7-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 13.58);
+      tl.set({}, {}, 15.8);
+      window.__timelines["lobi"] = tl;
+    })();
+  </script>
+</template>

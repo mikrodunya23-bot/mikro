@@ -1,0 +1,78 @@
+<template>
+  <style>
+    @font-face { font-family: "Bangers"; src: url("assets/fonts/bangers-latin.woff2") format("woff2"); }
+    @font-face { font-family: "Bangers"; src: url("assets/fonts/bangers-latin-ext.woff2") format("woff2"); unicode-range: U+0100-024F; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0d1430; font-family: "Bangers", sans-serif; }
+    .panel { position: absolute; inset: 0; overflow: hidden; }
+    .cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+    .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .txt { position: absolute; z-index: 10; }
+    .nar-in { background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+              padding: 18px 30px 14px; font-size: 56px; line-height: 1.05; letter-spacing: 2px; transform-origin: 0% 0%; }
+    .bl-in { position: relative; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 70px;
+             padding: 26px 44px 22px; font-size: 62px; line-height: 1.04; letter-spacing: 2px; text-align: center;
+             transform-origin: var(--tx) 120%; }
+    .bl-in::before { content: ""; position: absolute; left: calc(var(--tx) - 30px); bottom: -62px; border-left: 30px solid transparent;
+             border-right: 30px solid transparent; border-top: 62px solid #16121c; }
+    .bl-in::after { content: ""; position: absolute; left: calc(var(--tx) - 20px); bottom: -46px; border-left: 20px solid transparent;
+             border-right: 20px solid transparent; border-top: 48px solid #ffffff; }
+    .shout .bl-in { background: #ffe14a; border-radius: 18px; font-size: 84px; transform: rotate(-3deg); }
+    .shout .bl-in::after { border-top-color: #ffe14a; }
+    .flash { position: absolute; inset: 0; background: #fffbe8; z-index: 20; }
+    .floor { position: absolute; left: 380px; top: 170px; width: 320px; height: 150px; display: flex; align-items: center;
+             justify-content: center; color: #ff8a2a; font-size: 120px; letter-spacing: 8px; }
+    #final-title { position: absolute; left: 120px; top: 330px; width: 660px; text-align: center; z-index: 12; }
+    .tw { display: inline-block; color: #ff7a1a; font-size: 200px; line-height: 0.92; -webkit-text-stroke: 12px #16121c; paint-order: stroke fill;
+          text-shadow: 14px 14px 0 #16121c; letter-spacing: 6px; }
+    #final-k2 { color: #ffd84a; font-size: 240px; }
+    #final-ep { display: inline-block; margin-top: 30px; background: #16121c; color: #ffd84a; font-size: 64px; padding: 10px 30px; letter-spacing: 6px; }
+    #final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
+    #final-next-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+          font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+  </style>
+  <div id="root" data-composition-id="asansor" data-width="1080" data-height="1920">
+    <div id="asansor-p9" class="panel clip" data-start="0.0" data-duration="4.0" data-track-index="0">
+      <div id="asansor-p9-cam" class="cam"><svg data-art="eceHelp" data-layout-ignore></svg></div>
+    </div>
+    <div id="asansor-p10" class="panel clip" data-start="4.0" data-duration="4.2" data-track-index="0">
+      <div id="asansor-p10-cam" class="cam"><svg data-art="elevatorWater" data-layout-ignore></svg></div>
+    </div>
+    <div id="asansor-p11" class="panel clip" data-start="8.2" data-duration="2.8" data-track-index="0">
+      <div id="asansor-p11-cam" class="cam"><svg data-art="badge" data-layout-ignore></svg></div>
+    </div>
+    <div id="asansor-p12" class="panel clip" data-start="11.0" data-duration="5.4" data-track-index="0">
+      <div id="asansor-p12-cam" class="cam"><svg data-art="elevatorTwo" data-layout-ignore></svg>
+        <div id="asansor-p12-floor0" class="floor clip" data-start="11.0" data-duration="4.4" data-layout-ignore>41</div>
+        <div id="asansor-p12-floor1" class="floor clip" data-start="15.4" data-duration="1.0" data-layout-ignore>42</div></div>
+    </div>
+    <div id="asansor-b8" class="txt clip" data-start="0.4" data-duration="3.2" data-track-index="1" style="left:140px;top:300px;width:780px;"><div id="asansor-b8-in" class="bl-in" style="--tx:360px">DUR, BEN YARDIM EDERİM. SIRILSIKLAM OLMUŞSUN.</div></div>
+    <div id="asansor-b9" class="txt clip" data-start="4.3" data-duration="3.8" data-track-index="1" style="left:130px;top:290px;width:780px;"><div id="asansor-b9-in" class="bl-in" style="--tx:430px">AL, BİRAZ SU İÇ. BEN DE İLK GÜNÜMDE BÖYLE KARŞILANMIŞTIM.</div></div>
+    <div id="asansor-n10" class="txt clip" data-start="8.4" data-duration="2.6" data-track-index="1" style="left:160px;top:300px;"><div id="asansor-n10-in" class="nar-in">KARTINDA, STAJYER YAZIYORDU.</div></div>
+    <div id="asansor-b11" class="txt clip" data-start="11.3" data-duration="1.0" data-track-index="1" style="left:150px;top:560px;width:360px;"><div id="asansor-b11-in" class="bl-in" style="--tx:120px">ADIN NE?</div></div>
+    <div id="asansor-b12" class="txt clip" data-start="12.4" data-duration="1.5" data-track-index="1" style="left:470px;top:600px;width:410px;"><div id="asansor-b12-in" class="bl-in" style="--tx:300px">ECE. SENİNKİ?</div></div>
+    <div id="asansor-b13" class="txt clip" data-start="14.1" data-duration="1.6" data-track-index="1" style="left:130px;top:560px;width:560px;"><div id="asansor-b13-in" class="bl-in" style="--tx:150px">YAKINDA ÖĞRENİRSİN.</div></div>
+  </div>
+  <script>
+    (function () {
+      Comic.drawAll(document.querySelector('[data-composition-id="asansor"]'));
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#asansor-p9-cam", {"scale": 1.0}, {"scale": 1.08, "duration": 4.0, "ease": "sine.inOut"}, 0.0);
+      tl.fromTo("#asansor-p10-cam", {"scale": 1.0, "x": 20}, {"scale": 1.07, "x": -20, "duration": 4.2, "ease": "sine.inOut"}, 4.0);
+      tl.fromTo("#asansor-p11-cam", {"scale": 0.94}, {"scale": 1.08, "duration": 2.8, "ease": "sine.inOut"}, 8.2);
+      tl.fromTo("#asansor-p12-cam", {"scale": 1.0}, {"scale": 1.06, "duration": 5.4, "ease": "sine.inOut"}, 11.0);
+      tl.fromTo("#asansor-b8-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 0.4);
+      tl.to("#asansor-b8-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 3.48);
+      tl.fromTo("#asansor-b9-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 4.3);
+      tl.to("#asansor-b9-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 7.98);
+      tl.fromTo("#asansor-n10-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 8.4);
+      tl.fromTo("#asansor-b11-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 11.3);
+      tl.to("#asansor-b11-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 12.18);
+      tl.fromTo("#asansor-b12-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 12.4);
+      tl.to("#asansor-b12-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 13.78);
+      tl.fromTo("#asansor-b13-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 14.1);
+      tl.to("#asansor-b13-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 15.58);
+      tl.set({}, {}, 16.4);
+      window.__timelines["asansor"] = tl;
+    })();
+  </script>
+</template>
