@@ -87,10 +87,13 @@ ERCÜMENT: "İmzaymış! Senin gibileri tanırım ben!" — iter. Cem kayıp dü
 *İÇ SES (Cem):* "Demek güvenlik de kötü insanmış… Kimliğimi öğrenince bakalım ne yapacaksınız."
 Cem kaskını geri takıp ayağa kalkar. *İÇ SES:* "Oyun devam ediyor."
 
-**15. Ece [E]** · Kalabalığın arasından koşan genç bir kız. Çöpten paketi çıkarıp Cem'e uzatır.
-ECE: "İyi misiniz? Bir yeriniz kanıyor mu?"
-AYLİN: "Ece! Sen stajyersin, işine bak!" ECE: "Aylin Hanım… o da bir insan."
-*İÇ SES (Ece):* "Yine başım derde girecek. Ama doğrusu bu."
+**15. Ece [S]** · Herkes gülerken kalabalığın arasından genç bir kız çıkar, yerdeki Cem'e elini uzatır.
+ECE: "Tutun, kalkın. İyi misiniz? Bir yeriniz acıyor mu?"
+AYLİN: "Ece! Sen stajyersin, işine bak!" ECE: "Aylin Hanım… o da bir insan." **[E]**
+ECE (Cem'e, alçak sesle): "Kusura bakmayın. Burada bana da kötü davrandılar. İki gündür çalışıyorum… alıştım artık. Siz de takmayın."
+*İÇ SES (Ece):* "Yine başım derde girecek. Ama doğrusu bu." **[E]**
+*İÇ SES (Cem):* "Bu şirketteki tek iyi insan… herhalde bu kız." **[S]**
+Ece çöpten paketi çıkarıp Cem'e uzatır. **[E]**
 
 ## PERDE 4 — ASANSÖR (10:00–12:00)
 
