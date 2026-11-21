@@ -1,0 +1,922 @@
+{
+ "title": "Pofi ve Çalınan Renkler",
+ "model": "eleven_v3",
+ "voices": {
+  "anlatici": {
+   "id": "XrExE9yKIg1WjnnlVkGX"
+  },
+  "pofi": {
+   "id": "cgSgspJ2msm6clMCkdW9"
+  },
+  "fistik": {
+   "id": "TX3LPaxmHKxFdv7VOQHJ"
+  },
+  "piril": {
+   "id": "EXAVITQu4vr4xnSDxMaL"
+  },
+  "homur": {
+   "id": "N2lVS1w4EtoT3dr4eOWO"
+  },
+  "tosbi": {
+   "id": "pqHfZKP75CvOlQylNhV4"
+  }
+ },
+ "lines": [
+  {
+   "scene": "acilis",
+   "hold": 6,
+   "id": "acilis_pan"
+  },
+  {
+   "scene": "acilis",
+   "who": "anlatici",
+   "text": "Renk Vadisi'nde her sabah güneş, kocaman bir gökkuşağıyla birlikte doğarmış.",
+   "tag": "[warmly]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "acilis",
+   "who": "anlatici",
+   "text": "Bu vadide minik bulut Pofi, sincap Fıstık ve yıldız Pırıl yaşarmış. Üçü de en iyi arkadaşmış.",
+   "tag": "",
+   "id": "tanitim",
+   "inner": false
+  },
+  {
+   "scene": "acilis",
+   "hold": 4,
+   "id": "acilis_pan2"
+  },
+  {
+   "scene": "acilis",
+   "who": "anlatici",
+   "text": "Ama bir sabah... her şey değişti.",
+   "tag": "[ominous]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "acilis",
+   "hold": 7,
+   "id": "drain"
+  },
+  {
+   "scene": "baslik",
+   "hold": 7,
+   "id": "title"
+  },
+  {
+   "scene": "cayir",
+   "hold": 5,
+   "id": "cayir_est"
+  },
+  {
+   "scene": "cayir",
+   "who": "pofi",
+   "text": "Günaydın dünya! Hıı... Aaa! Neden her şey gri?",
+   "tag": "[cheerful]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "cayir",
+   "who": "fistik",
+   "text": "Pofi! Felaket! Fındıklarım griye döndü! Gri fındık yenir mi? Bence yenmez!",
+   "tag": "[panicked]",
+   "id": "fistik_gelir",
+   "inner": false
+  },
+  {
+   "scene": "cayir",
+   "who": "piril",
+   "text": "Gündüz uyuyordum ama bu gri karanlık beni uyandırdı. Gökkuşağı nerede?",
+   "tag": "[sleepy]",
+   "id": "piril_gelir",
+   "inner": false
+  },
+  {
+   "scene": "cayir",
+   "who": "pofi",
+   "text": "Gökkuşağı yoksa, renkler de yok. Bir şeyler yapmalıyım. Ama ne?",
+   "tag": "[thoughtful]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "cayir",
+   "who": "pofi",
+   "text": "Arkadaşlar, bakın! Yerde renkli bir iz var!",
+   "tag": "[excited]",
+   "id": "iz",
+   "inner": false
+  },
+  {
+   "scene": "cayir",
+   "who": "piril",
+   "text": "Bu bir renk damlası! Ormana doğru gidiyor.",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "cayir",
+   "who": "fistik",
+   "text": "Orman mı? Gri bir orman mı? Ben aslında hiç korkmam. Sadece dizlerim biraz titriyor.",
+   "tag": "[nervous]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "cayir",
+   "who": "pofi",
+   "text": "Birlikte gideceğiz! Renkleri geri getireceğiz!",
+   "tag": "[determined]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "cayir",
+   "who": "fistik",
+   "text": "Birlikte!",
+   "tag": "[shouting]",
+   "id": "birlikte",
+   "inner": false
+  },
+  {
+   "scene": "harita",
+   "hold": 1.5,
+   "id": "harita_in"
+  },
+  {
+   "scene": "harita",
+   "who": "anlatici",
+   "text": "Ve böylece üç arkadaş büyük bir maceraya atıldı. Önlerinde dört durak vardı: Fısıldayan Orman, Coşkun Nehir, Rüzgârlı Dağ...",
+   "tag": "[storytelling]",
+   "id": "harita1",
+   "inner": false
+  },
+  {
+   "scene": "harita",
+   "who": "anlatici",
+   "text": "ve kimsenin geri dönmediği Fırtına Kalesi!",
+   "tag": "[dramatic]",
+   "id": "harita2",
+   "inner": false
+  },
+  {
+   "scene": "harita",
+   "hold": 4,
+   "id": "harita_out"
+  },
+  {
+   "scene": "orman",
+   "hold": 7,
+   "id": "orman_est"
+  },
+  {
+   "scene": "orman",
+   "who": "anlatici",
+   "text": "Fısıldayan Orman'da ağaçlar bile sessizdi.",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "fistik",
+   "text": "Burası çok sessiz. Kuşlar neden şarkı söylemiyor?",
+   "tag": "[whispering]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "hold": 1.2,
+   "id": "dal"
+  },
+  {
+   "scene": "orman",
+   "who": "fistik",
+   "text": "Ayy! O ne? Bir canavar mı?",
+   "tag": "[scared]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "piril",
+   "text": "Sakin ol Fıstık. Sadece bir dal kırıldı.",
+   "tag": "[laughs]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "pofi",
+   "text": "Bakın! Şu dikenli çalının içinde bir şey parlıyor!",
+   "tag": "",
+   "id": "cali",
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "piril",
+   "text": "Yeşil renk! Ama dikenler çok sivri.",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "pofi",
+   "text": "Ben bir bulutum. Dikenlere değersem patlar mıyım acaba?",
+   "tag": "[worried]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "orman",
+   "who": "fistik",
+   "text": "Hadi Fıstık, sincaplar cesurdur! Değil mi? Değil mi?",
+   "tag": "[nervous]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "orman",
+   "who": "fistik",
+   "text": "Çekilin! Bu iş dünyanın en çevik sincabına göre!",
+   "tag": "[confident]",
+   "id": "cevik",
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "hold": 8.5,
+   "id": "diken_aksiyon"
+  },
+  {
+   "scene": "orman",
+   "who": "fistik",
+   "text": "Aldım! Yeşili aldım! Sadece kuyruğum biraz karıştı.",
+   "tag": "[proud]",
+   "id": "yesil_aldi",
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "hold": 8,
+   "id": "yesil_doner"
+  },
+  {
+   "scene": "orman",
+   "who": "pofi",
+   "text": "Yaşasın! Orman yeniden yeşil!",
+   "tag": "[joyfully]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "fistik",
+   "text": "Bu arada... Bu ormanda fındık ağacı da var mı? Sadece soruyorum.",
+   "tag": "[curious]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "piril",
+   "text": "Fıstık! Önce renkler!",
+   "tag": "[laughs]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "piril",
+   "text": "Bir renk tamam. Sırada nehir var!",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "hold": 6,
+   "id": "yol1"
+  },
+  {
+   "scene": "nehir",
+   "hold": 7.5,
+   "id": "nehir_est"
+  },
+  {
+   "scene": "nehir",
+   "who": "anlatici",
+   "text": "Coşkun Nehir'in suları gri ve hırçındı.",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "who": "tosbi",
+   "text": "Hoş geldiniz minikler. Ben Tosbi Dede. Yüz yıldır bu nehrin kıyısında yaşarım.",
+   "tag": "[slowly]",
+   "id": "tosbi_gelir",
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "who": "fistik",
+   "text": "Yüz yıl mı? Ben yüz saniye bile bekleyemem!",
+   "tag": "[amazed]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "who": "tosbi",
+   "text": "Acele etme evlat. Acele eden, nehre düşer.",
+   "tag": "[chuckles]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "who": "pofi",
+   "text": "Tosbi Dede, renkleri kimin çaldığını biliyor musun?",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "who": "tosbi",
+   "text": "Dün gece kapkara bir bulut geçti buradan. Adı Homur. Çok somurtkan, çok da yalnız biri.",
+   "tag": "",
+   "id": "homur_adi",
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "who": "fistik",
+   "text": "Kara bulut mu? Pofi, bu senin kötü kuzenin olabilir!",
+   "tag": "[teasing]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "who": "pofi",
+   "text": "Hey! Bütün bulutlar kötü değildir!",
+   "tag": "[offended]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "who": "tosbi",
+   "text": "Mavi renk, nehrin ortasındaki kayanın üstünde. Ama akıntı çok güçlü.",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "who": "pofi",
+   "text": "Suya düşersem dağılır mıyım? Ama arkadaşlarım bana güveniyor.",
+   "tag": "[worried]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "nehir",
+   "who": "fistik",
+   "text": "Şu kocaman yaprağı sal yapalım!",
+   "tag": "",
+   "id": "sal",
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "who": "pofi",
+   "text": "Ben de arkadan üflerim!",
+   "tag": "[determined]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "hold": 4,
+   "id": "sal_basla"
+  },
+  {
+   "scene": "nehir",
+   "who": "fistik",
+   "text": "Sağa! Hayır, sola! Hayır hayır, dümdüz!",
+   "tag": "[shouting]",
+   "id": "dumen",
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "hold": 7,
+   "id": "sal_aksiyon"
+  },
+  {
+   "scene": "nehir",
+   "who": "piril",
+   "text": "Mavi renk! Yakaladım!",
+   "tag": "[excited]",
+   "id": "mavi_aldi",
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "hold": 8,
+   "id": "mavi_doner"
+  },
+  {
+   "scene": "nehir",
+   "who": "tosbi",
+   "text": "Aferin size! Unutmayın: Homur'un kalbi, kalesi kadar karanlık değildir.",
+   "tag": "[wise]",
+   "id": "tosbi_ogut",
+   "inner": false
+  },
+  {
+   "scene": "nehir",
+   "who": "pofi",
+   "text": "Bu ne demek acaba?",
+   "tag": "[curious]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "nehir",
+   "hold": 6,
+   "id": "yol2"
+  },
+  {
+   "scene": "dag",
+   "hold": 7.5,
+   "id": "dag_est"
+  },
+  {
+   "scene": "dag",
+   "who": "anlatici",
+   "text": "Rüzgârlı Dağ'ın tepesinde rüzgâr öyle güçlüydü ki...",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "who": "pofi",
+   "text": "Aaa! Rüzgâr beni uçuruyor!",
+   "tag": "[screaming]",
+   "id": "ucuyor",
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "who": "fistik",
+   "text": "Pofi, tutun bana! Ben de uçuyorum!",
+   "tag": "[shouting]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "who": "piril",
+   "text": "Kayaya tutunun! Ben önden ışık tutacağım!",
+   "tag": "[shouting]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "hold": 8,
+   "id": "tirmanis"
+  },
+  {
+   "scene": "dag",
+   "who": "piril",
+   "text": "İşte! Zirvede iki renk var: Sarı ve turuncu!",
+   "tag": "",
+   "id": "zirve",
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "who": "homur",
+   "text": "Onlara dokunmayın! O renkler artık benim!",
+   "tag": "[angry] [shouting]",
+   "id": "homur_gelir",
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "hold": 2.5,
+   "id": "homur_bekle"
+  },
+  {
+   "scene": "dag",
+   "who": "homur",
+   "text": "Benim gri dünyamda kimse gülmeyecek! Herkes benim gibi somurtacak!",
+   "tag": "[angry]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "who": "fistik",
+   "text": "Neden bu kadar kızgınsın ki?",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "who": "homur",
+   "text": "Çünkü... Bu sizi ilgilendirmez! Fırtına, başla!",
+   "tag": "[angry]",
+   "id": "firtina",
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "hold": 4.5,
+   "id": "firtina_aksiyon"
+  },
+  {
+   "scene": "dag",
+   "who": "piril",
+   "text": "Pes etmeyin! Ben parlarsam o göremez!",
+   "tag": "[shouting]",
+   "id": "parla",
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "hold": 3,
+   "id": "flas"
+  },
+  {
+   "scene": "dag",
+   "who": "homur",
+   "text": "Gözlerim! Bunu ödeyeceksiniz! Kalemde görüşürüz!",
+   "tag": "[angry]",
+   "id": "homur_kacar",
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "hold": 2,
+   "id": "homur_gitti"
+  },
+  {
+   "scene": "dag",
+   "who": "piril",
+   "text": "Herkes iyi mi?",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "who": "fistik",
+   "text": "Kuyruğum düğüm oldu ama iyiyim! Turuncuyu kurtardık! Ama sarıyı götürdü.",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "dag",
+   "who": "pofi",
+   "text": "Homur'un gözleri... Kızgın değil, çok üzgün gibiydi.",
+   "tag": "[softly]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "kamp",
+   "hold": 10,
+   "id": "kamp_est"
+  },
+  {
+   "scene": "kamp",
+   "who": "anlatici",
+   "text": "O gece üç arkadaş, kalenin yakınında dinlendi.",
+   "tag": "[softly]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kamp",
+   "who": "fistik",
+   "text": "Ya kaleye girersek ve Homur bizi de griye çevirirse?",
+   "tag": "[worried]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kamp",
+   "who": "piril",
+   "text": "Korkmak normal Fıstık. Ben de biraz korkuyorum.",
+   "tag": "[gently]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kamp",
+   "who": "pofi",
+   "text": "Biliyor musunuz, bir zamanlar ben de çok küçük ve yalnızdım. Kimse benimle oynamazdı.",
+   "tag": "[sad]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kamp",
+   "who": "fistik",
+   "text": "Gerçekten mi? Ama sen çok eğlencelisin!",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kamp",
+   "who": "pofi",
+   "text": "Sizinle tanışınca her şey değişti. Belki Homur'un da sadece bir arkadaşa ihtiyacı vardır.",
+   "tag": "[warmly]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kamp",
+   "who": "piril",
+   "text": "Bakın, gökyüzündeki yıldızlar bize göz kırpıyor. Sanki yapabilirsiniz diyorlar.",
+   "tag": "[gently]",
+   "id": "yildizlar",
+   "inner": false
+  },
+  {
+   "scene": "kamp",
+   "who": "fistik",
+   "text": "Annem hep derdi ki: Korkuyu yenmenin yolu, bir arkadaşın elini tutmaktır.",
+   "tag": "[softly]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "kamp",
+   "who": "pofi",
+   "text": "Yarın en büyük cesareti göstermeliyim. Kavga etmek değil... arkadaş olmak.",
+   "tag": "[softly]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "kamp",
+   "hold": 8,
+   "id": "uyku"
+  },
+  {
+   "scene": "kale",
+   "hold": 8.5,
+   "id": "kale_est"
+  },
+  {
+   "scene": "kale",
+   "who": "anlatici",
+   "text": "Ertesi sabah Fırtına Kalesi'nin kapısında yağmur hiç durmuyordu.",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "who": "pofi",
+   "text": "Kalbim güm güm atıyor. Ama geri dönmeyeceğim.",
+   "tag": "[nervous]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "kale",
+   "who": "fistik",
+   "text": "Tak tak! Kimse yok mu? Lütfen yok de, lütfen yok de...",
+   "tag": "[whispering]",
+   "id": "kapi",
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "who": "homur",
+   "text": "Yine mi siz! Gidin buradan!",
+   "tag": "[angry] [shouting]",
+   "id": "homur_kapi",
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "who": "pofi",
+   "text": "Homur, seninle kavga etmeye gelmedik. Sadece bir şey sormaya geldik.",
+   "tag": "[calm]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "who": "homur",
+   "text": "Neymiş o?",
+   "tag": "[suspicious]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "who": "pofi",
+   "text": "Renkleri neden aldın?",
+   "tag": "[gently]",
+   "id": "neden",
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "hold": 2.5,
+   "id": "sessizlik"
+  },
+  {
+   "scene": "kale",
+   "who": "homur",
+   "text": "Çünkü gökkuşağı çıkınca herkes dışarıda birlikte oynuyordu. Ben kara bir bulut olduğum için kimse benimle oynamadı. Herkes beni görünce kaçtı.",
+   "tag": "[sad]",
+   "id": "itiraf",
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "who": "homur",
+   "text": "Ben de düşündüm ki, renkler yoksa kimse oynamaz. Herkes benim gibi yalnız olur.",
+   "tag": "[sad]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "who": "homur",
+   "text": "Neden bunları anlatıyorum ki? Herhalde ilk defa biri beni dinlediği için.",
+   "tag": "[softly]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "kale",
+   "who": "piril",
+   "text": "Ah Homur... Bu çok üzücü.",
+   "tag": "[sad]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "who": "fistik",
+   "text": "Ama bak, biz kaçmadık! Biz buradayız!",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "who": "pofi",
+   "text": "Homur, bizimle arkadaş olur musun? Gökkuşağının altında hep birlikte oynayabiliriz.",
+   "tag": "[warmly]",
+   "id": "teklif",
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "who": "homur",
+   "text": "Ben mi? Benimle mi? Gerçekten mi?",
+   "tag": "[surprised]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "who": "pofi",
+   "text": "Lütfen evet de... Lütfen evet de...",
+   "tag": "[hopeful]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "kale",
+   "who": "homur",
+   "text": "Evet... Evet! Daha önce hiç arkadaşım olmamıştı!",
+   "tag": "[crying] [happy]",
+   "id": "evet",
+   "inner": false
+  },
+  {
+   "scene": "kale",
+   "hold": 12,
+   "id": "renkler_doner"
+  },
+  {
+   "scene": "final",
+   "who": "anlatici",
+   "text": "Ve Homur'un mutluluk gözyaşları, gökyüzüne kocaman bir gökkuşağı çizdi.",
+   "tag": "[warmly]",
+   "id": "final_basla",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 6,
+   "id": "gokkusagi"
+  },
+  {
+   "scene": "final",
+   "who": "homur",
+   "text": "Bakın! Ben de renkli oldum!",
+   "tag": "[amazed]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "fistik",
+   "text": "Ve fındıklarım yeniden kahverengi! Yaşasın!",
+   "tag": "[excited]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "piril",
+   "text": "Renk Vadisi hiç bu kadar güzel olmamıştı.",
+   "tag": "",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "pofi",
+   "text": "Çünkü artık bir arkadaşımız daha var!",
+   "tag": "[joyfully]",
+   "id": "arkadas",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 20,
+   "id": "dans"
+  },
+  {
+   "scene": "final",
+   "who": "homur",
+   "text": "Hey Pofi! Yarışalım mı? Gökkuşağının ucuna kim önce varacak?",
+   "tag": "[playful]",
+   "id": "yaris",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "pofi",
+   "text": "Kabul! Hadi!",
+   "tag": "[laughing]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 10,
+   "id": "yaris_aksiyon"
+  },
+  {
+   "scene": "final",
+   "who": "anlatici",
+   "text": "O günden sonra Homur, her yağmurdan sonra gökkuşağını getiren bulut oldu. Ve kimse bir daha yalnız kalmadı.",
+   "tag": "[warmly]",
+   "id": "kapanis",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "pofi",
+   "text": "Unutmayın arkadaşlar: Bazen en somurtkan yüzün arkasında, sadece bir arkadaş arayan bir kalp vardır.",
+   "tag": "[warmly]",
+   "id": "mesaj",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 12,
+   "id": "son"
+  }
+ ]
+}
