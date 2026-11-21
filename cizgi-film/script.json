@@ -1,0 +1,24 @@
+{
+  "title": "Pofi ve Kayıp Yıldız",
+  "voices": {
+    "anlatici": {"id": "XrExE9yKIg1WjnnlVkGX", "stability": 0.5, "style": 0.35},
+    "pofi":     {"id": "cgSgspJ2msm6clMCkdW9", "stability": 0.35, "style": 0.6},
+    "fistik":   {"id": "TX3LPaxmHKxFdv7VOQHJ", "stability": 0.35, "style": 0.6},
+    "piril":    {"id": "EXAVITQu4vr4xnSDxMaL", "stability": 0.45, "style": 0.5}
+  },
+  "lines": [
+    {"scene": "baslik",   "who": "anlatici", "text": "Bir varmış, bir yokmuş... Gökyüzünün en minik bulutu Pofi, her gece yıldızları sayarmış."},
+    {"scene": "gece",     "who": "pofi",     "text": "Bir, iki, üç, dört... Aaa! Bir yıldız eksik!"},
+    {"scene": "dusus",    "who": "anlatici", "text": "O gece, Pırıl adında minicik bir yıldız, gökyüzünden kayıp ormana düşmüş."},
+    {"scene": "orman",    "who": "piril",    "text": "Hıı... Evimin yolunu kaybettim. Çok uzaktayım..."},
+    {"scene": "orman",    "who": "fistik",   "text": "Hey, ağlama! Ben Fıstık! Sana yardım edeceğim!"},
+    {"scene": "inis",     "who": "pofi",     "text": "Ben de geldim! Seni gökyüzüne taşıyabilirim... ama, ben çok küçüğüm."},
+    {"scene": "inis",     "who": "fistik",   "text": "O zaman birlikte deneriz! Herkes tutunsun!"},
+    {"scene": "tirmanis", "who": "anlatici", "text": "Fıstık ormanın en yüksek ağacına tırmanmış. Pofi de var gücüyle uçmuş, uçmuş..."},
+    {"scene": "yukselis", "who": "pofi",     "text": "Hadi! Biraz daha! Neredeyse geldik!"},
+    {"scene": "evde",     "who": "piril",    "text": "Evimdeyim! Teşekkürler arkadaşlarım! Artık her gece size göz kırpacağım!"},
+    {"scene": "evde",     "who": "fistik",   "text": "Küçük olabiliriz..."},
+    {"scene": "evde",     "who": "pofi",     "text": "Ama birlikte kocamanız!"},
+    {"scene": "son",      "who": "anlatici", "text": "Ve o geceden beri, gökyüzünde en çok parlayan yıldız... Pırıl'mış."}
+  ]
+}
