@@ -31,30 +31,30 @@
           font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
   </style>
   <div id="root" data-composition-id="final" data-width="1080" data-height="1920">
-    <div id="final-p16" class="panel clip" data-start="0.0" data-duration="3.4" data-track-index="0">
+    <div id="final-p16" class="panel clip" data-start="0.0" data-duration="3.72" data-track-index="0">
       <div id="final-p16-cam" class="cam"><svg data-art="eyes" data-layout-ignore></svg></div>
     </div>
-    <div id="final-p17" class="panel clip" data-start="3.4" data-duration="4.4" data-track-index="0">
+    <div id="final-p17" class="panel clip" data-start="3.72" data-duration="5.2" data-track-index="0">
       <div id="final-p17-cam" class="cam"><svg data-art="title" data-layout-ignore></svg></div>
     </div>
-    <div id="final-n16" class="txt clip" data-start="0.3" data-duration="3.1" data-track-index="1" style="left:180px;top:300px;"><div id="final-n16-in" class="nar-in">ŞİMDİ, ASIL OYUN BAŞLIYOR.</div></div>
-    <div id="final-title" class="clip" data-start="3.45" data-duration="4.35" data-track-index="1">
+    <div id="final-n16" class="txt clip" data-start="0.3" data-duration="3.35" data-track-index="1" style="left:180px;top:300px;"><div id="final-n16-in" class="nar-in">ŞİMDİ, ASIL OYUN BAŞLIYOR.</div></div>
+    <div id="final-title" class="clip" data-start="3.77" data-duration="5.15" data-track-index="1">
       <span id="final-k1" class="tw">KAPIDAKİ</span><br /><span id="final-k2" class="tw">KURYE</span><br /><span id="final-ep">BÖLÜM 1</span>
     </div>
-    <div id="final-next" class="clip" data-start="5.0" data-duration="2.8" data-track-index="2"><span id="final-next-in">DEVAMI BÖLÜM 2'DE...</span></div>
+    <div id="final-next" class="clip" data-start="5.32" data-duration="3.6" data-track-index="2"><span id="final-next-in">DEVAMI BÖLÜM 2'DE...</span></div>
   </div>
   <script>
     (function () {
       Comic.drawAll(document.querySelector('[data-composition-id="final"]'));
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#final-p16-cam", {"scale": 1.0}, {"scale": 1.1, "duration": 3.4, "ease": "sine.inOut"}, 0.0);
-      tl.fromTo("#final-p17-cam", {"scale": 1.04}, {"scale": 1.0, "duration": 4.4, "ease": "sine.out"}, 3.4);
+      tl.fromTo("#final-p16-cam", {"scale": 1.0}, {"scale": 1.1, "duration": 3.72, "ease": "sine.inOut"}, 0.0);
+      tl.fromTo("#final-p17-cam", {"scale": 1.04}, {"scale": 1.0, "duration": 5.2, "ease": "sine.out"}, 3.72);
       tl.fromTo("#final-n16-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 0.3);
-      tl.fromTo("#final-k1", {scale: 3, opacity: 0, rotation: -10}, {scale: 1, opacity: 1, rotation: -3, duration: 0.3, ease: "power4.in"}, 3.45);
-      tl.fromTo("#final-k2", {scale: 3, opacity: 0, rotation: 8}, {scale: 1, opacity: 1, rotation: 2, duration: 0.3, ease: "power4.in"}, 3.7);
-      tl.fromTo("#final-ep", {scaleX: 0}, {scaleX: 1, duration: 0.22, ease: "power3.out"}, 4.2);
-      tl.fromTo("#final-next-in", {y: 60, opacity: 0}, {y: 0, opacity: 1, duration: 0.3, ease: "back.out(2)"}, 5.0);
-      tl.set({}, {}, 7.8);
+      tl.fromTo("#final-k1", {scale: 3, opacity: 0, rotation: -10}, {scale: 1, opacity: 1, rotation: -3, duration: 0.3, ease: "power4.in"}, 3.77);
+      tl.fromTo("#final-k2", {scale: 3, opacity: 0, rotation: 8}, {scale: 1, opacity: 1, rotation: 2, duration: 0.3, ease: "power4.in"}, 4.02);
+      tl.fromTo("#final-ep", {scaleX: 0}, {scaleX: 1, duration: 0.22, ease: "power3.out"}, 4.52);
+      tl.fromTo("#final-next-in", {y: 60, opacity: 0}, {y: 0, opacity: 1, duration: 0.3, ease: "back.out(2)"}, 5.32);
+      tl.set({}, {}, 8.92);
       window.__timelines["final"] = tl;
     })();
   </script>

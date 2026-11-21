@@ -31,46 +31,46 @@
           font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
   </style>
   <div id="root" data-composition-id="lobi" data-width="1080" data-height="1920">
-    <div id="lobi-p4" class="panel clip" data-start="0.0" data-duration="3.6" data-track-index="0">
+    <div id="lobi-p4" class="panel clip" data-start="0.0" data-duration="5.18" data-track-index="0">
       <div id="lobi-p4-cam" class="cam"><svg data-art="reception" data-layout-ignore></svg></div>
     </div>
-    <div id="lobi-p5" class="panel clip" data-start="3.6" data-duration="3.6" data-track-index="0">
+    <div id="lobi-p5" class="panel clip" data-start="5.18" data-duration="3.09" data-track-index="0">
       <div id="lobi-p5-cam" class="cam"><svg data-art="denizDesk" data-layout-ignore></svg></div>
     </div>
-    <div id="lobi-p6" class="panel clip" data-start="7.2" data-duration="4.2" data-track-index="0">
+    <div id="lobi-p6" class="panel clip" data-start="8.27" data-duration="4.43" data-track-index="0">
       <div id="lobi-p6-cam" class="cam"><svg data-art="footprints" data-layout-ignore></svg></div>
     </div>
-    <div id="lobi-p7" class="panel clip" data-start="11.4" data-duration="2.4" data-track-index="0">
+    <div id="lobi-p7" class="panel clip" data-start="12.7" data-duration="2.38" data-track-index="0">
       <div id="lobi-p7-cam" class="cam"><svg data-art="guard" data-layout-ignore></svg></div>
     </div>
-    <div id="lobi-p8" class="panel clip" data-start="13.8" data-duration="2.0" data-track-index="0">
+    <div id="lobi-p8" class="panel clip" data-start="15.08" data-duration="2.0" data-track-index="0">
       <div id="lobi-p8-cam" class="cam"><svg data-art="bam" data-layout-ignore></svg></div>
     </div>
-    <div id="lobi-b4" class="txt clip" data-start="0.3" data-duration="3.1" data-track-index="1" style="left:150px;top:310px;width:780px;"><div id="lobi-b4-in" class="bl-in" style="--tx:470px">KURYE GİRİŞİ ARKADA! BURASI YÖNETİCİLER İÇİN.</div></div>
-    <div id="lobi-b5" class="txt clip" data-start="3.7" data-duration="3.4" data-track-index="1" style="left:140px;top:300px;width:760px;"><div id="lobi-b5-in" class="bl-in" style="--tx:400px">PAKET KIRK İKİNCİ KATA. İMZA GEREKİYOR.</div></div>
-    <div id="lobi-b6" class="txt clip" data-start="7.3" data-duration="4.0" data-track-index="1" style="left:130px;top:300px;width:780px;"><div id="lobi-b6-in" class="bl-in" style="--tx:430px">ISLAK AYAKKABILARINLA MERMERİ KİRLETİYORSUN. ÇIK DIŞARI!</div></div>
-    <div id="lobi-b7" class="txt clip shout" data-start="11.6" data-duration="2.1" data-track-index="1" style="left:170px;top:300px;width:700px;"><div id="lobi-b7-in" class="bl-in" style="--tx:380px">DUYMADIN MI? DIŞARI!</div></div>
+    <div id="lobi-b04" class="txt clip" data-start="0.3" data-duration="4.83" data-track-index="1" style="left:150px;top:310px;width:780px;"><div id="lobi-b04-in" class="bl-in" style="--tx:470px">KURYE GİRİŞİ ARKADA! BURASI YÖNETİCİLER İÇİN.</div></div>
+    <div id="lobi-b05" class="txt clip" data-start="5.28" data-duration="2.93" data-track-index="1" style="left:140px;top:300px;width:760px;"><div id="lobi-b05-in" class="bl-in" style="--tx:400px">PAKET KIRK İKİNCİ KATA. İMZA GEREKİYOR.</div></div>
+    <div id="lobi-b06" class="txt clip" data-start="8.37" data-duration="4.28" data-track-index="1" style="left:130px;top:300px;width:780px;"><div id="lobi-b06-in" class="bl-in" style="--tx:430px">ISLAK AYAKKABILARINLA MERMERİ KİRLETİYORSUN. ÇIK DIŞARI!</div></div>
+    <div id="lobi-b07" class="txt clip shout" data-start="12.9" data-duration="2.09" data-track-index="1" style="left:170px;top:300px;width:700px;"><div id="lobi-b07-in" class="bl-in" style="--tx:380px">DUYMADIN MI? DIŞARI!</div></div>
   </div>
   <script>
     (function () {
       Comic.drawAll(document.querySelector('[data-composition-id="lobi"]'));
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#lobi-p4-cam", {"scale": 1.08}, {"scale": 1.0, "duration": 3.6, "ease": "sine.out"}, 0.0);
-      tl.fromTo("#lobi-p5-cam", {"scale": 1.0}, {"scale": 1.08, "duration": 3.6, "ease": "sine.inOut"}, 3.6);
-      tl.fromTo("#lobi-p6-cam", {"scale": 1.0, "rotation": 0}, {"scale": 1.1, "rotation": -2, "duration": 4.2, "ease": "sine.inOut"}, 7.2);
-      tl.fromTo("#lobi-p7-cam", {"scale": 1.0}, {"scale": 1.16, "duration": 2.4, "ease": "power2.out"}, 11.4);
-      tl.fromTo("#lobi-p7", {x: 0, y: 0}, {keyframes: [{"x": 14.0, "y": -8.4}, {"x": -12.2, "y": 7.4}, {"x": 10.5, "y": -6.3}, {"x": -8.8, "y": 5.2}, {"x": 7.0, "y": -4.2}, {"x": -5.2, "y": 3.2}, {"x": 3.5, "y": -2.1}, {"x": -1.8, "y": 1.1}, {"x": 0, "y": 0}], duration: 0.35, ease: "none"}, 11.6);
-      tl.fromTo("#lobi-p8-cam", {"scale": 1.25}, {"scale": 1.0, "duration": 2.0, "ease": "expo.out"}, 13.8);
-      tl.fromTo("#lobi-p8", {x: 0, y: 0}, {keyframes: [{"x": 30.0, "y": -18.0}, {"x": -26.2, "y": 15.8}, {"x": 22.5, "y": -13.5}, {"x": -18.8, "y": 11.2}, {"x": 15.0, "y": -9.0}, {"x": -11.2, "y": 6.8}, {"x": 7.5, "y": -4.5}, {"x": -3.8, "y": 2.2}, {"x": 0, "y": 0}], duration: 0.5, ease: "none"}, 13.95);
-      tl.fromTo("#lobi-b4-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 0.3);
-      tl.to("#lobi-b4-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 3.28);
-      tl.fromTo("#lobi-b5-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 3.7);
-      tl.to("#lobi-b5-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 6.98);
-      tl.fromTo("#lobi-b6-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 7.3);
-      tl.to("#lobi-b6-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 11.18);
-      tl.fromTo("#lobi-b7-in", {scale: 0, rotation: -9}, {scale: 1, rotation: -3, duration: 0.24, ease: "back.out(2)"}, 11.6);
-      tl.to("#lobi-b7-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 13.58);
-      tl.set({}, {}, 15.8);
+      tl.fromTo("#lobi-p4-cam", {"scale": 1.08}, {"scale": 1.0, "duration": 5.18, "ease": "sine.out"}, 0.0);
+      tl.fromTo("#lobi-p5-cam", {"scale": 1.0}, {"scale": 1.08, "duration": 3.09, "ease": "sine.inOut"}, 5.18);
+      tl.fromTo("#lobi-p6-cam", {"scale": 1.0, "rotation": 0}, {"scale": 1.1, "rotation": -2, "duration": 4.43, "ease": "sine.inOut"}, 8.27);
+      tl.fromTo("#lobi-p7-cam", {"scale": 1.0}, {"scale": 1.16, "duration": 2.38, "ease": "power2.out"}, 12.7);
+      tl.fromTo("#lobi-p7", {x: 0, y: 0}, {keyframes: [{"x": 14.0, "y": -8.4}, {"x": -12.2, "y": 7.4}, {"x": 10.5, "y": -6.3}, {"x": -8.8, "y": 5.2}, {"x": 7.0, "y": -4.2}, {"x": -5.2, "y": 3.2}, {"x": 3.5, "y": -2.1}, {"x": -1.8, "y": 1.1}, {"x": 0, "y": 0}], duration: 0.35, ease: "none"}, 12.9);
+      tl.fromTo("#lobi-p8-cam", {"scale": 1.25}, {"scale": 1.0, "duration": 2.0, "ease": "expo.out"}, 15.08);
+      tl.fromTo("#lobi-p8", {x: 0, y: 0}, {keyframes: [{"x": 30.0, "y": -18.0}, {"x": -26.2, "y": 15.8}, {"x": 22.5, "y": -13.5}, {"x": -18.8, "y": 11.2}, {"x": 15.0, "y": -9.0}, {"x": -11.2, "y": 6.8}, {"x": 7.5, "y": -4.5}, {"x": -3.8, "y": 2.2}, {"x": 0, "y": 0}], duration: 0.5, ease: "none"}, 15.23);
+      tl.fromTo("#lobi-b04-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 0.3);
+      tl.to("#lobi-b04-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 5.01);
+      tl.fromTo("#lobi-b05-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 5.28);
+      tl.to("#lobi-b05-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 8.09);
+      tl.fromTo("#lobi-b06-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 8.37);
+      tl.to("#lobi-b06-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 12.53);
+      tl.fromTo("#lobi-b07-in", {scale: 0, rotation: -9}, {scale: 1, rotation: -3, duration: 0.24, ease: "back.out(2)"}, 12.9);
+      tl.to("#lobi-b07-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 14.87);
+      tl.set({}, {}, 17.08);
       window.__timelines["lobi"] = tl;
     })();
   </script>

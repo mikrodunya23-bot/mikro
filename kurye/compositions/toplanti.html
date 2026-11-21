@@ -31,33 +31,33 @@
           font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
   </style>
   <div id="root" data-composition-id="toplanti" data-width="1080" data-height="1920">
-    <div id="toplanti-p13" class="panel clip" data-start="0.0" data-duration="3.8" data-track-index="0">
+    <div id="toplanti-p13" class="panel clip" data-start="0.0" data-duration="3.06" data-track-index="0">
       <div id="toplanti-p13-cam" class="cam"><svg data-art="boardroom" data-layout-ignore></svg></div>
     </div>
-    <div id="toplanti-p14" class="panel clip" data-start="3.8" data-duration="3.8" data-track-index="0">
+    <div id="toplanti-p14" class="panel clip" data-start="3.06" data-duration="3.6" data-track-index="0">
       <div id="toplanti-p14-cam" class="cam"><svg data-art="door" data-layout-ignore></svg></div>
     </div>
-    <div id="toplanti-p14-flash" class="flash clip" data-start="3.8" data-duration="0.6" data-track-index="2" data-layout-ignore><div id="toplanti-p14-flash-in" style="position:absolute;inset:0;background:#fffbe8"></div></div>
-    <div id="toplanti-p15" class="panel clip" data-start="7.6" data-duration="3.2" data-track-index="0">
+    <div id="toplanti-p14-flash" class="flash clip" data-start="3.06" data-duration="0.6" data-track-index="2" data-layout-ignore><div id="toplanti-p14-flash-in" style="position:absolute;inset:0;background:#fffbe8"></div></div>
+    <div id="toplanti-p15" class="panel clip" data-start="6.66" data-duration="4.03" data-track-index="0">
       <div id="toplanti-p15-cam" class="cam"><svg data-art="shock" data-layout-ignore></svg></div>
     </div>
-    <div id="toplanti-b14" class="txt clip" data-start="0.4" data-duration="2.9" data-track-index="1" style="left:330px;top:640px;width:560px;"><div id="toplanti-b14-in" class="bl-in" style="--tx:400px">BEYLER, YENİ CEO'MUZ GELDİ.</div></div>
-    <div id="toplanti-b15" class="txt clip" data-start="7.8" data-duration="2.8" data-track-index="1" style="left:150px;top:300px;width:760px;"><div id="toplanti-b15-in" class="bl-in" style="--tx:390px">OLAMAZ... KURYE, PATRON MUYMUŞ?!</div></div>
+    <div id="toplanti-b14" class="txt clip" data-start="0.4" data-duration="2.56" data-track-index="1" style="left:330px;top:640px;width:560px;"><div id="toplanti-b14-in" class="bl-in" style="--tx:400px">BEYLER, YENİ CEO'MUZ GELDİ.</div></div>
+    <div id="toplanti-b15" class="txt clip" data-start="6.86" data-duration="3.74" data-track-index="1" style="left:150px;top:300px;width:760px;"><div id="toplanti-b15-in" class="bl-in" style="--tx:390px">OLAMAZ... KURYE, PATRON MUYMUŞ?!</div></div>
   </div>
   <script>
     (function () {
       Comic.drawAll(document.querySelector('[data-composition-id="toplanti"]'));
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#toplanti-p13-cam", {"scale": 1.0, "x": -20}, {"scale": 1.05, "x": 20, "duration": 3.8, "ease": "sine.inOut"}, 0.0);
-      tl.fromTo("#toplanti-p14-cam", {"scale": 1.0}, {"scale": 1.14, "duration": 3.8, "ease": "power1.inOut"}, 3.8);
-      tl.fromTo("#toplanti-p14-flash-in", {opacity: 1}, {opacity: 0, duration: 0.55, ease: "power2.out"}, 3.8);
-      tl.fromTo("#toplanti-p15-cam", {"scale": 1.12}, {"scale": 1.0, "duration": 3.2, "ease": "expo.out"}, 7.6);
-      tl.fromTo("#toplanti-p15", {x: 0, y: 0}, {keyframes: [{"x": 10.0, "y": -6.0}, {"x": -8.8, "y": 5.2}, {"x": 7.5, "y": -4.5}, {"x": -6.2, "y": 3.8}, {"x": 5.0, "y": -3.0}, {"x": -3.8, "y": 2.2}, {"x": 2.5, "y": -1.5}, {"x": -1.2, "y": 0.8}, {"x": 0, "y": 0}], duration: 0.3, ease: "none"}, 7.7);
+      tl.fromTo("#toplanti-p13-cam", {"scale": 1.0, "x": -20}, {"scale": 1.05, "x": 20, "duration": 3.06, "ease": "sine.inOut"}, 0.0);
+      tl.fromTo("#toplanti-p14-cam", {"scale": 1.0}, {"scale": 1.14, "duration": 3.6, "ease": "power1.inOut"}, 3.06);
+      tl.fromTo("#toplanti-p14-flash-in", {opacity: 1}, {opacity: 0, duration: 0.55, ease: "power2.out"}, 3.06);
+      tl.fromTo("#toplanti-p15-cam", {"scale": 1.12}, {"scale": 1.0, "duration": 4.03, "ease": "expo.out"}, 6.66);
+      tl.fromTo("#toplanti-p15", {x: 0, y: 0}, {keyframes: [{"x": 10.0, "y": -6.0}, {"x": -8.8, "y": 5.2}, {"x": 7.5, "y": -4.5}, {"x": -6.2, "y": 3.8}, {"x": 5.0, "y": -3.0}, {"x": -3.8, "y": 2.2}, {"x": 2.5, "y": -1.5}, {"x": -1.2, "y": 0.8}, {"x": 0, "y": 0}], duration: 0.3, ease: "none"}, 6.76);
       tl.fromTo("#toplanti-b14-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 0.4);
-      tl.to("#toplanti-b14-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 3.18);
-      tl.fromTo("#toplanti-b15-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 7.8);
+      tl.to("#toplanti-b14-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 2.84);
+      tl.fromTo("#toplanti-b15-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.24, ease: "back.out(2)"}, 6.86);
       tl.to("#toplanti-b15-in", {scale: 0.9, opacity: 0, duration: 0.12, ease: "power2.in"}, 10.48);
-      tl.set({}, {}, 10.8);
+      tl.set({}, {}, 10.69);
       window.__timelines["toplanti"] = tl;
     })();
   </script>

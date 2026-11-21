@@ -31,32 +31,32 @@
           font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
   </style>
   <div id="root" data-composition-id="gece" data-width="1080" data-height="1920">
-    <div id="gece-p1" class="panel clip" data-start="0.0" data-duration="2.2" data-track-index="0">
+    <div id="gece-p1" class="panel clip" data-start="0.0" data-duration="2.35" data-track-index="0">
       <div id="gece-p1-cam" class="cam"><svg data-art="tower" data-layout-ignore></svg></div>
     </div>
-    <div id="gece-p2" class="panel clip" data-start="2.2" data-duration="4.8" data-track-index="0">
+    <div id="gece-p2" class="panel clip" data-start="2.35" data-duration="7.22" data-track-index="0">
       <div id="gece-p2-cam" class="cam"><svg data-art="visor" data-layout-ignore></svg></div>
     </div>
-    <div id="gece-p3" class="panel clip" data-start="7.0" data-duration="3.2" data-track-index="0">
+    <div id="gece-p3" class="panel clip" data-start="9.57" data-duration="3.98" data-track-index="0">
       <div id="gece-p3-cam" class="cam"><svg data-art="walk" data-layout-ignore></svg></div>
     </div>
-    <div id="gece-n1" class="txt clip" data-start="0.15" data-duration="2.05" data-track-index="1" style="left:150px;top:330px;"><div id="gece-n1-in" class="nar-in">BU BİNAYI BEN KURDUM.</div></div>
-    <div id="gece-n2a" class="txt clip" data-start="2.35" data-duration="2.1" data-track-index="1" style="left:150px;top:320px;"><div id="gece-n2a-in" class="nar-in">KIRK İKİ KAT. ÜÇ BİN ÇALIŞAN.</div></div>
-    <div id="gece-n2b" class="txt clip" data-start="4.45" data-duration="2.55" data-track-index="1" style="left:220px;top:320px;"><div id="gece-n2b-in" class="nar-in">AMA HİÇBİRİ YÜZÜMÜ BİLMİYOR.</div></div>
-    <div id="gece-n3" class="txt clip" data-start="7.15" data-duration="3.05" data-track-index="1" style="left:150px;top:300px;width:720px;"><div id="gece-n3-in" class="nar-in">BU GECE, ONLARI GERÇEK HALLERİYLE GÖRECEĞİM.</div></div>
+    <div id="gece-n01" class="txt clip" data-start="0.3" data-duration="2.0" data-track-index="1" style="left:150px;top:330px;"><div id="gece-n01-in" class="nar-in">BU BİNAYI BEN KURDUM.</div></div>
+    <div id="gece-n02a" class="txt clip" data-start="2.5" data-duration="3.6" data-track-index="1" style="left:150px;top:320px;"><div id="gece-n02a-in" class="nar-in">KIRK İKİ KAT. ÜÇ BİN ÇALIŞAN.</div></div>
+    <div id="gece-n02b" class="txt clip" data-start="6.1" data-duration="3.41" data-track-index="1" style="left:220px;top:320px;"><div id="gece-n02b-in" class="nar-in">AMA HİÇBİRİ YÜZÜMÜ BİLMİYOR.</div></div>
+    <div id="gece-n03" class="txt clip" data-start="9.72" data-duration="3.75" data-track-index="1" style="left:150px;top:300px;width:720px;"><div id="gece-n03-in" class="nar-in">BU GECE, ONLARI GERÇEK HALLERİYLE GÖRECEĞİM.</div></div>
   </div>
   <script>
     (function () {
       Comic.drawAll(document.querySelector('[data-composition-id="gece"]'));
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#gece-p1-cam", {"scale": 1.15, "y": 150}, {"scale": 1.15, "y": -30, "duration": 2.2, "ease": "sine.inOut"}, 0.0);
-      tl.fromTo("#gece-p2-cam", {"scale": 1.0}, {"scale": 1.14, "duration": 4.8, "ease": "sine.inOut"}, 2.2);
-      tl.fromTo("#gece-p3-cam", {"scale": 1.02, "y": 40}, {"scale": 1.12, "y": -30, "duration": 3.2, "ease": "sine.inOut"}, 7.0);
-      tl.fromTo("#gece-n1-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 0.15);
-      tl.fromTo("#gece-n2a-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 2.35);
-      tl.fromTo("#gece-n2b-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 4.45);
-      tl.fromTo("#gece-n3-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 7.15);
-      tl.set({}, {}, 10.2);
+      tl.fromTo("#gece-p1-cam", {"scale": 1.15, "y": 150}, {"scale": 1.15, "y": -30, "duration": 2.35, "ease": "sine.inOut"}, 0.0);
+      tl.fromTo("#gece-p2-cam", {"scale": 1.0}, {"scale": 1.14, "duration": 7.22, "ease": "sine.inOut"}, 2.35);
+      tl.fromTo("#gece-p3-cam", {"scale": 1.02, "y": 40}, {"scale": 1.12, "y": -30, "duration": 3.98, "ease": "sine.inOut"}, 9.57);
+      tl.fromTo("#gece-n01-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 0.3);
+      tl.fromTo("#gece-n02a-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 2.5);
+      tl.fromTo("#gece-n02b-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 6.1);
+      tl.fromTo("#gece-n03-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 9.72);
+      tl.set({}, {}, 13.55);
       window.__timelines["gece"] = tl;
     })();
   </script>
