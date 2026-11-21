@@ -5,3 +5,5 @@ out/render.log
 out/video_noaudio.mp4
 preview/
 preview_times.txt
+out/*.log
+out/c_range.txt

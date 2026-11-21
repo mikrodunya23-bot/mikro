@@ -26,7 +26,21 @@ function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let
 function ell(x, y, rx, ry, rot = 0) { ctx.beginPath(); ctx.ellipse(x, y, Math.abs(rx) + .01, Math.abs(ry) + .01, rot, 0, Math.PI * 2); }
 function circ(x, y, r) { ell(x, y, r, r); }
 function rrect(x, y, w, h, r) { ctx.beginPath(); ctx.roundRect(x, y, w, h, r); }
-function withSat(s, fn) { ctx.save(); if (s < .995) ctx.filter = `saturate(${Math.max(0, s)})`; fn(); ctx.restore(); }
+// Doygunluk: CSS saturate() ile aynı formül, ama piksel bazında (çok daha hızlı)
+function desat(sOut, sIn = null, cx = 0, cy = 0, r = 0) {
+  const img = ctx.getImageData(0, 0, W, H), d = img.data, r2 = r * r;
+  for (let y = 0, i = 0; y < H; y++) {
+    const dy2 = (y - cy) * (y - cy);
+    for (let x = 0; x < W; x++, i += 4) {
+      const s = (sIn !== null && (x - cx) * (x - cx) + dy2 < r2) ? sIn : sOut;
+      if (s >= .995) continue;
+      const R = d[i], G = d[i + 1], B = d[i + 2], L = .213 * R + .715 * G + .072 * B;
+      d[i] = L + s * (R - L); d[i + 1] = L + s * (G - L); d[i + 2] = L + s * (B - L);
+    }
+  }
+  ctx.putImageData(img, 0, 0);
+}
+function withSat(s, fn) { ctx.save(); fn(); ctx.restore(); if (s < .995) desat(Math.max(0, s)); }
 
 function lineAt(t, pad = 0) { return TL.lines.find(l => t >= l.start && t < l.start + l.dur + pad); }
 function mouth(who, t) { const l = lineAt(t); if (!l || l.who !== who || l.inner) return 0; const k = Math.floor((t - l.start) * TL.fps); return l.env[k] || 0; }
@@ -448,10 +462,10 @@ function campfire(x, y, t) {
 function notes(t, x, y) { for (let i = 0; i < 5; i++) { const ph = (t * .5 + i / 5) % 1, nx = x + Math.sin(i * 2 + t) * 200 + (i - 2) * 160, ny = y - ph * 300; ctx.save(); ctx.globalAlpha = 1 - ph; ctx.fillStyle = ['#ff6b9a', '#ffe066', '#7ad7ff', '#9cff8a', '#c59bff'][i]; ell(nx, ny, 16, 12, -.4); ctx.fill(); ctx.fillRect(nx + 12, ny - 50, 6, 50); ctx.fillRect(nx + 12, ny - 50, 26, 8); ctx.restore(); } }
 function confetti(t, t0, n = 100, seed = 77) { const cr = rng(seed), ct = t - t0; for (let i = 0; i < n; i++) { const x = cr() * W, v = 160 + cr() * 260, y = ((-60 + ct * v - cr() * 900) % (H + 200) + H + 200) % (H + 200) - 100; ctx.save(); ctx.translate(x + Math.sin(ct * 3 + i) * 30, y); ctx.rotate(ct * 4 + i); ctx.fillStyle = ['#ff6b9a', '#ffe066', '#7ad7ff', '#9cff8a', '#c59bff'][i % 5]; ctx.fillRect(-8, -5, 16, 10); ctx.restore(); } }
 function colorWave(bgFn, s0, s1, cx, cy, p) {
-  withSat(s0, bgFn);
+  ctx.save(); bgFn(); ctx.restore();
+  const r = p > 0 ? easeOut(p) * 2400 : 0;
+  if (s0 < .995 || (p > 0 && s1 < .995)) desat(s0, p > 0 ? s1 : null, cx, cy, r);
   if (p <= 0) return;
-  const r = easeOut(p) * 2400;
-  ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, r, 0, 6.283); ctx.clip(); withSat(s1, bgFn); ctx.restore();
   if (p < 1) { ctx.save(); ctx.globalAlpha = 1 - p; ctx.strokeStyle = 'rgba(255,255,255,.8)'; ctx.lineWidth = 18; circ(cx, cy, r); ctx.stroke(); for (let i = 0; i < 24; i++) { const a = i / 24 * 6.283; sparkle(cx + Math.cos(a) * r, cy + Math.sin(a) * r, 26, 1); } ctx.restore(); }
 }
 function shake(amount, t) { ctx.translate(Math.sin(t * 61) * amount, Math.cos(t * 47) * amount); }
