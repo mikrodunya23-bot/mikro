@@ -247,6 +247,21 @@ for row in SFX:
     sid, f, st, vol, lane, extra = row[:6]
     d = row[6] if len(row) > 6 else sfx_dur(f) - 0.02
     sfx.append(f'      <audio id="{sid}" class="clip" src="{f}" data-start="{round(st, 3)}" data-duration="{d:.2f}" {extra} data-track-index="{lane}" data-volume="{vol}"></audio>'.replace("  data", " data"))
+# Music bed (MusicGen, looped by tools/make_bed.py): full between lines, ducked to 0.35 under the voice.
+BED = os.path.join(ROOT, "assets", "bgm", "bed.mp3")
+music = ""
+if os.path.exists(BED):
+    pts, low = [{"t": 0, "v": 1}], 0.35
+    for i, (vid, st, d) in enumerate(VO):
+        end = st + d
+        nxt = VO[i + 1][1] if i + 1 < len(VO) else None
+        if not pts or pts[-1]["v"] != low:
+            pts += [{"t": round(max(0, st - 0.3), 3), "v": 1}, {"t": round(st, 3), "v": low}]
+        if nxt is None or nxt - end > 0.9:
+            pts += [{"t": round(end + 0.1, 3), "v": low}, {"t": round(end + 0.5, 3), "v": 1}]
+    lane = json.dumps({"version": 1, "lanes": [{"target": "volume", "points": pts}]}).replace('"', "&quot;")
+    music = (f'      <audio id="music-bed" class="clip" src="assets/bgm/bed.mp3" data-start="0" data-duration="{TOTAL - 0.02:.2f}" '
+             f'data-track-index="5" data-volume="0.55" data-automation="{lane}"></audio>')
 INDEX = f'''<!doctype html>
 <html lang="tr">
   <head>
@@ -270,6 +285,9 @@ INDEX = f'''<!doctype html>
 
       <!-- Sound effects -->
 {chr(10).join(sfx)}
+
+      <!-- Music: MusicGen (facebook/musicgen-small), generated locally -->
+{music}
     </div>
     <script>
       window.__timelines = window.__timelines || {{}};
