@@ -156,3 +156,10 @@ s27m	cem	say	[cold] Haksızlığı üç gün boyunca ben yaşadım, Selin Hanım
 s29d	hasan	say	[laughing, amazed] Abi! Sen patron muymuşsun be! Ben sana motor sattım!
 s29e	cem	say	[laughs] Motorunu hâlâ seviyorum, Hasan Abi. Hoş geldin.
 s30c	tarik	say	[cold, slow] Deniz Aral'dan alamadığımı... oğlundan alacağım.
+c1	cem	say	[excited, friendly] Takip etmeyi ve yorum yapmayı unutmayın! İkinci bölüm çok yakında.
+c2	ece	say	[cheerful] Takip etmeyi ve yorum yapmayı unutmayın! Üçüncü bölümde görüşürüz.
+c3	cem	say	[determined, friendly] Takip etmeyi ve yorum yapmayı unutmayın! Dördüncü bölüm geliyor.
+c4	ece	say	[mysterious, playful] Takip etmeyi ve yorum yapmayı unutmayın! Beşinci bölümde sırlar açılıyor.
+c5	cem	say	[warm] Takip etmeyi ve yorum yapmayı unutmayın! Altıncı bölüm çok yakında.
+c6	ece	say	[excited] Takip etmeyi ve yorum yapmayı unutmayın! Final bölümü geliyor!
+c7	cem	say	[warm, grateful] Birinci sezonun sonuna geldik. İkinci sezon için takip etmeyi ve yorum yapmayı unutmayın!

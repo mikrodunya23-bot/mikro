@@ -1,0 +1,73 @@
+<template>
+  <style>
+    @font-face { font-family: "Bangers"; src: url("assets/fonts/bangers-latin.woff2") format("woff2"); }
+    @font-face { font-family: "Bangers"; src: url("assets/fonts/bangers-latin-ext.woff2") format("woff2"); unicode-range: U+0100-024F; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0d1430; font-family: "Bangers", sans-serif; }
+    .panel { position: absolute; inset: 0; overflow: hidden; }
+    .cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
+    .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .txt { position: absolute; left: 128px; top: 330px; width: 760px; z-index: 10; }
+    .nar-in { position: relative; display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+              padding: 18px 30px 14px; line-height: 1.06; letter-spacing: 2px; transform-origin: 0% 0%; }
+    .bl-in, .th-in { position: relative; display: inline-block; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 60px;
+             padding: 30px 40px 22px; line-height: 1.06; letter-spacing: 2px; text-align: center; transform-origin: var(--tx) 120%; }
+    .bl-in::before { content: ""; position: absolute; left: calc(var(--tx) - 30px); bottom: -62px; border-left: 30px solid transparent;
+             border-right: 30px solid transparent; border-top: 62px solid #16121c; }
+    .bl-in::after { content: ""; position: absolute; left: calc(var(--tx) - 20px); bottom: -46px; border-left: 20px solid transparent;
+             border-right: 20px solid transparent; border-top: 48px solid #ffffff; }
+    .th-in { background: #f3f6ff; border-style: dashed; border-radius: 90px; }
+    .th-in::before { content: ""; position: absolute; left: calc(var(--tx) - 22px); bottom: -52px; width: 44px; height: 34px; border-radius: 50%;
+             background: #f3f6ff; border: 6px solid #16121c; }
+    .th-in::after { content: ""; position: absolute; left: calc(var(--tx) - 4px); bottom: -88px; width: 24px; height: 20px; border-radius: 50%;
+             background: #f3f6ff; border: 5px solid #16121c; }
+    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 38px; padding: 4px 14px 2px; letter-spacing: 3px;
+           border-radius: 8px; white-space: nowrap; }
+    .card-t { position: absolute; left: 120px; top: 760px; width: 768px; text-align: center; z-index: 12; }
+    .card-t span { display: inline-block; color: #ffd84a; font-size: 130px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill;
+           text-shadow: 12px 12px 0 #16121c; letter-spacing: 6px; }
+    .final-title { position: absolute; left: 120px; top: 330px; width: 660px; text-align: center; z-index: 12; }
+    .tw { display: inline-block; color: #ff7a1a; font-size: 200px; line-height: 0.92; -webkit-text-stroke: 12px #16121c; paint-order: stroke fill;
+          text-shadow: 14px 14px 0 #16121c; letter-spacing: 6px; }
+    .tw2 { color: #ffd84a; font-size: 240px; }
+    .ep-tag { display: inline-block; margin-top: 30px; background: #16121c; color: #ffd84a; font-size: 64px; padding: 10px 30px; letter-spacing: 6px; }
+    .final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
+    .final-next span { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+          font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+    .intro { position: absolute; left: 128px; width: 760px; z-index: 11; }
+    .intro-in { display: inline-block; background: #16121c; border: 6px solid #ffd84a; box-shadow: 10px 10px 0 #ff7a1a; padding: 16px 30px 12px; text-align: left; }
+    .intro-in b { display: block; color: #ffd84a; font-weight: normal; font-size: 72px; letter-spacing: 4px; line-height: 1; }
+    .intro-in i { display: block; color: #ffffff; font-style: normal; font-size: 38px; letter-spacing: 3px; margin-top: 6px; }
+
+    .ct { position: absolute; left: 120px; width: 768px; text-align: center; z-index: 12; }
+    .brand { color: #ffd84a; font-size: 64px; letter-spacing: 8px; }
+    .next { display: inline-block; white-space: nowrap; color: #ff7a1a; font-size: 132px; line-height: 0.95; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill; text-shadow: 12px 12px 0 #16121c; }
+    .q { display: inline-block; background: #fff; color: #16121c; border: 7px solid #16121c; border-radius: 50px; padding: 26px 34px 20px; font-size: 54px; line-height: 1.05; letter-spacing: 2px; box-shadow: 10px 10px 0 #ff7a1a; }
+    .row { position: absolute; left: 130px; width: 650px; display: flex; justify-content: space-between; z-index: 12; }
+    .btn { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; padding: 16px 18px 10px; font-size: 50px; letter-spacing: 2px; transform: rotate(-3deg); box-shadow: 8px 8px 0 #16121c; }
+    .btn.b2 { background: #ff7a1a; transform: rotate(2deg); }
+    .btn.b3 { background: #ffffff; transform: rotate(-1deg); }
+</style>
+  <div id="root" data-composition-id="card2" data-width="1080" data-height="1920">
+    <div id="card2-bg" class="panel clip" data-start="0" data-duration="6.5" data-track-index="0"><div id="card2-cam" class="cam"><svg data-art="titleEnd" data-layout-ignore></svg></div></div>
+    <div id="card2-brand" class="ct brand clip" data-start="0.1" data-duration="6.4" data-track-index="1" style="top:320px">GİZEMLİ KURYE · BÖLÜM 2</div>
+    <div id="card2-next" class="ct clip" data-start="0.25" data-duration="6.25" data-track-index="1" style="top:410px"><span id="card2-next-in" class="next">DEVAMI<br/>BÖLÜM 3'DE...</span></div>
+    <div id="card2-q" class="ct clip" data-start="1.2" data-duration="5.3" data-track-index="2" style="top:740px"><span id="card2-q-in" class="q">KURYE KILIĞI İYİ BİR FİKİR Mİ?</span></div>
+    <div id="card2-row" class="row clip" data-start="2.0" data-duration="4.5" data-track-index="3" style="top:1060px">
+      <span id="card2-b1" class="btn">TAKİP ET</span><span id="card2-b2" class="btn b2">BEĞEN</span><span id="card2-b3" class="btn b3">YORUM YAP</span>
+    </div>
+  </div>
+  <script>
+    (function () {
+      Comic.drawAll(document.querySelector('[data-composition-id="card2"]'));
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#card2-cam", {scale: 1.0}, {scale: 1.06, duration: 6.5, ease: "sine.inOut"}, 0);
+      tl.fromTo("#card2-next-in", {scale: 2.6, opacity: 0}, {scale: 1, opacity: 1, duration: 0.35, ease: "power4.in"}, 0.25);
+      tl.fromTo("#card2-q-in", {scale: 0, rotation: -6}, {scale: 1, rotation: 0, duration: 0.3, ease: "back.out(2)"}, 1.2);
+      tl.fromTo("#card2-b1", {y: 80, opacity: 0}, {y: 0, opacity: 1, duration: 0.25, ease: "back.out(2.4)"}, 2.0);
+      tl.fromTo("#card2-b2", {y: 80, opacity: 0}, {y: 0, opacity: 1, duration: 0.25, ease: "back.out(2.4)"}, 2.25);
+      tl.fromTo("#card2-b3", {y: 80, opacity: 0}, {y: 0, opacity: 1, duration: 0.25, ease: "back.out(2.4)"}, 2.5);
+      tl.set({}, {}, 6.5);
+      window.__timelines["card2"] = tl;
+    })();
+  </script>
+</template>

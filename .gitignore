@@ -8,3 +8,7 @@ kurye/ep/.hyperframes/
 kurye/ep/beds/
 __pycache__/
 kurye/ep/vo_raw/
+kurye/parts/out/
+kurye/parts/cards/renders/
+kurye/parts/cards/.hyperframes/
+kurye/parts/badge*.png
