@@ -3,3 +3,7 @@ video/.hyperframes/
 node_modules/
 kurye/renders/
 kurye/.hyperframes/
+kurye/ep/renders/
+kurye/ep/.hyperframes/
+kurye/ep/beds/
+__pycache__/

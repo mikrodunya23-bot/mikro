@@ -1,0 +1,75 @@
+<template>
+  <style>
+    @font-face { font-family: "Bangers"; src: url("assets/fonts/bangers-latin.woff2") format("woff2"); }
+    @font-face { font-family: "Bangers"; src: url("assets/fonts/bangers-latin-ext.woff2") format("woff2"); unicode-range: U+0100-024F; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0d1430; font-family: "Bangers", sans-serif; }
+    .panel { position: absolute; inset: 0; overflow: hidden; }
+    .cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
+    .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .txt { position: absolute; left: 128px; top: 330px; width: 760px; z-index: 10; }
+    .nar-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+              padding: 18px 30px 14px; line-height: 1.06; letter-spacing: 2px; transform-origin: 0% 0%; }
+    .bl-in, .th-in { position: relative; display: inline-block; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 60px;
+             padding: 30px 40px 22px; line-height: 1.06; letter-spacing: 2px; text-align: center; transform-origin: var(--tx) 120%; }
+    .bl-in::before { content: ""; position: absolute; left: calc(var(--tx) - 30px); bottom: -62px; border-left: 30px solid transparent;
+             border-right: 30px solid transparent; border-top: 62px solid #16121c; }
+    .bl-in::after { content: ""; position: absolute; left: calc(var(--tx) - 20px); bottom: -46px; border-left: 20px solid transparent;
+             border-right: 20px solid transparent; border-top: 48px solid #ffffff; }
+    .th-in { background: #f3f6ff; border-style: dashed; border-radius: 90px; }
+    .th-in::before { content: ""; position: absolute; left: calc(var(--tx) - 22px); bottom: -52px; width: 44px; height: 34px; border-radius: 50%;
+             background: #f3f6ff; border: 6px solid #16121c; }
+    .th-in::after { content: ""; position: absolute; left: calc(var(--tx) - 4px); bottom: -88px; width: 24px; height: 20px; border-radius: 50%;
+             background: #f3f6ff; border: 5px solid #16121c; }
+    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 32px; padding: 4px 14px 2px; letter-spacing: 3px;
+           border-radius: 8px; white-space: nowrap; }
+    .card-t { position: absolute; left: 120px; top: 760px; width: 768px; text-align: center; z-index: 12; }
+    .card-t span { display: inline-block; color: #ffd84a; font-size: 130px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill;
+           text-shadow: 12px 12px 0 #16121c; letter-spacing: 6px; }
+    .final-title { position: absolute; left: 120px; top: 330px; width: 660px; text-align: center; z-index: 12; }
+    .tw { display: inline-block; color: #ff7a1a; font-size: 200px; line-height: 0.92; -webkit-text-stroke: 12px #16121c; paint-order: stroke fill;
+          text-shadow: 14px 14px 0 #16121c; letter-spacing: 6px; }
+    .tw2 { color: #ffd84a; font-size: 240px; }
+    .ep-tag { display: inline-block; margin-top: 30px; background: #16121c; color: #ffd84a; font-size: 64px; padding: 10px 30px; letter-spacing: 6px; }
+    .final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
+    .final-next span { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+          font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+</style>
+  <div id="root" data-composition-id="s14" data-width="1080" data-height="1920">
+    <div id="s14-p1" class="panel clip" data-start="0.0" data-duration="12.06" data-track-index="0">
+      <div id="s14-p1-cam" class="cam"><svg data-art="guard" data-layout-ignore></svg></div>
+    </div>
+    <div id="s14-p1-t1" class="txt clip" data-start="1.08" data-duration="3.64" data-track-index="1"><div id="s14-p1-t1-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">ERCÜMENT</span>NE OLUYOR BURADA? ÇIK DIŞARI! HER YERİ PİSLETTİN!</div></div>
+    <div id="s14-p1-t2" class="txt clip" data-start="5.02" data-duration="1.65" data-track-index="1"><div id="s14-p1-t2-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">CEM</span>SADECE BİR İMZA...</div></div>
+    <div id="s14-p1-t3" class="txt clip" data-start="6.97" data-duration="4.36" data-track-index="1"><div id="s14-p1-t3-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">ERCÜMENT</span>İMZAYMIŞ! SENİN GİBİLERİ İYİ TANIRIM BEN! YÜRÜ!</div></div>
+    <div id="s14-p2" class="panel clip" data-start="12.06" data-duration="1.8" data-track-index="0">
+      <div id="s14-p2-cam" class="cam"><svg data-art="bam" data-layout-ignore></svg></div>
+    </div>
+    <div id="s14-p3" class="panel clip" data-start="13.86" data-duration="8.41" data-track-index="0">
+      <div id="s14-p3-cam" class="cam"><svg data-art="fallen" data-layout-ignore></svg></div>
+    </div>
+    <div id="s14-p3-t1" class="txt clip" data-start="14.94" data-duration="6.06" data-track-index="1"><div id="s14-p3-t1-in" class="nar-in" style="font-size:44px">DEMEK GÜVENLİK DE KÖTÜ İNSANMIŞ... KİMLİĞİMİ ÖĞRENİNCE, BAKALIM NE YAPACAKSINIZ.</div></div>
+  </div>
+  <script>
+    (function () {
+      Comic.drawAll(document.querySelector('[data-composition-id="s14"]'));
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s14-p1-cam", {scale: 1.02, x: 0}, {scale: 1.1, x: 0, duration: 0.6, ease: "power2.inOut"}, 0.0);
+      tl.to("#s14-p1-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 4.77);
+      tl.to("#s14-p1-cam", {x: 0, duration: 0.5, ease: "power2.inOut"}, 6.72);
+      tl.fromTo("#s14-p1", {x: 0, y: 0}, {keyframes: [{"x": 16.0, "y": -10.0}, {"x": -14.0, "y": 8.8}, {"x": 12.0, "y": -7.5}, {"x": -10.0, "y": 6.2}, {"x": 8.0, "y": -5.0}, {"x": -6.0, "y": 3.8}, {"x": 4.0, "y": -2.5}, {"x": -2.0, "y": 1.2}, {"x": 0, "y": 0}], duration: 0.45, ease: "none"}, 0.15);
+      tl.fromTo("#s14-p1-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 1.08);
+      tl.to("#s14-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 4.6);
+      tl.fromTo("#s14-p1-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 5.02);
+      tl.to("#s14-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 6.55);
+      tl.fromTo("#s14-p1-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 6.97);
+      tl.to("#s14-p1-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 11.21);
+      tl.fromTo("#s14-p2-cam", {scale: 1.0}, {scale: 1.09, duration: 1.8, ease: "sine.inOut"}, 12.06);
+      tl.fromTo("#s14-p2", {x: 0, y: 0}, {keyframes: [{"x": 16.0, "y": -10.0}, {"x": -14.0, "y": 8.8}, {"x": 12.0, "y": -7.5}, {"x": -10.0, "y": 6.2}, {"x": 8.0, "y": -5.0}, {"x": -6.0, "y": 3.8}, {"x": 4.0, "y": -2.5}, {"x": -2.0, "y": 1.2}, {"x": 0, "y": 0}], duration: 0.45, ease: "none"}, 12.16);
+      tl.fromTo("#s14-p3-cam", {scale: 1.0}, {scale: 1.09, duration: 8.41, ease: "sine.inOut"}, 13.86);
+      tl.fromTo("#s14-p3-t1-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 14.94);
+      tl.to("#s14-p3-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 20.88);
+      tl.set({}, {}, 22.27);
+      window.__timelines["s14"] = tl;
+    })();
+  </script>
+</template>

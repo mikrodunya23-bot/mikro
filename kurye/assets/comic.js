@@ -166,9 +166,11 @@
       s += line(`M ${side * 20},${by + bi} Q ${side * 52},${by - 10 + (bi + bo) / 2} ${side * 82},${by + bo}`, bw, c.brow || (c.hair && c.style !== "cap" ? c.hair : "#2a1f1a"));
     }
     s += line("M 6,8 Q -6,40 -16,54 Q -2,62 14,56", 4.5);
+    if (c.old) s += line("M -60,-92 Q 0,-100 60,-92", 3.5, c.shade) + line("M -50,-80 Q 0,-86 50,-80", 3, c.shade) + line("M -44,70 Q -54,96 -40,118", 3.5, c.shade) + line("M 44,70 Q 54,96 40,118", 3.5, c.shade);
+    if (c.beard) s += `<path d="M -118,10 C -112,90 -70,170 0,178 C 70,170 112,90 118,10 C 100,70 70,96 40,100 Q 0,112 -40,100 C -70,96 -100,70 -118,10 Z" fill="${c.beard}" opacity="${c.beardOp || 0.55}"/>`;
     if (c.mustache) s += pth("M -62,72 Q -30,52 0,66 Q 30,52 62,72 Q 52,90 0,80 Q -52,90 -62,72 Z", c.mustache, 4);
     s += mouth(e.mouth, c);
-    if (c.glasses) s += `<circle cx="-50" cy="-4" r="40" fill="#fff" fill-opacity="0.12" stroke="${INK}" stroke-width="6"/><circle cx="50" cy="-4" r="40" fill="#fff" fill-opacity="0.12" stroke="${INK}" stroke-width="6"/>` + line("M -12,-8 Q 0,-16 12,-8", 5) + line("M -60,-26 L -42,-34", 4, "#fff", 'opacity="0.8"');
+    if (c.glasses && !o.noGlasses) s += `<circle cx="-50" cy="-4" r="40" fill="#fff" fill-opacity="0.12" stroke="${INK}" stroke-width="6"/><circle cx="50" cy="-4" r="40" fill="#fff" fill-opacity="0.12" stroke="${INK}" stroke-width="6"/>` + line("M -12,-8 Q 0,-16 12,-8", 5) + line("M -60,-26 L -42,-34", 4, "#fff", 'opacity="0.8"');
     if (c.lips && c.style === "bun") s += `<circle cx="-120" cy="58" r="11" fill="#e5b54a" stroke="${INK}" stroke-width="4"/><circle cx="120" cy="58" r="11" fill="#e5b54a" stroke="${INK}" stroke-width="4"/>`;
     s += hairFront(c);
     if (c.style === "cap") s += line("M -24,-44 L -86,-62", 12, "#2a1f1a") + line("M 24,-44 L 86,-62", 12, "#2a1f1a");
@@ -177,11 +179,18 @@
     return G(o.t || "", s);
   }
 
+  // extra outfits: kind -> [fill, shade, style]; style decides the details drawn
+  const TORSO = {
+    brown: ["#6b4a35", "#4a3223", "suit", "#2b4a7a"], navysuit: ["#1f2b45", "#121a2c", "suit", "#1d3d6e"],
+    white: ["#f4efe6", "#d8cfbf", "blazer"], sweater: ["#2f4f46", "#1f3630", "plain"], coat: ["#c9a77a", "#a5835a", "coat"],
+    gown: ["#bcd9e8", "#93b8cc", "plain"], black: ["#1b1a20", "#0c0b10", "suit", "#0c0b10"], green: ["#2e9d55", "#1f7a3e", "courier"],
+    sec: ["#3b3f4c", "#272a33", "blazer"],
+  };
   // torso, neck base at y=232, centred on x=0
   function torso(kind) {
     const base = "M -250,980 L -242,380 C -236,300 -172,252 -60,232 L 60,232 C 172,252 236,300 242,380 L 250,980 Z";
     const cid = nid("tc");
-    const T = {
+    const T = TORSO[kind] || {
       courier: ["#ff7a1a", "#cf5508"],
       suit: ["#22314f", "#141f36"],
       guard: ["#1c1f2b", "#0e1018"],
@@ -191,6 +200,26 @@
     }[kind];
     let s = `<clipPath id="${cid}"><path d="${base}"/></clipPath>` + pth(base, T[0], 7);
     s += `<g clip-path="url(#${cid})"><path d="M 90,240 C 120,420 100,700 130,980 L 300,980 L 300,240 Z" fill="${T[1]}"/><path d="M 90,240 C 120,420 100,700 130,980 L 300,980 L 300,240 Z" fill="url(#${P.dots})" opacity="0.18"/>`;
+    const X = TORSO[kind];
+    if (X) {
+      if (X[2] === "courier") {
+        s += rect(-260, 500, 520, 46, "#dfe3ea", 5) + line("M 0,250 L 0,980", 5) + `</g>` + pth("M -92,232 L -108,318 L 0,292 L 108,318 L 92,232 Z", X[1], 6);
+        return s;
+      }
+      if (X[2] === "suit") {
+        s += `</g>` + pth("M -62,232 L 0,420 L 62,232 Z", "#f6f3ee", 5) + pth("M -15,250 L 15,250 L 24,400 L 0,432 L -24,400 Z", X[3], 5);
+        return s + line("M -62,232 L -120,470 L 0,420", 6) + line("M 62,232 L 120,470 L 0,420", 6);
+      }
+      if (X[2] === "blazer") {
+        s += `</g>` + pth("M -62,232 L 0,380 L 62,232 Z", kind === "white" ? "#9b1c31" : "#f6f3ee", 5) + line("M -62,232 L -110,460 L 0,380", 6) + line("M 62,232 L 110,460 L 0,380", 6);
+        return s + `<circle cx="0" cy="520" r="12" fill="#e5b54a" stroke="${INK}" stroke-width="4"/><circle cx="0" cy="600" r="12" fill="#e5b54a" stroke="${INK}" stroke-width="4"/>`;
+      }
+      if (X[2] === "coat") {
+        s += `</g>` + pth("M -90,232 L -40,330 L 0,250 L 40,330 L 90,232 Z", X[1], 5) + line("M 0,250 L 0,980", 5) + line("M -150,560 L -60,560", 5) + line("M 150,560 L 60,560", 5);
+        return s;
+      }
+      return s + `</g>` + pth("M -70,232 Q 0,300 70,232", "none", 5);
+    }
     if (kind === "courier") {
       s += rect(-260, 500, 520, 46, "#dfe3ea", 5) + rect(-260, 512, 520, 10, "#ffffff") + line("M 0,250 L 0,980", 5);
       s += `</g>` + pth("M -92,232 L -108,318 L 0,292 L 108,318 L 92,232 Z", "#e8650c", 6) + line("M -150,640 L -150,760", 4) + line("M 150,640 L 150,760", 4);
@@ -527,5 +556,10 @@
     svg.setAttribute("preserveAspectRatio", "xMidYMid slice");
     svg.innerHTML = d + fn(mulberry32(seed));
   }
-  window.Comic = { draw, drawAll: (root) => (root || document).querySelectorAll("svg[data-art]").forEach(draw) };
+  window.Comic = {
+    draw, drawAll: (root) => (root || document).querySelectorAll("svg[data-art]").forEach(draw),
+    // building blocks for extension files (assets/comic_ep.js)
+    lib: { INK, nid, G, pth, line, rect, dots, lin, rad, CH, EXPR, PANELS, head, torso, hand, box, bust, skyNight, rainOver, tower, marble,
+           speedLines, burst, city, TORSO, P: () => P },
+  };
 })();

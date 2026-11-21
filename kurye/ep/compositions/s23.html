@@ -1,0 +1,70 @@
+<template>
+  <style>
+    @font-face { font-family: "Bangers"; src: url("assets/fonts/bangers-latin.woff2") format("woff2"); }
+    @font-face { font-family: "Bangers"; src: url("assets/fonts/bangers-latin-ext.woff2") format("woff2"); unicode-range: U+0100-024F; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0d1430; font-family: "Bangers", sans-serif; }
+    .panel { position: absolute; inset: 0; overflow: hidden; }
+    .cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
+    .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .txt { position: absolute; left: 128px; top: 330px; width: 760px; z-index: 10; }
+    .nar-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+              padding: 18px 30px 14px; line-height: 1.06; letter-spacing: 2px; transform-origin: 0% 0%; }
+    .bl-in, .th-in { position: relative; display: inline-block; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 60px;
+             padding: 30px 40px 22px; line-height: 1.06; letter-spacing: 2px; text-align: center; transform-origin: var(--tx) 120%; }
+    .bl-in::before { content: ""; position: absolute; left: calc(var(--tx) - 30px); bottom: -62px; border-left: 30px solid transparent;
+             border-right: 30px solid transparent; border-top: 62px solid #16121c; }
+    .bl-in::after { content: ""; position: absolute; left: calc(var(--tx) - 20px); bottom: -46px; border-left: 20px solid transparent;
+             border-right: 20px solid transparent; border-top: 48px solid #ffffff; }
+    .th-in { background: #f3f6ff; border-style: dashed; border-radius: 90px; }
+    .th-in::before { content: ""; position: absolute; left: calc(var(--tx) - 22px); bottom: -52px; width: 44px; height: 34px; border-radius: 50%;
+             background: #f3f6ff; border: 6px solid #16121c; }
+    .th-in::after { content: ""; position: absolute; left: calc(var(--tx) - 4px); bottom: -88px; width: 24px; height: 20px; border-radius: 50%;
+             background: #f3f6ff; border: 5px solid #16121c; }
+    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 32px; padding: 4px 14px 2px; letter-spacing: 3px;
+           border-radius: 8px; white-space: nowrap; }
+    .card-t { position: absolute; left: 120px; top: 760px; width: 768px; text-align: center; z-index: 12; }
+    .card-t span { display: inline-block; color: #ffd84a; font-size: 130px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill;
+           text-shadow: 12px 12px 0 #16121c; letter-spacing: 6px; }
+    .final-title { position: absolute; left: 120px; top: 330px; width: 660px; text-align: center; z-index: 12; }
+    .tw { display: inline-block; color: #ff7a1a; font-size: 200px; line-height: 0.92; -webkit-text-stroke: 12px #16121c; paint-order: stroke fill;
+          text-shadow: 14px 14px 0 #16121c; letter-spacing: 6px; }
+    .tw2 { color: #ffd84a; font-size: 240px; }
+    .ep-tag { display: inline-block; margin-top: 30px; background: #16121c; color: #ffd84a; font-size: 64px; padding: 10px 30px; letter-spacing: 6px; }
+    .final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
+    .final-next span { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+          font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+</style>
+  <div id="root" data-composition-id="s23" data-width="1080" data-height="1920">
+    <div id="s23-p1" class="panel clip" data-start="0.0" data-duration="24.29" data-track-index="0">
+      <div id="s23-p1-cam" class="cam"><svg data-art="muratOffice" data-layout-ignore></svg></div>
+    </div>
+    <div id="s23-p1-t1" class="txt clip" data-start="1.35" data-duration="2.92" data-track-index="1"><div id="s23-p1-t1-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">CEM</span>EVRAK MURAT BEY'E. ELDEN TESLİM EDECEĞİM.</div></div>
+    <div id="s23-p1-t2" class="txt clip" data-start="4.57" data-duration="4.53" data-track-index="1"><div id="s23-p1-t2-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">MURAT BEY</span>CEM BEY! NEDEN BUNU YAPIYORSUNUZ? SİZ ZATEN BURANIN SAHİBİSİNİZ!</div></div>
+    <div id="s23-p1-t3" class="txt clip" data-start="9.4" data-duration="6.21" data-track-index="1"><div id="s23-p1-t3-in" class="bl-in" style="--tx:150px;font-size:48px"><span class="tag">CEM</span>İNSANLARIN GERÇEK YÜZÜNÜ ANCAK SIRADAN BİRİ GİBİ GELİRSEM GÖREBİLİRDİM, MURAT BEY. VE GÖRDÜM.</div></div>
+    <div id="s23-p1-t4" class="txt clip" data-start="15.91" data-duration="4.53" data-track-index="1"><div id="s23-p1-t4-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">MURAT BEY</span>YARIN DEMİREL TARAFIYLA ORTAKLAR TOPLANTISI VAR. TANIŞMA TOPLANTISI.</div></div>
+    <div id="s23-p1-t5" class="txt clip" data-start="20.74" data-duration="3.09" data-track-index="1"><div id="s23-p1-t5-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">CEM</span>YARIN HER ŞEY AÇIĞA ÇIKACAK. HERKES İÇİN.</div></div>
+  </div>
+  <script>
+    (function () {
+      Comic.drawAll(document.querySelector('[data-composition-id="s23"]'));
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s23-p1-cam", {scale: 1.02, x: 0}, {scale: 1.1, x: 170, duration: 0.6, ease: "power2.inOut"}, 0.0);
+      tl.to("#s23-p1-cam", {x: -170, duration: 0.5, ease: "power2.inOut"}, 4.32);
+      tl.to("#s23-p1-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 9.15);
+      tl.to("#s23-p1-cam", {x: -170, duration: 0.5, ease: "power2.inOut"}, 15.66);
+      tl.to("#s23-p1-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 20.49);
+      tl.fromTo("#s23-p1-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 1.35);
+      tl.to("#s23-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 4.15);
+      tl.fromTo("#s23-p1-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 4.57);
+      tl.to("#s23-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 8.98);
+      tl.fromTo("#s23-p1-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 9.4);
+      tl.to("#s23-p1-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 15.49);
+      tl.fromTo("#s23-p1-t4-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 15.91);
+      tl.to("#s23-p1-t4-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 20.32);
+      tl.fromTo("#s23-p1-t5-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 20.74);
+      tl.to("#s23-p1-t5-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 23.71);
+      tl.set({}, {}, 24.29);
+      window.__timelines["s23"] = tl;
+    })();
+  </script>
+</template>
