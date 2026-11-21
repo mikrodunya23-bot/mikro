@@ -1,0 +1,99 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin.woff2"); }
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin-ext.woff2"); unicode-range: U+0100-024F; }
+html, body { margin: 0; background: #222; }
+svg { display: block; width: 1080px; height: 1080px; font-family: "Bangers"; }
+</style></head>
+<body>
+<!-- A: a tiny planet with a mini city, a courier scooter orbiting it -->
+<svg id="A" viewBox="0 0 1080 1080">
+  <defs>
+    <pattern id="dA" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="11" cy="11" r="3.4" fill="#ffffff" opacity="0.10"/></pattern>
+    <radialGradient id="pg" cx="38%" cy="32%"><stop offset="0" stop-color="#ffd27a"/><stop offset="0.6" stop-color="#ff7a1a"/><stop offset="1" stop-color="#c94f08"/></radialGradient>
+    <clipPath id="planetA"><circle cx="540" cy="600" r="250"/></clipPath>
+  </defs>
+  <rect width="1080" height="1080" fill="#0d1430"/><rect width="1080" height="1080" fill="url(#dA)"/>
+  <g stroke="#1f2d55" stroke-width="10">
+    <line x1="540" y1="540" x2="540" y2="-40"/><line x1="540" y1="540" x2="1120" y2="300"/><line x1="540" y1="540" x2="1120" y2="900"/>
+    <line x1="540" y1="540" x2="-40" y2="300"/><line x1="540" y1="540" x2="-40" y2="900"/><line x1="540" y1="540" x2="300" y2="1120"/><line x1="540" y1="540" x2="800" y2="1120"/>
+  </g>
+  <g fill="#ffd84a"><circle cx="190" cy="230" r="9"/><circle cx="880" cy="200" r="12"/><circle cx="930" cy="760" r="8"/><circle cx="150" cy="780" r="10"/></g>
+  <!-- orbit ring (back half) -->
+  <ellipse cx="540" cy="610" rx="380" ry="110" fill="none" stroke="#ffd84a" stroke-width="14" stroke-dasharray="26 22" transform="rotate(-14 540 610)"/>
+  <!-- planet -->
+  <circle cx="540" cy="600" r="250" fill="url(#pg)" stroke="#16121c" stroke-width="14"/>
+  <g clip-path="url(#planetA)">
+    <path d="M 300,640 C 400,600 480,700 560,660 C 640,620 700,690 800,650 L 800,900 L 300,900 Z" fill="#2e9d55" stroke="#16121c" stroke-width="8"/>
+    <path d="M 330,520 C 380,500 420,540 470,520" fill="none" stroke="#ffe7a6" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  <!-- mini city on top of the planet -->
+  <g stroke="#16121c" stroke-width="8" stroke-linejoin="round">
+    <rect x="455" y="300" width="70" height="80" fill="#3d8bd9"/>
+    <rect x="525" y="230" width="60" height="150" fill="#26355e"/>
+    <rect x="585" y="290" width="62" height="90" fill="#e8443a"/>
+    <path d="M 410,380 L 410,330 L 455,330 L 455,380 Z" fill="#ffd84a"/>
+  </g>
+  <g fill="#ffd27a"><rect x="537" y="250" width="12" height="16"/><rect x="561" y="250" width="12" height="16"/><rect x="537" y="285" width="12" height="16"/><rect x="561" y="320" width="12" height="16"/><rect x="470" y="320" width="14" height="16"/><rect x="600" y="310" width="14" height="16"/></g>
+  <!-- orbit ring (front half) + scooter -->
+  <path d="M 172,710 A 380,110 -14 0 0 912,530" fill="none" stroke="#ffd84a" stroke-width="14" transform="translate(0 0)"/>
+  <g transform="translate(840 520) rotate(-14) scale(0.62)">
+    <circle cx="-110" cy="50" r="46" fill="#1c1c22" stroke="#16121c" stroke-width="8"/><circle cx="120" cy="50" r="46" fill="#1c1c22" stroke="#16121c" stroke-width="8"/>
+    <path d="M -160,30 C -150,-30 -40,-50 10,-30 L 90,-30 L 130,-130 L 160,-130 L 115,0 L 90,30 Z" fill="#ff7a1a" stroke="#16121c" stroke-width="8"/>
+    <rect x="-20" y="-100" width="120" height="70" rx="10" fill="#fff" stroke="#16121c" stroke-width="8"/>
+  </g>
+  <!-- wordmark (outside the circle-safe core, still inside the crop) -->
+  <text x="540" y="965" text-anchor="middle" font-size="108" letter-spacing="6" fill="#ffd84a" stroke="#16121c" stroke-width="12" paint-order="stroke">MİKRO DÜNYA</text>
+</svg>
+
+<!-- B: bold monogram in a comic burst -->
+<svg id="B" viewBox="0 0 1080 1080">
+  <defs><pattern id="dB" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="13" cy="13" r="5" fill="#16121c" opacity="0.16"/></pattern></defs>
+  <rect width="1080" height="1080" fill="#ffd84a"/><rect width="1080" height="1080" fill="url(#dB)"/>
+  <path id="burst" fill="#ff7a1a" stroke="#16121c" stroke-width="14" stroke-linejoin="round"
+    d="M540,120 L610,300 L790,190 L740,380 L950,380 L790,510 L960,640 L760,660 L830,860 L640,750 L540,950 L440,750 L250,860 L320,660 L120,640 L290,510 L130,380 L340,380 L290,190 L470,300 Z"/>
+  <circle cx="540" cy="540" r="250" fill="#0d1430" stroke="#16121c" stroke-width="14"/>
+  <text x="540" y="620" text-anchor="middle" font-size="250" letter-spacing="4" fill="#ffd84a" stroke="#16121c" stroke-width="10" paint-order="stroke">MD</text>
+  <!-- tiny globe as the accent -->
+  <g transform="translate(735 360)">
+    <circle r="62" fill="#3d8bd9" stroke="#16121c" stroke-width="10"/>
+    <path d="M -40,-20 C -10,-40 10,0 40,-15 L 45,20 C 10,40 -20,10 -45,25 Z" fill="#2e9d55" stroke="#16121c" stroke-width="6"/>
+    <ellipse rx="92" ry="26" fill="none" stroke="#fff" stroke-width="8" transform="rotate(-20)"/>
+  </g>
+  <text x="540" y="985" text-anchor="middle" font-size="80" letter-spacing="8" fill="#16121c">MİKRO DÜNYA</text>
+</svg>
+
+<!-- C: a magnifying glass revealing a little world -->
+<svg id="C" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="skyC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fc0ef"/><stop offset="1" stop-color="#fff4dc"/></linearGradient>
+    <clipPath id="lens"><circle cx="500" cy="480" r="300"/></clipPath>
+    <pattern id="dC" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="12" cy="12" r="4" fill="#ffffff" opacity="0.08"/></pattern>
+  </defs>
+  <rect width="1080" height="1080" fill="#9b1c31"/><rect width="1080" height="1080" fill="url(#dC)"/>
+  <!-- handle -->
+  <path d="M 700,690 L 900,890 C 930,920 900,960 870,935 L 660,735 Z" fill="#16121c"/>
+  <rect x="690" y="660" width="80" height="60" rx="10" fill="#d9a441" stroke="#16121c" stroke-width="10" transform="rotate(45 730 690)"/>
+  <!-- world inside the lens -->
+  <g clip-path="url(#lens)">
+    <rect x="180" y="160" width="640" height="640" fill="url(#skyC)"/>
+    <circle cx="640" cy="320" r="60" fill="#ffe7a6"/>
+    <circle cx="500" cy="1050" r="520" fill="#86c95f" stroke="#16121c" stroke-width="10"/>
+    <g stroke="#16121c" stroke-width="8">
+      <rect x="320" y="420" width="90" height="140" fill="#3d8bd9"/><rect x="410" y="330" width="80" height="230" fill="#26355e"/>
+      <rect x="490" y="400" width="90" height="160" fill="#e8443a"/><rect x="580" y="450" width="80" height="110" fill="#ffd84a"/>
+    </g>
+    <g fill="#ffd27a"><rect x="425" y="350" width="14" height="18"/><rect x="458" y="350" width="14" height="18"/><rect x="425" y="390" width="14" height="18"/><rect x="458" y="430" width="14" height="18"/><rect x="340" y="450" width="16" height="18"/><rect x="510" y="430" width="16" height="18"/></g>
+    <path d="M 220,600 C 360,570 640,570 780,600" fill="none" stroke="#e9d3a6" stroke-width="40"/>
+    <g transform="translate(560 590) scale(0.42)">
+      <circle cx="-110" cy="50" r="46" fill="#1c1c22" stroke="#16121c" stroke-width="10"/><circle cx="120" cy="50" r="46" fill="#1c1c22" stroke="#16121c" stroke-width="10"/>
+      <path d="M -160,30 C -150,-30 -40,-50 10,-30 L 90,-30 L 130,-130 L 160,-130 L 115,0 L 90,30 Z" fill="#ff7a1a" stroke="#16121c" stroke-width="10"/>
+    </g>
+  </g>
+  <circle cx="500" cy="480" r="300" fill="none" stroke="#16121c" stroke-width="36"/>
+  <circle cx="500" cy="480" r="300" fill="none" stroke="#d9a441" stroke-width="16"/>
+  <path d="M 330,330 A 240,240 0 0 1 470,250" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" opacity="0.7"/>
+  <text x="540" y="975" text-anchor="middle" font-size="100" letter-spacing="6" fill="#ffd84a" stroke="#16121c" stroke-width="12" paint-order="stroke">MİKRO DÜNYA</text>
+</svg>
+</body></html>

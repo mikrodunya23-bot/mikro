@@ -126,7 +126,7 @@ html, body {{ margin: 0; width: 1080px; height: 1920px; background: transparent;
 .t big {{ display: block; font-size: 110px; letter-spacing: 6px; line-height: 1; }}
 .r {{ display: inline-block; margin-top: 22px; background: #ffd84a; color: #16121c; border: 5px solid #16121c; padding: 10px 20px 6px; font-size: 34px; letter-spacing: 2px; max-width: 740px; }}
 </style></head><body><div class="b"><div class="t"><small>GİZEMLİ KURYE</small><big id="big"></big></div><br/><div class="r" id="rec"></div></div></body></html>''')
-shot = os.path.join(HERE, "badge_shot.js")
+shot = os.path.join(HERE, "badge_shot.cjs")
 open(shot, "w").write('''const {chromium}=require('playwright');(async()=>{const parts=JSON.parse(process.argv[2]);const b=await chromium.launch();
 const p=await b.newPage({viewport:{width:1080,height:1920}});await p.goto('file://'+process.argv[3]);await p.evaluate(()=>document.fonts.ready);
 for(const x of parts){await p.evaluate(x=>{document.getElementById('big').textContent=x.big;const r=document.getElementById('rec');r.textContent=x.rec||'';r.style.display=x.rec?'inline-block':'none';},x);
