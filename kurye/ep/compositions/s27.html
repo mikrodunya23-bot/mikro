@@ -7,7 +7,7 @@
     .cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
     .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
     .txt { position: absolute; left: 128px; top: 330px; width: 760px; z-index: 10; }
-    .nar-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+    .nar-in { position: relative; display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
               padding: 18px 30px 14px; line-height: 1.06; letter-spacing: 2px; transform-origin: 0% 0%; }
     .bl-in, .th-in { position: relative; display: inline-block; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 60px;
              padding: 30px 40px 22px; line-height: 1.06; letter-spacing: 2px; text-align: center; transform-origin: var(--tx) 120%; }
@@ -20,7 +20,7 @@
              background: #f3f6ff; border: 6px solid #16121c; }
     .th-in::after { content: ""; position: absolute; left: calc(var(--tx) - 4px); bottom: -88px; width: 24px; height: 20px; border-radius: 50%;
              background: #f3f6ff; border: 5px solid #16121c; }
-    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 32px; padding: 4px 14px 2px; letter-spacing: 3px;
+    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 38px; padding: 4px 14px 2px; letter-spacing: 3px;
            border-radius: 8px; white-space: nowrap; }
     .card-t { position: absolute; left: 120px; top: 760px; width: 768px; text-align: center; z-index: 12; }
     .card-t span { display: inline-block; color: #ffd84a; font-size: 130px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill;
@@ -33,69 +33,94 @@
     .final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
     .final-next span { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
           font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+    .intro { position: absolute; left: 128px; width: 760px; z-index: 11; }
+    .intro-in { display: inline-block; background: #16121c; border: 6px solid #ffd84a; box-shadow: 10px 10px 0 #ff7a1a; padding: 16px 30px 12px; text-align: left; }
+    .intro-in b { display: block; color: #ffd84a; font-weight: normal; font-size: 72px; letter-spacing: 4px; line-height: 1; }
+    .intro-in i { display: block; color: #ffffff; font-style: normal; font-size: 38px; letter-spacing: 3px; margin-top: 6px; }
 </style>
   <div id="root" data-composition-id="s27" data-width="1080" data-height="1920">
-    <div id="s27-p1" class="panel clip" data-start="0.0" data-duration="18.04" data-track-index="0">
+    <div id="s27-p1" class="panel clip" data-start="0.0" data-duration="18.89" data-track-index="0">
       <div id="s27-p1-cam" class="cam"><svg data-art="boardroom2" data-layout-ignore></svg></div>
     </div>
-    <div id="s27-p1-t1" class="txt clip" data-start="1.89" data-duration="3.48" data-track-index="1"><div id="s27-p1-t1-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">CEM</span>ÜÇ GÜN BOYUNCA BU BİNADA İKİ TÜR İNSAN GÖRDÜM.</div></div>
-    <div id="s27-p1-t2" class="txt clip" data-start="5.44" data-duration="4.69" data-track-index="1"><div id="s27-p1-t2-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">CEM</span>KAPIDAN GİRENE GÖRE DAVRANANLAR... VE İNSANA GÖRE DAVRANANLAR.</div></div>
-    <div id="s27-p1-t3" class="txt clip" data-start="10.43" data-duration="2.05" data-track-index="1"><div id="s27-p1-t3-in" class="bl-in" style="--tx:380px;font-size:62px"><span class="tag">ERCÜMENT</span>EFENDİM... BİLSEYDİM...</div></div>
-    <div id="s27-p1-t4" class="txt clip" data-start="12.78" data-duration="4.53" data-track-index="1"><div id="s27-p1-t4-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">CEM</span>BİLSEYDİNİZ FARKLI DAVRANACAKTINIZ. SORUN DA TAM OLARAK BU.</div></div>
-    <div id="s27-p2" class="panel clip" data-start="18.04" data-duration="25.19" data-track-index="0">
+    <div id="s27-p1-t1" class="txt clip" data-start="1.89" data-duration="4.35" data-track-index="1"><div id="s27-p1-t1-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">CEM</span>ÜÇ GÜN BOYUNCA BU BİNADA İKİ TÜR İNSAN GÖRDÜM.</div></div>
+    <div id="s27-p1-t2" class="txt clip" data-start="6.29" data-duration="4.69" data-track-index="1"><div id="s27-p1-t2-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">CEM</span>KAPIDAN GİRENE GÖRE DAVRANANLAR... VE İNSANA GÖRE DAVRANANLAR.</div></div>
+    <div id="s27-p1-t3" class="txt clip" data-start="11.28" data-duration="2.05" data-track-index="1"><div id="s27-p1-t3-in" class="bl-in" style="--tx:380px;font-size:62px"><span class="tag">ERCÜMENT</span>EFENDİM... BİLSEYDİM...</div></div>
+    <div id="s27-p1-t4" class="txt clip" data-start="13.63" data-duration="4.53" data-track-index="1"><div id="s27-p1-t4-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">CEM</span>BİLSEYDİNİZ FARKLI DAVRANACAKTINIZ. SORUN DA TAM OLARAK BU.</div></div>
+    <div id="s27-p2" class="panel clip" data-start="18.89" data-duration="26.4" data-track-index="0">
       <div id="s27-p2-cam" class="cam"><svg data-art="firing" data-layout-ignore></svg></div>
     </div>
-    <div id="s27-p2-t1" class="txt clip" data-start="19.12" data-duration="8.05" data-track-index="1"><div id="s27-p2-t1-in" class="bl-in" style="--tx:380px;font-size:48px"><span class="tag">CEM</span>AYLİN HANIM, ERCÜMENT BEY, KAAN BEY, SELİN HANIM... BUGÜN İTİBARIYLA ARAL HOLDİNG İLE YOLLARINIZ AYRILIYOR.</div></div>
-    <div id="s27-p2-t2" class="txt clip" data-start="27.47" data-duration="2.15" data-track-index="1"><div id="s27-p2-t2-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">KAAN BEY</span>AMA CEM BEY...</div></div>
-    <div id="s27-p2-t3" class="txt clip" data-start="29.92" data-duration="3.42" data-track-index="1"><div id="s27-p2-t3-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">AYLİN</span>CEM BEY, LÜTFEN... İŞİME İHTİYACIM VAR...</div></div>
-    <div id="s27-p2-t4" class="txt clip" data-start="33.64" data-duration="3.16" data-track-index="1"><div id="s27-p2-t4-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">CEM</span>KAPIDAKİ KURYENİN DE İŞİNE İHTİYACI VARDI, AYLİN HANIM.</div></div>
-    <div id="s27-p2-t5" class="txt clip" data-start="37.03" data-duration="2.32" data-track-index="1"><div id="s27-p2-t5-in" class="bl-in" style="--tx:610px;font-size:62px"><span class="tag">SELİN HANIM</span>BU HAKSIZLIK!</div></div>
-    <div id="s27-p2-t6" class="txt clip" data-start="39.65" data-duration="3.16" data-track-index="1"><div id="s27-p2-t6-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">CEM</span>HAKSIZLIĞI ÜÇ GÜN BOYUNCA BEN YAŞADIM, SELİN HANIM.</div></div>
-    <div id="s27-p3" class="panel clip" data-start="43.23" data-duration="14.86" data-track-index="0">
+    <div id="s27-p2-t1" class="txt clip" data-start="19.97" data-duration="8.05" data-track-index="1"><div id="s27-p2-t1-in" class="bl-in" style="--tx:380px;font-size:48px"><span class="tag">CEM</span>AYLİN HANIM, ERCÜMENT BEY, KAAN BEY, SELİN HANIM... BUGÜN İTİBARIYLA ARAL HOLDİNG İLE YOLLARINIZ AYRILIYOR.</div></div>
+    <div id="s27-p2-t2" class="txt clip" data-start="28.32" data-duration="2.24" data-track-index="1"><div id="s27-p2-t2-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">KAAN BEY</span>AMA CEM BEY...</div></div>
+    <div id="s27-p2-t3" class="txt clip" data-start="30.77" data-duration="3.42" data-track-index="1"><div id="s27-p2-t3-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">AYLİN</span>CEM BEY, LÜTFEN... İŞİME İHTİYACIM VAR...</div></div>
+    <div id="s27-p2-t4" class="txt clip" data-start="34.49" data-duration="3.99" data-track-index="1"><div id="s27-p2-t4-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">CEM</span>KAPIDAKİ KURYENİN DE İŞİNE İHTİYACI VARDI, AYLİN HANIM.</div></div>
+    <div id="s27-p2-t5" class="txt clip" data-start="38.53" data-duration="2.32" data-track-index="1"><div id="s27-p2-t5-in" class="bl-in" style="--tx:610px;font-size:62px"><span class="tag">SELİN HANIM</span>BU HAKSIZLIK!</div></div>
+    <div id="s27-p2-t6" class="txt clip" data-start="41.15" data-duration="4.04" data-track-index="1"><div id="s27-p2-t6-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">CEM</span>HAKSIZLIĞI ÜÇ GÜN BOYUNCA BEN YAŞADIM, SELİN HANIM.</div></div>
+    <div id="s27-p3" class="panel clip" data-start="45.29" data-duration="15.47" data-track-index="0">
       <div id="s27-p3-cam" class="cam"><svg data-art="boardroom2" data-layout-ignore></svg></div>
     </div>
-    <div id="s27-p3-t1" class="txt clip" data-start="44.31" data-duration="6.37" data-track-index="1"><div id="s27-p3-t1-in" class="bl-in" style="--tx:380px;font-size:48px"><span class="tag">CEM</span>BU ŞİRKETİ BABAM İNSANLARLA KURDU. BEN DE İNSANLARLA YÖNETECEĞİM. UNVANLA DEĞİL... KALPLE.</div></div>
-    <div id="s27-p3-t2" class="txt clip" data-start="50.98" data-duration="4.21" data-track-index="1"><div id="s27-p3-t2-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">CEM</span>MURAT BEY, HASAN ABİ'Yİ ARAYIN. YENİ KURYE BİRİMİNİN ŞEFİ O OLACAK.</div></div>
-    <div id="s27-p3-t3" class="txt clip" data-start="55.49" data-duration="1.6" data-track-index="1"><div id="s27-p3-t3-in" class="bl-in" style="--tx:380px;font-size:62px"><span class="tag">MURAT BEY</span>MEMNUNİYETLE, EFENDİM.</div></div>
+    <div id="s27-p3-t1" class="txt clip" data-start="46.37" data-duration="6.37" data-track-index="1"><div id="s27-p3-t1-in" class="bl-in" style="--tx:380px;font-size:48px"><span class="tag">CEM</span>BU ŞİRKETİ BABAM İNSANLARLA KURDU. BEN DE İNSANLARLA YÖNETECEĞİM. UNVANLA DEĞİL... KALPLE.</div></div>
+    <div id="s27-p3-t2" class="txt clip" data-start="53.04" data-duration="5.07" data-track-index="1"><div id="s27-p3-t2-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">CEM</span>MURAT BEY, HASAN ABİ'Yİ ARAYIN. YENİ KURYE BİRİMİNİN ŞEFİ O OLACAK.</div></div>
+    <div id="s27-p3-t3" class="txt clip" data-start="58.16" data-duration="1.88" data-track-index="1"><div id="s27-p3-t3-in" class="bl-in" style="--tx:380px;font-size:62px"><span class="tag">MURAT BEY</span>MEMNUNİYETLE, EFENDİM.</div></div>
   </div>
   <script>
     (function () {
       Comic.drawAll(document.querySelector('[data-composition-id="s27"]'));
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#s27-p1-cam", {scale: 1.0}, {scale: 1.09, duration: 18.04, ease: "sine.inOut"}, 0.0);
+      tl.fromTo("#s27-p1-cam", {scale: 1.0}, {scale: 1.09, duration: 18.89, ease: "sine.inOut"}, 0.0);
+      if (document.querySelector('#s27-p1 .lip[data-who="cem"]')) { tl.set('#s27-p1 .lip[data-who="cem"]', {opacity: 0}, 0.0); tl.to('#s27-p1 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 21, yoyo: true}, 1.89); tl.set('#s27-p1 .lip[data-who="cem"]', {opacity: 0}, 4.79); }
+      if (document.querySelector('#s27-p1 .lip[data-who="deniz"]')) { tl.set('#s27-p1 .lip[data-who="deniz"]', {opacity: 0}, 0.0); tl.to('#s27-p1 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 21, yoyo: true}, 1.89); tl.set('#s27-p1 .lip[data-who="deniz"]', {opacity: 0}, 4.79); }
+      if (document.querySelector('#s27-p1 .lip[data-who="cem"]')) { tl.to('#s27-p1 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 32, yoyo: true}, 6.29); tl.set('#s27-p1 .lip[data-who="cem"]', {opacity: 0}, 10.63); }
+      if (document.querySelector('#s27-p1 .lip[data-who="deniz"]')) { tl.to('#s27-p1 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 32, yoyo: true}, 6.29); tl.set('#s27-p1 .lip[data-who="deniz"]', {opacity: 0}, 10.63); }
+      if (document.querySelector('#s27-p1 .lip[data-who="guvenlik"]')) { tl.set('#s27-p1 .lip[data-who="guvenlik"]', {opacity: 0}, 0.0); tl.to('#s27-p1 .lip[data-who="guvenlik"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 12, yoyo: true}, 11.28); tl.set('#s27-p1 .lip[data-who="guvenlik"]', {opacity: 0}, 12.98); }
+      if (document.querySelector('#s27-p1 .lip[data-who="cem"]')) { tl.to('#s27-p1 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 31, yoyo: true}, 13.63); tl.set('#s27-p1 .lip[data-who="cem"]', {opacity: 0}, 17.81); }
+      if (document.querySelector('#s27-p1 .lip[data-who="deniz"]')) { tl.to('#s27-p1 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 31, yoyo: true}, 13.63); tl.set('#s27-p1 .lip[data-who="deniz"]', {opacity: 0}, 17.81); }
       tl.fromTo("#s27-p1-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 1.89);
-      tl.to("#s27-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 5.25);
-      tl.fromTo("#s27-p1-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 5.44);
-      tl.to("#s27-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 10.01);
-      tl.fromTo("#s27-p1-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 10.43);
-      tl.to("#s27-p1-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 12.36);
-      tl.fromTo("#s27-p1-t4-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 12.78);
-      tl.to("#s27-p1-t4-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 17.19);
-      tl.fromTo("#s27-p2-cam", {scale: 1.02, x: 0}, {scale: 1.1, x: 0, duration: 0.6, ease: "power2.inOut"}, 18.04);
-      tl.to("#s27-p2-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 27.22);
-      tl.to("#s27-p2-cam", {x: 0, duration: 0.5, ease: "power2.inOut"}, 33.39);
-      tl.to("#s27-p2-cam", {x: -170, duration: 0.5, ease: "power2.inOut"}, 36.78);
-      tl.to("#s27-p2-cam", {x: 0, duration: 0.5, ease: "power2.inOut"}, 39.4);
-      tl.fromTo("#s27-p2-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 19.12);
-      tl.to("#s27-p2-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 27.05);
-      tl.fromTo("#s27-p2-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 27.47);
-      tl.to("#s27-p2-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 29.5);
-      tl.fromTo("#s27-p2-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 29.92);
-      tl.to("#s27-p2-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 33.22);
-      tl.fromTo("#s27-p2-t4-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 33.64);
-      tl.to("#s27-p2-t4-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 36.68);
-      tl.fromTo("#s27-p2-t5-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 37.03);
-      tl.to("#s27-p2-t5-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 39.23);
-      tl.fromTo("#s27-p2-t6-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 39.65);
-      tl.to("#s27-p2-t6-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 42.69);
-      tl.fromTo("#s27-p3-cam", {scale: 1.0}, {scale: 1.09, duration: 14.86, ease: "sine.inOut"}, 43.23);
-      tl.fromTo("#s27-p3-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 44.31);
-      tl.to("#s27-p3-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 50.56);
-      tl.fromTo("#s27-p3-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 50.98);
-      tl.to("#s27-p3-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 55.07);
-      tl.fromTo("#s27-p3-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 55.49);
-      tl.to("#s27-p3-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 56.97);
-      tl.set({}, {}, 58.09);
+      tl.to("#s27-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 6.12);
+      tl.fromTo("#s27-p1-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 6.29);
+      tl.to("#s27-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 10.86);
+      tl.fromTo("#s27-p1-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 11.28);
+      tl.to("#s27-p1-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 13.21);
+      tl.fromTo("#s27-p1-t4-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 13.63);
+      tl.to("#s27-p1-t4-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 18.04);
+      tl.fromTo("#s27-p2-cam", {scale: 1.04, x: 0}, {scale: 1.18, x: 0, duration: 0.6, ease: "power2.inOut"}, 18.89);
+      tl.to("#s27-p2-cam", {x: 90, duration: 0.5, ease: "power2.inOut"}, 28.07);
+      tl.to("#s27-p2-cam", {x: 0, duration: 0.5, ease: "power2.inOut"}, 34.24);
+      tl.to("#s27-p2-cam", {x: -90, duration: 0.5, ease: "power2.inOut"}, 38.28);
+      tl.to("#s27-p2-cam", {x: 0, duration: 0.5, ease: "power2.inOut"}, 40.9);
+      if (document.querySelector('#s27-p2 .lip[data-who="cem"]')) { tl.set('#s27-p2 .lip[data-who="cem"]', {opacity: 0}, 18.89); tl.to('#s27-p2 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 58, yoyo: true}, 19.97); tl.set('#s27-p2 .lip[data-who="cem"]', {opacity: 0}, 27.67); }
+      if (document.querySelector('#s27-p2 .lip[data-who="deniz"]')) { tl.set('#s27-p2 .lip[data-who="deniz"]', {opacity: 0}, 18.89); tl.to('#s27-p2 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 58, yoyo: true}, 19.97); tl.set('#s27-p2 .lip[data-who="deniz"]', {opacity: 0}, 27.67); }
+      if (document.querySelector('#s27-p2 .lip[data-who="kaan"]')) { tl.set('#s27-p2 .lip[data-who="kaan"]', {opacity: 0}, 18.89); tl.to('#s27-p2 .lip[data-who="kaan"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 12, yoyo: true}, 28.32); tl.set('#s27-p2 .lip[data-who="kaan"]', {opacity: 0}, 30.12); }
+      if (document.querySelector('#s27-p2 .lip[data-who="resepsiyon"]')) { tl.set('#s27-p2 .lip[data-who="resepsiyon"]', {opacity: 0}, 18.89); tl.to('#s27-p2 .lip[data-who="resepsiyon"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 22, yoyo: true}, 30.77); tl.set('#s27-p2 .lip[data-who="resepsiyon"]', {opacity: 0}, 33.84); }
+      if (document.querySelector('#s27-p2 .lip[data-who="cem"]')) { tl.to('#s27-p2 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 20, yoyo: true}, 34.49); tl.set('#s27-p2 .lip[data-who="cem"]', {opacity: 0}, 37.23); }
+      if (document.querySelector('#s27-p2 .lip[data-who="deniz"]')) { tl.to('#s27-p2 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 20, yoyo: true}, 34.49); tl.set('#s27-p2 .lip[data-who="deniz"]', {opacity: 0}, 37.23); }
+      if (document.querySelector('#s27-p2 .lip[data-who="selin"]')) { tl.set('#s27-p2 .lip[data-who="selin"]', {opacity: 0}, 18.89); tl.to('#s27-p2 .lip[data-who="selin"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 14, yoyo: true}, 38.53); tl.set('#s27-p2 .lip[data-who="selin"]', {opacity: 0}, 40.5); }
+      if (document.querySelector('#s27-p2 .lip[data-who="cem"]')) { tl.to('#s27-p2 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 18, yoyo: true}, 41.15); tl.set('#s27-p2 .lip[data-who="cem"]', {opacity: 0}, 43.65); }
+      if (document.querySelector('#s27-p2 .lip[data-who="deniz"]')) { tl.to('#s27-p2 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 18, yoyo: true}, 41.15); tl.set('#s27-p2 .lip[data-who="deniz"]', {opacity: 0}, 43.65); }
+      tl.fromTo("#s27-p2-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 19.97);
+      tl.to("#s27-p2-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 27.9);
+      tl.fromTo("#s27-p2-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 28.32);
+      tl.to("#s27-p2-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 30.44);
+      tl.fromTo("#s27-p2-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 30.77);
+      tl.to("#s27-p2-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 34.07);
+      tl.fromTo("#s27-p2-t4-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 34.49);
+      tl.to("#s27-p2-t4-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 38.36);
+      tl.fromTo("#s27-p2-t5-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 38.53);
+      tl.to("#s27-p2-t5-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 40.73);
+      tl.fromTo("#s27-p2-t6-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 41.15);
+      tl.to("#s27-p2-t6-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 45.07);
+      tl.fromTo("#s27-p3-cam", {scale: 1.0}, {scale: 1.09, duration: 15.47, ease: "sine.inOut"}, 45.29);
+      if (document.querySelector('#s27-p3 .lip[data-who="cem"]')) { tl.set('#s27-p3 .lip[data-who="cem"]', {opacity: 0}, 45.29); tl.to('#s27-p3 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 45, yoyo: true}, 46.37); tl.set('#s27-p3 .lip[data-who="cem"]', {opacity: 0}, 52.39); }
+      if (document.querySelector('#s27-p3 .lip[data-who="deniz"]')) { tl.set('#s27-p3 .lip[data-who="deniz"]', {opacity: 0}, 45.29); tl.to('#s27-p3 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 45, yoyo: true}, 46.37); tl.set('#s27-p3 .lip[data-who="deniz"]', {opacity: 0}, 52.39); }
+      if (document.querySelector('#s27-p3 .lip[data-who="cem"]')) { tl.to('#s27-p3 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 28, yoyo: true}, 53.04); tl.set('#s27-p3 .lip[data-who="cem"]', {opacity: 0}, 56.9); }
+      if (document.querySelector('#s27-p3 .lip[data-who="deniz"]')) { tl.to('#s27-p3 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 28, yoyo: true}, 53.04); tl.set('#s27-p3 .lip[data-who="deniz"]', {opacity: 0}, 56.9); }
+      if (document.querySelector('#s27-p3 .lip[data-who="murat"]')) { tl.set('#s27-p3 .lip[data-who="murat"]', {opacity: 0}, 45.29); tl.to('#s27-p3 .lip[data-who="murat"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 8, yoyo: true}, 58.16); tl.set('#s27-p3 .lip[data-who="murat"]', {opacity: 0}, 59.41); }
+      tl.fromTo("#s27-p3-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 46.37);
+      tl.to("#s27-p3-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 52.62);
+      tl.fromTo("#s27-p3-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 53.04);
+      tl.to("#s27-p3-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 57.99);
+      tl.fromTo("#s27-p3-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 58.16);
+      tl.to("#s27-p3-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 59.92);
+      tl.set({}, {}, 60.76);
       window.__timelines["s27"] = tl;
     })();
   </script>

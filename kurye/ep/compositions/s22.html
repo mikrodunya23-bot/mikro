@@ -7,7 +7,7 @@
     .cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
     .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
     .txt { position: absolute; left: 128px; top: 330px; width: 760px; z-index: 10; }
-    .nar-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+    .nar-in { position: relative; display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
               padding: 18px 30px 14px; line-height: 1.06; letter-spacing: 2px; transform-origin: 0% 0%; }
     .bl-in, .th-in { position: relative; display: inline-block; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 60px;
              padding: 30px 40px 22px; line-height: 1.06; letter-spacing: 2px; text-align: center; transform-origin: var(--tx) 120%; }
@@ -20,7 +20,7 @@
              background: #f3f6ff; border: 6px solid #16121c; }
     .th-in::after { content: ""; position: absolute; left: calc(var(--tx) - 4px); bottom: -88px; width: 24px; height: 20px; border-radius: 50%;
              background: #f3f6ff; border: 5px solid #16121c; }
-    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 32px; padding: 4px 14px 2px; letter-spacing: 3px;
+    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 38px; padding: 4px 14px 2px; letter-spacing: 3px;
            border-radius: 8px; white-space: nowrap; }
     .card-t { position: absolute; left: 120px; top: 760px; width: 768px; text-align: center; z-index: 12; }
     .card-t span { display: inline-block; color: #ffd84a; font-size: 130px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill;
@@ -33,44 +33,55 @@
     .final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
     .final-next span { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
           font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+    .intro { position: absolute; left: 128px; width: 760px; z-index: 11; }
+    .intro-in { display: inline-block; background: #16121c; border: 6px solid #ffd84a; box-shadow: 10px 10px 0 #ff7a1a; padding: 16px 30px 12px; text-align: left; }
+    .intro-in b { display: block; color: #ffd84a; font-weight: normal; font-size: 72px; letter-spacing: 4px; line-height: 1; }
+    .intro-in i { display: block; color: #ffffff; font-style: normal; font-size: 38px; letter-spacing: 3px; margin-top: 6px; }
 </style>
   <div id="root" data-composition-id="s22" data-width="1080" data-height="1920">
-    <div id="s22-p1" class="panel clip" data-start="0.0" data-duration="30.88" data-track-index="0">
+    <div id="s22-p1" class="panel clip" data-start="0.0" data-duration="32.87" data-track-index="0">
       <div id="s22-p1-cam" class="cam"><svg data-art="rooftop" data-layout-ignore></svg></div>
     </div>
-    <div id="s22-p1-t1" class="txt clip" data-start="2.7" data-duration="2.58" data-track-index="1"><div id="s22-p1-t1-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">ECE</span>BU ARADA... ADINI HİÇ SÖYLEMEDİN.</div></div>
-    <div id="s22-p1-t2" class="txt clip" data-start="5.58" data-duration="2.05" data-track-index="1"><div id="s22-p1-t2-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">CEM</span>SEN DE SOYADINI SÖYLEMEDİN.</div></div>
-    <div id="s22-p1-t3" class="txt clip" data-start="7.93" data-duration="5.65" data-track-index="1"><div id="s22-p1-t3-in" class="nar-in" style="font-size:50px">YALAN SÖYLEYEN İKİ KİŞİ... VE ŞİMDİYE KADAR YAŞADIĞIM EN DÜRÜST AN.</div></div>
-    <div id="s22-p1-t4" class="txt clip" data-start="13.88" data-duration="6.61" data-track-index="1"><div id="s22-p1-t4-in" class="bl-in" style="--tx:610px;font-size:48px"><span class="tag">ECE</span>BURAYI DAHA GÜZEL BİR YER YAPMAK İSTERDİM. KAPIDAN KİM GİRERSE GİRSİN, DEĞERLİ HİSSETTİĞİ BİR YER.</div></div>
-    <div id="s22-p1-t5" class="txt clip" data-start="20.79" data-duration="1.96" data-track-index="1"><div id="s22-p1-t5-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">CEM</span>BİR GÜN BELKİ YAPARSIN.</div></div>
-    <div id="s22-p1-t6" class="txt clip" data-start="23.05" data-duration="2.39" data-track-index="1"><div id="s22-p1-t6-in" class="bl-in" style="--tx:610px;font-size:62px"><span class="tag">ECE</span>BELKİ... BİRLİKTE.</div></div>
-    <div id="s22-p1-t7" class="txt clip" data-start="25.74" data-duration="3.33" data-track-index="1"><div id="s22-p1-t7-in" class="nar-in" style="font-size:50px">KALBİM... EN SON NE ZAMAN BÖYLE ATMIŞTI?</div></div>
+    <div id="s22-p1-t1" class="txt clip" data-start="2.7" data-duration="2.91" data-track-index="1"><div id="s22-p1-t1-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">ECE</span>BU ARADA... ADINI HİÇ SÖYLEMEDİN.</div></div>
+    <div id="s22-p1-t2" class="txt clip" data-start="5.66" data-duration="2.55" data-track-index="1"><div id="s22-p1-t2-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">CEM</span>SEN DE SOYADINI SÖYLEMEDİN.</div></div>
+    <div id="s22-p1-t3" class="txt clip" data-start="8.26" data-duration="6.57" data-track-index="1"><div id="s22-p1-t3-in" class="nar-in" style="font-size:50px"><span class="tag">CEM · İÇ SES</span>YALAN SÖYLEYEN İKİ KİŞİ... VE ŞİMDİYE KADAR YAŞADIĞIM EN DÜRÜST AN.</div></div>
+    <div id="s22-p1-t4" class="txt clip" data-start="15.13" data-duration="6.61" data-track-index="1"><div id="s22-p1-t4-in" class="bl-in" style="--tx:610px;font-size:48px"><span class="tag">ECE</span>BURAYI DAHA GÜZEL BİR YER YAPMAK İSTERDİM. KAPIDAN KİM GİRERSE GİRSİN, DEĞERLİ HİSSETTİĞİ BİR YER.</div></div>
+    <div id="s22-p1-t5" class="txt clip" data-start="22.04" data-duration="2.55" data-track-index="1"><div id="s22-p1-t5-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">CEM</span>BİR GÜN BELKİ YAPARSIN.</div></div>
+    <div id="s22-p1-t6" class="txt clip" data-start="24.64" data-duration="2.39" data-track-index="1"><div id="s22-p1-t6-in" class="bl-in" style="--tx:610px;font-size:62px"><span class="tag">ECE</span>BELKİ... BİRLİKTE.</div></div>
+    <div id="s22-p1-t7" class="txt clip" data-start="27.33" data-duration="3.73" data-track-index="1"><div id="s22-p1-t7-in" class="nar-in" style="font-size:50px"><span class="tag">CEM · İÇ SES</span>KALBİM... EN SON NE ZAMAN BÖYLE ATMIŞTI?</div></div>
   </div>
   <script>
     (function () {
       Comic.drawAll(document.querySelector('[data-composition-id="s22"]'));
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#s22-p1-cam", {scale: 1.02, x: 0}, {scale: 1.1, x: -170, duration: 0.6, ease: "power2.inOut"}, 0.0);
-      tl.to("#s22-p1-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 5.33);
-      tl.to("#s22-p1-cam", {x: -170, duration: 0.5, ease: "power2.inOut"}, 13.63);
-      tl.to("#s22-p1-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 20.54);
-      tl.to("#s22-p1-cam", {x: -170, duration: 0.5, ease: "power2.inOut"}, 22.8);
-      tl.to("#s22-p1-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 25.49);
+      tl.fromTo("#s22-p1-cam", {scale: 1.04, x: 0}, {scale: 1.18, x: -90, duration: 0.6, ease: "power2.inOut"}, 0.0);
+      tl.to("#s22-p1-cam", {x: 90, duration: 0.5, ease: "power2.inOut"}, 5.41);
+      tl.to("#s22-p1-cam", {x: -90, duration: 0.5, ease: "power2.inOut"}, 14.88);
+      tl.to("#s22-p1-cam", {x: 90, duration: 0.5, ease: "power2.inOut"}, 21.79);
+      tl.to("#s22-p1-cam", {x: -90, duration: 0.5, ease: "power2.inOut"}, 24.39);
+      tl.to("#s22-p1-cam", {x: 90, duration: 0.5, ease: "power2.inOut"}, 27.08);
+      if (document.querySelector('#s22-p1 .lip[data-who="ece"]')) { tl.set('#s22-p1 .lip[data-who="ece"]', {opacity: 0}, 0.0); tl.to('#s22-p1 .lip[data-who="ece"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 16, yoyo: true}, 2.7); tl.set('#s22-p1 .lip[data-who="ece"]', {opacity: 0}, 4.93); }
+      if (document.querySelector('#s22-p1 .lip[data-who="cem"]')) { tl.set('#s22-p1 .lip[data-who="cem"]', {opacity: 0}, 0.0); tl.to('#s22-p1 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 12, yoyo: true}, 5.66); tl.set('#s22-p1 .lip[data-who="cem"]', {opacity: 0}, 7.36); }
+      if (document.querySelector('#s22-p1 .lip[data-who="deniz"]')) { tl.set('#s22-p1 .lip[data-who="deniz"]', {opacity: 0}, 0.0); tl.to('#s22-p1 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 12, yoyo: true}, 5.66); tl.set('#s22-p1 .lip[data-who="deniz"]', {opacity: 0}, 7.36); }
+      if (document.querySelector('#s22-p1 .lip[data-who="ece"]')) { tl.to('#s22-p1 .lip[data-who="ece"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 47, yoyo: true}, 15.13); tl.set('#s22-p1 .lip[data-who="ece"]', {opacity: 0}, 21.39); }
+      if (document.querySelector('#s22-p1 .lip[data-who="cem"]')) { tl.to('#s22-p1 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 11, yoyo: true}, 22.04); tl.set('#s22-p1 .lip[data-who="cem"]', {opacity: 0}, 23.65); }
+      if (document.querySelector('#s22-p1 .lip[data-who="deniz"]')) { tl.to('#s22-p1 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 11, yoyo: true}, 22.04); tl.set('#s22-p1 .lip[data-who="deniz"]', {opacity: 0}, 23.65); }
+      if (document.querySelector('#s22-p1 .lip[data-who="ece"]')) { tl.to('#s22-p1 .lip[data-who="ece"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 14, yoyo: true}, 24.64); tl.set('#s22-p1 .lip[data-who="ece"]', {opacity: 0}, 26.68); }
       tl.fromTo("#s22-p1-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 2.7);
-      tl.to("#s22-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 5.16);
-      tl.fromTo("#s22-p1-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 5.58);
-      tl.to("#s22-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 7.51);
-      tl.fromTo("#s22-p1-t3-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 7.93);
-      tl.to("#s22-p1-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 13.46);
-      tl.fromTo("#s22-p1-t4-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 13.88);
-      tl.to("#s22-p1-t4-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 20.37);
-      tl.fromTo("#s22-p1-t5-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 20.79);
-      tl.to("#s22-p1-t5-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 22.63);
-      tl.fromTo("#s22-p1-t6-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 23.05);
-      tl.to("#s22-p1-t6-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 25.32);
-      tl.fromTo("#s22-p1-t7-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 25.74);
-      tl.to("#s22-p1-t7-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 28.95);
-      tl.set({}, {}, 30.88);
+      tl.to("#s22-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 5.49);
+      tl.fromTo("#s22-p1-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 5.66);
+      tl.to("#s22-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 8.09);
+      tl.fromTo("#s22-p1-t3-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 8.26);
+      tl.to("#s22-p1-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 14.71);
+      tl.fromTo("#s22-p1-t4-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 15.13);
+      tl.to("#s22-p1-t4-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 21.62);
+      tl.fromTo("#s22-p1-t5-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 22.04);
+      tl.to("#s22-p1-t5-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 24.47);
+      tl.fromTo("#s22-p1-t6-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 24.64);
+      tl.to("#s22-p1-t6-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 26.91);
+      tl.fromTo("#s22-p1-t7-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 27.33);
+      tl.to("#s22-p1-t7-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 30.94);
+      tl.set({}, {}, 32.87);
       window.__timelines["s22"] = tl;
     })();
   </script>

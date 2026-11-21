@@ -170,6 +170,9 @@
     if (c.beard) s += `<path d="M -118,10 C -112,90 -70,170 0,178 C 70,170 112,90 118,10 C 100,70 70,96 40,100 Q 0,112 -40,100 C -70,96 -100,70 -118,10 Z" fill="${c.beard}" opacity="${c.beardOp || 0.55}"/>`;
     if (c.mustache) s += pth("M -62,72 Q -30,52 0,66 Q 30,52 62,72 Q 52,90 0,80 Q -52,90 -62,72 Z", c.mustache, 4);
     s += mouth(e.mouth, c);
+    // talking mouth: hidden until the episode timeline flaps it while this character speaks
+    s += `<g class="lip" data-who="${who}" style="opacity:0"><path d="M -32,86 Q 0,78 32,86 Q 28,130 0,132 Q -28,130 -32,86 Z" fill="#5a1622" stroke="${INK}" stroke-width="5"/>` +
+      `<path d="M -26,88 Q 0,83 26,88 L 24,97 Q 0,93 -24,97 Z" fill="#fff"/><path d="M -16,122 Q 0,114 16,122 Q 0,128 -16,122 Z" fill="#c2455a"/></g>`;
     if (c.glasses && !o.noGlasses) s += `<circle cx="-50" cy="-4" r="40" fill="#fff" fill-opacity="0.12" stroke="${INK}" stroke-width="6"/><circle cx="50" cy="-4" r="40" fill="#fff" fill-opacity="0.12" stroke="${INK}" stroke-width="6"/>` + line("M -12,-8 Q 0,-16 12,-8", 5) + line("M -60,-26 L -42,-34", 4, "#fff", 'opacity="0.8"');
     if (c.lips && c.style === "bun") s += `<circle cx="-120" cy="58" r="11" fill="#e5b54a" stroke="${INK}" stroke-width="4"/><circle cx="120" cy="58" r="11" fill="#e5b54a" stroke="${INK}" stroke-width="4"/>`;
     s += hairFront(c);

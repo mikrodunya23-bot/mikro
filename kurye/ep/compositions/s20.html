@@ -7,7 +7,7 @@
     .cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
     .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
     .txt { position: absolute; left: 128px; top: 330px; width: 760px; z-index: 10; }
-    .nar-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+    .nar-in { position: relative; display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
               padding: 18px 30px 14px; line-height: 1.06; letter-spacing: 2px; transform-origin: 0% 0%; }
     .bl-in, .th-in { position: relative; display: inline-block; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 60px;
              padding: 30px 40px 22px; line-height: 1.06; letter-spacing: 2px; text-align: center; transform-origin: var(--tx) 120%; }
@@ -20,7 +20,7 @@
              background: #f3f6ff; border: 6px solid #16121c; }
     .th-in::after { content: ""; position: absolute; left: calc(var(--tx) - 4px); bottom: -88px; width: 24px; height: 20px; border-radius: 50%;
              background: #f3f6ff; border: 5px solid #16121c; }
-    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 32px; padding: 4px 14px 2px; letter-spacing: 3px;
+    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 38px; padding: 4px 14px 2px; letter-spacing: 3px;
            border-radius: 8px; white-space: nowrap; }
     .card-t { position: absolute; left: 120px; top: 760px; width: 768px; text-align: center; z-index: 12; }
     .card-t span { display: inline-block; color: #ffd84a; font-size: 130px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill;
@@ -33,81 +33,95 @@
     .final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
     .final-next span { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
           font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+    .intro { position: absolute; left: 128px; width: 760px; z-index: 11; }
+    .intro-in { display: inline-block; background: #16121c; border: 6px solid #ffd84a; box-shadow: 10px 10px 0 #ff7a1a; padding: 16px 30px 12px; text-align: left; }
+    .intro-in b { display: block; color: #ffd84a; font-weight: normal; font-size: 72px; letter-spacing: 4px; line-height: 1; }
+    .intro-in i { display: block; color: #ffffff; font-style: normal; font-size: 38px; letter-spacing: 3px; margin-top: 6px; }
 </style>
   <div id="root" data-composition-id="s20" data-width="1080" data-height="1920">
-    <div id="s20-p1" class="panel clip" data-start="0.0" data-duration="10.51" data-track-index="0">
+    <div id="s20-p1" class="panel clip" data-start="0.0" data-duration="11.58" data-track-index="0">
       <div id="s20-p1-cam" class="cam"><svg data-art="papers" data-layout-ignore></svg></div>
     </div>
-    <div id="s20-p1-t1" class="txt clip" data-start="1.08" data-duration="4.09" data-track-index="1"><div id="s20-p1-t1-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">AYLİN</span>AÇ ŞU PAKETİ! BELKİ İÇİNDE ÇALINTI BİR ŞEY VARDIR!</div></div>
-    <div id="s20-p1-t2" class="txt clip" data-start="5.47" data-duration="4.31" data-track-index="1"><div id="s20-p1-t2-in" class="nar-in" style="font-size:50px">EVRAKLARIM YERDE... TELEFONLAR HAVADA. HERKES ÇEKİYOR.</div></div>
-    <div id="s20-p2" class="panel clip" data-start="10.51" data-duration="5.3" data-track-index="0">
+    <div id="s20-p1-t1" class="txt clip" data-start="1.08" data-duration="4.35" data-track-index="1"><div id="s20-p1-t1-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">AYLİN</span>AÇ ŞU PAKETİ! BELKİ İÇİNDE ÇALINTI BİR ŞEY VARDIR!</div></div>
+    <div id="s20-p1-t2" class="txt clip" data-start="5.48" data-duration="5.37" data-track-index="1"><div id="s20-p1-t2-in" class="nar-in" style="font-size:50px"><span class="tag">CEM · İÇ SES</span>EVRAKLARIM YERDE... TELEFONLAR HAVADA. HERKES ÇEKİYOR.</div></div>
+    <div id="s20-p2" class="panel clip" data-start="11.58" data-duration="5.3" data-track-index="0">
       <div id="s20-p2-cam" class="cam"><svg data-art="coffee" data-layout-ignore></svg></div>
     </div>
-    <div id="s20-p2-t1" class="txt clip" data-start="11.59" data-duration="3.49" data-track-index="1"><div id="s20-p2-t1-in" class="bl-in" style="--tx:380px;font-size:62px"><span class="tag">KAAN BEY</span>EYVAH! NEYSE, ZATEN KİRLİYDİ.</div></div>
-    <div id="s20-p3" class="panel clip" data-start="15.81" data-duration="16.66" data-track-index="0">
+    <div id="s20-p2-t1" class="txt clip" data-start="12.66" data-duration="3.49" data-track-index="1"><div id="s20-p2-t1-in" class="bl-in" style="--tx:380px;font-size:62px"><span class="tag">KAAN BEY</span>EYVAH! NEYSE, ZATEN KİRLİYDİ.</div></div>
+    <div id="s20-p3" class="panel clip" data-start="16.88" data-duration="17.05" data-track-index="0">
       <div id="s20-p3-cam" class="cam"><svg data-art="mop" data-layout-ignore></svg></div>
     </div>
-    <div id="s20-p3-t1" class="txt clip" data-start="16.89" data-duration="4.6" data-track-index="1"><div id="s20-p3-t1-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">ERCÜMENT</span>ÇAMURLU AYAK İZLERİNİ GÖRDÜN MÜ? AL ŞU PASPASI, KENDİN SİL!</div></div>
-    <div id="s20-p3-t2" class="txt clip" data-start="21.79" data-duration="4.02" data-track-index="1"><div id="s20-p3-t2-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">SELİN HANIM</span>ÇEK BİR VİDEO, KAAN! BU BUGÜNÜN EN KOMİK ŞEYİ!</div></div>
-    <div id="s20-p3-t3" class="txt clip" data-start="26.11" data-duration="5.63" data-track-index="1"><div id="s20-p3-t3-in" class="nar-in" style="font-size:44px">GÜLÜN. BUGÜN GÜLÜN. PASPASI BEN TUTUYORUM... AMA KAPIYI DA BEN AÇACAĞIM.</div></div>
-    <div id="s20-p4" class="panel clip" data-start="32.47" data-duration="5.62" data-track-index="0">
+    <div id="s20-p3-t1" class="txt clip" data-start="17.96" data-duration="4.76" data-track-index="1"><div id="s20-p3-t1-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">ERCÜMENT</span>ÇAMURLU AYAK İZLERİNİ GÖRDÜN MÜ? AL ŞU PASPASI, KENDİN SİL!</div></div>
+    <div id="s20-p3-t2" class="txt clip" data-start="22.86" data-duration="4.35" data-track-index="1"><div id="s20-p3-t2-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">SELİN HANIM</span>ÇEK BİR VİDEO, KAAN! BU BUGÜNÜN EN KOMİK ŞEYİ!</div></div>
+    <div id="s20-p3-t3" class="txt clip" data-start="27.26" data-duration="5.94" data-track-index="1"><div id="s20-p3-t3-in" class="nar-in" style="font-size:44px"><span class="tag">CEM · İÇ SES</span>GÜLÜN. BUGÜN GÜLÜN. PASPASI BEN TUTUYORUM... AMA KAPIYI DA BEN AÇACAĞIM.</div></div>
+    <div id="s20-p4" class="panel clip" data-start="33.93" data-duration="5.62" data-track-index="0">
       <div id="s20-p4-cam" class="cam"><svg data-art="boxes" data-layout-ignore></svg></div>
     </div>
-    <div id="s20-p4-t1" class="txt clip" data-start="33.55" data-duration="3.81" data-track-index="1"><div id="s20-p4-t1-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">SELİN HANIM</span>MADEM BURADASIN, ŞU KOLİLER DE KIRK İKİNCİ KATA ÇIKSIN.</div></div>
-    <div id="s20-p5" class="panel clip" data-start="38.09" data-duration="21.13" data-track-index="0">
+    <div id="s20-p4-t1" class="txt clip" data-start="35.01" data-duration="4.4" data-track-index="1"><div id="s20-p4-t1-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">SELİN HANIM</span>MADEM BURADASIN, ŞU KOLİLER DE KIRK İKİNCİ KATA ÇIKSIN.</div></div>
+    <div id="s20-p5" class="panel clip" data-start="39.55" data-duration="21.7" data-track-index="0">
       <div id="s20-p5-cam" class="cam"><svg data-art="conspire" data-layout-ignore></svg></div>
     </div>
-    <div id="s20-p5-t1" class="txt clip" data-start="39.44" data-duration="4.33" data-track-index="1"><div id="s20-p5-t1-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">KAAN BEY</span>PATRON GELİNCE TERFİ LİSTESİ AÇIKLANACAK. SEN DE BENDE DE YER VAR.</div></div>
-    <div id="s20-p5-t2" class="txt clip" data-start="44.07" data-duration="4.72" data-track-index="1"><div id="s20-p5-t2-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">AYLİN</span>BEN ZATEN LİSTEDEYİM. MURAT BEY'İ YILLARDIR İDARE EDİYORUM.</div></div>
-    <div id="s20-p5-t3" class="txt clip" data-start="49.09" data-duration="5.77" data-track-index="1"><div id="s20-p5-t3-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">KAAN BEY</span>AMA O STAJYER KIZ... ÇOK SORU SORUYOR. GÖZÜN ÜSTÜNDE OLSUN.</div></div>
-    <div id="s20-p5-t4" class="txt clip" data-start="55.16" data-duration="3.33" data-track-index="1"><div id="s20-p5-t4-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">AYLİN</span>MERAK ETME. HAFTAYA O KIZ DA BURADA OLMAZ.</div></div>
-    <div id="s20-p6" class="panel clip" data-start="59.22" data-duration="12.71" data-track-index="0">
+    <div id="s20-p5-t1" class="txt clip" data-start="40.9" data-duration="5.07" data-track-index="1"><div id="s20-p5-t1-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">KAAN BEY</span>PATRON GELİNCE TERFİ LİSTESİ AÇIKLANACAK. SEN DE BENDE DE YER VAR.</div></div>
+    <div id="s20-p5-t2" class="txt clip" data-start="46.02" data-duration="4.72" data-track-index="1"><div id="s20-p5-t2-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">AYLİN</span>BEN ZATEN LİSTEDEYİM. MURAT BEY'İ YILLARDIR İDARE EDİYORUM.</div></div>
+    <div id="s20-p5-t3" class="txt clip" data-start="51.04" data-duration="5.77" data-track-index="1"><div id="s20-p5-t3-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">KAAN BEY</span>AMA O STAJYER KIZ... ÇOK SORU SORUYOR. GÖZÜN ÜSTÜNDE OLSUN.</div></div>
+    <div id="s20-p5-t4" class="txt clip" data-start="57.11" data-duration="4.04" data-track-index="1"><div id="s20-p5-t4-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">AYLİN</span>MERAK ETME. HAFTAYA O KIZ DA BURADA OLMAZ.</div></div>
+    <div id="s20-p6" class="panel clip" data-start="61.25" data-duration="13.33" data-track-index="0">
       <div id="s20-p6-cam" class="cam"><svg data-art="elevatorBlock" data-layout-ignore></svg></div>
     </div>
-    <div id="s20-p6-t1" class="txt clip" data-start="60.3" data-duration="4.36" data-track-index="1"><div id="s20-p6-t1-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">ERCÜMENT</span>KURYELER BU ASANSÖRE BİNEMEZ. MERDİVEN VAR, MERDİVEN.</div></div>
-    <div id="s20-p6-t2" class="txt clip" data-start="64.96" data-duration="5.97" data-track-index="1"><div id="s20-p6-t2-in" class="nar-in" style="font-size:50px">KIRK İKİ KAT... MERDİVENLE. BABAM BU BİNAYI BUNUN İÇİN Mİ KURDU?</div></div>
+    <div id="s20-p6-t1" class="txt clip" data-start="62.33" data-duration="4.36" data-track-index="1"><div id="s20-p6-t1-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">ERCÜMENT</span>KURYELER BU ASANSÖRE BİNEMEZ. MERDİVEN VAR, MERDİVEN.</div></div>
+    <div id="s20-p6-t2" class="txt clip" data-start="66.99" data-duration="6.59" data-track-index="1"><div id="s20-p6-t2-in" class="nar-in" style="font-size:50px"><span class="tag">CEM · İÇ SES</span>KIRK İKİ KAT... MERDİVENLE. BABAM BU BİNAYI BUNUN İÇİN Mİ KURDU?</div></div>
   </div>
   <script>
     (function () {
       Comic.drawAll(document.querySelector('[data-composition-id="s20"]'));
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#s20-p1-cam", {scale: 1.0}, {scale: 1.09, duration: 10.51, ease: "sine.inOut"}, 0.0);
+      tl.fromTo("#s20-p1-cam", {scale: 1.0}, {scale: 1.09, duration: 11.58, ease: "sine.inOut"}, 0.0);
+      if (document.querySelector('#s20-p1 .lip[data-who="resepsiyon"]')) { tl.set('#s20-p1 .lip[data-who="resepsiyon"]', {opacity: 0}, 0.0); tl.to('#s20-p1 .lip[data-who="resepsiyon"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 27, yoyo: true}, 1.08); tl.set('#s20-p1 .lip[data-who="resepsiyon"]', {opacity: 0}, 4.82); }
       tl.fromTo("#s20-p1-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 1.08);
-      tl.to("#s20-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 5.05);
-      tl.fromTo("#s20-p1-t2-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 5.47);
-      tl.to("#s20-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 9.66);
-      tl.fromTo("#s20-p2-cam", {scale: 1.0}, {scale: 1.09, duration: 5.3, ease: "sine.inOut"}, 10.51);
-      tl.fromTo("#s20-p2-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 11.59);
-      tl.to("#s20-p2-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 14.96);
-      tl.fromTo("#s20-p3-cam", {scale: 1.02, x: 0}, {scale: 1.1, x: -170, duration: 0.6, ease: "power2.inOut"}, 15.81);
-      tl.to("#s20-p3-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 21.54);
-      tl.fromTo("#s20-p3-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 16.89);
-      tl.to("#s20-p3-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 21.37);
-      tl.fromTo("#s20-p3-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 21.79);
-      tl.to("#s20-p3-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 25.69);
-      tl.fromTo("#s20-p3-t3-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 26.11);
-      tl.to("#s20-p3-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 31.62);
-      tl.fromTo("#s20-p4-cam", {scale: 1.0}, {scale: 1.09, duration: 5.62, ease: "sine.inOut"}, 32.47);
-      tl.fromTo("#s20-p4-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 33.55);
-      tl.to("#s20-p4-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 37.24);
-      tl.fromTo("#s20-p5-cam", {scale: 1.02, x: 0}, {scale: 1.1, x: -170, duration: 0.6, ease: "power2.inOut"}, 38.09);
-      tl.to("#s20-p5-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 43.82);
-      tl.to("#s20-p5-cam", {x: -170, duration: 0.5, ease: "power2.inOut"}, 48.84);
-      tl.to("#s20-p5-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 54.91);
-      tl.fromTo("#s20-p5-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 39.44);
-      tl.to("#s20-p5-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 43.65);
-      tl.fromTo("#s20-p5-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 44.07);
-      tl.to("#s20-p5-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 48.67);
-      tl.fromTo("#s20-p5-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 49.09);
-      tl.to("#s20-p5-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 54.74);
-      tl.fromTo("#s20-p5-t4-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 55.16);
-      tl.to("#s20-p5-t4-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 58.37);
-      tl.fromTo("#s20-p6-cam", {scale: 1.0}, {scale: 1.09, duration: 12.71, ease: "sine.inOut"}, 59.22);
-      tl.fromTo("#s20-p6-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 60.3);
-      tl.to("#s20-p6-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 64.54);
-      tl.fromTo("#s20-p6-t2-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 64.96);
-      tl.to("#s20-p6-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 70.81);
-      tl.set({}, {}, 71.93);
+      tl.to("#s20-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 5.31);
+      tl.fromTo("#s20-p1-t2-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 5.48);
+      tl.to("#s20-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 10.73);
+      tl.fromTo("#s20-p2-cam", {scale: 1.0}, {scale: 1.09, duration: 5.3, ease: "sine.inOut"}, 11.58);
+      if (document.querySelector('#s20-p2 .lip[data-who="kaan"]')) { tl.set('#s20-p2 .lip[data-who="kaan"]', {opacity: 0}, 11.58); tl.to('#s20-p2 .lip[data-who="kaan"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 23, yoyo: true}, 12.66); tl.set('#s20-p2 .lip[data-who="kaan"]', {opacity: 0}, 15.8); }
+      tl.fromTo("#s20-p2-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 12.66);
+      tl.to("#s20-p2-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 16.03);
+      tl.fromTo("#s20-p3-cam", {scale: 1.04, x: 0}, {scale: 1.18, x: -90, duration: 0.6, ease: "power2.inOut"}, 16.88);
+      tl.to("#s20-p3-cam", {x: 90, duration: 0.5, ease: "power2.inOut"}, 22.61);
+      if (document.querySelector('#s20-p3 .lip[data-who="guvenlik"]')) { tl.set('#s20-p3 .lip[data-who="guvenlik"]', {opacity: 0}, 16.88); tl.to('#s20-p3 .lip[data-who="guvenlik"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 31, yoyo: true}, 17.96); tl.set('#s20-p3 .lip[data-who="guvenlik"]', {opacity: 0}, 22.21); }
+      if (document.querySelector('#s20-p3 .lip[data-who="selin"]')) { tl.set('#s20-p3 .lip[data-who="selin"]', {opacity: 0}, 16.88); tl.to('#s20-p3 .lip[data-who="selin"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 27, yoyo: true}, 22.86); tl.set('#s20-p3 .lip[data-who="selin"]', {opacity: 0}, 26.53); }
+      tl.fromTo("#s20-p3-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 17.96);
+      tl.to("#s20-p3-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 22.6);
+      tl.fromTo("#s20-p3-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 22.86);
+      tl.to("#s20-p3-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 27.09);
+      tl.fromTo("#s20-p3-t3-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 27.26);
+      tl.to("#s20-p3-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 33.08);
+      tl.fromTo("#s20-p4-cam", {scale: 1.0}, {scale: 1.09, duration: 5.62, ease: "sine.inOut"}, 33.93);
+      if (document.querySelector('#s20-p4 .lip[data-who="selin"]')) { tl.set('#s20-p4 .lip[data-who="selin"]', {opacity: 0}, 33.93); tl.to('#s20-p4 .lip[data-who="selin"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 25, yoyo: true}, 35.01); tl.set('#s20-p4 .lip[data-who="selin"]', {opacity: 0}, 38.47); }
+      tl.fromTo("#s20-p4-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 35.01);
+      tl.to("#s20-p4-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 39.29);
+      tl.fromTo("#s20-p5-cam", {scale: 1.04, x: 0}, {scale: 1.18, x: -90, duration: 0.6, ease: "power2.inOut"}, 39.55);
+      tl.to("#s20-p5-cam", {x: 90, duration: 0.5, ease: "power2.inOut"}, 45.77);
+      tl.to("#s20-p5-cam", {x: -90, duration: 0.5, ease: "power2.inOut"}, 50.79);
+      tl.to("#s20-p5-cam", {x: 90, duration: 0.5, ease: "power2.inOut"}, 56.86);
+      if (document.querySelector('#s20-p5 .lip[data-who="kaan"]')) { tl.set('#s20-p5 .lip[data-who="kaan"]', {opacity: 0}, 39.55); tl.to('#s20-p5 .lip[data-who="kaan"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 29, yoyo: true}, 40.9); tl.set('#s20-p5 .lip[data-who="kaan"]', {opacity: 0}, 44.88); }
+      if (document.querySelector('#s20-p5 .lip[data-who="resepsiyon"]')) { tl.set('#s20-p5 .lip[data-who="resepsiyon"]', {opacity: 0}, 39.55); tl.to('#s20-p5 .lip[data-who="resepsiyon"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 32, yoyo: true}, 46.02); tl.set('#s20-p5 .lip[data-who="resepsiyon"]', {opacity: 0}, 50.39); }
+      if (document.querySelector('#s20-p5 .lip[data-who="kaan"]')) { tl.to('#s20-p5 .lip[data-who="kaan"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 40, yoyo: true}, 51.04); tl.set('#s20-p5 .lip[data-who="kaan"]', {opacity: 0}, 56.46); }
+      if (document.querySelector('#s20-p5 .lip[data-who="resepsiyon"]')) { tl.to('#s20-p5 .lip[data-who="resepsiyon"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 21, yoyo: true}, 57.11); tl.set('#s20-p5 .lip[data-who="resepsiyon"]', {opacity: 0}, 60.09); }
+      tl.fromTo("#s20-p5-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 40.9);
+      tl.to("#s20-p5-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 45.85);
+      tl.fromTo("#s20-p5-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 46.02);
+      tl.to("#s20-p5-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 50.62);
+      tl.fromTo("#s20-p5-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 51.04);
+      tl.to("#s20-p5-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 56.69);
+      tl.fromTo("#s20-p5-t4-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 57.11);
+      tl.to("#s20-p5-t4-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 61.03);
+      tl.fromTo("#s20-p6-cam", {scale: 1.0}, {scale: 1.09, duration: 13.33, ease: "sine.inOut"}, 61.25);
+      if (document.querySelector('#s20-p6 .lip[data-who="guvenlik"]')) { tl.set('#s20-p6 .lip[data-who="guvenlik"]', {opacity: 0}, 61.25); tl.to('#s20-p6 .lip[data-who="guvenlik"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 29, yoyo: true}, 62.33); tl.set('#s20-p6 .lip[data-who="guvenlik"]', {opacity: 0}, 66.34); }
+      tl.fromTo("#s20-p6-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 62.33);
+      tl.to("#s20-p6-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 66.57);
+      tl.fromTo("#s20-p6-t2-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 66.99);
+      tl.to("#s20-p6-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 73.46);
+      tl.set({}, {}, 74.58);
       window.__timelines["s20"] = tl;
     })();
   </script>

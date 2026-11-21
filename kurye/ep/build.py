@@ -12,8 +12,10 @@ LINES = {r["id"]: r for r in csv.DictReader(open(os.path.join(EP, "lines.tsv"), 
 DUR = {k: float(v) for k, v in (ln.split() for ln in open(os.path.join(EP, "durations.tsv")))}
 NAMES = {"cem": "CEM", "deniz": "DENİZ BEY", "murat": "MURAT BEY", "aylin": "AYLİN", "ercument": "ERCÜMENT", "ece": "ECE",
          "kaan": "KAAN BEY", "selin": "SELİN HANIM", "hasan": "HASAN ABİ", "tarik": "TARIK KARACA"}
-FOCUS = {"l": 170, "c": 0, "r": -170}
+FOCUS = {"l": 90, "c": 0, "r": -90}  # with scale 1.18 the frame never shows its edge
 TAIL = {"l": 150, "c": 380, "r": 610}
+WHO2CH = {"cem": ["cem", "deniz"], "deniz": ["denizBey"], "murat": ["murat"], "aylin": ["resepsiyon"], "ercument": ["guvenlik"], "ece": ["ece"],
+          "kaan": ["kaan"], "selin": ["selin"], "hasan": ["hasan"], "tarik": []}
 GAP = 0.65
 PACE = 1.35  # stretch for leads/tails: room for ambience and music between lines
 
@@ -42,14 +44,14 @@ for sc in EPISODE:
         if p.get("fixed"):
             t += p["fixed"]
         else:
-            t += p.get("lead", 0.8) * PACE
+            t += max(p.get("lead", 0.8) * PACE, 3.0 if p.get("intro") else 0)
             prev_need = None
             for i, lid in enumerate(p["lines"]):
                 if i:
                     t = max(t + GAP, prev_need)
                 d = DUR[lid]
                 words = len(display(LINES[lid]["text"]).split())
-                prev_need = t + max(d + 0.3, 0.6 + 0.32 * words)
+                prev_need = t + max(d + 0.3, 0.8 + 0.36 * (words + 1))
                 pp["items"].append((lid, round(t, 3), d))
                 VO.append((lid, round(s["start"] + t, 3), d))
                 t += d
@@ -80,7 +82,7 @@ def text_item(pid, n, lid, st, en, pos):
     tid = f"{pid}-t{n}"
     attrs = f'id="{tid}" class="txt clip" data-start="{st}" data-duration="{round(en - st, 3)}" data-track-index="1"'
     if kind == "think" and who == "cem":
-        inner = f'<div id="{tid}-in" class="nar-in" style="font-size:{fs - 4}px">{esc(txt)}</div>'
+        inner = f'<div id="{tid}-in" class="nar-in" style="font-size:{fs - 4}px"><span class="tag">CEM · İÇ SES</span>{esc(txt)}</div>'
         js = f'tl.fromTo("#{tid}-in", {{scaleX: 0}}, {{scaleX: 1, duration: 0.2, ease: "power3.out"}}, {st});'
     else:
         cls = "th-in" if kind == "think" else "bl-in"
@@ -103,7 +105,7 @@ def build_scene(s):
         multi = len({pos.get(w, "c") for w in speakers if w in pos}) > 1
         if multi:
             first = pos.get(LINES[p["items"][0][0]]["who"], "c")
-            js.append(f'tl.fromTo("#{pid}-cam", {{scale: 1.02, x: 0}}, {{scale: 1.1, x: {FOCUS[first]}, duration: 0.6, ease: "power2.inOut"}}, {a});')
+            js.append(f'tl.fromTo("#{pid}-cam", {{scale: 1.04, x: 0}}, {{scale: 1.18, x: {FOCUS[first]}, duration: 0.6, ease: "power2.inOut"}}, {a});')
             prev = first
             for lid, st, d in p["items"][1:]:
                 side = pos.get(LINES[lid]["who"], prev)
@@ -126,18 +128,37 @@ def build_scene(s):
         if p.get("title"):
             T = a
             html.append(f'''    <div id="{pid}-title" class="final-title clip" data-start="{round(T + 0.1, 3)}" data-duration="{round(b - T - 0.1, 3)}" data-track-index="1">
-      <span id="{pid}-k1" class="tw">KAPIDAKİ</span><br /><span id="{pid}-k2" class="tw tw2">KURYE</span><br /><span id="{pid}-ep" class="ep-tag">BÖLÜM 1</span>
+      <span id="{pid}-k1" class="tw">GİZEMLİ</span><br /><span id="{pid}-k2" class="tw tw2">KURYE</span><br /><span id="{pid}-ep" class="ep-tag">1. SEZON</span>
     </div>
     <div id="{pid}-next" class="final-next clip" data-start="{round(T + 1.6, 3)}" data-duration="{round(b - T - 1.6, 3)}" data-track-index="2"><span id="{pid}-next-in">DEVAMI BÖLÜM 2'DE...</span></div>''')
             js += [f'tl.fromTo("#{pid}-k1", {{scale: 3, opacity: 0, rotation: -10}}, {{scale: 1, opacity: 1, rotation: -3, duration: 0.3, ease: "power4.in"}}, {round(T + 0.1, 3)});',
                    f'tl.fromTo("#{pid}-k2", {{scale: 3, opacity: 0, rotation: 8}}, {{scale: 1, opacity: 1, rotation: 2, duration: 0.3, ease: "power4.in"}}, {round(T + 0.35, 3)});',
                    f'tl.fromTo("#{pid}-ep", {{scaleX: 0}}, {{scaleX: 1, duration: 0.22, ease: "power3.out"}}, {round(T + 0.9, 3)});',
                    f'tl.fromTo("#{pid}-next-in", {{y: 60, opacity: 0}}, {{y: 0, opacity: 1, duration: 0.3, ease: "back.out(2)"}}, {round(T + 1.6, 3)});']
+        if p.get("intro"):
+            end_i = round((p["items"][0][1] if p["items"] else b) - 0.15, 3)
+            for k, (nm, role, side) in enumerate(p["intro"]):
+                iid = f"{pid}-intro{k}"
+                align = {"l": "left", "c": "center", "r": "right"}[side]
+                top = 330 + k * 170
+                html.append(f'    <div id="{iid}" class="intro clip" data-start="{round(a + 0.25, 3)}" data-duration="{round(end_i - a - 0.25, 3)}" data-track-index="2" style="top:{top}px;text-align:{align}"><div id="{iid}-in" class="intro-in"><b>{esc(nm)}</b><i>{esc(tr_upper(role))}</i></div></div>')
+                js.append(f'tl.fromTo("#{iid}-in", {{x: {-80 if side != "r" else 80}, opacity: 0}}, {{x: 0, opacity: 1, duration: 0.3, ease: "power3.out"}}, {round(a + 0.25 + k * 0.2, 3)});')
+        based = set()
+        for lid, st, d in p["items"]:
+            r = LINES[lid]
+            if r["kind"] != "say":
+                continue
+            for key in WHO2CH.get(r["who"], []):
+                sel = f'#{pid} .lip[data-who="{key}"]'
+                n = max(1, int(d / 0.13))
+                base = "" if sel in based else f"tl.set('{sel}', {{opacity: 0}}, {a}); "
+                based.add(sel)
+                js.append(f"if (document.querySelector('{sel}')) {{ {base}tl.to('{sel}', {{opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: {n - 1}, yoyo: true}}, {st}); tl.set('{sel}', {{opacity: 0}}, {round(st + d, 3)}); }}")
         items = p["items"]
         for n, (lid, st, d) in enumerate(items):
             nxt = items[n + 1][1] if n + 1 < len(items) else b
             words = len(display(LINES[lid]["text"]).split())
-            en = round(min(max(st + d + 0.35, st + 0.6 + 0.32 * words), nxt - 0.05, b - 0.02), 3)
+            en = round(min(max(st + d + 0.35, st + 0.8 + 0.36 * (words + 1)), nxt - 0.05, b - 0.02), 3)
             h, j = text_item(pid, n + 1, lid, st, en, pos)
             html.append(h)
             js.append(j)
@@ -279,3 +300,6 @@ INDEX = f'''<!doctype html>
 '''
 open(os.path.join(EP, "index.html"), "w").write(INDEX)
 print(f"{len(SCENES)} scenes, {sum(len(s['panels']) for s in SCENES)} panels, {len(VO)} lines, {len(SFX)} sfx, total {TOTAL:.1f}s ({TOTAL / 60:.1f} min), amb={have_amb} music={have_mus}")
+json.dump([{"scene": s["id"], "art": p["art"], "start": round(s["start"] + p["a"], 2), "end": round(s["start"] + p["b"], 2),
+            "lines": [[l, round(s["start"] + t0, 2)] for l, t0, _ in p["items"]]} for s in SCENES for p in s["panels"]],
+          open(os.path.join(EP, "timing.json"), "w"), ensure_ascii=False, indent=1)

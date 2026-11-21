@@ -7,7 +7,7 @@
     .cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
     .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
     .txt { position: absolute; left: 128px; top: 330px; width: 760px; z-index: 10; }
-    .nar-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+    .nar-in { position: relative; display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
               padding: 18px 30px 14px; line-height: 1.06; letter-spacing: 2px; transform-origin: 0% 0%; }
     .bl-in, .th-in { position: relative; display: inline-block; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 60px;
              padding: 30px 40px 22px; line-height: 1.06; letter-spacing: 2px; text-align: center; transform-origin: var(--tx) 120%; }
@@ -20,7 +20,7 @@
              background: #f3f6ff; border: 6px solid #16121c; }
     .th-in::after { content: ""; position: absolute; left: calc(var(--tx) - 4px); bottom: -88px; width: 24px; height: 20px; border-radius: 50%;
              background: #f3f6ff; border: 5px solid #16121c; }
-    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 32px; padding: 4px 14px 2px; letter-spacing: 3px;
+    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 38px; padding: 4px 14px 2px; letter-spacing: 3px;
            border-radius: 8px; white-space: nowrap; }
     .card-t { position: absolute; left: 120px; top: 760px; width: 768px; text-align: center; z-index: 12; }
     .card-t span { display: inline-block; color: #ffd84a; font-size: 130px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill;
@@ -33,24 +33,32 @@
     .final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
     .final-next span { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
           font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+    .intro { position: absolute; left: 128px; width: 760px; z-index: 11; }
+    .intro-in { display: inline-block; background: #16121c; border: 6px solid #ffd84a; box-shadow: 10px 10px 0 #ff7a1a; padding: 16px 30px 12px; text-align: left; }
+    .intro-in b { display: block; color: #ffd84a; font-weight: normal; font-size: 72px; letter-spacing: 4px; line-height: 1; }
+    .intro-in i { display: block; color: #ffffff; font-style: normal; font-size: 38px; letter-spacing: 3px; margin-top: 6px; }
 </style>
   <div id="root" data-composition-id="s02" data-width="1080" data-height="1920">
-    <div id="s02-p1" class="panel clip" data-start="0.0" data-duration="14.89" data-track-index="0">
+    <div id="s02-p1" class="panel clip" data-start="0.0" data-duration="15.19" data-track-index="0">
       <div id="s02-p1-cam" class="cam"><svg data-art="hospital" data-layout-ignore></svg></div>
     </div>
-    <div id="s02-p1-t1" class="txt clip" data-start="2.7" data-duration="2.61" data-track-index="1"><div id="s02-p1-t1-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">DENİZ BEY</span>OĞLUM... GEL YANIMA.</div></div>
-    <div id="s02-p1-t2" class="txt clip" data-start="5.61" data-duration="6.66" data-track-index="1"><div id="s02-p1-t2-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">DENİZ BEY</span>BU ŞİRKETİ BİNALAR DEĞİL... İNSANLAR BÜYÜTTÜ. SAKIN UNUTMA.</div></div>
+    <div id="s02-p1-intro0" class="intro clip" data-start="0.25" data-duration="2.6" data-track-index="2" style="top:330px;text-align:left"><div id="s02-p1-intro0-in" class="intro-in"><b>DENİZ ARAL</b><i>ARAL HOLDİNG'İN KURUCUSU</i></div></div>
+    <div id="s02-p1-t1" class="txt clip" data-start="3.0" data-duration="2.61" data-track-index="1"><div id="s02-p1-t1-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">DENİZ BEY</span>OĞLUM... GEL YANIMA.</div></div>
+    <div id="s02-p1-t2" class="txt clip" data-start="5.91" data-duration="6.66" data-track-index="1"><div id="s02-p1-t2-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">DENİZ BEY</span>BU ŞİRKETİ BİNALAR DEĞİL... İNSANLAR BÜYÜTTÜ. SAKIN UNUTMA.</div></div>
   </div>
   <script>
     (function () {
       Comic.drawAll(document.querySelector('[data-composition-id="s02"]'));
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#s02-p1-cam", {scale: 1.0}, {scale: 1.09, duration: 14.89, ease: "sine.inOut"}, 0.0);
-      tl.fromTo("#s02-p1-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 2.7);
-      tl.to("#s02-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 5.19);
-      tl.fromTo("#s02-p1-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 5.61);
-      tl.to("#s02-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 12.15);
-      tl.set({}, {}, 14.89);
+      tl.fromTo("#s02-p1-cam", {scale: 1.0}, {scale: 1.09, duration: 15.19, ease: "sine.inOut"}, 0.0);
+      tl.fromTo("#s02-p1-intro0-in", {x: -80, opacity: 0}, {x: 0, opacity: 1, duration: 0.3, ease: "power3.out"}, 0.25);
+      if (document.querySelector('#s02-p1 .lip[data-who="denizBey"]')) { tl.set('#s02-p1 .lip[data-who="denizBey"]', {opacity: 0}, 0.0); tl.to('#s02-p1 .lip[data-who="denizBey"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 16, yoyo: true}, 3.0); tl.set('#s02-p1 .lip[data-who="denizBey"]', {opacity: 0}, 5.26); }
+      if (document.querySelector('#s02-p1 .lip[data-who="denizBey"]')) { tl.to('#s02-p1 .lip[data-who="denizBey"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 47, yoyo: true}, 5.91); tl.set('#s02-p1 .lip[data-who="denizBey"]', {opacity: 0}, 12.22); }
+      tl.fromTo("#s02-p1-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 3.0);
+      tl.to("#s02-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 5.49);
+      tl.fromTo("#s02-p1-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 5.91);
+      tl.to("#s02-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 12.45);
+      tl.set({}, {}, 15.19);
       window.__timelines["s02"] = tl;
     })();
   </script>

@@ -1,12 +1,12 @@
 id	who	kind	text
-s01a	cem	think	[quiet, bitter] Yirmi yıl... ve kendi binamda, yerdeyim.
+s01a	cem	think	[inner monologue, soft and intimate, quiet, bitter] Yirmi yıl... ve kendi binamda, yerdeyim.
 s02a	deniz	say	[weak, tender] Oğlum... gel yanıma.
 s02b	deniz	say	[weak, slow] Bu şirketi binalar değil... insanlar büyüttü. Sakın unutma.
-s03a	cem	think	[somber] O gün babamı kaybettim. Şirket bana kaldı... ama ben, okyanusun öbür yakasına gittim.
-s04a	cem	think	[reflective] Yirmi yıl boyunca şirketimi bir ekrandan yönettim.
-s04b	cem	think	Rakamları ezbere biliyordum. İnsanları değil.
-s04c	cem	think	[curious] Her belgenin altında aynı imza vardı. E. Demirel. Babamın ortağının ailesi... Ne bir yüz gördüm, ne bir ses duydum.
-s05a	cem	think	[deep breath] Ve yirmi yıl sonra... İstanbul.
+s03a	cem	think	[inner monologue, soft and intimate, somber] O gün babamı kaybettim. Şirket bana kaldı... ama ben, okyanusun öbür yakasına gittim.
+s04a	cem	think	[inner monologue, soft and intimate, reflective] Yirmi yıl boyunca şirketimi bir ekrandan yönettim.
+s04b	cem	think	[inner monologue, soft and intimate] Rakamları ezbere biliyordum. İnsanları değil.
+s04c	cem	think	[inner monologue, soft and intimate, curious] Her belgenin altında aynı imza vardı. E. Demirel. Babamın ortağının ailesi... Ne bir yüz gördüm, ne bir ses duydum.
+s05a	cem	think	[inner monologue, soft and intimate, deep breath] Ve yirmi yıl sonra... İstanbul.
 s05b	cem	say	[calm] Alo, Murat Bey? Ben Cem. İstanbul'dayım.
 s05c	murat	say	[surprised, joyful] Cem Bey! Yirmi yıl sonra... Hoş geldiniz! Hemen karşılama hazırlığına başlıyoruz!
 s05d	murat	think	[emotional] Deniz Bey'in oğlu... sonunda eve döndü.
@@ -20,17 +20,17 @@ s07c	cem	say	[thoughtful] Herkes patronu bekliyor. Ben insanları görmek istiyo
 s07d	murat	say	[hesitant] Üç gün sonra ortaklar toplantısı var. Demirel tarafı da ilk kez gelecek.
 s07e	cem	say	[firm] O zamana kadar kimse bilmeyecek. Kimse.
 s07f	murat	think	[smiling] Tıpkı babası...
-s08a	cem	think	[observant] Kimse bir kuryenin yüzüne bakmaz. Görünmez olmanın en kolay yolu bu.
+s08a	cem	think	[inner monologue, soft and intimate, observant] Kimse bir kuryenin yüzüne bakmaz. Görünmez olmanın en kolay yolu bu.
 s09a	cem	say	[friendly] Kolay gelsin abi. Motorunu satar mısın?
 s09b	hasan	say	[laughs] Ha? Abi sen kurye misin? Elin yüzün pırıl pırıl.
 s09c	cem	say	[smiling] Yeni başlıyorum.
 s09d	hasan	say	[shocked] Oha! Bu parayla iki motor alırsın be abi!
 s09e	hasan	say	[friendly] Al, montla kask da senin olsun. Bak tavsiye: kaskı çıkarma. Zaten kimse yüzüne bakmaz.
 s09f	hasan	think	[amused] Bu adamda bir iş var ama... para temiz, gerisi beni ilgilendirmez.
-s10a	cem	think	[wry] İçi boş bir paket. Bakalım bu binada kim, onu neyle dolduracak.
-s11a	cem	think	[low] Kırk iki kat. Üç bin çalışan.
-s11b	cem	think	[low] Ve hiçbiri yüzümü bilmiyor.
-s12a	cem	think	[ironic] Beni bekliyorlar... ama yanlış kapıya bakıyorlar.
+s10a	cem	think	[inner monologue, soft and intimate, wry] İçi boş bir paket. Bakalım bu binada kim, onu neyle dolduracak.
+s11a	cem	think	[inner monologue, soft and intimate, low] Kırk iki kat. Üç bin çalışan.
+s11b	cem	think	[inner monologue, soft and intimate, low] Ve hiçbiri yüzümü bilmiyor.
+s12a	cem	think	[inner monologue, soft and intimate, ironic] Beni bekliyorlar... ama yanlış kapıya bakıyorlar.
 s13a	aylin	say	[snapping] Hop hop! Nereye? Kuryeler buradan giremez!
 s13b	cem	say	[polite] Paket kırk ikinci kata. İmza gerekiyor.
 s13c	aylin	say	[contemptuous] Senin yerin mal kabul kapısı! Bugün çok önemli bir gün, senin gibilerle uğraşamam!
@@ -38,15 +38,15 @@ s13d	aylin	say	[cold] Paketin de oraya yakışır.
 s14a	ercument	say	[shouting] Ne oluyor burada? Çık dışarı! Her yeri pislettin!
 s14b	cem	say	[calm] Sadece bir imza...
 s14c	ercument	say	[angry] İmzaymış! Senin gibileri iyi tanırım ben! Yürü!
-s14d	cem	think	[cold, quiet] Demek güvenlik de kötü insanmış... Kimliğimi öğrenince, bakalım ne yapacaksınız.
+s14d	cem	think	[inner monologue, soft and intimate, cold, quiet] Demek güvenlik de kötü insanmış... Kimliğimi öğrenince, bakalım ne yapacaksınız.
 s15a	ece	say	[worried, kind] Tutun, kalkın. İyi misiniz? Bir yeriniz acıyor mu?
 s15b	ece	say	[softly] Kusura bakmayın. Burada bana da kötü davrandılar. İki gündür çalışıyorum... alıştım artık. Siz de takmayın.
-s15c	cem	think	[surprised, warm] Bu şirketteki tek iyi insan... herhalde bu kız.
+s15c	cem	think	[inner monologue, soft and intimate, surprised, warm] Bu şirketteki tek iyi insan... herhalde bu kız.
 s15d	aylin	say	[shouting] Ece! Al şu pis kuryeyi, buradan götür! Evraklarını teslim etsin, ortalığı dağıtmadan çıkıp gitsin!
 s16a	selin	say	[disgusted] Patron gelecek diye lobiyi çöp gibi bırakmışlar.
 s16b	kaan	say	[mocking] Kurye de dekorun parçası herhalde. [laughs]
-s16c	cem	think	[bitter] Müdürlerim... Yüzlerini ekranda yüz kere gördüm. Ama bu yüzlerini hiç görmemiştim.
-s17a	cem	think	[determined] Bugün kimliğimi açıklarsam herkes maske takar. Bu oyunu birkaç gün daha sürdüreceğim.
+s16c	cem	think	[inner monologue, soft and intimate, bitter] Müdürlerim... Yüzlerini ekranda yüz kere gördüm. Ama bu yüzlerini hiç görmemiştim.
+s17a	cem	think	[inner monologue, soft and intimate, determined] Bugün kimliğimi açıklarsam herkes maske takar. Bu oyunu birkaç gün daha sürdüreceğim.
 s18a	cem	say	[sincere] Sana teşekkür etmek istedim. Bugün beni yerden kaldıran tek kişi sendin.
 s18b	ece	say	[shy] Bir şey yapmadım ki.
 s18c	cem	say	[curious] Neden burada, bu insanların yanında çalışıyorsun? Buna katlanmak zorunda değilsin.
@@ -55,20 +55,20 @@ s18e	cem	say	[thoughtful] Bu cümleyi bir yerden hatırlıyorum.
 s18f	ece	say	[playful] Herkes bir yerden hatırlar. İyi geceler, kurye.
 s18g	ece	think	[suspicious] Fazla soru soruyor... bir kurye için fazla.
 s19a	ercument	say	[annoyed] Yine mi sen? Mal kabul kapısı arkada demedik mi! Bekle orada!
-s19b	cem	think	[shivering] Yarım saat... yağmurda. Kapının öbür yanında benim adımı taşıyan pankart asılıyken.
+s19b	cem	think	[inner monologue, soft and intimate, shivering] Yarım saat... yağmurda. Kapının öbür yanında benim adımı taşıyan pankart asılıyken.
 s20a	aylin	say	[suspicious, loud] Aç şu paketi! Belki içinde çalıntı bir şey vardır!
-s20b	cem	think	[quiet] Evraklarım yerde... telefonlar havada. Herkes çekiyor.
+s20b	cem	think	[inner monologue, soft and intimate, quiet] Evraklarım yerde... telefonlar havada. Herkes çekiyor.
 s20c	kaan	say	[fake surprise] Eyvah! [laughs] Neyse, zaten kirliydi.
 s20d	selin	say	[bossy] Madem buradasın, şu koliler de kırk ikinci kata çıksın.
 s20e	ercument	say	[smug] Kuryeler bu asansöre binemez. Merdiven var, merdiven.
-s20f	cem	think	[exhausted] Kırk iki kat... merdivenle. Babam bu binayı bunun için mi kurdu?
+s20f	cem	think	[inner monologue, soft and intimate, exhausted] Kırk iki kat... merdivenle. Babam bu binayı bunun için mi kurdu?
 s21a	ece	say	[shocked] Delirdin mi sen? Bunları taşımak zorunda değilsin!
 s21b	cem	say	[tired, smiling] Sen de bana yardım etmek zorunda değilsin.
 s21c	ece	say	[warm] Hep zorunda olduğumuz şeyleri yapsaydık... hiç tanışmazdık.
 s21d	ece	think	[soft] Bu kadar aşağılanıp hâlâ gülümseyen biri... Kimsin sen?
 s22a	ece	say	[curious] Bu arada... adını hiç söylemedin.
 s22b	cem	say	[teasing] Sen de soyadını söylemedin.
-s22c	cem	think	[warm] Yalan söyleyen iki kişi... ve şimdiye kadar yaşadığım en dürüst an.
+s22c	cem	think	[inner monologue, soft and intimate, warm] Yalan söyleyen iki kişi... ve şimdiye kadar yaşadığım en dürüst an.
 s23a	cem	say	[firm] Evrak Murat Bey'e. Elden teslim edeceğim.
 s23b	murat	say	[whispering, urgent] Cem Bey! Neden bunu yapıyorsunuz? Siz zaten buranın sahibisiniz!
 s23c	cem	say	[calm] İnsanların gerçek yüzünü ancak sıradan biri gibi gelirsem görebilirdim, Murat Bey. Ve gördüm.
@@ -95,7 +95,7 @@ s27i	murat	say	[smiling] Memnuniyetle, efendim.
 s28a	ece	say	[confident, smiling] Benim oyunumu sen de oynadın demek... Cem Aral.
 s28b	murat	say	[astonished] Ece Hanım? Siz... Demirel misiniz?
 s28c	ece	say	[proud] Ece Demirel. Nevra Demirel'in kızı. Bu şirketin diğer yarısı.
-s28d	cem	think	[amused, tender] Şirketteki tek iyi insan... ortağımmış.
+s28d	cem	think	[inner monologue, soft and intimate, amused, tender] Şirketteki tek iyi insan... ortağımmış.
 s28e	cem	say	[teasing] Stajyerlik nasıldı?
 s28f	ece	say	[teasing] Kuryelikten daha zor değildi.
 s29a	ece	say	[playful, firm] Şirketin yarısı benim, Cem. Kararların da yarısı.
@@ -103,8 +103,8 @@ s29b	cem	say	[smiling] O zaman ilk ortak kararımız... çatıda simit.
 s29c	ece	say	[laughs] Anlaştık, ortak.
 s30a	aylin	say	[bitter, scheming] Aral Holding'in artık iki patronu var... ve birbirlerine aşıklar. Bu onların zayıf noktası.
 s30b	tarik	say	[menacing, slow] O zaman... savaş başlasın.
-s05e	cem	think	[nostalgic] Taksinin camından şehir akıyordu. Babamın elimi tutup bu sokaklarda yürüttüğü günler...
-s05f	cem	think	[resolute] Bu sefer kaçmayacağım.
+s05e	cem	think	[inner monologue, soft and intimate, nostalgic] Taksinin camından şehir akıyordu. Babamın elimi tutup bu sokaklarda yürüttüğü günler...
+s05f	cem	think	[inner monologue, soft and intimate, resolute] Bu sefer kaçmayacağım.
 s06e	kaan	say	[smug] Yirmi yıldır yüzünü gören yok. Londra'dan gelen bir çocuk... ne anlar bu şirketten?
 s06f	selin	say	[laughs] Bırak gelsin. İki gün kalır, imzasını atar, geri döner.
 s06g	kaan	say	[scheming] Biz de yerimizde otururuz. Asıl patron kim, herkes biliyor.
@@ -114,8 +114,8 @@ s06j	aylin	say	[cold] Bir de o gözlükleri düzelt. Burası plaza, kütüphane 
 s06k	ece	think	[patient, mysterious] Sabret Ece... Daha çok şey göreceksin.
 s07g	murat	say	[nostalgic] Biliyor musunuz, babanız da bazen fabrikaya işçi tulumuyla girerdi. Kimse anlamazdı.
 s07h	cem	say	[surprised, soft] Bunu bilmiyordum.
-s07i	murat	say	[warm] Derdi ki, "Murat, insanı en iyi, onu kimse izlemiyorken tanırsın."
-s07j	cem	think	[moved] Babam... yirmi yıl sonra bile bana yol gösteriyor.
+s07i	murat	say	"[warm] Derdi ki, ""Murat, insanı en iyi, onu kimse izlemiyorken tanırsın."""
+s07j	cem	think	[inner monologue, soft and intimate, moved] Babam... yirmi yıl sonra bile bana yol gösteriyor.
 s09g	hasan	say	[warning] Bir şey daha abi. Büyük plazalarda kuryeye arka kapıyı gösterirler. Ön kapıdan girersen kıyamet kopar.
 s09h	cem	say	[smiling] Ben ön kapıdan gireceğim.
 s09i	hasan	say	[laughs] Allah kolaylık versin o zaman! Kaskını sağlam bağla!
@@ -125,13 +125,13 @@ s18i	cem	say	[quiet] Babam da benzer şeyler söylerdi. Onu uzun zaman önce kay
 s18j	ece	say	[soft, sad] Başın sağ olsun. Ben de annemi geçen yıl kaybettim.
 s18k	cem	say	[sincere] Seninki de başın sağ olsun. Demek ikimiz de bir şeylerin peşindeyiz.
 s18l	ece	say	[small laugh] Belki de.
-s18m	cem	think	[curious] Geçen yıl... Neden bu kadar tanıdık geliyor?
+s18m	cem	think	[inner monologue, soft and intimate, curious] Geçen yıl... Neden bu kadar tanıdık geliyor?
 s19c	murat	say	[worried] Cem Bey, lobideki videonuz bütün şirkette dolaşıyor! Herkes kuryeye gülüyor!
 s19d	cem	say	[calm] Bırakın dolaşsın, Murat Bey. O video yakında çok işimize yarayacak.
 s19e	murat	say	[sighs] Siz bilirsiniz efendim... ama yüreğim dayanmıyor.
 s20g	ercument	say	[mocking] Çamurlu ayak izlerini gördün mü? Al şu paspası, kendin sil!
 s20h	selin	say	[laughs] Çek bir video, Kaan! Bu bugünün en komik şeyi!
-s20i	cem	think	[cold] Gülün. Bugün gülün. Paspası ben tutuyorum... ama kapıyı da ben açacağım.
+s20i	cem	think	[inner monologue, soft and intimate, cold] Gülün. Bugün gülün. Paspası ben tutuyorum... ama kapıyı da ben açacağım.
 s20j	kaan	say	[low, scheming] Patron gelince terfi listesi açıklanacak. Sen de bende de yer var.
 s20k	aylin	say	[smug] Ben zaten listedeyim. Murat Bey'i yıllardır idare ediyorum.
 s20l	kaan	say	[suspicious] Ama o stajyer kız... çok soru soruyor. Gözün üstünde olsun.
@@ -139,11 +139,11 @@ s20m	aylin	say	[cold] Merak etme. Haftaya o kız da burada olmaz.
 s22d	ece	say	[dreamy] Burayı daha güzel bir yer yapmak isterdim. Kapıdan kim girerse girsin, değerli hissettiği bir yer.
 s22e	cem	say	[warm] Bir gün belki yaparsın.
 s22f	ece	say	[softly, smiling] Belki... birlikte.
-s22g	cem	think	[surprised, tender] Kalbim... en son ne zaman böyle atmıştı?
+s22g	cem	think	[inner monologue, soft and intimate, surprised, tender] Kalbim... en son ne zaman böyle atmıştı?
 s24d	ece	say	[on the phone, confident] Yarınki toplantıya ben gireceğim. Hazırlıkları yapın.
 s24e	ece	say	[on the phone, softer] Ve... Cem Aral'ın dosyasını bana gönderin. Hepsini.
 s24f	ece	think	[smiling] Oyunun kuralları değişti, kurye bey.
-s25b	cem	think	[calm] Üç gün kuryeydim. Bugün... babamın oğluyum.
+s25b	cem	think	[inner monologue, soft and intimate, calm] Üç gün kuryeydim. Bugün... babamın oğluyum.
 s25c	murat	say	[proud] Hazır mısınız, Cem Bey?
 s25d	cem	say	[firm] Hiç bu kadar hazır olmamıştım.
 s26f	ercument	say	[nervous, overly polite] Hoş geldiniz efendim! Buyurun, buyurun, kapı sizin!

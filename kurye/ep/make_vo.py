@@ -18,8 +18,13 @@ VOICES = {
     "tarik": "MuOq11XzQTthwLhmGZ2V",     # Nihat
 }
 THINK_FX = "highpass=f=110,lowpass=f=7500,aecho=0.8:0.6:45|90:0.22|0.12,volume=0.9,"
+# Cem's inner voice: lower, closer, darker and roomier than his spoken voice, so the two never sound alike
+CEM_THINK_FX = "rubberband=pitch=0.94,highpass=f=90,lowpass=f=4200,aecho=0.85:0.75:70|140|210:0.32|0.22|0.12,volume=0.85,"
+
 EP = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(EP, "vo")
+RAW = os.path.join(EP, "vo_raw")
+os.makedirs(RAW, exist_ok=True)
 os.makedirs(OUT, exist_ok=True)
 only = set(sys.argv[1:])
 rows = list(csv.DictReader(open(os.path.join(EP, "lines.tsv"), newline=""), delimiter="\t"))
@@ -53,13 +58,13 @@ for r in rows:
     if not only and os.path.exists(dst):
         continue
     data, cost = tts(VOICES[r["who"]], r["text"])
-    with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as tmp:
-        tmp.write(data)
-    fx = THINK_FX if r["kind"] == "think" else ""
+    raw = os.path.join(RAW, r["id"] + ".mp3")
+    with open(raw, "wb") as fh:
+        fh.write(data)
+    fx = (CEM_THINK_FX if r["who"] == "cem" else THINK_FX) if r["kind"] == "think" else ""
     af = fx + ("silenceremove=start_periods=1:start_threshold=-50dB,areverse,silenceremove=start_periods=1:start_threshold=-50dB,"
                "areverse,apad=pad_dur=0.06,loudnorm=I=-16:TP=-1.5")
-    subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", tmp.name, "-af", af, "-ar", "48000", "-ac", "1", "-b:a", "192k", dst], check=True)
-    os.unlink(tmp.name)
+    subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", raw, "-af", af, "-ar", "48000", "-ac", "1", "-b:a", "192k", dst], check=True)
     d = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", dst]))
     durs[r["id"]] = f"{d:.2f}"
     print(f"{r['id']}\t{r['who']}\t{d:.2f}\tcost={cost}", flush=True)

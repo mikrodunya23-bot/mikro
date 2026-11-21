@@ -53,13 +53,36 @@
   }
   const helmet = (x, y, s = 1, r = 0) => G(`translate(${x} ${y}) rotate(${r}) scale(${s})`, pth("M -120,40 C -130,-120 130,-120 120,40 L 100,80 L -100,80 Z", "#1c1c22", 7) + pth("M -96,-10 C -60,-50 60,-50 96,-10 L 90,40 L -90,40 Z", "#2c3a66", 5) + line("M -70,-20 C -30,-38 30,-38 70,-20", 5, "#8fa3d9"));
 
+
+  // full-body figure: feet at local y=1380, head centre at 0
+  const PANTS = { courier: "#141824", suit: "#22314f", navysuit: "#1f2b45", guard: "#1c1f2b", red: "#2a2230", blue: "#2b3e6b", grey: "#3e4452", green: "#1c2a20", sweater: "#2b2f3a", brown: "#4a3223", sec: "#272a33", white: "#e8e2d6", coat: "#3a3240" };
+  function standing(who, kind, expr, o = {}) {
+    const c = CH[who], cid = nid("st"), pc = PANTS[kind] || "#2b2f3a", skin = c.skin;
+    let s = "";
+    s += pth("M -120,720 L -150,1330 L -40,1330 L -10,820 L 10,820 L 40,1330 L 150,1330 L 120,720 Z", pc, 7);
+    s += `<ellipse cx="-95" cy="1352" rx="78" ry="34" fill="${o.shoes || "#1a1a1f"}" stroke="${INK}" stroke-width="6"/><ellipse cx="95" cy="1352" rx="78" ry="34" fill="${o.shoes || "#1a1a1f"}" stroke="${INK}" stroke-width="6"/>`;
+    const arm = (side, mode) => {
+      const x = side * 225, col = (L.TORSO[kind] || [{ courier: "#ff7a1a", suit: "#22314f", guard: "#1c1f2b", red: "#8e1f35", blue: "#8fc3e8", grey: "#5d6474" }[kind]])[0];
+      if (mode === "phone") return pth(`M ${x - 40},330 L ${x + 40},330 L ${x + side * 30},560 L ${side * 90},380 L ${side * 40},330 Z`, col, 6) + phone(side * 70, 300, side * -10, 1.0) + G(`translate(${side * 70} 380)`, hand("open", skin));
+      if (mode === "up") return pth(`M ${x - 40},330 L ${x + 40},330 L ${x + side * 80},60 L ${x + side * 10},40 Z`, col, 6) + G(`translate(${x + side * 50} 20) rotate(${side * 20})`, hand("open", skin));
+      return pth(`M ${x - 45},330 C ${x - 50},520 ${x - 40},640 ${x - 30},740 L ${x + 40},740 C ${x + 50},640 ${x + 50},520 ${x + 45},330 Z`, col, 6) + G(`translate(${x + 5} 790)`, hand("open", skin));
+    };
+    s += arm(-1, o.armR || "down") + arm(1, o.armL || "down");
+    s += `<clipPath id="${cid}"><rect x="-320" y="150" width="640" height="610"/></clipPath><g clip-path="url(#${cid})">${torso(kind)}</g>` + line("M -242,760 L 242,760", 7);
+    s += head(who, expr, Object.assign({}, o, { t: "" }));
+    return G(o.t || "", s);
+  }
+
   Object.assign(PANELS, {
     card,
     fallen(rand) {
-      let s = lobbyBg(rand) + rect(0, 0, 1080, 1920, "#0d1430", 0, 'opacity="0.12"');
-      s += laughingCrowd(rand, 820);
-      s += lyingCem(520, 1380, -78, 0.8) + helmet(880, 1640, 0.7, 30) + line("M 760,1700 l 60,0 M 760,1730 l 40,0", 6);
-      s += rainOver(0.0);
+      let s = lobbyBg(rand) + rect(0, 0, 1080, 1920, "#0d1430", 0, 'opacity="0.10"');
+      s += standing("staff1", "suit", "kind", { t: "translate(150 860) scale(0.42)", armL: "phone" }) + standing("staff2", "grey", "kind", { t: "translate(930 880) scale(0.42)", armR: "phone", shoes: "#8e1f35" });
+      s += standing("kaan", "suit", "smirk", { t: "translate(780 840) scale(0.36)", armR: "phone" });
+      s += `<ellipse cx="520" cy="1745" rx="430" ry="40" fill="#000" opacity="0.15"/>`;
+      s += standing("cem", "courier", "shocked", { t: "translate(150 1600) rotate(-90) scale(0.6)", wet: true, armL: "up", shoes: "#1a1a1f" });
+      s += helmet(930, 1720, 0.62, 35) + line("M 820,1730 l 50,0 M 820,1760 l 30,0", 6);
+      s += line("M 360,1440 l -20,-50 M 420,1420 l 0,-56 M 480,1440 l 20,-50", 7);
       return s;
     },
     hospital(rand) {
@@ -74,7 +97,8 @@
     funeral(rand) {
       let s = rect(0, 0, 1080, 1920, "#6d7585") + dots(0, 0, 1080, 1920, 0.12) + rect(0, 1300, 1080, 620, "#3f5a3a") + dots(0, 1300, 1080, 620, 0.15);
       s += pth("M 430,1000 L 650,1000 L 650,1360 L 430,1360 Z", "#9a9aa4", 7) + pth("M 430,1000 Q 540,920 650,1000 Z", "#9a9aa4", 7) + `<text x="540" y="1150" text-anchor="middle" font-family="Bangers" font-size="54" fill="${INK}">DENİZ ARAL</text>`;
-      for (let i = 0; i < 7; i++) s += umbrella(100 + i * 150, 820 + (i % 2) * 70, 0.9);
+      const mourner = (x, y, s2) => G(`translate(${x} ${y}) scale(${s2})`, `<circle cx="0" cy="40" r="34" fill="#0d0c10"/>` + pth("M -48,80 L -70,330 L 70,330 L 48,80 Z", "#0d0c10", 4) + pth("M -60,330 L -50,420 L -10,420 L 0,340 L 10,420 L 50,420 L 60,330 Z", "#0d0c10", 3));
+      for (let i = 0; i < 7; i++) { const x = 100 + i * 150, y = 820 + (i % 2) * 70; s += mourner(x, y - 10, 0.9) + umbrella(x, y, 0.9); }
       s += G("translate(930 740) scale(0.8)", pth("M -150,10 L 150,10 L 110,-40 L -110,-40 Z", "#0a090c", 5) + pth("M -80,-40 C -80,-130 80,-130 80,-40 Z", "#0a090c", 5) + pth("M -90,20 L -120,380 L 120,380 L 90,20 Z", "#0a090c", 5));
       s += bust("cem", "black", "sneer", { t: "translate(420 1500) scale(0.62)", e: { lid: 0.3, mouth: "flat", bi: -14, bo: 6 } }) + umbrella(420, 1260, 0.7, "#1d1b22");
       s += rainOver(1);
@@ -218,17 +242,22 @@
       return s;
     },
     papers(rand) {
-      let s = lobbyBg(rand) + bust("resepsiyon", "red", "angry", { t: "translate(540 950) scale(1.05)" });
-      for (let i = 0; i < 14; i++) s += G(`translate(${120 + rand() * 840} ${1530 + rand() * 330}) rotate(${-40 + rand() * 80})`, rect(-60, -80, 120, 160, "#fbf8f0", 4) + rect(-40, -50, 80, 8, "#c9c2b0") + rect(-40, -30, 70, 8, "#c9c2b0"));
-      s += phoneHand(150, 1350, -10, 1.0, CH.staff1.skin) + phoneHand(930, 1330, 12, 1.0, CH.staff2.skin);
+      let s = lobbyBg(rand);
+      s += bust("staff1", "suit", "kind", { t: "translate(140 1000) scale(0.5)" }) + phone(250, 1060, -12, 0.8) + bust("staff2", "grey", "kind", { t: "translate(950 1010) scale(0.5)" }) + phone(830, 1070, 12, 0.8);
+      s += bust("kaan", "suit", "smirk", { t: "translate(820 760) scale(0.38)" }) + phone(720, 800, 10, 0.6);
+      s += bust("resepsiyon", "red", "angry", { t: "translate(540 980) scale(1.0)" });
+      for (let i = 0; i < 14; i++) s += G(`translate(${120 + rand() * 840} ${1560 + rand() * 300}) rotate(${-40 + rand() * 80})`, rect(-60, -80, 120, 160, "#fbf8f0", 4) + rect(-40, -50, 80, 8, "#c9c2b0") + rect(-40, -30, 70, 8, "#c9c2b0"));
       return s;
     },
     coffee(rand) {
-      let s = rect(0, 0, 1080, 1920, "#f2d8a8") + speedLines(rand, 540, 1100, "#e0b878", 50);
-      s += bust("kaan", "suit", "smirk", { t: "translate(560 760) scale(1.0)" });
-      s += pth("M -40,1220 C 300,1160 780,1180 1120,1260 L 1120,1920 L -40,1920 Z", "#ff7a1a", 8) + rect(-40, 1420, 1160, 50, "#dfe3ea", 5);
-      s += pth("M 420,1250 C 380,1350 460,1420 420,1520 C 520,1460 600,1500 640,1420 C 600,1350 660,1300 600,1240 Z", "#6b3f1f", 5);
-      s += G("translate(640 1130) rotate(70)", pth("M -40,-60 L 40,-60 L 32,60 L -32,60 Z", "#ffffff", 5)) + line("M 600,1160 C 560,1190 540,1220 520,1260", 12, "#6b3f1f");
+      let s = officeBg(rand) + speedLines(rand, 640, 1100, "#00000018", 40);
+      s += standing("cem", "courier", "shocked", { t: "translate(690 760) scale(0.72)", wet: true });
+      s += bust("kaan", "suit", "smirk", { t: "translate(230 1020) scale(0.72)", light: "left" });
+      s += pth("M 380,1260 C 440,1230 480,1210 520,1190 L 540,1240 C 500,1260 460,1280 400,1310 Z", "#22314f", 6) + G("translate(560 1180) rotate(-60)", pth("M -40,-60 L 40,-60 L 32,60 L -32,60 Z", "#ffffff", 6) + rect(-42, -20, 84, 30, "#7a4a2a"));
+      s += pth("M 590,1150 C 620,1100 660,1080 700,1100 C 680,1130 650,1160 610,1180 Z", "#6b3f1f", 4);
+      s += pth("M 600,1170 C 650,1120 700,1110 740,1140 C 760,1180 720,1230 700,1300 C 690,1360 650,1380 640,1330 C 650,1280 620,1240 600,1170 Z", "#6b3f1f", 5);
+      for (const [x, y, r] of [[760, 1120, 14], [790, 1170, 10], [740, 1080, 9], [680, 1400, 12], [720, 1440, 8], [610, 1420, 9]]) s += `<circle cx="${x}" cy="${y}" r="${r}" fill="#6b3f1f" stroke="${INK}" stroke-width="3"/>`;
+      s += `<text x="860" y="1060" text-anchor="middle" font-family="Bangers" font-size="96" fill="#ffd84a" stroke="${INK}" stroke-width="6" paint-order="stroke" transform="rotate(10 860 1060)">ŞLAP!</text>`;
       return s;
     },
     boxes(rand) {
@@ -252,9 +281,20 @@
     rooftop(rand) {
       const sky = nid("sk");
       let s = `<defs>${lin(sky, [[0, "#3a4d88"], [0.5, "#f19a6b"], [1, "#ffd59a"]])}</defs>` + rect(0, 0, 1080, 1920, `url(#${sky})`);
-      s += `<circle cx="760" cy="760" r="120" fill="#ffe7a6"/>` + city(rand, 700, 360, "#3a3352") + rect(0, 1060, 1080, 860, "#5a5560") + line("M 0,1060 L 1080,1060", 10) + dots(0, 1060, 1080, 860, 0.12);
-      s += bust("cem", "courier", "smile", { t: "translate(330 1240) scale(0.85)", light: "left" }) + simit(470, 1780, 0.75) + G("translate(470 1850) scale(0.9)", hand("open", CH.cem.skin));
-      s += bust("ece", "blue", "kind", { t: "translate(760 1250) scale(0.8)" }) + simit(640, 1790, 0.7) + G("translate(640 1860) scale(0.85)", hand("open", CH.ece.skin));
+      s += `<circle cx="780" cy="700" r="110" fill="#ffe7a6"/>` + city(rand, 640, 420, "#3a3352");
+      for (const [x, y] of [[180, 520], [260, 470], [880, 560]]) s += line(`M ${x - 26},${y} q 13,-14 26,0 q 13,-14 26,0`, 5);
+      // rooftop: water tank, AC units, antenna, railing
+      s += G("translate(150 900)", rect(-80, -120, 160, 150, "#9aa0aa", 6, 'rx="20"') + line("M -60,30 L -70,120 M 60,30 L 70,120", 8));
+      s += rect(840, 880, 180, 120, "#c9ced6", 6) + `<circle cx="930" cy="940" r="42" fill="#9aa0aa" stroke="${INK}" stroke-width="5"/>` + line("M 960,880 L 960,700 M 930,740 L 990,740 M 940,780 L 980,780", 6);
+      s += rect(0, 1040, 1080, 880, "#6a6470") + dots(0, 1040, 1080, 880, 0.12) + line("M 0,1040 L 1080,1040", 10);
+      for (let x = 20; x < 1080; x += 90) s += line(`M ${x},1040 L ${x},900`, 8, "#3a3540");
+      s += line("M 0,900 L 1080,900", 10, "#3a3540") + line("M 0,960 L 1080,960", 6, "#3a3540");
+      // sitting on the ledge, simit in hand (bitten), tea and a paper bag
+      s += bust("cem", "courier", "smile", { t: "translate(320 1240) scale(0.85)", light: "left" });
+      s += bust("ece", "blue", "kind", { t: "translate(770 1250) scale(0.8)" });
+      s += simit(470, 1610, 0.85) + G("translate(480 1680) scale(0.95)", hand("open", CH.cem.skin));
+      s += simit(630, 1630, 0.8) + G("translate(630 1700) scale(0.9)", hand("open", CH.ece.skin));
+      s += G("translate(540 1820)", pth("M -90,-80 L 90,-80 L 80,70 L -80,70 Z", "#e8d4a8", 6) + `<text x="0" y="10" text-anchor="middle" font-family="Bangers" font-size="44" fill="#9b1c31">SİMİT</text>`);
       return s;
     },
     muratOffice(rand) {
@@ -333,11 +373,30 @@
       s += bust("cem", "navysuit", "smirk", { t: "translate(330 1620) scale(0.95)", light: "left" }) + bust("ece", "white", "smirk", { t: "translate(760 1640) scale(0.9)", noGlasses: true });
       return s;
     },
+    money(rand) {
+      let s = rect(0, 0, 1080, 1920, "#a9bccd") + speedLines(rand, 540, 1100, "#ffffff40", 40);
+      s += bust("hasan", "green", "O", { t: "translate(780 760) scale(0.75)", e: { round: true, bi: -24, bo: -18, mouth: "O" } });
+      s += pth("M -40,1280 C 120,1250 260,1240 380,1250 L 380,1360 C 260,1360 120,1380 -40,1400 Z", "#2f4f46", 7);
+      const note = (x, y, r, col, val) => G(`translate(${x} ${y}) rotate(${r})`, rect(-150, -70, 300, 140, col, 6, 'rx="8"') + `<circle cx="-80" cy="0" r="38" fill="#ffffff" opacity="0.5"/>` + `<text x="60" y="22" text-anchor="middle" font-family="Bangers" font-size="62" fill="${INK}">${val} ₺</text>`);
+      s += note(520, 1250, -18, "#c7a4d6", 200) + note(560, 1220, -6, "#9bc7e8", 200) + note(600, 1200, 8, "#c7a4d6", 200);
+      s += G("translate(420 1320) scale(1.6)", hand("open", CH.cem.skin));
+      s += pth("M 1120,1180 C 980,1190 860,1200 780,1220 L 790,1320 C 880,1300 1000,1290 1120,1290 Z", "#2e9d55", 7) + G("translate(760 1260) scale(1.5) rotate(-90)", hand("open", CH.hasan.skin));
+      return s;
+    },
     taxi(rand) {
-      let s = rect(0, 0, 1080, 1920, "#141a2e") + city(rand, 300, 700, "#24345f") + rainOver(0.5);
-      s += pth("M -20,180 L 1100,180 L 1100,1000 L -20,1000 Z", "none", 0) + rect(0, 1000, 1080, 920, "#1c1c22") + pth("M 40,200 L 1040,200 L 1000,980 L 80,980 Z", "none", 12);
-      s += bust("cem", "sweater", "neutral", { t: "translate(560 1250) scale(1.0)", light: "left", e: { lid: 0.35, look: [-12, -2] } });
-      s += rect(0, 0, 1080, 200, "#1c1c22") + `<rect x="900" y="40" width="120" height="70" rx="10" fill="#ffd84a" stroke="${INK}" stroke-width="5"/><text x="960" y="90" text-anchor="middle" font-family="Bangers" font-size="44" fill="${INK}">TAKSİ</text>`;
+      let s = rect(0, 0, 1080, 1920, "#141a2e") + city(rand, 260, 620, "#24345f") + rainOver(0.6);
+      for (let i = 0; i < 6; i++) s += line(`M ${80 + i * 170},${330 + (i % 3) * 120} l -120,0`, 5, "#ffd27a", 'opacity="0.5"');
+      // car body: roof, pillars, door frame
+      s += pth("M -20,-20 L 1100,-20 L 1100,170 L -20,170 Z", "#1c1c22", 0) + pth("M 0,170 C 300,150 780,150 1080,170 L 1080,230 C 780,210 300,210 0,230 Z", "#2a2a33", 6);
+      s += pth("M -20,170 L 90,170 L 40,980 L -20,980 Z", "#1c1c22", 6) + pth("M 1100,170 L 990,170 L 1040,980 L 1100,980 Z", "#1c1c22", 6);
+      s += rect(440, 200, 200, 60, "#2a2a33", 5, 'rx="12"') + line("M 540,260 L 540,320", 4) + pth("M 520,320 L 560,320 L 548,380 L 532,380 Z", "#2e9d55", 3);
+      // dashboard, steering wheel, driver silhouette, taximeter
+      s += pth("M -20,980 C 300,940 780,940 1100,980 L 1100,1920 L -20,1920 Z", "#26262e", 7) + dots(0, 980, 1080, 940, 0.18);
+      s += G("translate(860 1000)", `<circle cx="0" cy="40" r="150" fill="none" stroke="${INK}" stroke-width="26"/><circle cx="0" cy="40" r="150" fill="none" stroke="#3a3a44" stroke-width="16"/>` + line("M -140,40 L 140,40 M 0,40 L 0,180", 16, "#3a3a44"));
+      s += G("translate(960 760)", `<circle cx="0" cy="0" r="80" fill="#0d0c10"/>` + pth("M -110,80 L -150,300 L 150,300 L 110,80 Z", "#0d0c10", 4));
+      s += G("translate(470 1000)", rect(-90, -46, 180, 92, "#0d0c10", 6, 'rx="10"') + `<text x="0" y="16" text-anchor="middle" font-family="Bangers" font-size="44" fill="#ff5a3a">₺ 186</text>`);
+      s += bust("cem", "sweater", "neutral", { t: "translate(330 1330) scale(0.95)", light: "left", e: { lid: 0.35, look: [-14, -2] } });
+      s += G("translate(540 120)", rect(-120, -50, 240, 90, "#ffd84a", 6, 'rx="12"') + `<text x="0" y="22" text-anchor="middle" font-family="Bangers" font-size="62" fill="${INK}">TAKSİ</text>`);
       return s;
     },
     gossip(rand) {

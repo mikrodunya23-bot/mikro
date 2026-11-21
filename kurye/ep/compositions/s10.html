@@ -7,7 +7,7 @@
     .cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
     .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
     .txt { position: absolute; left: 128px; top: 330px; width: 760px; z-index: 10; }
-    .nar-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+    .nar-in { position: relative; display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
               padding: 18px 30px 14px; line-height: 1.06; letter-spacing: 2px; transform-origin: 0% 0%; }
     .bl-in, .th-in { position: relative; display: inline-block; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 60px;
              padding: 30px 40px 22px; line-height: 1.06; letter-spacing: 2px; text-align: center; transform-origin: var(--tx) 120%; }
@@ -20,7 +20,7 @@
              background: #f3f6ff; border: 6px solid #16121c; }
     .th-in::after { content: ""; position: absolute; left: calc(var(--tx) - 4px); bottom: -88px; width: 24px; height: 20px; border-radius: 50%;
              background: #f3f6ff; border: 5px solid #16121c; }
-    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 32px; padding: 4px 14px 2px; letter-spacing: 3px;
+    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 38px; padding: 4px 14px 2px; letter-spacing: 3px;
            border-radius: 8px; white-space: nowrap; }
     .card-t { position: absolute; left: 120px; top: 760px; width: 768px; text-align: center; z-index: 12; }
     .card-t span { display: inline-block; color: #ffd84a; font-size: 130px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill;
@@ -33,21 +33,25 @@
     .final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
     .final-next span { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
           font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+    .intro { position: absolute; left: 128px; width: 760px; z-index: 11; }
+    .intro-in { display: inline-block; background: #16121c; border: 6px solid #ffd84a; box-shadow: 10px 10px 0 #ff7a1a; padding: 16px 30px 12px; text-align: left; }
+    .intro-in b { display: block; color: #ffd84a; font-weight: normal; font-size: 72px; letter-spacing: 4px; line-height: 1; }
+    .intro-in i { display: block; color: #ffffff; font-style: normal; font-size: 38px; letter-spacing: 3px; margin-top: 6px; }
 </style>
   <div id="root" data-composition-id="s10" data-width="1080" data-height="1920">
-    <div id="s10-p1" class="panel clip" data-start="0.0" data-duration="8.52" data-track-index="0">
+    <div id="s10-p1" class="panel clip" data-start="0.0" data-duration="8.47" data-track-index="0">
       <div id="s10-p1-cam" class="cam"><svg data-art="parcelMake" data-layout-ignore></svg></div>
     </div>
-    <div id="s10-p1-t1" class="txt clip" data-start="1.89" data-duration="5.63" data-track-index="1"><div id="s10-p1-t1-in" class="nar-in" style="font-size:50px">İÇİ BOŞ BİR PAKET. BAKALIM BU BİNADA KİM, ONU NEYLE DOLDURACAK.</div></div>
+    <div id="s10-p1-t1" class="txt clip" data-start="1.89" data-duration="5.58" data-track-index="1"><div id="s10-p1-t1-in" class="nar-in" style="font-size:50px"><span class="tag">CEM · İÇ SES</span>İÇİ BOŞ BİR PAKET. BAKALIM BU BİNADA KİM, ONU NEYLE DOLDURACAK.</div></div>
   </div>
   <script>
     (function () {
       Comic.drawAll(document.querySelector('[data-composition-id="s10"]'));
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#s10-p1-cam", {scale: 1.0}, {scale: 1.09, duration: 8.52, ease: "sine.inOut"}, 0.0);
+      tl.fromTo("#s10-p1-cam", {scale: 1.0}, {scale: 1.09, duration: 8.47, ease: "sine.inOut"}, 0.0);
       tl.fromTo("#s10-p1-t1-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 1.89);
-      tl.to("#s10-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 7.4);
-      tl.set({}, {}, 8.52);
+      tl.to("#s10-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 7.35);
+      tl.set({}, {}, 8.47);
       window.__timelines["s10"] = tl;
     })();
   </script>

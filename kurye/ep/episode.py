@@ -8,7 +8,7 @@ EPISODE = [
         dict(art="fallen", lines=["s01a"], lead=1.2, tail=1.0, sfx=[("crowd_laugh", 0.1, 0.5), ("body_fall", 0.0, 0.6)]),
         dict(art="card", card="ÜÇ GÜN ÖNCE", fixed=3.0)]),
     dict(id="s02", amb="hospital", mus="sad", panels=[
-        dict(art="hospital", lines=["s02a", "s02b"], pos={"deniz": "l"}, lead=2.0, tail=2.2, sfx=[("flatline", "end-2.0", 0.45)])]),
+        dict(art="hospital", lines=["s02a", "s02b"], pos={"deniz": "l"}, intro=[("DENİZ ARAL", "Aral Holding'in kurucusu", "l")], lead=2.0, tail=2.2, sfx=[("flatline", "end-2.0", 0.45)])]),
     dict(id="s03", amb="funeral_rain", mus="sad", panels=[
         dict(art="funeral", lines=["s03a"], lead=1.8, tail=1.5)]),
     dict(id="s04", amb="office_london", mus="sad", panels=[
@@ -17,18 +17,20 @@ EPISODE = [
     dict(id="s05", amb="airport", mus="warm", panels=[
         dict(art="plane", lines=["s05a"], lead=1.8, tail=1.0),
         dict(art="taxi", lines=["s05e", "s05f"], lead=0.8, tail=0.8),
-        dict(art="phoneSplit", lines=["s05b", "s05c", "s05d"], pos={"cem": "l", "murat": "r"}, lead=1.2, tail=1.0, sfx=[("phone_ring", 0.0, 0.5)])]),
+        dict(art="phoneSplit", lines=["s05b", "s05c", "s05d"], pos={"cem": "l", "murat": "r"}, intro=[("MURAT BEY", "Genel Müdür", "r")], lead=1.2, tail=1.0, sfx=[("phone_ring", 0.0, 0.5)])]),
     dict(id="s06", amb="lobby", mus="tense", panels=[
-        dict(art="lobbyPrep", lines=["s06a", "s06b", "s06c"], pos={"aylin": "c"}, lead=1.2),
-        dict(art="guardProud", lines=["s06d"], pos={"ercument": "c"}),
-        dict(art="gossip", lines=["s06e", "s06f", "s06g"], pos={"kaan": "l", "selin": "r"}),
-        dict(art="copier", lines=["s06h", "s06i", "s06j", "s06k"], pos={"aylin": "l", "ece": "r"}, tail=1.0)]),
+        dict(art="lobbyPrep", lines=["s06a", "s06b", "s06c"], pos={"aylin": "c"}, lead=1.2, intro=[("AYLİN HANIM", "Danışman · Karşılama şefi", "c")]),
+        dict(art="guardProud", lines=["s06d"], pos={"ercument": "c"}, intro=[("ERCÜMENT", "Güvenlik şefi", "c")]),
+        dict(art="gossip", lines=["s06e", "s06f", "s06g"], pos={"kaan": "l", "selin": "r"}, intro=[("KAAN BEY", "Finans müdürü", "l"), ("SELİN HANIM", "Pazarlama müdürü", "r")]),
+        dict(art="copier", lines=["s06h", "s06i", "s06j", "s06k"], pos={"aylin": "l", "ece": "r"}, tail=1.0, intro=[("ECE", "Stajyer · işte 2. günü", "r")])]),
     dict(id="s07", amb="tea_garden", mus="warm", panels=[
         dict(art="teaGarden", lines=["s07a", "s07b", "s07c", "s07d", "s07e", "s07f", "s07g", "s07h", "s07i", "s07j"], pos={"cem": "l", "murat": "r"}, lead=2.0, tail=1.2)]),
     dict(id="s08", amb="street", mus="tense", panels=[
         dict(art="street", lines=["s08a"], lead=1.6, tail=1.0)]),
     dict(id="s09", amb="street", mus="warm", panels=[
-        dict(art="hasan", lines=["s09a", "s09b", "s09c", "s09d", "s09e", "s09f", "s09g", "s09h", "s09i"], pos={"cem": "l", "hasan": "r"}, lead=1.0, tail=1.2, sfx=[("scooter", "end-1.4", 0.5)])]),
+        dict(art="hasan", lines=["s09a", "s09b", "s09c"], pos={"cem": "l", "hasan": "r"}, lead=1.0, intro=[("HASAN ABİ", "Mahallenin kuryesi", "r")]),
+        dict(art="money", lines=["s09d"], pos={"hasan": "r"}, lead=0.6, tail=0.6),
+        dict(art="hasan", lines=["s09e", "s09f", "s09g", "s09h", "s09i"], pos={"cem": "l", "hasan": "r"}, lead=0.4, tail=1.2, sfx=[("scooter", "end-1.4", 0.5)])]),
     dict(id="s10", amb="shop", mus="tense", panels=[
         dict(art="parcelMake", lines=["s10a"], lead=1.4, tail=1.0)]),
     dict(id="s11", amb="rain_city", mus="tense", panels=[
@@ -94,6 +96,6 @@ EPISODE = [
         dict(art="hasanUniform", lines=["s29d", "s29e"], pos={"hasan": "l", "cem": "r"}, lead=1.0),
         dict(art="finalTwo", lines=["s29a", "s29b", "s29c"], pos={"cem": "l", "ece": "r"}, lead=1.6, tail=2.0)]),
     dict(id="s30", amb="rain_city", mus="mystery", panels=[
-        dict(art="rival", lines=["s30a", "s30b", "s30c"], pos={"aylin": "l", "tarik": "r"}, lead=1.4, tail=1.2),
+        dict(art="rival", lines=["s30a", "s30b", "s30c"], pos={"aylin": "l", "tarik": "r"}, lead=1.4, tail=1.2, intro=[("TARIK KARACA", "Karaca Holding · rakip", "r")]),
         dict(art="titleEnd", fixed=6.5, title=True)]),
 ]

@@ -7,7 +7,7 @@
     .cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
     .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
     .txt { position: absolute; left: 128px; top: 330px; width: 760px; z-index: 10; }
-    .nar-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+    .nar-in { position: relative; display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
               padding: 18px 30px 14px; line-height: 1.06; letter-spacing: 2px; transform-origin: 0% 0%; }
     .bl-in, .th-in { position: relative; display: inline-block; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 60px;
              padding: 30px 40px 22px; line-height: 1.06; letter-spacing: 2px; text-align: center; transform-origin: var(--tx) 120%; }
@@ -20,7 +20,7 @@
              background: #f3f6ff; border: 6px solid #16121c; }
     .th-in::after { content: ""; position: absolute; left: calc(var(--tx) - 4px); bottom: -88px; width: 24px; height: 20px; border-radius: 50%;
              background: #f3f6ff; border: 5px solid #16121c; }
-    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 32px; padding: 4px 14px 2px; letter-spacing: 3px;
+    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 38px; padding: 4px 14px 2px; letter-spacing: 3px;
            border-radius: 8px; white-space: nowrap; }
     .card-t { position: absolute; left: 120px; top: 760px; width: 768px; text-align: center; z-index: 12; }
     .card-t span { display: inline-block; color: #ffd84a; font-size: 130px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill;
@@ -33,40 +33,46 @@
     .final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
     .final-next span { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
           font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+    .intro { position: absolute; left: 128px; width: 760px; z-index: 11; }
+    .intro-in { display: inline-block; background: #16121c; border: 6px solid #ffd84a; box-shadow: 10px 10px 0 #ff7a1a; padding: 16px 30px 12px; text-align: left; }
+    .intro-in b { display: block; color: #ffd84a; font-weight: normal; font-size: 72px; letter-spacing: 4px; line-height: 1; }
+    .intro-in i { display: block; color: #ffffff; font-style: normal; font-size: 38px; letter-spacing: 3px; margin-top: 6px; }
 </style>
   <div id="root" data-composition-id="s24" data-width="1080" data-height="1920">
-    <div id="s24-p1" class="panel clip" data-start="0.0" data-duration="12.69" data-track-index="0">
+    <div id="s24-p1" class="panel clip" data-start="0.0" data-duration="13.51" data-track-index="0">
       <div id="s24-p1-cam" class="cam"><svg data-art="eavesdrop" data-layout-ignore></svg></div>
     </div>
     <div id="s24-p1-t1" class="txt clip" data-start="1.08" data-duration="4.17" data-track-index="1"><div id="s24-p1-t1-in" class="th-in" style="--tx:150px;font-size:54px"><span class="tag">ECE · İÇİNDEN</span>CEM ARAL... O KURYE... CEM ARAL MIYMIŞ?</div></div>
-    <div id="s24-p1-t2" class="txt clip" data-start="5.55" data-duration="2.81" data-track-index="1"><div id="s24-p1-t2-in" class="th-in" style="--tx:150px;font-size:54px"><span class="tag">ECE · İÇİNDEN</span>DEMEK O DA BENİM GİBİ OYUN OYNUYOR...</div></div>
-    <div id="s24-p1-t3" class="txt clip" data-start="8.41" data-duration="3.01" data-track-index="1"><div id="s24-p1-t3-in" class="th-in" style="--tx:150px;font-size:54px"><span class="tag">ECE · İÇİNDEN</span>AŞIK OLDUĞUM ADAM... ORTAĞIMMIŞ.</div></div>
-    <div id="s24-p2" class="panel clip" data-start="12.69" data-duration="12.92" data-track-index="0">
+    <div id="s24-p1-t2" class="txt clip" data-start="5.55" data-duration="3.63" data-track-index="1"><div id="s24-p1-t2-in" class="th-in" style="--tx:150px;font-size:54px"><span class="tag">ECE · İÇİNDEN</span>DEMEK O DA BENİM GİBİ OYUN OYNUYOR...</div></div>
+    <div id="s24-p1-t3" class="txt clip" data-start="9.23" data-duration="3.01" data-track-index="1"><div id="s24-p1-t3-in" class="th-in" style="--tx:150px;font-size:54px"><span class="tag">ECE · İÇİNDEN</span>AŞIK OLDUĞUM ADAM... ORTAĞIMMIŞ.</div></div>
+    <div id="s24-p2" class="panel clip" data-start="13.51" data-duration="12.92" data-track-index="0">
       <div id="s24-p2-cam" class="cam"><svg data-art="eceNight" data-layout-ignore></svg></div>
     </div>
-    <div id="s24-p2-t1" class="txt clip" data-start="14.31" data-duration="3.33" data-track-index="1"><div id="s24-p2-t1-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">ECE</span>YARINKİ TOPLANTIYA BEN GİRECEĞİM. HAZIRLIKLARI YAPIN.</div></div>
-    <div id="s24-p2-t2" class="txt clip" data-start="17.94" data-duration="3.64" data-track-index="1"><div id="s24-p2-t2-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">ECE</span>VE... CEM ARAL'IN DOSYASINI BANA GÖNDERİN. HEPSİNİ.</div></div>
-    <div id="s24-p2-t3" class="txt clip" data-start="21.88" data-duration="2.46" data-track-index="1"><div id="s24-p2-t3-in" class="th-in" style="--tx:380px;font-size:54px"><span class="tag">ECE · İÇİNDEN</span>OYUNUN KURALLARI DEĞİŞTİ, KURYE BEY.</div></div>
+    <div id="s24-p2-t1" class="txt clip" data-start="15.13" data-duration="3.33" data-track-index="1"><div id="s24-p2-t1-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">ECE</span>YARINKİ TOPLANTIYA BEN GİRECEĞİM. HAZIRLIKLARI YAPIN.</div></div>
+    <div id="s24-p2-t2" class="txt clip" data-start="18.76" data-duration="3.68" data-track-index="1"><div id="s24-p2-t2-in" class="bl-in" style="--tx:380px;font-size:54px"><span class="tag">ECE</span>VE... CEM ARAL'IN DOSYASINI BANA GÖNDERİN. HEPSİNİ.</div></div>
+    <div id="s24-p2-t3" class="txt clip" data-start="22.7" data-duration="2.96" data-track-index="1"><div id="s24-p2-t3-in" class="th-in" style="--tx:380px;font-size:54px"><span class="tag">ECE · İÇİNDEN</span>OYUNUN KURALLARI DEĞİŞTİ, KURYE BEY.</div></div>
   </div>
   <script>
     (function () {
       Comic.drawAll(document.querySelector('[data-composition-id="s24"]'));
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#s24-p1-cam", {scale: 1.0}, {scale: 1.09, duration: 12.69, ease: "sine.inOut"}, 0.0);
+      tl.fromTo("#s24-p1-cam", {scale: 1.0}, {scale: 1.09, duration: 13.51, ease: "sine.inOut"}, 0.0);
       tl.fromTo("#s24-p1-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 1.08);
       tl.to("#s24-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 5.13);
       tl.fromTo("#s24-p1-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 5.55);
-      tl.to("#s24-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 8.24);
-      tl.fromTo("#s24-p1-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 8.41);
-      tl.to("#s24-p1-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 11.3);
-      tl.fromTo("#s24-p2-cam", {scale: 1.0}, {scale: 1.09, duration: 12.92, ease: "sine.inOut"}, 12.69);
-      tl.fromTo("#s24-p2-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 14.31);
-      tl.to("#s24-p2-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 17.52);
-      tl.fromTo("#s24-p2-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 17.94);
-      tl.to("#s24-p2-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 21.46);
-      tl.fromTo("#s24-p2-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 21.88);
-      tl.to("#s24-p2-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 24.22);
-      tl.set({}, {}, 25.61);
+      tl.to("#s24-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 9.06);
+      tl.fromTo("#s24-p1-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 9.23);
+      tl.to("#s24-p1-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 12.12);
+      tl.fromTo("#s24-p2-cam", {scale: 1.0}, {scale: 1.09, duration: 12.92, ease: "sine.inOut"}, 13.51);
+      if (document.querySelector('#s24-p2 .lip[data-who="ece"]')) { tl.set('#s24-p2 .lip[data-who="ece"]', {opacity: 0}, 13.51); tl.to('#s24-p2 .lip[data-who="ece"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 21, yoyo: true}, 15.13); tl.set('#s24-p2 .lip[data-who="ece"]', {opacity: 0}, 18.11); }
+      if (document.querySelector('#s24-p2 .lip[data-who="ece"]')) { tl.to('#s24-p2 .lip[data-who="ece"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 24, yoyo: true}, 18.76); tl.set('#s24-p2 .lip[data-who="ece"]', {opacity: 0}, 22.05); }
+      tl.fromTo("#s24-p2-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 15.13);
+      tl.to("#s24-p2-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 18.34);
+      tl.fromTo("#s24-p2-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 18.76);
+      tl.to("#s24-p2-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 22.32);
+      tl.fromTo("#s24-p2-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 22.7);
+      tl.to("#s24-p2-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 25.54);
+      tl.set({}, {}, 26.43);
       window.__timelines["s24"] = tl;
     })();
   </script>

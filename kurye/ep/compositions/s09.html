@@ -7,7 +7,7 @@
     .cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
     .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
     .txt { position: absolute; left: 128px; top: 330px; width: 760px; z-index: 10; }
-    .nar-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+    .nar-in { position: relative; display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
               padding: 18px 30px 14px; line-height: 1.06; letter-spacing: 2px; transform-origin: 0% 0%; }
     .bl-in, .th-in { position: relative; display: inline-block; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 60px;
              padding: 30px 40px 22px; line-height: 1.06; letter-spacing: 2px; text-align: center; transform-origin: var(--tx) 120%; }
@@ -20,7 +20,7 @@
              background: #f3f6ff; border: 6px solid #16121c; }
     .th-in::after { content: ""; position: absolute; left: calc(var(--tx) - 4px); bottom: -88px; width: 24px; height: 20px; border-radius: 50%;
              background: #f3f6ff; border: 5px solid #16121c; }
-    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 32px; padding: 4px 14px 2px; letter-spacing: 3px;
+    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 38px; padding: 4px 14px 2px; letter-spacing: 3px;
            border-radius: 8px; white-space: nowrap; }
     .card-t { position: absolute; left: 120px; top: 760px; width: 768px; text-align: center; z-index: 12; }
     .card-t span { display: inline-block; color: #ffd84a; font-size: 130px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill;
@@ -33,50 +33,74 @@
     .final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
     .final-next span { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
           font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+    .intro { position: absolute; left: 128px; width: 760px; z-index: 11; }
+    .intro-in { display: inline-block; background: #16121c; border: 6px solid #ffd84a; box-shadow: 10px 10px 0 #ff7a1a; padding: 16px 30px 12px; text-align: left; }
+    .intro-in b { display: block; color: #ffd84a; font-weight: normal; font-size: 72px; letter-spacing: 4px; line-height: 1; }
+    .intro-in i { display: block; color: #ffffff; font-style: normal; font-size: 38px; letter-spacing: 3px; margin-top: 6px; }
 </style>
   <div id="root" data-composition-id="s09" data-width="1080" data-height="1920">
-    <div id="s09-p1" class="panel clip" data-start="0.0" data-duration="42.79" data-track-index="0">
+    <div id="s09-p1" class="panel clip" data-start="0.0" data-duration="13.67" data-track-index="0">
       <div id="s09-p1-cam" class="cam"><svg data-art="hasan" data-layout-ignore></svg></div>
     </div>
-    <div id="s09-p1-t1" class="txt clip" data-start="1.35" data-duration="2.61" data-track-index="1"><div id="s09-p1-t1-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">CEM</span>KOLAY GELSİN ABİ. MOTORUNU SATAR MISIN?</div></div>
-    <div id="s09-p1-t2" class="txt clip" data-start="4.26" data-duration="4.12" data-track-index="1"><div id="s09-p1-t2-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">HASAN ABİ</span>HA? ABİ SEN KURYE MİSİN? ELİN YÜZÜN PIRIL PIRIL.</div></div>
-    <div id="s09-p1-t3" class="txt clip" data-start="8.68" data-duration="2.2" data-track-index="1"><div id="s09-p1-t3-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">CEM</span>YENİ BAŞLIYORUM.</div></div>
-    <div id="s09-p1-t4" class="txt clip" data-start="11.18" data-duration="3.16" data-track-index="1"><div id="s09-p1-t4-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">HASAN ABİ</span>OHA! BU PARAYLA İKİ MOTOR ALIRSIN BE ABİ!</div></div>
-    <div id="s09-p1-t5" class="txt clip" data-start="14.54" data-duration="6.73" data-track-index="1"><div id="s09-p1-t5-in" class="bl-in" style="--tx:610px;font-size:48px"><span class="tag">HASAN ABİ</span>AL, MONTLA KASK DA SENİN OLSUN. BAK TAVSİYE: KASKI ÇIKARMA. ZATEN KİMSE YÜZÜNE BAKMAZ.</div></div>
-    <div id="s09-p1-t6" class="txt clip" data-start="21.57" data-duration="6.04" data-track-index="1"><div id="s09-p1-t6-in" class="th-in" style="--tx:610px;font-size:54px"><span class="tag">HASAN ABİ · İÇİNDEN</span>BU ADAMDA BİR İŞ VAR AMA... PARA TEMİZ, GERİSİ BENİ İLGİLENDİRMEZ.</div></div>
-    <div id="s09-p1-t7" class="txt clip" data-start="27.91" data-duration="6.4" data-track-index="1"><div id="s09-p1-t7-in" class="bl-in" style="--tx:610px;font-size:48px"><span class="tag">HASAN ABİ</span>BİR ŞEY DAHA ABİ. BÜYÜK PLAZALARDA KURYEYE ARKA KAPIYI GÖSTERİRLER. ÖN KAPIDAN GİRERSEN KIYAMET KOPAR.</div></div>
-    <div id="s09-p1-t8" class="txt clip" data-start="34.61" data-duration="2.44" data-track-index="1"><div id="s09-p1-t8-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">CEM</span>BEN ÖN KAPIDAN GİRECEĞİM.</div></div>
-    <div id="s09-p1-t9" class="txt clip" data-start="37.35" data-duration="4.17" data-track-index="1"><div id="s09-p1-t9-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">HASAN ABİ</span>ALLAH KOLAYLIK VERSİN O ZAMAN! KASKINI SAĞLAM BAĞLA!</div></div>
+    <div id="s09-p1-intro0" class="intro clip" data-start="0.25" data-duration="2.6" data-track-index="2" style="top:330px;text-align:right"><div id="s09-p1-intro0-in" class="intro-in"><b>HASAN ABİ</b><i>MAHALLENİN KURYESİ</i></div></div>
+    <div id="s09-p1-t1" class="txt clip" data-start="3.0" data-duration="3.27" data-track-index="1"><div id="s09-p1-t1-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">CEM</span>KOLAY GELSİN ABİ. MOTORUNU SATAR MISIN?</div></div>
+    <div id="s09-p1-t2" class="txt clip" data-start="6.32" data-duration="4.37" data-track-index="1"><div id="s09-p1-t2-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">HASAN ABİ</span>HA? ABİ SEN KURYE MİSİN? ELİN YÜZÜN PIRIL PIRIL.</div></div>
+    <div id="s09-p1-t3" class="txt clip" data-start="10.74" data-duration="2.2" data-track-index="1"><div id="s09-p1-t3-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">CEM</span>YENİ BAŞLIYORUM.</div></div>
+    <div id="s09-p2" class="panel clip" data-start="13.67" data-duration="4.95" data-track-index="0">
+      <div id="s09-p2-cam" class="cam"><svg data-art="money" data-layout-ignore></svg></div>
+    </div>
+    <div id="s09-p2-t1" class="txt clip" data-start="14.48" data-duration="4.04" data-track-index="1"><div id="s09-p2-t1-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">HASAN ABİ</span>OHA! BU PARAYLA İKİ MOTOR ALIRSIN BE ABİ!</div></div>
+    <div id="s09-p3" class="panel clip" data-start="18.62" data-duration="28.79" data-track-index="0">
+      <div id="s09-p3-cam" class="cam"><svg data-art="hasan" data-layout-ignore></svg></div>
+    </div>
+    <div id="s09-p3-t1" class="txt clip" data-start="19.16" data-duration="6.73" data-track-index="1"><div id="s09-p3-t1-in" class="bl-in" style="--tx:610px;font-size:48px"><span class="tag">HASAN ABİ</span>AL, MONTLA KASK DA SENİN OLSUN. BAK TAVSİYE: KASKI ÇIKARMA. ZATEN KİMSE YÜZÜNE BAKMAZ.</div></div>
+    <div id="s09-p3-t2" class="txt clip" data-start="26.19" data-duration="6.04" data-track-index="1"><div id="s09-p3-t2-in" class="th-in" style="--tx:610px;font-size:54px"><span class="tag">HASAN ABİ · İÇİNDEN</span>BU ADAMDA BİR İŞ VAR AMA... PARA TEMİZ, GERİSİ BENİ İLGİLENDİRMEZ.</div></div>
+    <div id="s09-p3-t3" class="txt clip" data-start="32.53" data-duration="6.56" data-track-index="1"><div id="s09-p3-t3-in" class="bl-in" style="--tx:610px;font-size:48px"><span class="tag">HASAN ABİ</span>BİR ŞEY DAHA ABİ. BÜYÜK PLAZALARDA KURYEYE ARKA KAPIYI GÖSTERİRLER. ÖN KAPIDAN GİRERSEN KIYAMET KOPAR.</div></div>
+    <div id="s09-p3-t4" class="txt clip" data-start="39.23" data-duration="2.6" data-track-index="1"><div id="s09-p3-t4-in" class="bl-in" style="--tx:150px;font-size:62px"><span class="tag">CEM</span>BEN ÖN KAPIDAN GİRECEĞİM.</div></div>
+    <div id="s09-p3-t5" class="txt clip" data-start="41.97" data-duration="4.17" data-track-index="1"><div id="s09-p3-t5-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">HASAN ABİ</span>ALLAH KOLAYLIK VERSİN O ZAMAN! KASKINI SAĞLAM BAĞLA!</div></div>
   </div>
   <script>
     (function () {
       Comic.drawAll(document.querySelector('[data-composition-id="s09"]'));
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#s09-p1-cam", {scale: 1.02, x: 0}, {scale: 1.1, x: 170, duration: 0.6, ease: "power2.inOut"}, 0.0);
-      tl.to("#s09-p1-cam", {x: -170, duration: 0.5, ease: "power2.inOut"}, 4.01);
-      tl.to("#s09-p1-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 8.43);
-      tl.to("#s09-p1-cam", {x: -170, duration: 0.5, ease: "power2.inOut"}, 10.93);
-      tl.to("#s09-p1-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 34.36);
-      tl.to("#s09-p1-cam", {x: -170, duration: 0.5, ease: "power2.inOut"}, 37.1);
-      tl.fromTo("#s09-p1-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 1.35);
-      tl.to("#s09-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 3.84);
-      tl.fromTo("#s09-p1-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 4.26);
-      tl.to("#s09-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 8.26);
-      tl.fromTo("#s09-p1-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 8.68);
-      tl.to("#s09-p1-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 10.76);
-      tl.fromTo("#s09-p1-t4-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 11.18);
-      tl.to("#s09-p1-t4-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 14.22);
-      tl.fromTo("#s09-p1-t5-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 14.54);
-      tl.to("#s09-p1-t5-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 21.15);
-      tl.fromTo("#s09-p1-t6-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 21.57);
-      tl.to("#s09-p1-t6-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 27.49);
-      tl.fromTo("#s09-p1-t7-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 27.91);
-      tl.to("#s09-p1-t7-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 34.19);
-      tl.fromTo("#s09-p1-t8-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 34.61);
-      tl.to("#s09-p1-t8-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 36.93);
-      tl.fromTo("#s09-p1-t9-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 37.35);
-      tl.to("#s09-p1-t9-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 41.4);
-      tl.set({}, {}, 42.79);
+      tl.fromTo("#s09-p1-cam", {scale: 1.04, x: 0}, {scale: 1.18, x: 90, duration: 0.6, ease: "power2.inOut"}, 0.0);
+      tl.to("#s09-p1-cam", {x: -90, duration: 0.5, ease: "power2.inOut"}, 6.07);
+      tl.to("#s09-p1-cam", {x: 90, duration: 0.5, ease: "power2.inOut"}, 10.49);
+      tl.fromTo("#s09-p1-intro0-in", {x: 80, opacity: 0}, {x: 0, opacity: 1, duration: 0.3, ease: "power3.out"}, 0.25);
+      if (document.querySelector('#s09-p1 .lip[data-who="cem"]')) { tl.set('#s09-p1 .lip[data-who="cem"]', {opacity: 0}, 0.0); tl.to('#s09-p1 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 16, yoyo: true}, 3.0); tl.set('#s09-p1 .lip[data-who="cem"]', {opacity: 0}, 5.26); }
+      if (document.querySelector('#s09-p1 .lip[data-who="deniz"]')) { tl.set('#s09-p1 .lip[data-who="deniz"]', {opacity: 0}, 0.0); tl.to('#s09-p1 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 16, yoyo: true}, 3.0); tl.set('#s09-p1 .lip[data-who="deniz"]', {opacity: 0}, 5.26); }
+      if (document.querySelector('#s09-p1 .lip[data-who="hasan"]')) { tl.set('#s09-p1 .lip[data-who="hasan"]', {opacity: 0}, 0.0); tl.to('#s09-p1 .lip[data-who="hasan"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 28, yoyo: true}, 6.32); tl.set('#s09-p1 .lip[data-who="hasan"]', {opacity: 0}, 10.09); }
+      if (document.querySelector('#s09-p1 .lip[data-who="cem"]')) { tl.to('#s09-p1 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 13, yoyo: true}, 10.74); tl.set('#s09-p1 .lip[data-who="cem"]', {opacity: 0}, 12.59); }
+      if (document.querySelector('#s09-p1 .lip[data-who="deniz"]')) { tl.to('#s09-p1 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 13, yoyo: true}, 10.74); tl.set('#s09-p1 .lip[data-who="deniz"]', {opacity: 0}, 12.59); }
+      tl.fromTo("#s09-p1-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 3.0);
+      tl.to("#s09-p1-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 6.15);
+      tl.fromTo("#s09-p1-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 6.32);
+      tl.to("#s09-p1-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 10.57);
+      tl.fromTo("#s09-p1-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 10.74);
+      tl.to("#s09-p1-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 12.82);
+      tl.fromTo("#s09-p2-cam", {scale: 1.0}, {scale: 1.09, duration: 4.95, ease: "sine.inOut"}, 13.67);
+      if (document.querySelector('#s09-p2 .lip[data-who="hasan"]')) { tl.set('#s09-p2 .lip[data-who="hasan"]', {opacity: 0}, 13.67); tl.to('#s09-p2 .lip[data-who="hasan"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 19, yoyo: true}, 14.48); tl.set('#s09-p2 .lip[data-who="hasan"]', {opacity: 0}, 17.19); }
+      tl.fromTo("#s09-p2-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 14.48);
+      tl.to("#s09-p2-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 18.4);
+      tl.fromTo("#s09-p3-cam", {scale: 1.04, x: 0}, {scale: 1.18, x: -90, duration: 0.6, ease: "power2.inOut"}, 18.62);
+      tl.to("#s09-p3-cam", {x: 90, duration: 0.5, ease: "power2.inOut"}, 38.98);
+      tl.to("#s09-p3-cam", {x: -90, duration: 0.5, ease: "power2.inOut"}, 41.72);
+      if (document.querySelector('#s09-p3 .lip[data-who="hasan"]')) { tl.set('#s09-p3 .lip[data-who="hasan"]', {opacity: 0}, 18.62); tl.to('#s09-p3 .lip[data-who="hasan"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 48, yoyo: true}, 19.16); tl.set('#s09-p3 .lip[data-who="hasan"]', {opacity: 0}, 25.54); }
+      if (document.querySelector('#s09-p3 .lip[data-who="hasan"]')) { tl.to('#s09-p3 .lip[data-who="hasan"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 45, yoyo: true}, 32.53); tl.set('#s09-p3 .lip[data-who="hasan"]', {opacity: 0}, 38.58); }
+      if (document.querySelector('#s09-p3 .lip[data-who="cem"]')) { tl.set('#s09-p3 .lip[data-who="cem"]', {opacity: 0}, 18.62); tl.to('#s09-p3 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 15, yoyo: true}, 39.23); tl.set('#s09-p3 .lip[data-who="cem"]', {opacity: 0}, 41.32); }
+      if (document.querySelector('#s09-p3 .lip[data-who="deniz"]')) { tl.set('#s09-p3 .lip[data-who="deniz"]', {opacity: 0}, 18.62); tl.to('#s09-p3 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 15, yoyo: true}, 39.23); tl.set('#s09-p3 .lip[data-who="deniz"]', {opacity: 0}, 41.32); }
+      if (document.querySelector('#s09-p3 .lip[data-who="hasan"]')) { tl.to('#s09-p3 .lip[data-who="hasan"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 28, yoyo: true}, 41.97); tl.set('#s09-p3 .lip[data-who="hasan"]', {opacity: 0}, 45.79); }
+      tl.fromTo("#s09-p3-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 19.16);
+      tl.to("#s09-p3-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 25.77);
+      tl.fromTo("#s09-p3-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 26.19);
+      tl.to("#s09-p3-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 32.11);
+      tl.fromTo("#s09-p3-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 32.53);
+      tl.to("#s09-p3-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 38.97);
+      tl.fromTo("#s09-p3-t4-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 39.23);
+      tl.to("#s09-p3-t4-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 41.71);
+      tl.fromTo("#s09-p3-t5-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 41.97);
+      tl.to("#s09-p3-t5-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 46.02);
+      tl.set({}, {}, 47.41);
       window.__timelines["s09"] = tl;
     })();
   </script>

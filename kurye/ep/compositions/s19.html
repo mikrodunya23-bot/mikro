@@ -7,7 +7,7 @@
     .cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
     .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
     .txt { position: absolute; left: 128px; top: 330px; width: 760px; z-index: 10; }
-    .nar-in { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
+    .nar-in { position: relative; display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
               padding: 18px 30px 14px; line-height: 1.06; letter-spacing: 2px; transform-origin: 0% 0%; }
     .bl-in, .th-in { position: relative; display: inline-block; background: #ffffff; color: #16121c; border: 7px solid #16121c; border-radius: 60px;
              padding: 30px 40px 22px; line-height: 1.06; letter-spacing: 2px; text-align: center; transform-origin: var(--tx) 120%; }
@@ -20,7 +20,7 @@
              background: #f3f6ff; border: 6px solid #16121c; }
     .th-in::after { content: ""; position: absolute; left: calc(var(--tx) - 4px); bottom: -88px; width: 24px; height: 20px; border-radius: 50%;
              background: #f3f6ff; border: 5px solid #16121c; }
-    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 32px; padding: 4px 14px 2px; letter-spacing: 3px;
+    .tag { position: absolute; left: 28px; top: -26px; background: #16121c; color: #ffd84a; font-size: 38px; padding: 4px 14px 2px; letter-spacing: 3px;
            border-radius: 8px; white-space: nowrap; }
     .card-t { position: absolute; left: 120px; top: 760px; width: 768px; text-align: center; z-index: 12; }
     .card-t span { display: inline-block; color: #ffd84a; font-size: 130px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill;
@@ -33,23 +33,27 @@
     .final-next { position: absolute; left: 120px; top: 1010px; width: 768px; text-align: center; z-index: 12; }
     .final-next span { display: inline-block; background: #ffd84a; color: #16121c; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c;
           font-size: 60px; padding: 14px 34px 10px; letter-spacing: 3px; transform: rotate(-2deg); }
+    .intro { position: absolute; left: 128px; width: 760px; z-index: 11; }
+    .intro-in { display: inline-block; background: #16121c; border: 6px solid #ffd84a; box-shadow: 10px 10px 0 #ff7a1a; padding: 16px 30px 12px; text-align: left; }
+    .intro-in b { display: block; color: #ffd84a; font-weight: normal; font-size: 72px; letter-spacing: 4px; line-height: 1; }
+    .intro-in i { display: block; color: #ffffff; font-style: normal; font-size: 38px; letter-spacing: 3px; margin-top: 6px; }
 </style>
   <div id="root" data-composition-id="s19" data-width="1080" data-height="1920">
     <div id="s19-p1" class="panel clip" data-start="0.0" data-duration="3.0" data-track-index="0">
       <div id="s19-p1-cam" class="cam"><svg data-art="card" data-layout-ignore></svg></div>
     </div>
     <div id="s19-p1-card" class="card-t clip" data-start="0.2" data-duration="2.7" data-track-index="1"><span id="s19-p1-card-in">İKİ GÜN SONRA</span></div>
-    <div id="s19-p2" class="panel clip" data-start="3.0" data-duration="16.18" data-track-index="0">
+    <div id="s19-p2" class="panel clip" data-start="3.0" data-duration="16.28" data-track-index="0">
       <div id="s19-p2-cam" class="cam"><svg data-art="phoneSplit" data-layout-ignore></svg></div>
     </div>
     <div id="s19-p2-t1" class="txt clip" data-start="4.08" data-duration="5.46" data-track-index="1"><div id="s19-p2-t1-in" class="bl-in" style="--tx:610px;font-size:48px"><span class="tag">MURAT BEY</span>CEM BEY, LOBİDEKİ VİDEONUZ BÜTÜN ŞİRKETTE DOLAŞIYOR! HERKES KURYEYE GÜLÜYOR!</div></div>
-    <div id="s19-p2-t2" class="txt clip" data-start="9.84" data-duration="4.36" data-track-index="1"><div id="s19-p2-t2-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">CEM</span>BIRAKIN DOLAŞSIN, MURAT BEY. O VİDEO YAKINDA ÇOK İŞİMİZE YARAYACAK.</div></div>
-    <div id="s19-p2-t3" class="txt clip" data-start="14.5" data-duration="3.95" data-track-index="1"><div id="s19-p2-t3-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">MURAT BEY</span>SİZ BİLİRSİNİZ EFENDİM... AMA YÜREĞİM DAYANMIYOR.</div></div>
-    <div id="s19-p3" class="panel clip" data-start="19.18" data-duration="16.65" data-track-index="0">
+    <div id="s19-p2-t2" class="txt clip" data-start="9.84" data-duration="4.71" data-track-index="1"><div id="s19-p2-t2-in" class="bl-in" style="--tx:150px;font-size:54px"><span class="tag">CEM</span>BIRAKIN DOLAŞSIN, MURAT BEY. O VİDEO YAKINDA ÇOK İŞİMİZE YARAYACAK.</div></div>
+    <div id="s19-p2-t3" class="txt clip" data-start="14.6" data-duration="3.95" data-track-index="1"><div id="s19-p2-t3-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">MURAT BEY</span>SİZ BİLİRSİNİZ EFENDİM... AMA YÜREĞİM DAYANMIYOR.</div></div>
+    <div id="s19-p3" class="panel clip" data-start="19.28" data-duration="19.03" data-track-index="0">
       <div id="s19-p3-cam" class="cam"><svg data-art="rainWait" data-layout-ignore></svg></div>
     </div>
-    <div id="s19-p3-t1" class="txt clip" data-start="20.53" data-duration="6.69" data-track-index="1"><div id="s19-p3-t1-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">ERCÜMENT</span>YİNE Mİ SEN? MAL KABUL KAPISI ARKADA DEMEDİK Mİ! BEKLE ORADA!</div></div>
-    <div id="s19-p3-t2" class="txt clip" data-start="27.52" data-duration="7.31" data-track-index="1"><div id="s19-p3-t2-in" class="nar-in" style="font-size:44px">YARIM SAAT... YAĞMURDA. KAPININ ÖBÜR YANINDA BENİM ADIMI TAŞIYAN PANKART ASILIYKEN.</div></div>
+    <div id="s19-p3-t1" class="txt clip" data-start="20.63" data-duration="6.69" data-track-index="1"><div id="s19-p3-t1-in" class="bl-in" style="--tx:610px;font-size:54px"><span class="tag">ERCÜMENT</span>YİNE Mİ SEN? MAL KABUL KAPISI ARKADA DEMEDİK Mİ! BEKLE ORADA!</div></div>
+    <div id="s19-p3-t2" class="txt clip" data-start="27.62" data-duration="9.69" data-track-index="1"><div id="s19-p3-t2-in" class="nar-in" style="font-size:44px"><span class="tag">CEM · İÇ SES</span>YARIM SAAT... YAĞMURDA. KAPININ ÖBÜR YANINDA BENİM ADIMI TAŞIYAN PANKART ASILIYKEN.</div></div>
   </div>
   <script>
     (function () {
@@ -57,21 +61,26 @@
       const tl = gsap.timeline({ paused: true });
       tl.fromTo("#s19-p1-cam", {scale: 1.0}, {scale: 1.09, duration: 3.0, ease: "sine.inOut"}, 0.0);
       tl.fromTo("#s19-p1-card-in", {scale: 2.4, opacity: 0}, {scale: 1, opacity: 1, duration: 0.35, ease: "power4.in"}, 0.2);
-      tl.fromTo("#s19-p2-cam", {scale: 1.02, x: 0}, {scale: 1.1, x: -170, duration: 0.6, ease: "power2.inOut"}, 3.0);
-      tl.to("#s19-p2-cam", {x: 170, duration: 0.5, ease: "power2.inOut"}, 9.59);
-      tl.to("#s19-p2-cam", {x: -170, duration: 0.5, ease: "power2.inOut"}, 14.25);
+      tl.fromTo("#s19-p2-cam", {scale: 1.04, x: 0}, {scale: 1.18, x: -90, duration: 0.6, ease: "power2.inOut"}, 3.0);
+      tl.to("#s19-p2-cam", {x: 90, duration: 0.5, ease: "power2.inOut"}, 9.59);
+      tl.to("#s19-p2-cam", {x: -90, duration: 0.5, ease: "power2.inOut"}, 14.35);
+      if (document.querySelector('#s19-p2 .lip[data-who="murat"]')) { tl.set('#s19-p2 .lip[data-who="murat"]', {opacity: 0}, 3.0); tl.to('#s19-p2 .lip[data-who="murat"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 38, yoyo: true}, 4.08); tl.set('#s19-p2 .lip[data-who="murat"]', {opacity: 0}, 9.19); }
+      if (document.querySelector('#s19-p2 .lip[data-who="cem"]')) { tl.set('#s19-p2 .lip[data-who="cem"]', {opacity: 0}, 3.0); tl.to('#s19-p2 .lip[data-who="cem"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 29, yoyo: true}, 9.84); tl.set('#s19-p2 .lip[data-who="cem"]', {opacity: 0}, 13.85); }
+      if (document.querySelector('#s19-p2 .lip[data-who="deniz"]')) { tl.set('#s19-p2 .lip[data-who="deniz"]', {opacity: 0}, 3.0); tl.to('#s19-p2 .lip[data-who="deniz"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 29, yoyo: true}, 9.84); tl.set('#s19-p2 .lip[data-who="deniz"]', {opacity: 0}, 13.85); }
+      if (document.querySelector('#s19-p2 .lip[data-who="murat"]')) { tl.to('#s19-p2 .lip[data-who="murat"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 26, yoyo: true}, 14.6); tl.set('#s19-p2 .lip[data-who="murat"]', {opacity: 0}, 18.2); }
       tl.fromTo("#s19-p2-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 4.08);
       tl.to("#s19-p2-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 9.42);
       tl.fromTo("#s19-p2-t2-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 9.84);
-      tl.to("#s19-p2-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 14.08);
-      tl.fromTo("#s19-p2-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 14.5);
-      tl.to("#s19-p2-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 18.33);
-      tl.fromTo("#s19-p3-cam", {scale: 1.0}, {scale: 1.09, duration: 16.65, ease: "sine.inOut"}, 19.18);
-      tl.fromTo("#s19-p3-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 20.53);
-      tl.to("#s19-p3-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 27.1);
-      tl.fromTo("#s19-p3-t2-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 27.52);
-      tl.to("#s19-p3-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 34.71);
-      tl.set({}, {}, 35.83);
+      tl.to("#s19-p2-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 14.43);
+      tl.fromTo("#s19-p2-t3-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 14.6);
+      tl.to("#s19-p2-t3-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 18.43);
+      tl.fromTo("#s19-p3-cam", {scale: 1.0}, {scale: 1.09, duration: 19.03, ease: "sine.inOut"}, 19.28);
+      if (document.querySelector('#s19-p3 .lip[data-who="guvenlik"]')) { tl.set('#s19-p3 .lip[data-who="guvenlik"]', {opacity: 0}, 19.28); tl.to('#s19-p3 .lip[data-who="guvenlik"]', {opacity: 1, duration: 0.13, ease: 'steps(1)', repeat: 47, yoyo: true}, 20.63); tl.set('#s19-p3 .lip[data-who="guvenlik"]', {opacity: 0}, 26.97); }
+      tl.fromTo("#s19-p3-t1-in", {scale: 0}, {scale: 1, duration: 0.24, ease: "back.out(2)"}, 20.63);
+      tl.to("#s19-p3-t1-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 27.2);
+      tl.fromTo("#s19-p3-t2-in", {scaleX: 0}, {scaleX: 1, duration: 0.2, ease: "power3.out"}, 27.62);
+      tl.to("#s19-p3-t2-in", {opacity: 0, duration: 0.12, ease: "power2.in"}, 37.19);
+      tl.set({}, {}, 38.31);
       window.__timelines["s19"] = tl;
     })();
   </script>
