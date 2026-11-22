@@ -1,0 +1,835 @@
+{
+ "title": "Pofi ve Dev Kar Tanesi",
+ "model": "eleven_v3",
+ "voices": {
+  "anlatici": {
+   "id": "2w5twzryiFg9VNnXphRP"
+  },
+  "pofi": {
+   "id": "sJ0xHHPzz1LOio4QNlB0"
+  },
+  "fistik": {
+   "id": "xROJDAAwVXltxzeQxuFL"
+  },
+  "piril": {
+   "id": "XjxV2uE0ZjxxzwMtx4Zx"
+  },
+  "homur": {
+   "id": "y6X1mFgtBqHFtQwrOezf"
+  },
+  "kristal": {
+   "id": "Hr3W7yWIljG9YBJn39oK"
+  },
+  "buzbas": {
+   "id": "pDx8Z50wrzWlatwIixrm"
+  }
+ },
+ "lines": [
+  {
+   "scene": "onceki",
+   "hold": 1.5,
+   "id": "onceki_in"
+  },
+  {
+   "scene": "onceki",
+   "who": "anlatici",
+   "text": "Önceki bölümde Pofi ve arkadaşları çalınan renkleri geri getirmiş, somurtkan bulut Homur'la da en iyi arkadaş olmuşlardı.",
+   "tag": "[warmly]",
+   "id": "onceki_anlat",
+   "inner": false
+  },
+  {
+   "scene": "onceki",
+   "hold": 2,
+   "id": "onceki_out"
+  },
+  {
+   "scene": "baslik",
+   "hold": 7,
+   "id": "title"
+  },
+  {
+   "scene": "kar",
+   "hold": 7,
+   "id": "kar_est"
+  },
+  {
+   "scene": "kar",
+   "who": "anlatici",
+   "text": "Renk Vadisi'nde o sabah herkes uyandığında, dünya bembeyaz bir yorganın altındaydı.",
+   "tag": "[warmly]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "who": "pofi",
+   "text": "Aaa! Arkadaşlar, bakın! Kar yağıyor! İlk kar!",
+   "tag": "[excited]",
+   "id": "pofi_uyanir",
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "who": "fistik",
+   "text": "Kar mı? Brrr! Kuyruğum dondu! Ama dur... Bu kartopu savaşı demek!",
+   "tag": "[excited]",
+   "id": "fistik_gelir",
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "who": "piril",
+   "text": "Her yer pırıl pırıl parlıyor. Tıpkı benim gibi!",
+   "tag": "[happy]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "who": "fistik",
+   "text": "Hazır olun! Kartopu savaşı başlasın!",
+   "tag": "[shouting]",
+   "id": "savas",
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "hold": 12,
+   "id": "kartopu"
+  },
+  {
+   "scene": "kar",
+   "who": "homur",
+   "text": "Hey! Kim attı o kartopunu? Şaka şaka, ben de oynuyorum!",
+   "tag": "[laughing]",
+   "id": "homur_gelir",
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "who": "pofi",
+   "text": "Homur! Gel, sen bizim takımdasın!",
+   "tag": "[cheerful]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "hold": 6,
+   "id": "kartopu2"
+  },
+  {
+   "scene": "kar",
+   "who": "piril",
+   "text": "Arkadaşlar, durun! Gökyüzüne bakın! Bir şey düşüyor!",
+   "tag": "[surprised]",
+   "id": "bakin",
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "hold": 4.5,
+   "id": "dusus"
+  },
+  {
+   "scene": "kar",
+   "who": "fistik",
+   "text": "Vay canına! Bu dünyanın en büyük kar tanesi!",
+   "tag": "[amazed]",
+   "id": "buyuk",
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "who": "kristal",
+   "text": "Ayy, başım döndü... Merhaba! Ben Kristal. Kar Bulutları'nın en küçük kızıyım.",
+   "tag": "[dizzy]",
+   "id": "kristal_tanis",
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "who": "pofi",
+   "text": "Merhaba Kristal! Ben Pofi. Ama sen buraya nasıl düştün?",
+   "tag": "[curious]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "who": "kristal",
+   "text": "Dün gece çok sert bir rüzgâr esti ve beni ailemden kopardı. Evim, Buz Dağı'nın en tepesinde.",
+   "tag": "[sad]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "who": "kristal",
+   "text": "Ve bir sorun var... Eğer güneş doğmadan eve dönemezsem, eriyip yok olacağım.",
+   "tag": "[worried]",
+   "id": "sorun",
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "who": "fistik",
+   "text": "Eriyip yok olmak mı? Hayır, hayır, hayır! Buna izin vermeyiz!",
+   "tag": "[panicked]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "who": "pofi",
+   "text": "Buz Dağı çok uzakta. Bir gecede oraya varabilir miyiz? Ama denemek zorundayız.",
+   "tag": "[determined]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "kar",
+   "who": "homur",
+   "text": "Merak etmeyin! Ben kocaman bir bulutum. Hepinizi sırtımda uçururum!",
+   "tag": "[confident]",
+   "id": "homur_teklif",
+   "inner": false
+  },
+  {
+   "scene": "kar",
+   "who": "pofi",
+   "text": "Harika fikir! Hadi arkadaşlar, Kristal'i evine götürüyoruz!",
+   "tag": "[determined]",
+   "id": "yola",
+   "inner": false
+  },
+  {
+   "scene": "ucus",
+   "hold": 8,
+   "id": "ucus_est"
+  },
+  {
+   "scene": "ucus",
+   "who": "anlatici",
+   "text": "Ve böylece beş arkadaş, gün batarken Buz Dağı'na doğru havalandı.",
+   "tag": "[storytelling]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "ucus",
+   "who": "fistik",
+   "text": "Yaşasın! Uçuyorum! Bakın, aşağıda evler minicik görünüyor!",
+   "tag": "[excited]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "ucus",
+   "who": "kristal",
+   "text": "Bu gece çok güzel. Ama rüzgâr yine sertleşiyor...",
+   "tag": "[worried]",
+   "id": "ruzgar",
+   "inner": false
+  },
+  {
+   "scene": "ucus",
+   "hold": 3,
+   "id": "firtina_basla"
+  },
+  {
+   "scene": "ucus",
+   "who": "homur",
+   "text": "Tutunun! Fırtına çok güçlü! Aşağı iniyoruz!",
+   "tag": "[shouting]",
+   "id": "iniyoruz",
+   "inner": false
+  },
+  {
+   "scene": "ucus",
+   "hold": 6,
+   "id": "dusme"
+  },
+  {
+   "scene": "gol",
+   "hold": 7,
+   "id": "gol_est"
+  },
+  {
+   "scene": "gol",
+   "who": "anlatici",
+   "text": "Fırtına onları kocaman, donmuş bir gölün kıyısına bıraktı.",
+   "tag": "",
+   "id": "gol_anlat",
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "who": "piril",
+   "text": "Herkes iyi mi? Kristal, sen iyi misin?",
+   "tag": "[worried]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "who": "kristal",
+   "text": "İyiyim. Ama biraz küçülmüş gibiyim, değil mi?",
+   "tag": "[softly]",
+   "id": "kucuk",
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "hold": 3.5,
+   "id": "kayma"
+  },
+  {
+   "scene": "gol",
+   "who": "buzbas",
+   "text": "Yoldan çekiliiiin! Frenler tutmuyooor!",
+   "tag": "[shouting]",
+   "id": "buzbas_gelir",
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "hold": 1.5,
+   "id": "carpisma"
+  },
+  {
+   "scene": "gol",
+   "who": "buzbas",
+   "text": "Ehem. Hiçbir şey olmadı. Kaşif Buzbaş, hizmetinizde! Bu buzulların en büyük kaşifi benim!",
+   "tag": "[proud]",
+   "id": "buzbas_tanis",
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "who": "fistik",
+   "text": "Kaşif mi? Az önce kafa üstü kaydın ama.",
+   "tag": "[teasing]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "who": "buzbas",
+   "text": "O... O bir kaşif selamıydı! Buz Dağı'na mı gidiyorsunuz? Ben yolu çok iyi bilirim. Beni takip edin!",
+   "tag": "[confident]",
+   "id": "takip",
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "who": "pofi",
+   "text": "Gerçekten mi? Çok teşekkürler Buzbaş!",
+   "tag": "[happy]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "hold": 10,
+   "id": "paten"
+  },
+  {
+   "scene": "gol",
+   "who": "fistik",
+   "text": "Vııı! Durduramıyorum! Biri beni durdursun!",
+   "tag": "[screaming]",
+   "id": "fistik_kayar",
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "hold": 1.5,
+   "id": "catirti"
+  },
+  {
+   "scene": "gol",
+   "who": "piril",
+   "text": "Dikkat! Buz çatlıyor!",
+   "tag": "[shouting]",
+   "id": "catlak",
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "who": "homur",
+   "text": "Fıstık, tut elimi!",
+   "tag": "[shouting]",
+   "id": "tut",
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "hold": 3.5,
+   "id": "kurtarma"
+  },
+  {
+   "scene": "gol",
+   "who": "fistik",
+   "text": "Kurtuldum! Teşekkürler Homur!",
+   "tag": "[relieved]",
+   "id": "kurtuldu",
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "who": "fistik",
+   "text": "Bir daha asla, ama asla buz pateni yapmayacağım.",
+   "tag": "[nervous]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "gol",
+   "who": "buzbas",
+   "text": "Siz... beni bırakıp gitmediniz. Herkes hep bırakır giderdi.",
+   "tag": "[softly]",
+   "id": "buzbas_duygu",
+   "inner": false
+  },
+  {
+   "scene": "gol",
+   "who": "pofi",
+   "text": "Biz arkadaşlarımızı asla yolda bırakmayız, Buzbaş!",
+   "tag": "[warmly]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "hold": 7.5,
+   "id": "orman_est"
+  },
+  {
+   "scene": "orman",
+   "who": "anlatici",
+   "text": "Gölün ötesinde, tipinin hiç dinmediği Karlı Orman başlıyordu.",
+   "tag": "",
+   "id": "orman_anlat",
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "pofi",
+   "text": "Hiçbir şey göremiyorum! Buzbaş, hangi yöne gidiyoruz?",
+   "tag": "[shouting]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "buzbas",
+   "text": "Şey... Sağa! Hayır, sola! Aslında... galiba buradan... Hmm.",
+   "tag": "[nervous]",
+   "id": "kayboldu",
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "kristal",
+   "text": "Buzbaş, kaybolduk mu?",
+   "tag": "[worried]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "buzbas",
+   "text": "Herkes beni büyük bir kaşif sansın istedim. Ama ben aslında hiç bu kadar uzağa gelmedim.",
+   "tag": "[sad]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "orman",
+   "who": "buzbas",
+   "text": "Özür dilerim arkadaşlar. Ben gerçek bir kaşif değilim. Yolu bilmiyorum.",
+   "tag": "[sad]",
+   "id": "itiraf",
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "homur",
+   "text": "Hey, üzülme. Ben de bir zamanlar herkesi kandırmıştım. Önemli olan doğruyu söylemek.",
+   "tag": "[warmly]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "pofi",
+   "text": "Ve bak, şimdi yalnız değilsin. Yolu birlikte buluruz!",
+   "tag": "[warmly]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "piril",
+   "text": "Durun! Bulutların arasından bir yıldız görüyorum. Bu Kuzey Yıldızı! O hep kuzeyi gösterir.",
+   "tag": "[excited]",
+   "id": "kuzey",
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "piril",
+   "text": "Ve bir sır vereyim mi? Kuzey Yıldızı benim kuzenim!",
+   "tag": "[laughs]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "fistik",
+   "text": "Senin kuzenin mi? Vay! Benim kuzenim sadece fındık toplar.",
+   "tag": "[amazed]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "who": "buzbas",
+   "text": "O zaman yıldızı takip edelim! Bu sefer gerçekten!",
+   "tag": "[determined]",
+   "id": "takip2",
+   "inner": false
+  },
+  {
+   "scene": "orman",
+   "hold": 9,
+   "id": "yuruyus"
+  },
+  {
+   "scene": "magara",
+   "hold": 7.5,
+   "id": "magara_est"
+  },
+  {
+   "scene": "magara",
+   "who": "anlatici",
+   "text": "Kuzey Yıldızı onları, dağın içinden geçen parıl parıl bir Buz Mağarası'na götürdü.",
+   "tag": "",
+   "id": "magara_anlat",
+   "inner": false
+  },
+  {
+   "scene": "magara",
+   "who": "fistik",
+   "text": "Vaaay! Duvarlar elmas gibi parlıyor! Merhabaaa!",
+   "tag": "[amazed]",
+   "id": "merhaba",
+   "inner": false
+  },
+  {
+   "scene": "magara",
+   "hold": 2.5,
+   "id": "yanki1"
+  },
+  {
+   "scene": "magara",
+   "who": "fistik",
+   "text": "Fındııık!",
+   "tag": "[shouting]",
+   "id": "findik",
+   "inner": false
+  },
+  {
+   "scene": "magara",
+   "hold": 2.5,
+   "id": "yanki2"
+  },
+  {
+   "scene": "magara",
+   "who": "pofi",
+   "text": "Fıstık! Mağarada bile fındık mı düşünüyorsun?",
+   "tag": "[laughs]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "magara",
+   "who": "fistik",
+   "text": "Ne yapayım, açım! Kahramanlar da acıkır!",
+   "tag": "[playful]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "magara",
+   "who": "kristal",
+   "text": "Gücüm azalıyor. Ama arkadaşlarıma söylersem çok üzülürler.",
+   "tag": "[weak]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "magara",
+   "who": "piril",
+   "text": "Kristal, ışığın sönükleşiyor. Daha da küçüldün!",
+   "tag": "[worried]",
+   "id": "sonuk",
+   "inner": false
+  },
+  {
+   "scene": "magara",
+   "who": "kristal",
+   "text": "Ben iyiyim, gerçekten... Sadece biraz yoruldum.",
+   "tag": "[softly]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "magara",
+   "who": "buzbas",
+   "text": "Bakın! Mağaranın sonu bir kaydırak gibi aşağı iniyor. Buradan hızlıca çıkarız!",
+   "tag": "[excited]",
+   "id": "kaydirak",
+   "inner": false
+  },
+  {
+   "scene": "magara",
+   "who": "fistik",
+   "text": "Kaydırak mı? İşte buna bayılırım!",
+   "tag": "[excited]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "magara",
+   "hold": 11,
+   "id": "kayis"
+  },
+  {
+   "scene": "magara",
+   "who": "homur",
+   "text": "Yaşasın! Dağın tepesine geldik!",
+   "tag": "[joyful]",
+   "id": "geldik",
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "hold": 4.5,
+   "id": "zirve_est"
+  },
+  {
+   "scene": "zirve",
+   "who": "anlatici",
+   "text": "Ama gökyüzü kızarmaya başlamıştı bile. Güneş doğmak üzereydi.",
+   "tag": "[dramatic]",
+   "id": "safak",
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "who": "kristal",
+   "text": "Bakın... Ailem orada, yukarıdaki bulutlarda. Ama çok yüksekteler. Oraya yetişemem.",
+   "tag": "[weak] [sad]",
+   "id": "aile",
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "who": "fistik",
+   "text": "Hayır! Bu kadar yolu boşuna mı geldik?",
+   "tag": "[sad]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "who": "pofi",
+   "text": "Düşün Pofi, düşün! Güneşi örtecek kocaman bir bulut lazım. Kocaman bir bulut...",
+   "tag": "[thoughtful]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "zirve",
+   "who": "pofi",
+   "text": "Buldum! Homur, biz iki bulutuz! Birleşirsek kocaman bir kar bulutu oluruz!",
+   "tag": "[excited]",
+   "id": "fikir",
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "who": "homur",
+   "text": "Birleşmek mi? Hiç denemedim. Ama senin için her şeye varım, Pofi!",
+   "tag": "[determined]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "who": "pofi",
+   "text": "Hazır mısın? Bir, iki, üç!",
+   "tag": "[shouting]",
+   "id": "birles",
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "hold": 11,
+   "id": "birlesme"
+  },
+  {
+   "scene": "zirve",
+   "who": "anlatici",
+   "text": "Ve iki bulut birleşerek gökyüzünü kaplayan dev bir kar bulutuna dönüştü. Güneş, bulutun arkasında kaldı ve kar yağmaya başladı.",
+   "tag": "[amazed]",
+   "id": "kar_yagar",
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "who": "kristal",
+   "text": "Gücüm geri geliyor! Büyüyorum!",
+   "tag": "[joyful]",
+   "id": "buyuyor",
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "hold": 5,
+   "id": "ucar"
+  },
+  {
+   "scene": "zirve",
+   "who": "kristal",
+   "text": "Anneciğim! Babacığım! Eve döndüm!",
+   "tag": "[crying] [happy]",
+   "id": "kavusma",
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "hold": 4,
+   "id": "kavusma_hold"
+  },
+  {
+   "scene": "zirve",
+   "who": "kristal",
+   "text": "Teşekkürler arkadaşlarım. Siz olmasaydınız bunu asla başaramazdım.",
+   "tag": "[warmly]",
+   "id": "tesekkur",
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "who": "kristal",
+   "text": "Buzbaş, sen yolu bilmiyordun ama hiç pes etmedin. Bence sen gerçek bir kaşifsin.",
+   "tag": "[warmly]",
+   "id": "buzbas_ovgu",
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "who": "buzbas",
+   "text": "Ben mi? Gerçek bir kaşif mi? Yaşasııın!",
+   "tag": "[crying] [happy]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "zirve",
+   "who": "kristal",
+   "text": "Her kış ilk karla size geleceğim. Söz!",
+   "tag": "[happy]",
+   "id": "soz",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 4,
+   "id": "final_est"
+  },
+  {
+   "scene": "final",
+   "who": "anlatici",
+   "text": "O günden sonra Renk Vadisi'nde her kış, gökyüzünden ilk düşen kar tanesi Kristal oldu.",
+   "tag": "[warmly]",
+   "id": "final_anlat",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "fistik",
+   "text": "Hadi bakalım, kardan adam yapma zamanı!",
+   "tag": "[excited]",
+   "id": "kardan",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 10,
+   "id": "kardanadam"
+  },
+  {
+   "scene": "final",
+   "who": "homur",
+   "text": "Bir dakika... Bu kardan adam bana benziyor! Ama daha yakışıklıyım!",
+   "tag": "[laughing]",
+   "id": "benziyor",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "fistik",
+   "text": "Havuç bulamadım, ben de burnuna fındık koydum!",
+   "tag": "[proud]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "pofi",
+   "text": "Fıstık! Sen her şeye fındık koyuyorsun!",
+   "tag": "[laughing]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "buzbas",
+   "text": "Herkes kızağa! Kaşif Buzbaş önden gidiyor!",
+   "tag": "[shouting]",
+   "id": "kizak",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 16,
+   "id": "kizak_hold"
+  },
+  {
+   "scene": "final",
+   "who": "anlatici",
+   "text": "Ve böylece herkes öğrendi ki, gerçek kaşif yolu bilen değil, arkadaşını yolda bırakmayandır.",
+   "tag": "[warmly]",
+   "id": "ders",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "pofi",
+   "text": "Unutmayın arkadaşlar: Birlikte olunca en soğuk kış bile sıcacık olur!",
+   "tag": "[warmly]",
+   "id": "mesaj",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 14,
+   "id": "son"
+  }
+ ]
+}
