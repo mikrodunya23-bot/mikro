@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin.woff2"); }
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin-ext.woff2"); unicode-range: U+0100-024F; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #0d1430; font-family: "Bangers", sans-serif; }
+#art { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+.abs { position: absolute; left: 0; width: 1080px; text-align: center; }
+.sunar { top: 236px; color: #fff; font-size: 44px; letter-spacing: 10px; }
+.sunar b { color: #ffd84a; font-weight: normal; }
+.t1 { top: 330px; color: #ff7a1a; font-size: 190px; line-height: 0.95; -webkit-text-stroke: 12px #16121c; paint-order: stroke fill; text-shadow: 14px 14px 0 #16121c; letter-spacing: 6px; }
+.t2 { top: 492px; color: #ffd84a; font-size: 230px; line-height: 0.95; -webkit-text-stroke: 12px #16121c; paint-order: stroke fill; text-shadow: 14px 14px 0 #16121c; letter-spacing: 6px; }
+.tag { top: 720px; }
+.tag span { display: inline-block; background: #fff; color: #16121c; border: 7px solid #16121c; border-radius: 40px; padding: 18px 34px 14px; font-size: 46px; line-height: 1.1; letter-spacing: 2px; box-shadow: 10px 10px 0 #ff7a1a; transform: rotate(-1.5deg); }
+.every { top: 1270px; }
+.every span { display: inline-block; background: #e8443a; color: #fff; border: 7px solid #16121c; padding: 14px 40px 8px; font-size: 76px; letter-spacing: 4px; box-shadow: 10px 10px 0 #16121c; transform: rotate(-2deg); }
+.list { position: absolute; left: 90px; top: 1388px; width: 900px; background: #16121c; border: 6px solid #ffd84a; box-shadow: 12px 12px 0 #ff7a1a; padding: 18px 30px 14px; box-sizing: border-box; }
+.row { display: flex; align-items: baseline; color: #fff; font-size: 34px; letter-spacing: 2px; line-height: 1.26; }
+.row .d { width: 150px; color: #ffd84a; }
+.row .n { width: 170px; color: #ff9a4a; }
+.row.f .d, .row.f .n, .row.f .x { color: #ffd84a; }
+.cta { margin-top: 8px; padding-top: 8px; border-top: 3px dashed #ffd84a55; text-align: center; color: #fff; font-size: 38px; letter-spacing: 3px; }
+.cta b { color: #ffd84a; font-weight: normal; }
+</style></head>
+<body>
+<svg id="art" data-art="story"></svg>
+<div class="abs sunar"><b>MİKRO DÜNYA</b> SUNAR</div>
+<div class="abs t1">GİZEMLİ</div>
+<div class="abs t2">KURYE</div>
+<div class="abs tag"><span>KENDİ ŞİRKETİNE KURYE KILIĞINDA<br/>GİREN PATRON... VE BİR SIR.</span></div>
+<div class="abs every"><span>HER GÜN 20:00'DE YENİ BÖLÜM!</span></div>
+<div class="list">
+  <div class="row"><span class="d">1. GÜN</span><span class="n">BÖLÜM 1</span><span class="x">EVE DÖNÜŞ</span></div>
+  <div class="row"><span class="d">2. GÜN</span><span class="n">BÖLÜM 2</span><span class="x">KURYE KILIĞI</span></div>
+  <div class="row"><span class="d">3. GÜN</span><span class="n">BÖLÜM 3</span><span class="x">KAPIDAKİ AŞAĞILANMA</span></div>
+  <div class="row"><span class="d">4. GÜN</span><span class="n">BÖLÜM 4</span><span class="x">GECE KONUŞMASI</span></div>
+  <div class="row"><span class="d">5. GÜN</span><span class="n">BÖLÜM 5</span><span class="x">42 KAT VE BİR SİMİT</span></div>
+  <div class="row"><span class="d">6. GÜN</span><span class="n">BÖLÜM 6</span><span class="x">KAPI ARKASINDAKİ SIR</span></div>
+  <div class="row f"><span class="d">7. GÜN</span><span class="n">FİNAL</span><span class="x">GERÇEK YÜZLER</span></div>
+  <div class="cta">TAKİP ET, <b>HİÇBİR BÖLÜMÜ KAÇIRMA!</b></div>
+</div>
+<script src="../assets/comic.js"></script>
+<script src="../assets/comic_ep.js"></script>
+<script>
+  // Background art: speed lines, the Aral tower in the rain, Cem (courier) and Ece between the title and the schedule.
+  const L = Comic.lib;
+  L.PANELS.story = function (rand) {
+    let s = L.rect(0, 0, 1080, 1920, "#0d1430") + L.speedLines(rand, 540, 700, "#1f2d55", 70) + L.dots(0, 0, 1080, 1920, 0.10, true);
+    s += L.G("translate(180 0) scale(0.67)", L.tower(rand, 120, 960, 1180, 2650, 170)) + L.rainOver(0.5);
+    s += L.rect(0, 1230, 1080, 690, "#ff7a1a") + L.dots(0, 1230, 1080, 690, 0.16) + L.line("M 0,1230 L 1080,1230", 10);
+    s += L.bust("cem", "courier", "smirk", { t: "translate(300 1010) scale(0.78)", light: "left" });
+    s += L.bust("ece", "blue", "smirk", { t: "translate(780 1030) scale(0.72)" });
+    return s;
+  };
+  Comic.drawAll(document);
+</script>
+</body></html>
