@@ -456,7 +456,14 @@ speech = maximum_filter1d(speech, size=T(.7))                       # kelimeler 
 win = T(.25); speech = np.convolve(speech, np.ones(win) / win, mode="same")
 duck = 1 - .82 * speech                                             # konuşurken müzik ~%80 kısılır
 duck_amb = 1 - .72 * speech                                         # ortam sesleri ~%70 kısılır
-mix = vox * 1.15 + stereo(mus, 0) * (duck * .5)[:, None] + amb * (duck_amb * 1.1)[:, None]
+bg = stereo(mus, 0) * (duck * .5)[:, None] + amb * (duck_amb * 1.1)[:, None]
+# arka plan sınırlayıcı: müzik+efekt hiçbir yerde konuşmanın ~5 dB altını geçmesin
+vrms = np.sqrt(np.mean(vox[speech > .5] ** 2)) * 1.15
+target = vrms * 0.56
+benv = np.sqrt(np.convolve((bg ** 2).mean(1), np.ones(T(.4)) / T(.4), mode="same")) + 1e-6
+bgain = np.minimum(1.0, (target / benv) ** .8)
+bgain = np.convolve(bgain, np.ones(T(.3)) / T(.3), mode="same")
+mix = vox * 1.15 + bg * bgain[:, None]
 mix = mix[: T(TOTAL)]
 fo = T(3); mix[-fo:] *= np.linspace(1, 0, fo)[:, None]
 mix = np.tanh(mix * 1.1) / np.tanh(1.1)
