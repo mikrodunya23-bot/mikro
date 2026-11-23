@@ -1,0 +1,830 @@
+{
+ "title": "Pofi ve Kayıp Hazine Haritası",
+ "model": "eleven_v3",
+ "voices": {
+  "anlatici": {
+   "id": "2w5twzryiFg9VNnXphRP"
+  },
+  "pofi": {
+   "id": "sJ0xHHPzz1LOio4QNlB0"
+  },
+  "fistik": {
+   "id": "xROJDAAwVXltxzeQxuFL"
+  },
+  "piril": {
+   "id": "XjxV2uE0ZjxxzwMtx4Zx"
+  },
+  "homur": {
+   "id": "y6X1mFgtBqHFtQwrOezf"
+  },
+  "buzbas": {
+   "id": "pDx8Z50wrzWlatwIixrm"
+  },
+  "tilkos": {
+   "id": "nBnvrVUbHrIrA5DpT4vp"
+  }
+ },
+ "lines": [
+  {
+   "scene": "acilis",
+   "hold": 7,
+   "id": "gemi_est"
+  },
+  {
+   "scene": "acilis",
+   "who": "anlatici",
+   "text": "Fırtınalı bir gecede, uzak denizlerin ortasında bir korsan gemisi dalgalarla boğuşuyordu.",
+   "tag": "[dramatic]",
+   "id": "acilis_anlat",
+   "inner": false
+  },
+  {
+   "scene": "acilis",
+   "hold": 2,
+   "id": "simsek"
+  },
+  {
+   "scene": "acilis",
+   "who": "tilkos",
+   "text": "Hehehe... Sonunda buldum! Efsanevi Gökkuşağı Adası haritasının yarısı!",
+   "tag": "[sly]",
+   "id": "tilkos_ilk",
+   "inner": false
+  },
+  {
+   "scene": "acilis",
+   "who": "tilkos",
+   "text": "Diğer yarısı Renk Vadisi'nde saklı. Ve o hazine... Benim olacak! Hahahaha!",
+   "tag": "[evil laugh]",
+   "id": "tilkos_gul",
+   "inner": false
+  },
+  {
+   "scene": "acilis",
+   "hold": 3,
+   "id": "acilis_son"
+  },
+  {
+   "scene": "baslik",
+   "hold": 7,
+   "id": "title"
+  },
+  {
+   "scene": "vadi",
+   "hold": 7,
+   "id": "vadi_est"
+  },
+  {
+   "scene": "vadi",
+   "who": "anlatici",
+   "text": "Renk Vadisi'nde sonbahar gelmiş, ağaçlar turuncuya bürünmüştü. Fıstık ise kış için fındık depoluyordu.",
+   "tag": "[warmly]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "vadi",
+   "who": "fistik",
+   "text": "Yüz on bir, yüz on iki... Hmm? Bu da ne? Toprağın altında bir şişe var!",
+   "tag": "[curious]",
+   "id": "sise",
+   "inner": false
+  },
+  {
+   "scene": "vadi",
+   "hold": 2.5,
+   "id": "sise_cikar"
+  },
+  {
+   "scene": "vadi",
+   "who": "pofi",
+   "text": "İçinde eski bir kâğıt parlıyor! Hadi açalım!",
+   "tag": "[excited]",
+   "id": "ac",
+   "inner": false
+  },
+  {
+   "scene": "vadi",
+   "hold": 2.5,
+   "id": "harita_parla"
+  },
+  {
+   "scene": "vadi",
+   "who": "piril",
+   "text": "Bu bir hazine haritası! Ama yarısı yırtılmış.",
+   "tag": "[amazed]",
+   "id": "harita",
+   "inner": false
+  },
+  {
+   "scene": "vadi",
+   "who": "buzbas",
+   "text": "Durun! Bu haritayı tanıyorum! Kaşifler kitabımda yazıyor: Efsanevi Gökkuşağı Adası!",
+   "tag": "[excited]",
+   "id": "buzbas_gelir",
+   "inner": false
+  },
+  {
+   "scene": "vadi",
+   "who": "buzbas",
+   "text": "Adanın tapınağında, kimsenin bulamadığı muhteşem bir hazine saklıymış!",
+   "tag": "[mysterious]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "vadi",
+   "who": "homur",
+   "text": "Hazine mi? Altın mı? Elmas mı? Bir sürü fındık mı?",
+   "tag": "[excited]",
+   "id": "homur_hazine",
+   "inner": false
+  },
+  {
+   "scene": "vadi",
+   "who": "fistik",
+   "text": "Bir sürü fındık olsun, lütfen bir sürü fındık olsun!",
+   "tag": "[hopeful]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "vadi",
+   "who": "piril",
+   "text": "Haritanın üstünde bir de bilmece yazıyor: Hazineyi tek başına arayan bulamaz, birlikte arayanı ada bekler.",
+   "tag": "[reading]",
+   "id": "bilmece",
+   "inner": false
+  },
+  {
+   "scene": "vadi",
+   "who": "pofi",
+   "text": "Birlikte arayanı ada bekler... Bu ne demek acaba?",
+   "tag": "[thoughtful]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "vadi",
+   "hold": 2,
+   "id": "tilkos_belir"
+  },
+  {
+   "scene": "vadi",
+   "who": "tilkos",
+   "text": "Merhaba sevimli dostlar! Ben Kaptan Tilkoş, dünyanın en kibar korsanı!",
+   "tag": "[charming]",
+   "id": "tilkos_tanis",
+   "inner": false
+  },
+  {
+   "scene": "vadi",
+   "who": "tilkos",
+   "text": "Ah, ne güzel bir harita! Benim de bir yarım var, bakın! Birleştirip hazineyi birlikte arayalım mı?",
+   "tag": "[sweet]",
+   "id": "birlestir",
+   "inner": false
+  },
+  {
+   "scene": "vadi",
+   "who": "fistik",
+   "text": "Bir korsan mı? Ama ne kadar kibar! Tamam, birlikte arayalım!",
+   "tag": "[happy]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "vadi",
+   "who": "pofi",
+   "text": "Bu tilkinin gülüşünde bir tuhaflık var. Gözlerimi ondan ayırmamalıyım.",
+   "tag": "[suspicious]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "gece",
+   "hold": 5,
+   "id": "gece_est"
+  },
+  {
+   "scene": "gece",
+   "who": "anlatici",
+   "text": "O gece herkes yola çıkmadan önce dinlenirken, karanlıkta biri sessizce kımıldadı.",
+   "tag": "[whispering]",
+   "id": "gece_anlat",
+   "inner": false
+  },
+  {
+   "scene": "gece",
+   "hold": 5,
+   "id": "sinsi"
+  },
+  {
+   "scene": "gece",
+   "who": "tilkos",
+   "text": "Uyuyun minikler, uyuyun... Harita artık benim! Hazineyi de tek başıma alacağım!",
+   "tag": "[whispering]",
+   "id": "calma",
+   "inner": false
+  },
+  {
+   "scene": "gece",
+   "who": "tilkos",
+   "text": "Biraz suçlu hissediyorum... Hayır, hayır! Korsanlar suçlu hissetmez! Hazine benim!",
+   "tag": "[whispering]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "gece",
+   "hold": 1.5,
+   "id": "uyanma"
+  },
+  {
+   "scene": "gece",
+   "who": "piril",
+   "text": "Hey! Haritayı geri ver! Arkadaşlar, uyanın! Tilkoş haritayı çaldı!",
+   "tag": "[shouting]",
+   "id": "caldi",
+   "inner": false
+  },
+  {
+   "scene": "gece",
+   "hold": 5,
+   "id": "kacis"
+  },
+  {
+   "scene": "gece",
+   "who": "tilkos",
+   "text": "Hoşça kalın enayiler! Gökkuşağı Adası'nda görüşmeyiz! Hahaha!",
+   "tag": "[evil laugh]",
+   "id": "elveda",
+   "inner": false
+  },
+  {
+   "scene": "gece",
+   "who": "fistik",
+   "text": "Gitti! Haritamız gitti! Şimdi ne yapacağız?",
+   "tag": "[sad]",
+   "id": "gitti",
+   "inner": false
+  },
+  {
+   "scene": "gece",
+   "who": "buzbas",
+   "text": "Ehem! Endişelenmeyin! Gerçek kaşifler her zaman haritanın bir kopyasını çizer!",
+   "tag": "[proud]",
+   "id": "kopya",
+   "inner": false
+  },
+  {
+   "scene": "gece",
+   "who": "pofi",
+   "text": "Buzbaş, sen bir dahisin!",
+   "tag": "[joyful]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "gece",
+   "who": "homur",
+   "text": "Hadi o zaman! Ben yelken olurum, siz de sala binin. Tilkoş'tan önce adaya varacağız!",
+   "tag": "[determined]",
+   "id": "yola",
+   "inner": false
+  },
+  {
+   "scene": "deniz",
+   "hold": 8,
+   "id": "deniz_est"
+  },
+  {
+   "scene": "deniz",
+   "who": "anlatici",
+   "text": "Arkadaşlar şafakla birlikte açık denize açıldı. Homur kocaman bir yelken gibi şişti.",
+   "tag": "[storytelling]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "deniz",
+   "who": "fistik",
+   "text": "Yaşasın! Denizciyiz! Hey hey, yo ho ho!",
+   "tag": "[singing]",
+   "id": "denizci",
+   "inner": false
+  },
+  {
+   "scene": "deniz",
+   "hold": 3,
+   "id": "dalga1"
+  },
+  {
+   "scene": "deniz",
+   "who": "piril",
+   "text": "Ufukta kara bulutlar var! Bir fırtına geliyor!",
+   "tag": "[worried]",
+   "id": "firtina",
+   "inner": false
+  },
+  {
+   "scene": "deniz",
+   "hold": 7,
+   "id": "firtina_aksiyon"
+  },
+  {
+   "scene": "deniz",
+   "who": "fistik",
+   "text": "Keşke evde kalıp fındık toplasaydım... Ama arkadaşlarımı asla bırakmam!",
+   "tag": "[scared]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "deniz",
+   "who": "homur",
+   "text": "Rüzgâr çok güçlü! Sal parçalanıyor!",
+   "tag": "[shouting]",
+   "id": "parcalan",
+   "inner": false
+  },
+  {
+   "scene": "deniz",
+   "hold": 2.5,
+   "id": "dev_dalga"
+  },
+  {
+   "scene": "deniz",
+   "who": "pofi",
+   "text": "Dayanın arkadaşlar! Birbirinizi bırakmayın!",
+   "tag": "[shouting]",
+   "id": "dayanin",
+   "inner": false
+  },
+  {
+   "scene": "deniz",
+   "hold": 3.5,
+   "id": "balina_cikar"
+  },
+  {
+   "scene": "deniz",
+   "who": "buzbas",
+   "text": "Bu... Bu dev bir balina! Bizi sırtına aldı!",
+   "tag": "[amazed]",
+   "id": "balina",
+   "inner": false
+  },
+  {
+   "scene": "deniz",
+   "hold": 8,
+   "id": "balina_yuzer"
+  },
+  {
+   "scene": "deniz",
+   "who": "pofi",
+   "text": "Bakın! Balina bize göz kırptı! Bizi kurtarmaya gelmiş!",
+   "tag": "[joyful]",
+   "id": "goz_kirp",
+   "inner": false
+  },
+  {
+   "scene": "deniz",
+   "who": "anlatici",
+   "text": "Kocaman balina, fırtınanın içinden geçerek onları Gökkuşağı Adası'nın kıyısına bıraktı.",
+   "tag": "[warmly]",
+   "id": "kiyida",
+   "inner": false
+  },
+  {
+   "scene": "deniz",
+   "who": "fistik",
+   "text": "Teşekkürler koca balina! Sen dünyanın en iyi kaptanısın!",
+   "tag": "[happy]",
+   "id": "tesekkur",
+   "inner": false
+  },
+  {
+   "scene": "ada",
+   "hold": 7,
+   "id": "ada_est"
+  },
+  {
+   "scene": "ada",
+   "who": "buzbas",
+   "text": "Gökkuşağı Adası! Kaşifler kitabındaki gibi! Tapınak ormanın ortasında olmalı.",
+   "tag": "[excited]",
+   "id": "ada",
+   "inner": false
+  },
+  {
+   "scene": "ada",
+   "who": "piril",
+   "text": "Bakın, kumda ayak izleri var! Tilkoş bizden önce gelmiş!",
+   "tag": "[worried]",
+   "id": "izler",
+   "inner": false
+  },
+  {
+   "scene": "ada",
+   "hold": 4,
+   "id": "orman_gir"
+  },
+  {
+   "scene": "ada",
+   "who": "fistik",
+   "text": "Önümüzde kocaman bir uçurum var! Karşıya nasıl geçeceğiz?",
+   "tag": "[worried]",
+   "id": "ucurum",
+   "inner": false
+  },
+  {
+   "scene": "ada",
+   "who": "fistik",
+   "text": "Sarmaşıklar! Ben bir sincabım. Ağaçtan ağaca atlamak benim işim!",
+   "tag": "[confident]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "ada",
+   "who": "fistik",
+   "text": "Herkes sarmaşıklara tutunsun! Sayınca atlıyoruz! Bir, iki, üüüç!",
+   "tag": "[shouting]",
+   "id": "atla",
+   "inner": false
+  },
+  {
+   "scene": "ada",
+   "hold": 9,
+   "id": "sarmasik"
+  },
+  {
+   "scene": "ada",
+   "who": "buzbas",
+   "text": "Bakın, uçuyorum! Ah hayır, sadece düşüyorum! Biri beni yakalasın!",
+   "tag": "[screaming]",
+   "id": "buzbas_dus",
+   "inner": false
+  },
+  {
+   "scene": "ada",
+   "hold": 2,
+   "id": "yakala"
+  },
+  {
+   "scene": "ada",
+   "who": "homur",
+   "text": "Başardık! Ve işte, tapınak!",
+   "tag": "[amazed]",
+   "id": "tapinak_gor",
+   "inner": false
+  },
+  {
+   "scene": "ada",
+   "hold": 3,
+   "id": "kapi"
+  },
+  {
+   "scene": "ada",
+   "who": "piril",
+   "text": "Kapının üstünde dört taş var. Bir yazı da: Tek el açamaz, dört el açar.",
+   "tag": "[reading]",
+   "id": "dort_tas",
+   "inner": false
+  },
+  {
+   "scene": "ada",
+   "who": "pofi",
+   "text": "Bilmece buydu! Hazineyi birlikte arayanı ada bekler! Herkes bir taşa bassın!",
+   "tag": "[excited]",
+   "id": "birlikte",
+   "inner": false
+  },
+  {
+   "scene": "ada",
+   "hold": 6,
+   "id": "kapi_acilir"
+  },
+  {
+   "scene": "tapinak",
+   "hold": 5,
+   "id": "tapinak_est"
+  },
+  {
+   "scene": "tapinak",
+   "who": "anlatici",
+   "text": "Tapınağın içi meşalelerle aydınlanıyordu. Duvarlardaki resimler sanki onları izliyordu.",
+   "tag": "[mysterious]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "tapinak",
+   "who": "tilkos",
+   "text": "İmdaaat! Kimse yok mu? Kurtarın beni!",
+   "tag": "[screaming]",
+   "id": "imdat",
+   "inner": false
+  },
+  {
+   "scene": "tapinak",
+   "hold": 2,
+   "id": "tuzak_gor"
+  },
+  {
+   "scene": "tapinak",
+   "who": "buzbas",
+   "text": "Bu Tilkoş! Tek başına girmiş ve tuzağa düşmüş! Çukurun üstünde asılı kalmış!",
+   "tag": "[shocked]",
+   "id": "tuzak",
+   "inner": false
+  },
+  {
+   "scene": "tapinak",
+   "who": "fistik",
+   "text": "Oh olsun! Haritamızı çaldı! Bırakalım da biraz sallansın!",
+   "tag": "[angry]",
+   "id": "ohsun",
+   "inner": false
+  },
+  {
+   "scene": "tapinak",
+   "who": "pofi",
+   "text": "Bize kötülük yaptı. Ama onu bu halde bırakırsam, ben de onun gibi olurum.",
+   "tag": "[conflicted]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "tapinak",
+   "who": "pofi",
+   "text": "Hayır Fıstık. Biz arkadaşlarımıza da, bize kötülük yapanlara da yardım ederiz.",
+   "tag": "[firmly]",
+   "id": "yardim",
+   "inner": false
+  },
+  {
+   "scene": "tapinak",
+   "who": "homur",
+   "text": "Pofi haklı. Ben de bir zamanlar kötü davranmıştım ama siz bana el uzattınız.",
+   "tag": "[warmly]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "tapinak",
+   "who": "fistik",
+   "text": "Peki, peki! Tut bakalım şu kuyruğumu, korsan!",
+   "tag": "[grumpy]",
+   "id": "kurtar",
+   "inner": false
+  },
+  {
+   "scene": "tapinak",
+   "hold": 6,
+   "id": "kurtarma"
+  },
+  {
+   "scene": "tapinak",
+   "who": "tilkos",
+   "text": "Siz... Beni kurtardınız mı? Ben size bu kadar kötülük yapmışken?",
+   "tag": "[shocked]",
+   "id": "tilkos_sok",
+   "inner": false
+  },
+  {
+   "scene": "tapinak",
+   "who": "tilkos",
+   "text": "Hayatım boyunca hep tek başıma kazanmaya çalıştım. Kimse bana yardım etmemişti.",
+   "tag": "[sad]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "tapinak",
+   "who": "piril",
+   "text": "Hadi Tilkoş. Bu sefer birlikte arayalım. Gerçekten birlikte.",
+   "tag": "[gently]",
+   "id": "birlikte2",
+   "inner": false
+  },
+  {
+   "scene": "hazine",
+   "hold": 5,
+   "id": "hazine_est"
+  },
+  {
+   "scene": "hazine",
+   "who": "anlatici",
+   "text": "Ve sonunda, tapınağın en derin odasında, ışıl ışıl parlayan bir sandık buldular.",
+   "tag": "[amazed]",
+   "id": "sandik",
+   "inner": false
+  },
+  {
+   "scene": "hazine",
+   "who": "fistik",
+   "text": "Hazine! Gerçek bir hazine sandığı! Kalbim güm güm atıyor!",
+   "tag": "[excited]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "hazine",
+   "who": "tilkos",
+   "text": "Bırakın, ben taşırım! Ah... Uff... Çok ağır! Tek başıma kaldıramıyorum!",
+   "tag": "[straining]",
+   "id": "agir",
+   "inner": false
+  },
+  {
+   "scene": "hazine",
+   "hold": 2,
+   "id": "gurultu"
+  },
+  {
+   "scene": "hazine",
+   "who": "buzbas",
+   "text": "Tapınak çöküyor! Sandığı kaldırdığımız için tuzak çalıştı! Hemen çıkmalıyız!",
+   "tag": "[panicked]",
+   "id": "cokuyor",
+   "inner": false
+  },
+  {
+   "scene": "hazine",
+   "who": "pofi",
+   "text": "Herkes sandığın bir ucundan tutsun! Birlikte taşırız!",
+   "tag": "[shouting]",
+   "id": "tutun",
+   "inner": false
+  },
+  {
+   "scene": "hazine",
+   "hold": 4,
+   "id": "kos1"
+  },
+  {
+   "scene": "hazine",
+   "who": "piril",
+   "text": "Arkamızda dev bir kaya yuvarlanıyor! Koşuuun!",
+   "tag": "[screaming]",
+   "id": "kaya",
+   "inner": false
+  },
+  {
+   "scene": "hazine",
+   "hold": 9,
+   "id": "kaya_kovalamaca"
+  },
+  {
+   "scene": "hazine",
+   "who": "fistik",
+   "text": "Fındıklarım! Sizi bir daha görebilecek miyim?",
+   "tag": "[panicked]",
+   "id": null,
+   "inner": true
+  },
+  {
+   "scene": "hazine",
+   "who": "homur",
+   "text": "Çıkış orada! Atlayın!",
+   "tag": "[shouting]",
+   "id": "atlayin",
+   "inner": false
+  },
+  {
+   "scene": "hazine",
+   "hold": 4,
+   "id": "cikis"
+  },
+  {
+   "scene": "hazine",
+   "who": "fistik",
+   "text": "Kurtulduk! Ve hazine de bizimle!",
+   "tag": "[relieved]",
+   "id": "kurtulduk",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 4,
+   "id": "final_est"
+  },
+  {
+   "scene": "final",
+   "who": "anlatici",
+   "text": "Renk Vadisi'ne döndüklerinde herkes sandığın etrafında toplandı.",
+   "tag": "[warmly]",
+   "id": null,
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "tilkos",
+   "text": "Hadi açalım! İçinde ne var acaba? Altın mı? Elmas mı?",
+   "tag": "[excited]",
+   "id": "acalim",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 3,
+   "id": "acilis_sandik"
+  },
+  {
+   "scene": "final",
+   "who": "piril",
+   "text": "Tohumlar? Parlayan gökkuşağı tohumları! Ve bir not var.",
+   "tag": "[surprised]",
+   "id": "tohum",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "buzbas",
+   "text": "Notta şöyle yazıyor: Bu tohumları paylaşan, herkese yetecek kadar meyve verir.",
+   "tag": "[reading]",
+   "id": "not",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "pofi",
+   "text": "Hadi tohumları birlikte ekelim!",
+   "tag": "[excited]",
+   "id": "ekelim",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 10,
+   "id": "agac_buyur"
+  },
+  {
+   "scene": "final",
+   "who": "fistik",
+   "text": "Vay canına! Ağaçta her renkten meyve var! Ve... Fındık! Kocaman fındıklar!",
+   "tag": "[overjoyed]",
+   "id": "findik",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "homur",
+   "text": "Bu ağacı her gün ben sularım! Sonuçta ben bir yağmur bulutuyum!",
+   "tag": "[proud]",
+   "id": "sula",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "tilkos",
+   "text": "Hayatımda gördüğüm en güzel hazine bu. Çünkü herkesle paylaşınca büyüdü.",
+   "tag": "[warmly]",
+   "id": "ders",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "tilkos",
+   "text": "Arkadaşlar, beni de aranıza alır mısınız? Gemim hepimizin olsun!",
+   "tag": "[hopeful]",
+   "id": "katil",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "pofi",
+   "text": "Tabii ki Tilkoş! Pofi'nin maceralarına hoş geldin!",
+   "tag": "[joyful]",
+   "id": "hosgeldin",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 16,
+   "id": "kutlama"
+  },
+  {
+   "scene": "final",
+   "who": "anlatici",
+   "text": "Ve o günden sonra Renk Vadisi'nin ortasında, herkesin meyvesini paylaştığı kocaman bir gökkuşağı ağacı yükseldi.",
+   "tag": "[warmly]",
+   "id": "kapanis",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "who": "pofi",
+   "text": "Unutmayın arkadaşlar: Gerçek hazine, paylaştıkça büyüyen şeydir!",
+   "tag": "[warmly]",
+   "id": "mesaj",
+   "inner": false
+  },
+  {
+   "scene": "final",
+   "hold": 13,
+   "id": "son"
+  }
+ ]
+}
