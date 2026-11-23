@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin.woff2"); }
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin-ext.woff2"); unicode-range: U+0100-024F; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #0d1430; font-family: "Bangers", sans-serif; }
+#art { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+/* TikTok safe area: text kept within x 120-880 and y 290-1250 */
+.abs { position: absolute; left: 120px; width: 760px; text-align: center; }
+.sunar { top: 300px; color: #fff; font-size: 40px; letter-spacing: 9px; }
+.sunar b { color: #ffd84a; font-weight: normal; }
+.t1 { top: 350px; color: #ff7a1a; font-size: 140px; line-height: 1.05; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill; text-shadow: 12px 12px 0 #16121c; letter-spacing: 6px; }
+.t2 { top: 490px; color: #ffd84a; font-size: 170px; line-height: 1.05; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill; text-shadow: 12px 12px 0 #16121c; letter-spacing: 6px; }
+.ep { top: 700px; }
+.ep span { display: inline-block; background: #e8443a; color: #fff; border: 7px solid #16121c; padding: 10px 44px 4px; font-size: 92px; letter-spacing: 6px; box-shadow: 10px 10px 0 #16121c; transform: rotate(-2deg); }
+.live { top: 845px; }
+.live span { display: inline-block; background: #ffd84a; color: #16121c; border: 7px solid #16121c; padding: 16px 30px 10px; font-size: 64px; line-height: 1.12; letter-spacing: 3px; box-shadow: 10px 10px 0 #ff7a1a; transform: rotate(1.5deg); }
+.recap { top: 1065px; }
+.recap span { display: inline-block; background: #16121c; color: #fff; border: 5px solid #ffd84a; padding: 12px 22px 8px; font-size: 34px; letter-spacing: 2px; line-height: 1.2; }
+.recap b { color: #ffd84a; font-weight: normal; }
+</style></head>
+<body>
+<svg id="art" data-art="tiktokStory"></svg>
+<div class="abs sunar"><b>MİKRO DÜNYA</b> SUNAR</div>
+<div class="abs t1">GİZEMLİ</div>
+<div class="abs t2">KURYE</div>
+<div class="abs ep"><span>2. BÖLÜM</span></div>
+<div class="abs live"><span>BUGÜN SAAT 20:00'DE<br/>YAYINDA!</span></div>
+<div class="abs recap"><span><b>ÖNCEKİ BÖLÜMDE:</b><br/>CEM 20 YIL SONRA İSTANBUL'A DÖNDÜ<br/>VE KİMSEYE GÖRÜNMEMEYE KARAR VERDİ...</span></div>
+<script src="../assets/comic.js"></script>
+<script src="../assets/comic_ep.js"></script>
+<script>
+  const L = Comic.lib;
+  L.PANELS.tiktokStory = function (rand) {
+    let s = L.rect(0, 0, 1080, 1920, "#0d1430") + L.speedLines(rand, 540, 820, "#1c2a55", 80) + L.dots(0, 0, 1080, 1920, 0.10, true);
+    // bottom: Cem in the courier jacket holding his helmet, a parcel, the Aral tower behind him, rain
+    s += L.rect(0, 1290, 1080, 630, "#ff7a1a") + L.dots(0, 1290, 1080, 630, 0.16) + L.line("M 0,1290 L 1080,1290", 10);
+    s += L.bust("cem", "courier", "smirk", { t: "translate(470 1560) scale(0.9)", light: "left" });
+    s += L.G("translate(800 1700) scale(0.75)", L.pth("M -120,40 C -130,-120 130,-120 120,40 L 100,80 L -100,80 Z", "#1c1c22", 7) +
+      L.pth("M -96,-10 C -60,-50 60,-50 96,-10 L 90,40 L -90,40 Z", "#2c3a66", 5));
+    s += L.G("translate(190 1780) scale(0.8) rotate(-8)", L.box({ label: true }));
+    s += L.rainOver(0.45);
+    return s;
+  };
+  Comic.drawAll(document);
+</script>
+</body></html>
