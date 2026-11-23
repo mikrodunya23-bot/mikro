@@ -1,0 +1,52 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin.woff2"); }
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin-ext.woff2"); unicode-range: U+0100-024F; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #0d1430; font-family: "Bangers", sans-serif; }
+#art { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+.abs { position: absolute; left: 0; width: 1080px; text-align: center; }
+.sunar { top: 240px; color: #fff; font-size: 42px; letter-spacing: 10px; }
+.sunar b { color: #ffd84a; font-weight: normal; }
+.t1 { top: 300px; color: #ff7a1a; font-size: 150px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill; text-shadow: 12px 12px 0 #16121c; letter-spacing: 6px; }
+.t2 { top: 438px; color: #ffd84a; font-size: 180px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill; text-shadow: 12px 12px 0 #16121c; letter-spacing: 6px; }
+.ep { top: 640px; }
+.ep span { display: inline-block; background: #e8443a; color: #fff; border: 7px solid #16121c; padding: 12px 44px 6px; font-size: 84px; letter-spacing: 6px; box-shadow: 10px 10px 0 #16121c; transform: rotate(-2deg); }
+.when { top: 770px; color: #fff; font-size: 64px; letter-spacing: 6px; }
+.when b { color: #ffd84a; font-weight: normal; }
+.hint { top: 880px; color: #ffd84a; font-size: 40px; letter-spacing: 4px; }
+.foot { top: 1300px; color: #fff; font-size: 44px; letter-spacing: 3px; }
+.foot b { color: #ffd84a; font-weight: normal; }
+</style></head>
+<body>
+<svg id="art" data-art="countdown"></svg>
+<div class="abs sunar"><b>MİKRO DÜNYA</b> SUNAR</div>
+<div class="abs t1">GİZEMLİ</div>
+<div class="abs t2">KURYE</div>
+<div class="abs ep"><span>1. BÖLÜM</span></div>
+<div class="abs when" id="when"><b>BU AKŞAM</b> 20:00</div>
+<div class="abs hint">▼ HATIRLATICIYI AÇ, KAÇIRMA! ▼</div>
+<div class="abs foot">KENDİ ŞİRKETİNE <b>KURYE KILIĞINDA</b> GİREN PATRON...</div>
+<script src="../assets/comic.js"></script>
+<script src="../assets/comic_ep.js"></script>
+<script>
+  const q = new URLSearchParams(location.search);
+  if (q.get("when")) document.getElementById("when").innerHTML = q.get("when");
+  const L = Comic.lib;
+  L.PANELS.countdown = function (rand) {
+    let s = L.rect(0, 0, 1080, 1920, "#0d1430") + L.speedLines(rand, 540, 1080, "#1c2a55", 80) + L.dots(0, 0, 1080, 1920, 0.10, true);
+    const g = L.nid("sp");
+    // soft spotlight where the countdown sticker goes (y ~950-1300), nothing drawn inside it
+    s += `<defs><radialGradient id="${g}"><stop offset="0" stop-color="#ffd27a" stop-opacity="0.45"/><stop offset="0.55" stop-color="#ff7a1a" stop-opacity="0.18"/><stop offset="1" stop-color="#ff7a1a" stop-opacity="0"/></radialGradient></defs>`;
+    s += `<ellipse cx="540" cy="1120" rx="520" ry="270" fill="url(#${g})"/>`;
+    // bottom: the courier in his helmet, half in shadow, rain
+    s += L.rect(0, 1390, 1080, 530, "#0a0f22");
+    s += L.G("translate(540 1640) scale(1.05)", L.torso("courier") + L.head("cem", "determined", { light: "left" }) +
+      L.pth("M -150,-30 C -170,-220 170,-220 150,-30 L 140,10 C 120,-120 -120,-120 -140,10 Z", "#1c1c22", 7) +
+      L.pth("M -130,-110 C -60,-190 60,-190 130,-110 L 120,-150 C 60,-210 -60,-210 -120,-150 Z", "#2c3a66", 5));
+    s += `<rect x="0" y="1390" width="1080" height="530" fill="#0d1430" opacity="0.25"/>` + L.rainOver(0.8);
+    return s;
+  };
+  Comic.drawAll(document);
+</script>
+</body></html>
