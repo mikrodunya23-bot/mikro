@@ -1,6 +1,6 @@
 const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1920}});
 p.on('pageerror',e=>console.log('ERR',e.message));
-for(const [w,out] of [['','gizemli-kurye-gerisayim-bu-aksam.png'],['<b>YARIN</b> 20:00','gizemli-kurye-gerisayim-yarin.png']]){
+for(const [w,out] of [['','gizemli-kurye-gerisayim-bolum2-bu-aksam.png'],['<b>YARIN</b> 20:00','gizemli-kurye-gerisayim-bolum2-yarin.png']]){
 await p.goto('file://'+process.argv[2]+(w?'?when='+encodeURIComponent(w):''));await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(400);
 await p.screenshot({path:process.argv[3]+'/'+out});}
 // preview with a mock sticker to check placement (not delivered as the cover)
