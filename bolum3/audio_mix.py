@@ -448,11 +448,15 @@ vox = norm(vox, .9)
 print("seslendirme tamam")
 
 # ---------------- mix with ducking ----------------
+from scipy.ndimage import maximum_filter1d
 venv = np.abs(vox).max(1)
-win = T(.25); venv = np.convolve(venv, np.ones(win) / win, mode="same")
-duck = 1 - np.clip(venv * 6, 0, .6)          # music/ambience drop up to 60% under speech
-duck_amb = 1 - np.clip(venv * 4, 0, .45)
-mix = vox * 1.0 + stereo(mus, 0) * (duck * .55)[:, None] + amb * (duck_amb * 1.25)[:, None]
+win = T(.05); venv = np.convolve(venv, np.ones(win) / win, mode="same")
+speech = np.clip(venv * 12, 0, 1)
+speech = maximum_filter1d(speech, size=T(.7))                       # kelimeler arasında pompalamasın
+win = T(.25); speech = np.convolve(speech, np.ones(win) / win, mode="same")
+duck = 1 - .82 * speech                                             # konuşurken müzik ~%80 kısılır
+duck_amb = 1 - .72 * speech                                         # ortam sesleri ~%70 kısılır
+mix = vox * 1.15 + stereo(mus, 0) * (duck * .5)[:, None] + amb * (duck_amb * 1.1)[:, None]
 mix = mix[: T(TOTAL)]
 fo = T(3); mix[-fo:] *= np.linspace(1, 0, fo)[:, None]
 mix = np.tanh(mix * 1.1) / np.tanh(1.1)
