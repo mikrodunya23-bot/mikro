@@ -1,12 +1,15 @@
 """Filmden dikey YouTube Shorts klipleri üretir (1080x1920, <60 sn)."""
 import json, subprocess, os
-c = json.load(open("shorts.json"))
+import sys
+c = json.load(open(sys.argv[1] if len(sys.argv) > 1 else "shorts.json"))
 TITLES = {
  "1_kartopu_savasi": "DEV KAR TANESİ\nDÜŞTÜ!",
  "2_buzbas_geliyor": "EN BÜYÜK KAŞİF\nGELDİ... KAFA ÜSTÜ!",
  "3_buz_catliyor": "BUZ ÇATLIYOR!\nFISTIK KURTULACAK MI?",
  "4_magara_yankisi": "MAĞARADA\nFINDIIIK!",
  "5_iki_bulut_birlesti": "İKİ BULUT\nBİRLEŞİNCE...",
+ "6_buzbasin_sirri": "KAŞİF BUZBAŞ\nYALAN MI SÖYLEDİ?",
+ "7_kardan_adam_kizak": "KARDAN ADAM\nKİME BENZİYOR?",
 }
 FONT = os.path.abspath("fonts/Baloo2-ExtraBold.ttf")
 os.makedirs("out/shorts", exist_ok=True)
