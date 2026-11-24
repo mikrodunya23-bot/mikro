@@ -1,0 +1,51 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin.woff2"); }
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin-ext.woff2"); unicode-range: U+0100-024F; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #ffd84a; font-family: "Bangers", sans-serif; }
+#art { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+/* everything important sits inside the 3:4 grid crop (y 240-1680) */
+.abs { position: absolute; left: 90px; width: 900px; text-align: center; }
+.brand { top: 300px; }
+.brand span { display: inline-block; background: #16121c; color: #ffd84a; padding: 10px 26px 4px; font-size: 52px; letter-spacing: 6px; transform: rotate(-2deg); }
+.n { top: 380px; color: #e8443a; font-size: 300px; line-height: 0.95; -webkit-text-stroke: 14px #16121c; paint-order: stroke fill; text-shadow: 16px 16px 0 #16121c; }
+.t { top: 660px; color: #fff; font-size: 128px; line-height: 1.02; -webkit-text-stroke: 12px #16121c; paint-order: stroke fill; text-shadow: 12px 12px 0 #16121c; letter-spacing: 4px; }
+.t b { color: #ff7a1a; font-weight: normal; }
+.when { top: 960px; }
+.when span { display: inline-block; background: #fff; color: #16121c; border: 7px solid #16121c; border-radius: 40px; padding: 14px 34px 8px; font-size: 56px; letter-spacing: 3px; box-shadow: 10px 10px 0 #e8443a; transform: rotate(1.5deg); }
+</style></head>
+<body>
+<svg id="art" data-art="happyCover"></svg>
+<div class="abs brand"><span>GİZEMLİ KURYE</span></div>
+<div class="abs n">3.</div>
+<div class="abs t">BÖLÜMÜMÜZ<br/><b>SİZLERLE!</b></div>
+<div class="abs when"><span>İYİ SEYİRLER!</span></div>
+<script src="../assets/comic.js"></script>
+<script src="../assets/comic_ep.js"></script>
+<script>
+  const L = Comic.lib;
+  L.PANELS.happyCover = function (rand) {
+    // sunburst on yellow, halftone, confetti and balloons; Cem and Ece smiling at the bottom of the crop
+    let s = L.rect(0, 0, 1080, 1920, "#ffd84a");
+    for (let i = 0; i < 24; i++) {
+      const a0 = (i / 24) * Math.PI * 2, a1 = a0 + Math.PI / 24, r = 1500, cx = 540, cy = 760;
+      if (i % 2) s += `<path d="M ${cx},${cy} L ${cx + Math.cos(a0) * r},${cy + Math.sin(a0) * r} L ${cx + Math.cos(a1) * r},${cy + Math.sin(a1) * r} Z" fill="#ffc21a"/>`;
+    }
+    s += L.dots(0, 0, 1080, 1920, 0.08);
+    const cols = ["#e8443a", "#3d8bd9", "#2e9d55", "#ff7a1a", "#ffffff", "#9b59b6"];
+    for (let i = 0; i < 70; i++) {
+      const x = rand() * 1080, y = 120 + rand() * 1500, c = cols[i % cols.length], r = rand() * 360;
+      s += i % 3 ? `<rect x="${x}" y="${y}" width="${16 + rand() * 14}" height="${30 + rand() * 14}" fill="${c}" stroke="#16121c" stroke-width="3" transform="rotate(${r} ${x} ${y})"/>`
+                 : `<circle cx="${x}" cy="${y}" r="${8 + rand() * 8}" fill="${c}" stroke="#16121c" stroke-width="3"/>`;
+    }
+    for (const [x, y, c] of [[110, 520, "#e8443a"], [190, 440, "#3d8bd9"], [960, 520, "#2e9d55"], [880, 430, "#e8443a"]])
+      s += `<ellipse cx="${x}" cy="${y}" rx="58" ry="72" fill="${c}" stroke="#16121c" stroke-width="6"/><path d="M ${x - 10},${y + 70} L ${x + 10},${y + 70} L ${x},${y + 86} Z" fill="${c}" stroke="#16121c" stroke-width="4"/>` + L.line(`M ${x},${y + 86} q 20,80 -10,190`, 4);
+    s += L.rect(0, 1120, 1080, 800, "#ff7a1a") + L.dots(0, 1120, 1080, 800, 0.16) + L.line("M 0,1120 L 1080,1120", 10);
+    s += L.bust("cem", "courier", "kind", { t: "translate(320 1380) scale(0.82)", light: "left" });
+    s += L.bust("ece", "blue", "kind", { t: "translate(770 1400) scale(0.78)" });
+    return s;
+  };
+  Comic.drawAll(document);
+</script>
+</body></html>
