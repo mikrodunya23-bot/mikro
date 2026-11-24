@@ -1,0 +1,54 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin.woff2"); }
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin-ext.woff2"); unicode-range: U+0100-024F; }
+html, body { margin: 0; width: 1080px; height: 1350px; overflow: hidden; background: #b3172b; font-family: "Bangers", sans-serif; }
+#art { position: absolute; inset: 0; width: 1080px; height: 1350px; }
+.abs { position: absolute; left: 60px; width: 960px; text-align: center; }
+.brand { top: 50px; }
+.brand span { display: inline-block; background: #16121c; color: #ffd84a; padding: 10px 30px 4px; font-size: 52px; letter-spacing: 6px; transform: rotate(-2deg); box-shadow: 8px 8px 0 #ffd84a; }
+.brand span b { color: #fff; font-weight: normal; }
+.diff { top: 150px; color: #ffd84a; font-size: 120px; line-height: 1; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill; text-shadow: 12px 12px 0 #16121c; letter-spacing: 5px; }
+.q { top: 320px; color: #fff; font-size: 92px; line-height: 1.05; -webkit-text-stroke: 9px #16121c; paint-order: stroke fill; text-shadow: 10px 10px 0 #16121c; letter-spacing: 3px; }
+.q b { color: #ffd84a; font-weight: normal; }
+.cta { top: 560px; }
+.cta span { display: inline-block; background: #fff; color: #16121c; border: 7px solid #16121c; border-radius: 44px; padding: 16px 38px 10px; font-size: 64px; letter-spacing: 3px; box-shadow: 10px 10px 0 #ffd84a; transform: rotate(1.5deg); }
+.bubble { position: absolute; left: 60px; top: 780px; }
+.bubble span { position: relative; display: inline-block; background: #fff; color: #16121c; border: 6px solid #16121c; border-radius: 40px; padding: 18px 30px 12px; font-size: 52px; letter-spacing: 2px; }
+.bubble span::after { content: ""; position: absolute; right: 60px; bottom: -44px; border-left: 22px solid transparent; border-right: 22px solid transparent; border-top: 44px solid #16121c; }
+.bubble u { text-decoration: none; display: inline-block; min-width: 190px; border-bottom: 6px dashed #e8443a; }
+.tag { position: absolute; left: 70px; top: 1020px; width: 330px; transform: rotate(-6deg); }
+.tag div { background: #fff; border: 6px solid #16121c; box-shadow: 10px 10px 0 #16121c; text-align: center; }
+.tag .h { background: #2f5fa8; color: #fff; font-size: 36px; letter-spacing: 3px; padding: 10px 0 4px; border-bottom: 6px solid #16121c; }
+.tag .n { color: #c9c2b0; font-size: 64px; padding: 20px 0 14px; letter-spacing: 4px; }
+.tag .r { color: #16121c; font-size: 30px; padding: 0 0 14px; letter-spacing: 2px; }
+</style></head>
+<body>
+<svg id="art" data-art="namesPost"></svg>
+<div class="abs brand"><span><b>MİKRO DÜNYA</b> SUNAR</span></div>
+<div class="abs diff">FARKLI HİKÂYELER</div>
+<div class="abs q">HİKÂYEMİZDE<br/><b>İSMİNİZ</b> GEÇSİN Mİ?</div>
+<div class="abs cta"><span>YORUMLARA YAZIN! 👇</span></div>
+<div class="bubble"><span>MERHABA, BEN <u>&nbsp;</u> !</span></div>
+<div class="tag"><div><div class="h">ARAL HOLDİNG</div><div class="n">SENİN ADIN</div><div class="r">YENİ KARAKTER</div></div></div>
+<script src="../assets/comic.js"></script>
+<script src="../assets/comic_ep.js"></script>
+<script>
+  const L = Comic.lib;
+  L.PANELS.namesPost = function (rand) {
+    let s = L.rect(0, 0, 1080, 1350, "#b3172b");
+    for (let i = 0; i < 26; i++) {
+      const a0 = (i / 26) * Math.PI * 2, a1 = a0 + Math.PI / 26, r = 1400, cx = 540, cy = 380;
+      if (i % 2) s += `<path d="M ${cx},${cy} L ${cx + Math.cos(a0) * r},${cy + Math.sin(a0) * r} L ${cx + Math.cos(a1) * r},${cy + Math.sin(a1) * r} Z" fill="#c8213a"/>`;
+    }
+    s += L.dots(0, 0, 1080, 1350, 0.10);
+    s += L.rect(0, 720, 1080, 630, "#8e1224") + L.dots(0, 720, 1080, 630, 0.14) + L.line("M 0,720 L 1080,720", 10);
+    s += L.bust("ece", "blue", "kind", { t: "translate(900 1010) scale(0.62)" });
+    s += L.bust("cem", "courier", "smile", { t: "translate(660 1040) scale(0.66)", light: "left" });
+    return s;
+  };
+  Comic.drawAll(document);
+  document.getElementById("art").setAttribute("viewBox", "0 0 1080 1350");
+</script>
+</body></html>
