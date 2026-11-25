@@ -1,0 +1,68 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin.woff2"); }
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin-ext.woff2"); unicode-range: U+0100-024F; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; font-family: "Bangers", sans-serif; }
+#art { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+/* all text and faces stay inside the 3:4 profile-grid crop (y 240-1680) */
+.abs { position: absolute; left: 90px; width: 900px; text-align: center; }
+.brand { top: 290px; }
+.brand span { display: inline-block; background: #16121c; color: #ffd84a; padding: 10px 26px 4px; font-size: 52px; letter-spacing: 6px; transform: rotate(-2deg); }
+.n { top: 335px; color: var(--num); font-size: 320px; line-height: 0.95; -webkit-text-stroke: 14px #16121c; paint-order: stroke fill; text-shadow: 16px 16px 0 #16121c; }
+.b { top: 700px; color: #fff; font-size: 120px; line-height: 1; -webkit-text-stroke: 11px #16121c; paint-order: stroke fill; text-shadow: 11px 11px 0 #16121c; letter-spacing: 8px; }
+.t { top: 850px; }
+.t span { display: inline-block; background: #fff; color: #16121c; border: 7px solid #16121c; border-radius: 40px; padding: 14px 34px 8px; font-size: 62px; letter-spacing: 3px; box-shadow: 10px 10px 0 var(--accent); transform: rotate(-1.5deg); }
+</style></head>
+<body>
+<svg id="art" data-art="epCover"></svg>
+<div class="abs brand"><span>GİZEMLİ KURYE</span></div>
+<div class="abs n" id="n">1.</div>
+<div class="abs b" id="b">BÖLÜM</div>
+<div class="abs t"><span id="t">EVE DÖNÜŞ</span></div>
+<script src="../assets/comic.js"></script>
+<script src="../assets/comic_ep.js"></script>
+<script>
+  const EP = {
+    1: { title: "EVE DÖNÜŞ", bg: "#ffd84a", ray: "#ffc21a", band: "#3d8bd9", num: "#e8443a", accent: "#3d8bd9",
+         a: ["cem", "sweater", "smile"], b: ["murat", "brown", "kind"] },
+    2: { title: "KURYE KILIĞI", bg: "#ff9a3c", ray: "#ff8a24", band: "#2e9d55", num: "#ffd84a", accent: "#2e9d55",
+         a: ["cem", "courier", "smirk"], b: ["hasan", "green", "kind"] },
+    3: { title: "KAPIDAKİ AŞAĞILANMA", bg: "#e8443a", ray: "#d6303a", band: "#16121c", num: "#ffd84a", accent: "#16121c",
+         a: ["resepsiyon", "red", "angry"], b: ["guvenlik", "guard", "angry"] },
+    4: { title: "GECE KONUŞMASI", bg: "#3d5fae", ray: "#33529a", band: "#141a2e", num: "#ffd84a", accent: "#ff7a1a",
+         a: ["cem", "courier", "neutral"], b: ["ece", "coat", "smirk"] },
+    5: { title: "42 KAT VE BİR SİMİT", bg: "#ff8fb1", ray: "#ff7aa2", band: "#9b1c31", num: "#ffffff", accent: "#9b1c31",
+         a: ["cem", "courier", "smile"], b: ["ece", "blue", "kind"] },
+    6: { title: "KAPI ARKASINDAKİ SIR", bg: "#7b4bb0", ray: "#6c3fa0", band: "#16121c", num: "#ffd84a", accent: "#ff7a1a",
+         a: ["ece", "blue", "shocked"], b: ["cem", "navysuit", "smirk"] },
+    7: { title: "SEZON FİNALİ", bg: "#d9a441", ray: "#c8922f", band: "#16121c", num: "#ffffff", accent: "#e8443a",
+         a: ["cem", "navysuit", "smirk"], b: ["ece", "white", "smirk"], noGlassesB: true },
+  };
+  const n = +(new URLSearchParams(location.search).get("ep") || 1), E = EP[n];
+  document.documentElement.style.setProperty("--num", E.num);
+  document.documentElement.style.setProperty("--accent", E.accent);
+  document.getElementById("n").textContent = n + ".";
+  document.getElementById("t").textContent = E.title;
+  const L = Comic.lib;
+  L.PANELS.epCover = function (rand) {
+    let s = L.rect(0, 0, 1080, 1920, E.bg);
+    for (let i = 0; i < 24; i++) {
+      const a0 = (i / 24) * Math.PI * 2, a1 = a0 + Math.PI / 24, r = 1500, cx = 540, cy = 640;
+      if (i % 2) s += `<path d="M ${cx},${cy} L ${cx + Math.cos(a0) * r},${cy + Math.sin(a0) * r} L ${cx + Math.cos(a1) * r},${cy + Math.sin(a1) * r} Z" fill="${E.ray}"/>`;
+    }
+    s += L.dots(0, 0, 1080, 1920, 0.08);
+    const cols = ["#e8443a", "#3d8bd9", "#2e9d55", "#ff7a1a", "#ffffff", "#ffd84a"];
+    for (let i = 0; i < 46; i++) {
+      const x = rand() * 1080, y = 120 + rand() * 1000, c = cols[i % cols.length], r = rand() * 360;
+      s += i % 3 ? `<rect x="${x}" y="${y}" width="${16 + rand() * 12}" height="${28 + rand() * 12}" fill="${c}" stroke="#16121c" stroke-width="3" transform="rotate(${r} ${x} ${y})"/>`
+                 : `<circle cx="${x}" cy="${y}" r="${7 + rand() * 7}" fill="${c}" stroke="#16121c" stroke-width="3"/>`;
+    }
+    s += L.rect(0, 1030, 1080, 890, E.band) + L.dots(0, 1030, 1080, 890, 0.16, E.band === "#16121c" || E.band === "#141a2e") + L.line("M 0,1030 L 1080,1030", 10);
+    s += L.bust(E.a[0], E.a[1], E.a[2], { t: "translate(320 1320) scale(0.82)", light: "left" });
+    s += L.bust(E.b[0], E.b[1], E.b[2], { t: "translate(770 1340) scale(0.78)", noGlasses: !!E.noGlassesB });
+    return s;
+  };
+  Comic.drawAll(document);
+</script>
+</body></html>
