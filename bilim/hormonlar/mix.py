@@ -68,9 +68,12 @@ for name, a0, a1 in BEDS:
     place(music, a, a0, 1.0)
 
 # ducking: smoothed voice envelope pulls the music down while the narrator speaks
-env = np.sqrt(np.convolve(voice ** 2, np.ones(int(.05 * SR)) / int(.05 * SR), mode="same"))
+def mavg(x, k):
+    c = np.cumsum(np.concatenate([np.zeros(k // 2 + 1), x, np.zeros(k)]))
+    return ((c[k:k + len(x)] - c[:len(x)]) / k).astype(np.float32)
+env = np.sqrt(mavg(voice.astype(np.float64) ** 2, int(.05 * SR)))
 act = (env > .02).astype(np.float32)
-k = int(.35 * SR); act = np.convolve(act, np.ones(k) / k, mode="same")
+act = mavg(act.astype(np.float64), int(.35 * SR))
 mgain = (.2 * (1 - .5 * np.clip(act, 0, 1))).astype(np.float32)   # ~-14 dB bed, ~-20 dB under speech
 mix = voice[:, None] * 1.0 + sfx + music * mgain[:, None]
 peak = np.abs(mix).max(); print("peak before limit", round(float(peak), 3))
