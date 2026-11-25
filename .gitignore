@@ -1,1 +1,8 @@
 bilim/ornek/vo_raw/
+bilim/hormonlar/vo/
+bilim/hormonlar/out/
+bilim/hormonlar/mix.wav
+bilim/hormonlar/mix_raw.f32
+bilim/hormonlar/*_log.txt
+bilim/hormonlar/concat.txt
+__pycache__/

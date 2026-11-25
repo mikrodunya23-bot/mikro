@@ -1,0 +1,88 @@
+id	tone	text
+s0_01	curious	Sana bir soru sorayım.
+s0_02	curious	İnsan neden bir kişiye âşık olur da… başka birine hiçbir şey hissetmez?
+s0_03	upbeat	Âşık olduğumuz kişiyi neden unutamayız?
+s0_04	upbeat	Ayrılık yaşadığımızda neden sanki bir yerimiz kırılmış gibi, fiziksel bir acı çekeriz?
+s0_05	upbeat	Bir insanın kokusu… sesi… tek bir bakışı… bizi neden bu kadar etkiler?
+s0_06	excited	Ve en tuhafı: korku filmi izlerken yanındaki kişiye neden daha çok bağlanırsın?
+s0_07	whisper	Sence hangisi daha ilginç? Yorumlara yaz.
+s0_08	calm	Çünkü bu videonun sonunda hepsinin cevabını bileceksin.
+s0_09	calm	Ve göreceksin ki aşk, korku ve heyecan aslında aynı makinenin üç farklı düğmesi.
+s1_01	upbeat	Şiirlerde, şarkılarda, kartlarda hep aynı şey: kalp. Kalbim çarpıyor, kalbim kırıldı, kalbimi çaldın.
+s1_02	curious	Peki aşk gerçekten kalpte mi yaşanıyor?
+s1_03	calm	Bilim insanları bunu merak etmiş ve âşık insanları beyin tarayıcısına sokmuşlar. Yeni âşık olmuş gönüllülere sevdikleri kişinin fotoğrafı gösterilmiş.
+s1_04	excited	Ve ekranda kalp değil, beynin derinlerinde küçük bölgeler parlamış!
+s1_05	calm	Bu bölgeler beynin ödül sisteminin parçası. Lezzetli bir yemekte, bir başarıda, hatta bağımlılık yapan maddelerde de çalışan sistemin ta kendisi.
+s1_06	calm	Yani emri veren beyin. Kalp ise o emre uyan, çok sadık bir asker.
+s1_07	calm	Kalbin hızlanması, yüzünün kızarması, midendeki o tuhaf kıpırtı… hepsi beyinden gelen sinyallerin sonucu.
+s1_08	curious	Peki beyin bu emirleri nasıl gönderiyor?
+s1_09	upbeat	Kimyasal haberciler sayesinde. Bugün bu habercilerin en ünlü üçüyle tanışacağız.
+s2_01	calm	Dopamin, beynin derinindeki küçük bir bölgede üretilir. Buradan uzanan sinir yolları, onu beynin ödül merkezine ve karar verdiğimiz bölgelere taşır.
+s2_02	curious	"Çoğu kişi dopamini ""mutluluk hormonu"" sanır. Ama aslında öyle değil."
+s2_03	excited	"Dopamin ""Mutluyum"" demez. Dopamin ""İstiyorum!"" der."
+s2_04	calm	"Seni bir şeyin peşinden koşturan, motive eden, ""Hadi, bir daha!"" diye fısıldayan şey odur."
+s2_05	whisper	Şimdi Ahmet'e bak. Bu an, Ahmet'in beyninde bir fırtınanın başladığı an.
+s2_06	excited	Gözleri Meryem'i görür görmez sinyal ışık hızıyla beyne koşar. Ödül merkezi ateşlenir ve sinir hücreleri arasındaki boşluğa dopamin boşalır!
+s2_07	upbeat	"Mesaj çok basit: ""Bu önemli. Bunu yine istiyorum."""
+s2_08	calm	Ahmet'in dikkati daralır, gözünde etraftaki her şey bulanıklaşır. Şu an onun beyni için dünyada tek bir şey var.
+s2_09	tense	Peki bu neden geceleri seni uyutmaz?
+s2_10	tense	Çünkü dopamin en çok belirsizlikte yükselir. Cevap gelecek mi, gelmeyecek mi?
+s2_11	excited	Beyin ödülü kesin bildiğinde değil, belki diye beklediğinde çıldırır!
+s2_12	calm	Kumar makinelerini ve sosyal medya bildirimlerini bu kadar çekici yapan da aynı mekanizma.
+s2_13	calm	Araştırmalar, aşkın ilk dönemlerinde beynin ruh halini dengeleyen serotonin seviyesinin düşebildiğini gösteriyor. Hem de saplantılı düşüncelerle uğraşan insanlarda görülen seviyelere yakın.
+s2_14	curious	Yani o kişiyi aklından çıkaramaman tesadüf değil.
+s2_15	whisper	Beynin onu kelimenin tam anlamıyla takıntı haline getiriyor.
+s3_01	tense	Ama beynin tek işi âşık olmak değil.
+s3_02	tense	Milyonlarca yıl boyunca atalarımızın hayatta kalması tek bir şeye bağlıydı: tehlikeyi herkesten önce fark etmek.
+s3_03	tense	Ve bunun için vücudun bir alarm sistemi var.
+s3_04	tense	Meryem çöpü atmak için kovaya uzanır. Ve tam o anda…
+s3_05	excited	Daha Meryem ne olduğunu anlamadan vücudu harekete geçmiştir bile!
+s3_06	upbeat	Gözden gelen sinyal önce beynin santraline gider. Burada yol ikiye ayrılır.
+s3_07	upbeat	Biri uzun yoldur. Görüntüyü inceler, ne olduğunu anlamaya çalışır.
+s3_08	excited	Diğeri kestirmedir. Doğrudan beynin alarm merkezine, amigdalaya koşar!
+s3_09	tense	Amigdala düşünmez. Sormaz. Sadece alarmı çalar.
+s3_10	upbeat	Sinyal omurilik boyunca aşağı iner ve böbreklerin üstündeki küçük bezlere ulaşır. Ve böbreküstü bezleri kana adrenalin pompalar!
+s3_11	upbeat	Kalp hızlanır. Nefes derinleşir. Göz bebekleri büyür. Karaciğer kana şeker boşaltır, kaslar yakıtını alır.
+s3_12	upbeat	Sindirim bekleyebilir. Kan mideden çekilir, bacaklara gider.
+s3_13	excited	Vücut tek bir şeye hazırlanır: savaş… ya da kaç!
+s3_14	calm	Ve sonunda uzun yoldan giden sinyal de varır. Beyin karar verir: bu… sadece bir kedi.
+s3_15	curious	Peki tehlike geçtiyse Meryem'in elleri neden hâlâ titriyor?
+s3_16	calm	Çünkü adrenalin bir kere kana karıştı mı hemen yok olmaz. Ardından daha yavaş çalışan kortizol gelir. Vücudun sakinleşmesi birkaç dakikayı bulabilir.
+s3_17	whisper	"Yani beynin ""Yanlış alarm"" dese de vücudun bir süre daha inanmaz."
+s3_18	curious	Şimdi baştaki sorulardan birine dönelim: korku filmi izlerken yanındakine neden daha çok bağlanırsın?
+s3_19	calm	Ünlü bir deneyde erkek katılımcılar, sallanan yüksek bir asma köprüden geçerken bir araştırmacıyla tanıştırılmış. Köprüden geçenler, sağlam bir köprüdekilere göre araştırmacıyı sonradan çok daha sık aramış.
+s3_20	excited	"Çünkü beyin bazen kalbin neden çarptığını karıştırır! ""Kalbim deli gibi atıyor… herhalde bu kişiden etkilendim."""
+s3_21	whisper	Yani bir dahaki ilk buluşma için tavsiye: lunapark. Romantik restoran değil.
+s4_01	calm	Gelelim üçüncü habercimize: oksitosin.
+s4_02	calm	Beynin derinlerinde üretilir, hipofiz bezinden kana bırakılır. Bir kısmı da doğrudan beynin içinde çalışır.
+s4_03	calm	"Ona ""sarılma hormonu"", ""bağlanma hormonu"" denir. Anneyle bebeği, arkadaşları, sevgilileri birbirine bağlayan kimyasal yapıştırıcılardan biri."
+s4_04	curious	Ve onu salgılatmanın en kolay yolu nedir biliyor musun?
+s4_05	calm	Dokunmak.
+s4_06	calm	Ahmet'in eli Meryem'in sırtına değdiği anda derideki minik algılayıcılar beyne sinyal gönderir.
+s4_07	calm	Hipotalamus cevap verir ve kana oksitosin karışır.
+s4_08	curious	Peki az önce çılgınca öten alarm merkezi ne yapar?
+s4_09	calm	Sakinleşir. Oksitosin amigdalanın sesini kısar, stres hormonlarını frenler.
+s4_10	calm	Kalp yavaşlar. Nefes düzelir.
+s4_11	whisper	"Beyin artık şunu söylüyor: ""Güvendesin."""
+s4_12	curious	Peki bir insanın kokusu, sesi ya da bakışı bizi neden bu kadar etkiler?
+s4_13	upbeat	Koku, duyular arasında beynin duygu ve hafıza merkezlerine en doğrudan ulaşan duyudur. Bu yüzden bir parfüm seni bir anda yıllar öncesine götürebilir.
+s4_14	calm	"Bazı araştırmalar, insanların bağışıklık genleri kendilerinden farklı olan kişilerin kokusunu daha çekici bulabildiğini öne sürüyor. Yani ""Kimyamız tuttu"" sözü bir parça gerçek olabilir."
+s4_15	calm	Sevilen birinin sesi, sıcak bir bakış ve uzun bir göz teması da oksitosin sistemini harekete geçirebilir.
+s4_16	curious	Ama oksitosin sadece masum bir sevgi hormonu değil.
+s4_17	calm	"""Bizim"" dediklerimize bağlanmamızı güçlendirirken, yabancılara karşı daha temkinli, hatta kıskanç olmamıza da katkıda bulunabilir."
+s5_01	calm	Peki bütün bu sistem ters giderse? Ya o kişi gitmişse?
+s5_02	calm	Ayrılık acısı yaşayan insanların beyinleri incelendiğinde şaşırtıcı bir şey görülmüş.
+s5_03	calm	Ödül sistemi hâlâ çalışıyor. Hâlâ o kişiyi istiyor. Bu tablo, bağımlılıktaki yoksunluk krizine benzetiliyor.
+s5_04	excited	Daha da ilginci: reddedilme, beyinde fiziksel acıyla ilgili bölgelerin bazılarını da harekete geçiriyor!
+s5_05	calm	"Yani ""Canım yanıyor"" derken mecaz yapmıyorsun. Beynin için bu, gerçek bir acı."
+s5_06	tense	"Ve bazen bedeli kalp öder. Çok yoğun bir duygusal şokta stres hormonları kalp kasını geçici olarak zayıflatabilir. Tıpta buna gerçekten de ""kırık kalp sendromu"" denir."
+s5_07	whisper	Yani aşk beyinde yaşanıyor… ama kalp de bedelini ödeyebiliyor.
+s5_08	calm	İyi haber şu: beyin değişebilen bir organ. Zamanla yeni yollar kurar. Spor, arkadaşlarla gülmek, yeni hedefler… hepsi bu sistemleri yeniden, sağlıklı bir şekilde çalıştırır.
+s6_01	upbeat	Toparlayalım.
+s6_02	upbeat	"Dopamin ""İstiyorum!"" der. Seni peşinden koşturur, aklından çıkarmaz."
+s6_03	upbeat	"Adrenalin ""Hazır ol!"" der. Kalbini hızlandırır, seni tehlikeye karşı uyanık tutar. Bazen de aşkla karışır."
+s6_04	upbeat	"Oksitosin ""Güvendesin"" der. Seni sevdiklerine bağlar, korkunu yatıştırır."
+s6_05	calm	Aşk, korku ve heyecan… Hepsi aynı beynin, aynı vücudun içinde birbirine bağlı, muhteşem bir kimya.
+s6_06	curious	Ve şimdi sana son bir soru: en son ne zaman kalbinin bu üç düğmesine aynı anda basıldı?
+s6_07	excited	Yorumlarda anlat! Ve Mikro Dünya'ya abone olmayı unutma.
+s6_08	whisper	Bir sonraki videoda… vücudundaki diğer gizli kimyasalların peşine düşeceğiz.
