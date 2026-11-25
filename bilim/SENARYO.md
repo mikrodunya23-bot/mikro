@@ -289,7 +289,7 @@
 
 ## Yapım notları
 
-- **Süre:** Anlatım yaklaşık 1.150 kelime. Sahne geçişleri ve sessiz anlarla birlikte 8–9 dakika eder. Kesin süre seslendirmeden sonra ölçülüp görüntüler ona göre ayarlanır.
+- **Süre:** Anlatım yaklaşık 1.000 kelime, yani 7,5–8 dakika konuşma. Sahne geçişleri ve sessiz anlarla birlikte 8,5–9 dakika eder. Kesin süre seslendirmeden sonra ölçülüp görüntüler ona göre ayarlanır.
 - **Ton:** Anlatıcı her bölüme ait etiketle seslendirilir. Gerilimden sonra sakin bölüme geçişte kısa bir sessizlik ve müzik değişimi olur.
 - **Arka plan müziği:** Anlatımın altında sürekli ve kısık çalar. Konuşma sırasında otomatik olarak alçalır.
 - **Bilimsel tasvirler:** Gerçek oranlarda değil, öğretici ve sade çizilecek. Beyin bölgelerinin isimleri ilk geçtikleri yerde ekranda etiketle gösterilecek.
