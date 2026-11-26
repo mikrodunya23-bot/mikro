@@ -1,0 +1,64 @@
+id	who	tone	text
+h0_01	nar	excited	Bu Miraç. Ve bugün kalbi tam üç kez çıldıracak!
+h0_02	nar	upbeat	Bir kez aşktan… bir kez korkudan… bir kez de—
+h0_03	ege	line	Miyav!
+h0_04	nar	whisper	Ama sana bir sır vereyim: bu krizlerin hiçbirini kalp başlatmadı.
+h0_05	nar	excited	Asıl suçlu burada!
+h1_01	yasemin	line	Dikkat et, kahven uçuyordu!
+h1_02	mirac	line	Ben… şey… teşekkür… kahve… yani… MERHABA!
+h1_03	nar	upbeat	Ve işte başladı! Miraç'ın beyninde şu an bir parti var. Gel, içeri girelim!
+h1_04	nar	excited	Burası VTA: beynin dopamin fabrikası. Yasemin'i gördüğü saniye vardiya başladı!
+h1_05	nar	upbeat	Dopamin sinir hücrelerinin arasındaki boşluğa fırlıyor ve ödül merkezine tek bir mesaj taşıyor:
+h1_06	dopa	line	BUNU YİNE İSTİYORUM!
+h1_07	nar	curious	"Ama dikkat: dopamin ""mutluluk hormonu"" değil. O bir motivasyon molekülü. ""Mutluyum"" demez… ""Peşinden git!"" der."
+h1_08	nar	upbeat	Bilim insanları yeni âşık olan insanları beyin tarayıcısına sokmuş. Sevdikleri kişinin fotoğrafını görünce ne parlamış? Kalp değil… tam da bu ödül devresi! Lezzetli bir yemekte, bir golde, hatta bağımlılık yapan maddelerde çalışan devrenin ta kendisi.
+h1_09	mirac	line	Yazıyor! … Yazmıyor. … YAZIYOR!
+h1_10	nar	tense	Miraç telefonu neden elinden bırakamıyor?
+h1_11	nar	excited	"Çünkü dopamin en çok belirsizlikte coşar! Cevap gelecek mi, gelmeyecek mi? Beyin ""belki"" kelimesine bayılır. Bildirimlerin bu kadar bağımlılık yapmasının sırrı da bu."
+h1_12	nar	playful	Bir de bonus bilgi: aşkın ilk aylarında beyindeki serotonin düşebiliyor, hem de saplantılı düşüncelerdekine benzer şekilde. Yani Miraç'ın Yasemin'i kafasından atamaması… bilimsel olarak normal!
+h2_01	yasemin	line	Şunu atıp geliyorum.
+h2_02	mirac	line	Gece kovalarına dikkat et, tehlikelidir!
+h2_03	nar	tense	Miraç şaka yapıyor… Ama kovanın içinde biri var. Ve hiç keyfi yok.
+h2_04	ege	line	HHHHSSSS!
+h2_05	nar	sports	Ve yarış başlıyor! Göz sinyali beynin santraline, talamusa ulaştı. Burada yol ikiye ayrılıyor!
+h2_06	nar	sports	"Bir tarafta uzun yol: görme korteksi. Titiz, dikkatli… ""Bu bir kedi mi, bir poşet mi, yoksa bir kaplan mı?"""
+h2_07	nar	sports	Diğer tarafta kestirme: amigdala! Soru yok, düşünce yok, sadece gaz!
+h2_08	nar	excited	Ve kestirme açık ara önde! Amigdala alarmı çalıyor!
+h2_09	nar	upbeat	Sinyal omurilikten aşağı fırlıyor, böbreklerin üstündeki küçük bezlere ulaşıyor ve—
+h2_10	nar	excited	ADRENALİN!
+h2_11	nar	upbeat	Kalp gaza basıyor! Nefes derinleşiyor! Göz bebekleri büyüyor! Karaciğer kana şeker pompalıyor, kaslar yakıtını alıyor!
+h2_12	nar	playful	"Mide mi? ""Sonra bakarız."" Kan bacaklara gidiyor."
+h2_13	nar	excited	Vücudun artık tek bir sorusu var: SAVAŞ MI… KAÇ MI?!
+h2_14	ege	line	Miyav.
+h2_15	yasemin	line	…Bu arada ben korkmadım.
+h2_16	nar	playful	Tabii, Yasemin. Ama ellerin hâlâ titriyor.
+h2_17	nar	upbeat	Çünkü adrenalin bir kere kana karışınca hemen gitmez. Arkasından daha yavaş çalışan kortizol gelir ve vücudun sakinleşmesi birkaç dakika sürebilir.
+h2_18	nar	playful	"Beyin ""Yanlış alarm"" der. Vücut ""Emin misin?"" der."
+h3_01	mirac	think	Kalbim neden bu kadar hızlı atıyor? …Galiba ben Yasemin'e gerçekten âşığım!
+h3_02	nar	playful	Miraç, o çarpıntının yarısı kediden!
+h3_03	nar	curious	Ama beyin bazen bunu gerçekten karıştırır.
+h3_04	nar	upbeat	Ünlü bir deneyde, sallanan yüksek bir köprüde biriyle tanışan erkekler, o kişiyi sonradan çok daha sık aramış. Korkunun yarattığı çarpıntı… çekim gibi hissedilmiş!
+h3_05	nar	whisper	Yani ilk buluşma tavsiyesi: lunapark. Romantik restoran değil.
+h4_01	nar	excited	Ve şimdi sihirli an: sarılma!
+h4_02	nar	upbeat	Deri altındaki minik algılayıcılar beyne haber yolluyor. Hipotalamus cevap veriyor, hipofiz bezi kana oksitosin salıyor.
+h4_03	nar	upbeat	Oksitosin doğruca az önce ortalığı birbirine katan alarm merkezine gidiyor… ve sesini kısıyor! Stres hormonları frenleniyor, kalp yavaşlıyor, nefes düzeliyor.
+h4_04	nar	whisper	Beynin mesajı tek kelime: Güvendesin.
+h4_05	nar	curious	Peki neden Yasemin? Neden başkası değil?
+h4_06	nar	upbeat	İpucu: koku! Koku, beynin duygu ve hafıza merkezlerine en doğrudan ulaşan duyu. Bazı araştırmalara göre bağışıklık genleri bizden farklı olan kişilerin kokusunu daha çekici bulabiliyoruz.
+h4_07	nar	playful	"Yani ""kimyamız tuttu"" sözünde bir parça gerçek olabilir! Sevilen birinin sesi ve uzun bir göz teması da oksitosini harekete geçirebiliyor."
+h5_01	mirac	think	O da kim?!
+h5_02	nar	playful	"Oksitosinin karanlık tarafıyla tanış! ""Biz"" dediklerimize bağlanmamızı güçlendirirken, yabancılara karşı daha temkinli… hatta kıskanç yapabilir."
+h5_03	nar	tense	İşte aşkın acı tarafı. Reddedildiğini düşünen beyinde ödül sistemi hâlâ o kişiyi istiyor, tıpkı bağımlılıktaki yoksunluk gibi.
+h5_04	nar	excited	"Üstelik reddedilme, fiziksel acıyla ilgili bölgelerin bazılarını da harekete geçiriyor! Yani ""Canım yanıyor"" derken mecaz yapmıyorsun."
+h5_05	nar	whisper	"Hatta çok yoğun bir şokta stres hormonları kalp kasını geçici olarak zayıflatabilir. Tıpta adı gerçekten de ""kırık kalp sendromu""."
+h5_06	yasemin	line	Telefonum öldü! Bu arada tanıştırayım: kuzenim Numan.
+h5_07	mirac	line	Kuzen! Tabii ya, kuzen! Merhaba Numan!
+h5_08	nar	excited	Ve beyindeki bütün ışıklar yeniden yanıyor: dopamin, oksitosin… hepsi aynı anda!
+h6_01	nar	upbeat	Toparlıyorum!
+h6_02	nar	upbeat	"Dopamin: ""İstiyorum!"" Seni peşinden koşturur."
+h6_03	nar	upbeat	"Adrenalin: ""Hazır ol!"" Seni tehlikeye karşı uyanık tutar. Bazen de aşkla karışır."
+h6_04	nar	upbeat	"Oksitosin: ""Güvendesin."" Seni sevdiklerine bağlar."
+h6_05	nar	excited	Aşk, korku, heyecan… Hepsi kalpte değil, beyninde yazılı muhteşem bir kimya!
+h6_06	nar	curious	Peki senin kalbin en son ne zaman üçüne birden yakalandı? Yorumlara yaz!
+h6_07	ege	line	Miyav!
+h6_08	nar	excited	Mikro Dünya'ya abone olmayı unutma!
