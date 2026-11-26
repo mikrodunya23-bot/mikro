@@ -6,12 +6,12 @@
 **Karakterler (4):**
 - **Miraç:** Heyecanlı, sakar, iyi kalpli. Bol bol kekeliyor.
 - **Yasemin:** Zeki ve esprili. Sakin görünüyor ama kedilerden ödü kopuyor.
-- **Tırmık:** Çöp kovasında yaşayan turuncu sokak kedisi. Gizli baş rol; sadece "Miyav" ve "Hhhsss" diyor.
+- **Ege:** Çöp kovasında yaşayan turuncu sokak kedisi. Gizli baş rol; sadece "Miyav" ve "Hhhsss" diyor.
 - **Numan:** Yasemin'in kuzeni. Sadece 5. bölümde görünüyor, konuşmuyor, el sallıyor.
 
 **Anlatıcı:** Hızlı, enerjik ve esprili. Yarış sahnesinde spor spikeri gibi konuşuyor. Sakin bölüm yok denecek kadar az.
 
-**Karakter sesleri:** Miraç ve Yasemin kısa repliklerle konuşuyor. Tırmık gerçek kedi sesi. Dopamin molekülü tek bir cırtlak replik söylüyor.
+**Karakter sesleri:** Miraç ve Yasemin kısa repliklerle konuşuyor. Ege gerçek kedi sesi. Dopamin molekülü tek bir cırtlak replik söylüyor.
 
 **Müzik:**
 - Video boyunca sürekli ve heyecan verici: davul, nabız gibi atan synth, sahne geçişlerinde sinematik vuruşlar.
@@ -32,14 +32,14 @@
 
 **GÖRÜNTÜ:** Üç hızlı flaş, her biri 2 saniye. Köşede nabız sayacı var.
 1. Parkta Yasemin'i gören Miraç. Kalbi çizgi film gibi göğsünden fırlayıp geri giriyor. Nabız 72'den 130'a çıkıyor.
-2. Gece kovadan fırlayan Tırmık. Miraç ve Yasemin çığlık atıp birbirine sarılıyor. Nabız 160.
+2. Gece kovadan fırlayan Ege. Miraç ve Yasemin çığlık atıp birbirine sarılıyor. Nabız 160.
 3. Sakin bir sarılma. Nabız 160'tan 70'e iniyor.
 
 **ANLATICI:**
 > [HEYECANLI] Bu Miraç. Ve bugün kalbi tam üç kez çıldıracak!
 > [HIZLI] Bir kez aşktan… bir kez korkudan… bir kez de—
 
-**TIRMIK:** Miyav!
+**EGE:** Miyav!
 
 **ANLATICI:**
 > [FISILTI] Ama sana bir sır vereyim: bu krizlerin hiçbirini kalp başlatmadı.
@@ -119,9 +119,9 @@
 
 ### 2b. PAT! (2:14 – 2:20)
 
-**GÖRÜNTÜ:** Kapak uçuyor, Tırmık tıslayarak fırlıyor. Yasemin çığlık atıp Miraç'ın kucağına zıplıyor (komik). **Görüntü donuyor.** Ekranda büyük yazı: **0,1 SANİYE.**
+**GÖRÜNTÜ:** Kapak uçuyor, Ege tıslayarak fırlıyor. Yasemin çığlık atıp Miraç'ın kucağına zıplıyor (komik). **Görüntü donuyor.** Ekranda büyük yazı: **0,1 SANİYE.**
 
-**TIRMIK:** HHHHSSSS!
+**EGE:** HHHHSSSS!
 
 ### 2c. Beyindeki yarış: spor spikeri (2:20 – 2:58)
 
@@ -160,9 +160,9 @@
 
 ### 2e. Bitiş çizgisi (3:30 – 3:55)
 
-**GÖRÜNTÜ:** Uzun yoldaki mavi sinyal sonunda bitiş çizgisine varıyor, elinde "KEDİ" yazan bir kart var. Görüntü çözülüyor: Tırmık kovanın üstüne oturmuş, patisini yalıyor.
+**GÖRÜNTÜ:** Uzun yoldaki mavi sinyal sonunda bitiş çizgisine varıyor, elinde "KEDİ" yazan bir kart var. Görüntü çözülüyor: Ege kovanın üstüne oturmuş, patisini yalıyor.
 
-**TIRMIK:** Miyav.
+**EGE:** Miyav.
 **YASEMİN:** (Miraç'ın kucağından iniyor, kıpkırmızı) …Bu arada ben korkmadım.
 
 **ANLATICI:**
@@ -195,7 +195,7 @@
 ### 4a. Sarılma yolculuğu (4:30 – 5:08)
 
 **GÖRÜNTÜ:**
-1. Miraç, Yasemin'e sarılıyor. Tırmık araya girmeye çalışıyor (komik).
+1. Miraç, Yasemin'e sarılıyor. Ege araya girmeye çalışıyor (komik).
 2. Kamera sırttaki temas noktasına dalıyor. Deri altında minik soğan halkası gibi **dokunma algılayıcıları** ışıldıyor.
 3. Sinyal omurilikten yukarı, **hipotalamus**a akıyor. Hipotalamus pembe yanıyor ve **hipofiz**den pembe bir oksitosin bulutu yayılıyor.
 4. Pembe parçacıklar **amigdala**ya ulaşıyor. Kırmızı siren yavaşça pembeye dönüyor ve bir ses düğmesi kısılıyor.
@@ -267,9 +267,9 @@
 > [HEYECANLI] Aşk, korku, heyecan… Hepsi kalpte değil, beyninde yazılı muhteşem bir kimya!
 > [MERAKLI] Peki senin kalbin en son ne zaman üçüne birden yakalandı? Yorumlara yaz!
 
-**GÖRÜNTÜ:** Tırmık kameraya doğru yaklaşıyor.
+**GÖRÜNTÜ:** Ege kameraya doğru yaklaşıyor.
 
-**TIRMIK:** Miyav! (altyazı: "Abone ol, yoksa kovadan fırlarım.")
+**EGE:** Miyav! (altyazı: "Abone ol, yoksa kovadan fırlarım.")
 
 **ANLATICI:**
 > [HEYECANLI] Mikro Dünya'ya abone olmayı unutma!
@@ -282,15 +282,15 @@
 
 - **Giriş:** 50 saniyeden 20 saniyeye indi. Hemen hikâyeye giriliyor.
 - **Hikâye:** Videonun tamamı tek bir güne bağlandı ve karakterler baştan sona ekranda. Bilim bölümleri ayrı durmuyor, olayların içine yerleşti.
-- **Karakterler konuşuyor:** Miraç, Yasemin ve Tırmık'ın kısa replikleri var.
+- **Karakterler konuşuyor:** Miraç, Yasemin ve Ege'nin kısa replikleri var.
 - **Ses önerileri:**
   - Miraç: "Ali", genç ve telaşlı bir ses.
   - Yasemin: "Ezgi" ya da "Gözde".
   - Dopamin molekülü: "Zuu", cırtlak ve oyuncu.
-  - Tırmık: gerçek kedi efekti.
+  - Ege: gerçek kedi efekti.
   - Anlatıcı: Celil daha enerjik ayarla, ya da "Özgür Öztürk". İkisi kısa bir testle karşılaştırılır.
 - **Süre ve tempo:** Video yaklaşık 7 dakika. Cümleler kısaldı, konuşma daha hızlı; sakin ve uzun açıklamalar çıkarıldı.
-- **Mizah:** Kahve çarpışması, "47 kez telefona bakma", spor spikeri yarışı, "Mide: sonra bakarız", "Ben korkmadım", kuzen ters köşesi ve Tırmık'ın abone tehdidi.
+- **Mizah:** Kahve çarpışması, "47 kez telefona bakma", spor spikeri yarışı, "Mide: sonra bakarız", "Ben korkmadım", kuzen ters köşesi ve Ege'nin abone tehdidi.
 - **Müzik:** Daha yüksek ve heyecanlı. Konuşma altında hafif alçalıyor ama hep duyuluyor.
 - **Bilimsel içerik:** v1'deki bütün bilgiler korundu: VTA ve ödül merkezi, MR deneyi, belirsizlik ve dopamin, serotonin, talamus ile iki yol, amigdala, böbreküstü bezi ve organ etkileri, kortizol, asma köprü deneyi, oksitosin ve amigdala, koku ve genler, kıskançlık, reddedilme ve acı, kırık kalp sendromu. Kaynak listesi v1 ile aynı.
 - **Hazır parçalar:** Mevcut beyin, sinaps, damar tüneli, Miraç, Yasemin ve kedi çizimleri yeniden kullanılabilir. Eklenecekler: kafe sahnesi, kahve, yarış pisti ve skor tabelası, Numan karakteri, saat göstergesi.
