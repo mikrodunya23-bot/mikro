@@ -6,3 +6,8 @@ bilim/hormonlar/mix_raw.f32
 bilim/hormonlar/*_log.txt
 bilim/hormonlar/concat.txt
 __pycache__/
+bilim/hormonlar2/vo/
+bilim/hormonlar2/out/
+bilim/hormonlar2/mix.wav
+bilim/hormonlar2/*_log.txt
+bilim/hormonlar2/concat.txt

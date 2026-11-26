@@ -126,18 +126,29 @@ const capEl = document.getElementById('cap');
 const CAPS = [];
 (function buildCaps() {
   TM.lines.forEach(l => {
+    if (l.who === 'ege') return;
     // split into chunks at sentence ends / long clauses, timed by character share
     let parts = l.text.replace(/\s+/g, ' ').match(/[^.!?…:]+[.!?…:]*["”]?\s*/g) || [l.text];
     const chunks = []; let cur = '';
     parts.forEach(p => { if ((cur + p).length > 82 && cur) { chunks.push(cur.trim()); cur = p; } else cur += p; });
     if (cur.trim()) chunks.push(cur.trim());
     const total = chunks.reduce((a, c) => a + c.length, 0); let acc = 0;
-    chunks.forEach(c => { const t0 = l.t + l.d * acc / total; acc += c.length; CAPS.push({t0, t1: l.t + l.d * acc / total + .25, text: wrap(c)}); });
+    const pre = l.who === 'mirac' ? 'Miraç: ' : l.who === 'yasemin' ? 'Yasemin: ' : '';
+    chunks.forEach((c, i) => { const t0 = l.t + l.d * acc / total; acc += c.length; CAPS.push({t0, t1: l.t + l.d * acc / total + .2, text: wrap((i === 0 ? pre : '') + c)}); });
   });
   function wrap(s) { if (s.length <= 48) return s; const mid = s.length / 2; let best = -1; for (let i = 0; i < s.length; i++) if (s[i] === ' ' && (best < 0 || Math.abs(i - mid) < Math.abs(best - mid))) best = i; return s.slice(0, best) + '\n' + s.slice(best + 1); }
 })();
 let capsOn = true;
 function captionAt(t) { let s = ''; if (capsOn) for (const c of CAPS) if (t >= c.t0 && t < c.t1) s = c.text; if (capEl.textContent !== s) capEl.textContent = s; }
+
+// ---- HUD: clock (top-left) and heart-rate counter (top-right) ----
+function hudClock(text, t0 = 0, t1 = 1e9) { add(`<g id="hudC" opacity="0"><rect x="40" y="36" width="230" height="84" rx="22" fill="#0B0820" opacity=".7"/><text class="lbl" x="155" y="96" text-anchor="middle" font-size="54" fill="#FFE45C">${text}</text></g>`, overlay); tl.set('#hudC', {opacity: 1}, t0); if (t1 < 1e9) tl.set('#hudC', {opacity: 0}, t1); }
+function hudPulse(keys) { // keys: [[t, bpm], ...] linear between keys
+  add(`<g id="hudP" opacity="0"><rect x="1600" y="36" width="280" height="84" rx="22" fill="#0B0820" opacity=".7"/><path id="hudH" d="${heartD}" transform="translate(1650,72) scale(1.25)" fill="#FF3B5C"/><text id="hudN" class="lbl" x="1850" y="98" text-anchor="end" font-size="52" fill="#fff">72</text></g>`, overlay);
+  tl.set('#hudP', {opacity: 1}, keys[0][0]);
+  SEEKERS.push(t => { let v = keys[0][1]; for (let i = 0; i < keys.length - 1; i++) { const [a, va] = keys[i], [b, vb] = keys[i + 1]; if (t >= a && t <= b) v = va + (vb - va) * (t - a) / (b - a); else if (t > b) v = vb; }
+    $('#hudN').textContent = Math.round(v); const ph = (t * v / 60) % 1, sc = 1.25 * (ph < .15 ? 1.25 : 1); $('#hudH').setAttribute('transform', `translate(1650,72) scale(${sc})`); });
+}
 
 // ---- finish: expose seek for the renderer ----
 function finish() {

@@ -4,6 +4,8 @@ const MERYEM = {kind: 'f', skin: '#F9C3B8', skinD: '#E89A97', nose: '#F2909A', h
   shirt: '#36C2C9', shirtD: '#249EA6', coat: '#F6F3FB', coatD: '#DCD6EC', pants: '#5C4A8E', pantsD: '#4C3C7A', shoes: '#2C2350', mouth: '#9B2F66'};
 const AHMET = {kind: 'm', skin: '#E9B48C', skinD: '#C98C68', nose: '#D98A72', hair: '#3A2621', hairD: '#2A1A16', brow: '#2E1D19',
   shirt: '#F3A53A', shirtD: '#D9882A', pants: '#2F4A7E', pantsD: '#263D6A', shoes: '#1D2340', mouth: '#7A2E3A'};
+const NUMAN = {kind: 'm', skin: '#C98E6A', skinD: '#A8704E', nose: '#B87A5C', hair: '#1E1412', hairD: '#140D0B', brow: '#1E1412',
+  shirt: '#4CB572', shirtD: '#3A9A5C', pants: '#3A3A4E', pantsD: '#2E2E40', shoes: '#1D1D2A', mouth: '#6A2A30'};
 const GHOST = {kind: 'm', skin: '#8E8AA8', skinD: '#77738F', nose: '#77738F', hair: '#5E5A78', hairD: '#5E5A78', brow: '#5E5A78',
   shirt: '#6E6A88', shirtD: '#5E5A78', pants: '#55516E', pantsD: '#4A4662', shoes: '#3A3650', mouth: '#4A4662'};
 function xrayPal(c = '#2D6BFF') { return {kind: 'f', skin: c, skinD: c, nose: c, hair: c, hairD: c, brow: c, shirt: c, shirtD: c, coat: c, coatD: c, pants: c, pantsD: c, shoes: c, mouth: c, xray: true}; }
@@ -131,3 +133,14 @@ function catSit(id) {
 const binSvg = (id) => `<g id="${id}"><path d="M-110,0 L-92,-250 L92,-250 L110,0Z" fill="#3E9B6E"/><path d="M40,-250 L92,-250 L110,0 L56,0Z" fill="#2F7E58"/>` +
   `<rect x="-60" y="-210" width="16" height="180" rx="8" fill="#2F7E58"/><rect x="-8" y="-210" width="16" height="180" rx="8" fill="#2F7E58"/><rect x="-104" y="-262" width="208" height="24" rx="12" fill="#56B886"/></g>`;
 const lidSvg = (id) => `<g id="${id}"><ellipse cx="0" cy="0" rx="118" ry="26" fill="#56B886"/><ellipse cx="0" cy="-6" rx="96" ry="18" fill="#6CCB98"/><rect x="-26" y="-34" width="52" height="20" rx="10" fill="#2F7E58"/></g>`;
+
+// lip-flap from the line's loudness envelope (30 values per second); closed/open mouth names
+function talk(id, lineId, open = 'o', closed = 'smile', from = null) {
+  const env = (window.TIMING.env || {})[lineId] || []; const t0 = T(lineId), t1 = E(lineId);
+  SEEKERS.push(t => {
+    if (t < t0 || t > t1 + .2) return;
+    const v = t > t1 ? 0 : (env[Math.floor((t - t0) * 30)] || 0);
+    const m = v > .32 ? open : v > .12 ? (open === 'scream' ? 'o' : 'smile') : closed;
+    MOUTHS.forEach(k => { const e = document.getElementById(`${id}-m-${k}`); if (e) e.style.opacity = k === m ? 1 : 0; });
+  });
+}
