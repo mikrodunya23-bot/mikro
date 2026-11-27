@@ -30,7 +30,7 @@ html, body { margin: 0; background: #000; font-family: "Bangers", sans-serif; }
   <svg class="art" data-art="ytBanner"></svg>
   <svg class="logo" viewBox="0 0 1080 1080" id="logo"></svg>
   <div class="abs name">MİKRO DÜNYA</div>
-  <div class="abs show"><span>GİZEMLİ KURYE · 1. SEZON</span></div>
+  <div class="abs show"><span>KISA DİZİLER · BÜYÜK HİKÂYELER</span></div>
   <div class="abs when"><b>HER GÜN 20:00'DE</b> YENİ BÖLÜM · ABONE OL!</div>
 </div>
 <div id="thumb" class="frame">
@@ -49,9 +49,8 @@ html, body { margin: 0; background: #000; font-family: "Bangers", sans-serif; }
     let s = L.rect(0, 0, 2560, 1440, "#0d1430") + L.speedLines(rand, 1280, 720, "#1c2a55", 110) + L.dots(0, 0, 2560, 1440, 0.10, true);
     // left and right edges (visible only on TV / wide desktop): rainy Aral tower and the cast
     s += L.G("translate(-40 -60) scale(0.9)", L.tower(rand, 60, 560, 0, 1700, 90)) + L.rainOver(0.5);
-    s += L.rect(2060, 0, 500, 1440, "#ff7a1a") + L.dots(2060, 0, 500, 1440, 0.16) + L.line("M 2060,0 L 2060,1440", 10);
-    s += L.bust("ece", "white", "smirk", { t: "translate(2330 900) scale(0.6)", noGlasses: true });
-    s += L.bust("cem", "navysuit", "smirk", { t: "translate(2240 1180) scale(0.55)" });
+    s += L.G("translate(2560 0) scale(-1 1) translate(-40 -60) scale(0.9)", L.tower(rand, 60, 560, 0, 1700, 90));
+    for (const [x, y, r] of [[700, 300, 10], [1900, 260, 14], [2200, 1100, 9], [420, 1150, 12], [1500, 1200, 8], [1100, 220, 7]]) s += `<circle cx="${x}" cy="${y}" r="${r}" fill="#ffd84a"/>`;
     return s;
   };
   L.PANELS.ytThumb = function (rand) {
