@@ -1,0 +1,81 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin.woff2"); }
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin-ext.woff2"); unicode-range: U+0100-024F; }
+html, body { margin: 0; background: #000; font-family: "Bangers", sans-serif; }
+.frame { position: relative; overflow: hidden; }
+.frame svg.art { position: absolute; inset: 0; }
+.abs { position: absolute; text-align: center; }
+/* ---------- banner 2560x1440, safe area 1546x423 centred (x 507-2053, y 508-931) ---------- */
+#banner { width: 2560px; height: 1440px; }
+#banner svg.art { width: 2560px; height: 1440px; }
+#banner .logo { position: absolute; left: 540px; top: 520px; width: 400px; height: 400px; }
+#banner .name { left: 940px; top: 530px; width: 1110px; color: #ffd84a; font-size: 190px; line-height: 1; -webkit-text-stroke: 14px #16121c; paint-order: stroke fill; text-shadow: 14px 14px 0 #ff7a1a; letter-spacing: 8px; text-align: left; }
+#banner .show { left: 950px; top: 735px; width: 1100px; text-align: left; }
+#banner .show span { display: inline-block; background: #e8443a; color: #fff; border: 8px solid #16121c; padding: 10px 34px 4px; font-size: 76px; letter-spacing: 5px; box-shadow: 10px 10px 0 #16121c; transform: rotate(-1.5deg); }
+#banner .when { left: 955px; top: 860px; width: 1100px; color: #fff; font-size: 58px; letter-spacing: 4px; text-align: left; }
+#banner .when b { color: #ffd84a; font-weight: normal; }
+/* ---------- thumbnail 1280x720 ---------- */
+#thumb { width: 1280px; height: 720px; margin-top: 20px; }
+#thumb svg.art { width: 1280px; height: 720px; }
+#thumb .q1 { left: 30px; top: 30px; width: 600px; color: #fff; font-size: 104px; line-height: 0.95; -webkit-text-stroke: 9px #16121c; paint-order: stroke fill; text-shadow: 9px 9px 0 #16121c; }
+#thumb .q2 { left: 650px; top: 30px; width: 600px; color: #ffd84a; font-size: 104px; line-height: 0.95; -webkit-text-stroke: 9px #16121c; paint-order: stroke fill; text-shadow: 9px 9px 0 #16121c; }
+#thumb .title { left: 0; top: 548px; width: 1280px; }
+#thumb .title span { display: inline-block; background: #16121c; color: #ffd84a; border: 6px solid #ffd84a; padding: 6px 30px 0; font-size: 86px; letter-spacing: 6px; box-shadow: 8px 8px 0 #e8443a; }
+#thumb .full { position: absolute; left: 1010px; top: 400px; width: 250px; height: 250px; }
+</style></head>
+<body>
+<div id="banner" class="frame">
+  <svg class="art" data-art="ytBanner"></svg>
+  <svg class="logo" viewBox="0 0 1080 1080" id="logo"></svg>
+  <div class="abs name">MİKRO DÜNYA</div>
+  <div class="abs show"><span>GİZEMLİ KURYE · 1. SEZON</span></div>
+  <div class="abs when"><b>HER GÜN 20:00'DE</b> YENİ BÖLÜM · ABONE OL!</div>
+</div>
+<div id="thumb" class="frame">
+  <svg class="art" data-art="ytThumb"></svg>
+  <div class="abs q1">KURYE Mİ?</div>
+  <div class="abs q2">PATRON MU?</div>
+  <div class="abs title"><span>GİZEMLİ KURYE</span></div>
+  <svg class="full" viewBox="-110 -110 220 220"><path d="M0,-105 L25,-42 L92,-52 L48,0 L92,52 L25,42 L0,105 L-25,42 L-92,52 L-48,0 L-92,-52 L-25,-42 Z" fill="#e8443a" stroke="#16121c" stroke-width="8"/>
+    <text x="0" y="-8" text-anchor="middle" font-family="Bangers" font-size="40" fill="#fff" transform="rotate(-10)">TÜM SEZON</text><text x="0" y="34" text-anchor="middle" font-family="Bangers" font-size="44" fill="#ffd84a" transform="rotate(-10)">TEK PARÇA</text></svg>
+</div>
+<script src="../assets/comic.js"></script>
+<script src="../assets/comic_ep.js"></script>
+<script>
+  const L = Comic.lib;
+  L.PANELS.ytBanner = function (rand) {
+    let s = L.rect(0, 0, 2560, 1440, "#0d1430") + L.speedLines(rand, 1280, 720, "#1c2a55", 110) + L.dots(0, 0, 2560, 1440, 0.10, true);
+    // left and right edges (visible only on TV / wide desktop): rainy Aral tower and the cast
+    s += L.G("translate(-40 -60) scale(0.9)", L.tower(rand, 60, 560, 0, 1700, 90)) + L.rainOver(0.5);
+    s += L.rect(2060, 0, 500, 1440, "#ff7a1a") + L.dots(2060, 0, 500, 1440, 0.16) + L.line("M 2060,0 L 2060,1440", 10);
+    s += L.bust("ece", "white", "smirk", { t: "translate(2330 900) scale(0.6)", noGlasses: true });
+    s += L.bust("cem", "navysuit", "smirk", { t: "translate(2240 1180) scale(0.55)" });
+    return s;
+  };
+  L.PANELS.ytThumb = function (rand) {
+    let s = L.rect(0, 0, 640, 720, "#ff7a1a") + L.dots(0, 0, 640, 720, 0.16) + L.rect(640, 0, 640, 720, "#16203f") + L.dots(640, 0, 640, 720, 0.12, true);
+    s += L.speedLines(rand, 320, 420, "#00000022", 40);
+    s += `<path d="M 600,0 L 680,0 L 600,720 L 520,720 Z" fill="#ffd84a" stroke="#16121c" stroke-width="10"/>`;
+    s += L.bust("cem", "courier", "shocked", { t: "translate(300 470) scale(0.62)", wet: true, light: "left" });
+    s += L.bust("cem", "navysuit", "smirk", { t: "translate(900 470) scale(0.62)" });
+    return s;
+  };
+  for (const id of ["banner", "thumb"]) {
+    const svg = document.querySelector(`#${id} svg.art`);
+    Comic.draw(svg);
+    svg.setAttribute("viewBox", id === "banner" ? "0 0 2560 1440" : "0 0 1280 720");
+  }
+  // logo: the Mikro Dünya planet from the profile picture
+  fetch; // (no network: logo drawn inline below)
+  document.getElementById("logo").innerHTML = `
+    <circle cx="540" cy="540" r="520" fill="#16203f" stroke="#ffd84a" stroke-width="18"/>
+    <g transform="translate(0 -40)">
+    <ellipse cx="540" cy="610" rx="380" ry="110" fill="none" stroke="#ffd84a" stroke-width="16" stroke-dasharray="26 22" transform="rotate(-14 540 610)"/>
+    <circle cx="540" cy="600" r="250" fill="#ff7a1a" stroke="#16121c" stroke-width="14"/>
+    <path d="M 302,650 C 400,600 480,700 560,660 C 640,620 700,690 790,650 C 760,780 640,850 540,850 C 420,850 330,770 302,650 Z" fill="#2e9d55" stroke="#16121c" stroke-width="8"/>
+    <g stroke="#16121c" stroke-width="8"><rect x="455" y="300" width="70" height="80" fill="#3d8bd9"/><rect x="525" y="230" width="60" height="150" fill="#26355e"/><rect x="585" y="290" width="62" height="90" fill="#e8443a"/><rect x="410" y="330" width="45" height="50" fill="#ffd84a"/></g>
+    <path d="M 172,710 A 380,110 -14 0 0 912,530" fill="none" stroke="#ffd84a" stroke-width="16"/></g>`;
+</script>
+</body></html>
