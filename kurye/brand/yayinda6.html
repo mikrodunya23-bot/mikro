@@ -1,0 +1,54 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin.woff2"); }
+@font-face { font-family: "Bangers"; src: url("../assets/fonts/bangers-latin-ext.woff2"); unicode-range: U+0100-024F; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #0d1430; font-family: "Bangers", sans-serif; }
+#art { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+.abs { position: absolute; left: 120px; width: 760px; text-align: center; }
+.sunar { top: 250px; color: #fff; font-size: 40px; letter-spacing: 9px; }
+.sunar b { color: #ffd84a; font-weight: normal; }
+.t1 { top: 335px; color: #ff7a1a; font-size: 130px; line-height: 1.05; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill; text-shadow: 12px 12px 0 #16121c; letter-spacing: 6px; }
+.t2 { top: 462px; color: #ffd84a; font-size: 160px; line-height: 1.05; -webkit-text-stroke: 10px #16121c; paint-order: stroke fill; text-shadow: 12px 12px 0 #16121c; letter-spacing: 6px; }
+.live { top: 650px; }
+.live .a { display: inline-block; background: #e8443a; color: #fff; border: 7px solid #16121c; padding: 10px 40px 4px; font-size: 96px; letter-spacing: 6px; box-shadow: 10px 10px 0 #16121c; transform: rotate(-2deg); }
+.live .b { display: inline-block; margin-top: 18px; background: #ffd84a; color: #16121c; border: 7px solid #16121c; padding: 8px 46px 2px; font-size: 110px; letter-spacing: 8px; box-shadow: 10px 10px 0 #ff7a1a; transform: rotate(1.5deg); }
+.new { position: absolute; left: 120px; top: 600px; width: 150px; height: 150px; }
+.tease { top: 960px; }
+.tease span { display: inline-block; background: #fff; color: #16121c; border: 6px solid #16121c; border-radius: 40px; padding: 16px 26px 12px; font-size: 38px; line-height: 1.15; letter-spacing: 1px; box-shadow: 8px 8px 0 #ff7a1a; }
+.hint { top: 1135px; color: #ffd84a; font-size: 44px; letter-spacing: 4px; }
+.go { top: 1130px; }
+.go span { display: inline-block; background: #16121c; color: #ffd84a; border: 6px solid #ffd84a; padding: 14px 30px 8px; font-size: 58px; letter-spacing: 4px; box-shadow: 10px 10px 0 #e8443a; }
+</style></head>
+<body>
+<svg id="art" data-art="liveStory"></svg>
+<div class="abs sunar"><b>MİKRO DÜNYA</b> SUNAR</div>
+<div class="abs t1">GİZEMLİ</div>
+<div class="abs t2">KURYE</div>
+<div class="abs live"><span class="a">6. BÖLÜM</span><br/><span class="b">YAYINDA!</span></div>
+<svg class="new" viewBox="-80 -80 160 160"><path d="M0,-75 L18,-30 L66,-38 L34,0 L66,38 L18,30 L0,75 L-18,30 L-66,38 L-34,0 L-66,-38 L-18,-30 Z" fill="#ffd84a" stroke="#16121c" stroke-width="7"/><text x="0" y="14" text-anchor="middle" font-family="Bangers" font-size="40" fill="#e8443a" transform="rotate(-12)">YENİ!</text></svg>
+<div class="abs tease"><span>YARIN <b style="color:#e8443a;font-weight:normal">SEZON FİNALİ!</b> 🔥<br/>SENCE KİMLER KOVULACAK?</span></div>
+<div class="abs hint" id="hint">▼ OYLA! ▼</div>
+<div class="abs go" id="go" style="display:none"><span>PROFİLE GİT, HEMEN İZLE!</span></div>
+<script src="../assets/comic.js"></script>
+<script src="../assets/comic_ep.js"></script>
+<script>
+  const tiktok = new URLSearchParams(location.search).get("p") === "tiktok";
+  if (tiktok) { document.getElementById("hint").style.display = "none"; document.getElementById("go").style.display = "block"; }
+  const L = Comic.lib;
+  L.PANELS.liveStory = function (rand) {
+    let s = L.rect(0, 0, 1080, 1920, "#0d1430") + L.speedLines(rand, 540, 760, "#1c2a55", 80) + L.dots(0, 0, 1080, 1920, 0.10, true);
+    if (!tiktok) {  // empty spotlight for the link / shared-reel sticker
+      const g = L.nid("sp");
+      s += `<defs><radialGradient id="${g}"><stop offset="0" stop-color="#ffd27a" stop-opacity="0.45"/><stop offset="0.6" stop-color="#ff7a1a" stop-opacity="0.15"/><stop offset="1" stop-color="#ff7a1a" stop-opacity="0"/></radialGradient></defs><ellipse cx="540" cy="1300" rx="460" ry="140" fill="url(#${g})"/>`;
+    }
+    const y0 = tiktok ? 1290 : 1440;
+    s += L.rect(0, y0, 1080, 1920 - y0, "#ff7a1a") + L.dots(0, y0, 1080, 1920 - y0, 0.16) + L.line(`M 0,${y0} L 1080,${y0}`, 10);
+    s += L.bust("ece", "blue", "shocked", { t: `translate(300 ${y0 + 290}) scale(0.74)`, light: "left" });
+    s += L.bust("cem", "navysuit", "smirk", { t: `translate(790 ${y0 + 270}) scale(0.78)` });
+    s += L.rainOver(0.4);
+    return s;
+  };
+  Comic.drawAll(document);
+</script>
+</body></html>
